@@ -4,23 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp3
+namespace Impfstoff
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Wie alt ist Sie?: ");
-            int alter = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Sie ist: " + alter);
+            Console.WriteLine("Haben Wir noch Impfstoff da?);
+            Console.WriteLine("Anzahl an vorhandenen Impfstoff angeben:);
+            int Impfstoff = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(Impfstoff + "noch?");
+            Console.WriteLine("Hast du einen genommen? (Ja oder Nein)");
+            string frage = Console.ReadLine();
 
-            if (alter >= 18)
+
+            if (frage == "Ja")
             {
-                Console.WriteLine("Gönn dia Bruda");
+                Console.WriteLine("Hast du?");
+                Console.WriteLine("Ey er ist voll der Boris geworden.");
             }
             else
             {
-                Console.WriteLine("Bruda, du krigst Anseige");
+                Console.WriteLine("Omg, was machen wir jetzt?");
             }
             Console.ReadLine();
         }
