@@ -10,18 +10,23 @@ namespace Impfstoff
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Haben Wir noch Impfstoff da?");
+            Console.WriteLine("Haben Wir noch Impfstoff da? (1 oder 0)");
             Console.WriteLine("Anzahl an vorhandenen Impfstoff angeben:");
-            int Impfstoff = Convert.ToInt32(Console.ReadLine());      
-            Console.WriteLine(Impfstoff + " noch?");
+            int Impfstoff = Convert.ToInt32(Console.ReadLine());
+
+            if (Impfstoff == 0)
+            {
+                Console.WriteLine("Keinen mehr?");
+            } 
+            else
+            {
+                Console.WriteLine("Einen noch?");
+            }
+
             Console.WriteLine("Hast du einen genommen? (Ja oder Nein)");
             string frage = Console.ReadLine(); 
 
-
-
             if (frage == "Ja")
-
-   
 
             {
                 Console.WriteLine("Hast du?");
@@ -31,6 +36,7 @@ namespace Impfstoff
             {
                 Console.WriteLine("Omg, voll gut!");
             }
+            
             Console.ReadKey();
         }
     }
