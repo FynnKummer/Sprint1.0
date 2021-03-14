@@ -19,6 +19,8 @@ namespace Impfstoff
 
 
             if (frage == "Ja"||"Hallo")
+
+   
             {
                 Console.WriteLine("Hast du?");
                 Console.WriteLine("Ey er ist voll der Boris geworden.");
