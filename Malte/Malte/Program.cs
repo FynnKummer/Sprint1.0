@@ -18,9 +18,15 @@ namespace Impfstoff
             string frage = Console.ReadLine(); 
 
 
+<<<<<<< HEAD
             if (frage == "Ja"||"hi")
+=======
+
+            if (frage == "Ja"||"spongebob")
+>>>>>>> d9ee55c2874c68eb2aed8644d0fb148c25fcf8d1
 
    
+
             {
                 Console.WriteLine("Hast du?");
                 Console.WriteLine("Ey er ist voll der Boris geworden.");
