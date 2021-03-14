@@ -12,10 +12,10 @@ namespace Impfstoff
         {
             Console.WriteLine("Haben Wir noch Impfstoff da?");
             Console.WriteLine("Anzahl an vorhandenen Impfstoff angeben:");
-            int Impfstoff = Convert.ToInt32(Console.ReadLine());
+            int Impfstoff = Convert.ToInt32(Console.ReadLine());        //Eingabe als Zahl konvertieren
             Console.WriteLine(Impfstoff + " noch?");
             Console.WriteLine("Hast du einen genommen? (Ja oder Nein)");
-            string frage = Console.ReadLine();
+            string frage = Console.ReadLine(); 
 
 
             if (frage == "Ja")
@@ -25,9 +25,9 @@ namespace Impfstoff
             }
             else
             {
-                Console.WriteLine("Omg, was machen wir jetzt?");
+                Console.WriteLine("Omg, voll gut!");
             }
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
