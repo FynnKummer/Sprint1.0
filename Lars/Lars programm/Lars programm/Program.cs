@@ -4,12 +4,12 @@ namespace Rechner
 {
     class Calculator
     {
-        public static double DoOperation(double num1, double num2, string op)
+        public static double DoOperation(double num1, double num2, string Rechenart)
         {
             double result = double.NaN; // Default value is "not-a-number" which we use if an operation, such as division, could result in an error.
 
             // Use a switch statement to do the math.
-            switch (op)
+            switch (Rechenart)
             {
                 case "a":
                     result = num1 + num2;
@@ -80,11 +80,11 @@ namespace Rechner
                 Console.WriteLine("\td - Divide");
                 Console.Write("Your option? ");
 
-                string op = Console.ReadLine();
+                string Rechenart = Console.ReadLine();
 
                 try
                 {
-                    result = Calculator.DoOperation(cleanNum1, cleanNum2, op);
+                    result = Calculator.DoOperation(cleanNum1, cleanNum2, Rechenart);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("This operation will result in a mathematical error.\n");
