@@ -19,7 +19,7 @@ namespace Impfstoff
 
 
 
-            if (frage == "Ja"||"spongebob")
+            if (frage == "Ja"||"test")
 
    
 
