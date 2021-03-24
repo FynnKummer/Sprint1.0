@@ -15,7 +15,7 @@ namespace Impfstoff
             int Impfstoff = Convert.ToInt32(Console.ReadLine());        //Eingabe als Zahl konvertieren
 
             //Abfrage Zahl
-            if (Impfstoff == 1)
+            if (Impfstoff == 12)
             {
                 Console.WriteLine("Keinen mehr?");
             } 
