@@ -19,9 +19,13 @@ namespace Impfstoff
             {
                 Console.WriteLine("Keinen mehr?");
             } 
-            else
+            else if (Impfstoff == 1)
             {
                 Console.WriteLine("Einen noch?");
+            }
+            else
+            {
+                Console.WriteLine("Achso.");
             }
 
             Console.WriteLine("Hast du einen genommen? (Ja oder Nein)");
