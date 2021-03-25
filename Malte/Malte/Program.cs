@@ -16,8 +16,8 @@ namespace Impfstoff
 
             //Abfrage Zahl
 
+            if (Impfstoff == 0)
 
-            if (Impfstoff == 2)
 
             {
                 Console.WriteLine("Keinen mehr?");
