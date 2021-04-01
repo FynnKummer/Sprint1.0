@@ -8,13 +8,25 @@ namespace Sprint1
 {
     class Program
     {
-        public static double schraubkopf()
+        public static double schraubkopf(String form, int schluesselbreite)
         {
-            //hier den Code reinschreiben
-            //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird
+            if (form == "I"||form=="i")
+            {
+                
+
+            }
+            else if (form == "A"||form=="a")
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("Fehlerhafte Eingabe. Starten Sie das Programm neu");
+            }
+            
 
         }
-        public static double gewinde()
+        public static double gewinde(String[] gew)
         {
 
 
@@ -43,6 +55,7 @@ namespace Sprint1
             //hier den Code reinschreiben
             //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird
 
+            
         }
 
 
@@ -51,11 +64,20 @@ namespace Sprint1
             double länge;
             double material;
             String[] gewinde;
-            
-            
-           
 
-            
+            Console.WriteLine("Geben Sie ein, ob die Schraube einen Aussensechskant- oder Innensechskantkopf haben soll\nGeben Sie für Innensechskannt I und für Aussensechskant A in die Konsole ein!");
+
+
+
+
+
+
+                   
+
+
+
+
+
 
 
 
