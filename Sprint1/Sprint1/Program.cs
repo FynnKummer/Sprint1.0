@@ -8,7 +8,106 @@ namespace Sprint1
 {
     class Program
     {
+        static void Main(string[] args)     //Hauptprogramm
+        {
+
+            //Variablendeklariation für die Unterprogramme?
+
+            
+
+            //Methoden aufrufen
+
+
+
+
+            /*int schluesselbreite;
+            double material, masse;
+
+            String[] gewinde;
+            
+
+
+            // Methode Schraubkopf
+
+            Console.WriteLine("Welcher Schraubenype ist erwünscht?\nEs besteht die Auswahl zwischen Innensechskant und Außensechkant");
+
+            String kopftyp=kopftest();      //Hier wird in einer Methode die Eingabe über den Typ der Schraube getätigt und auf zulässigkeit geprüft
+            Console.WriteLine("Methode geht");
+            int schluesselbreite = breite_test();
+
+            
+
+
+
+            //Methode Gewinde
+
+
+
+            
+            
+            //Methode Festigkeit
+
+
+
+                
+
+
+            //Methode Masse
+
+                masse = 1; 
+
+            
+
+
+
+             //Methode Preis
+
+            double nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, kilopreis, preis50, preis100, mws; 
+
+            mws = 1.19;
+
+                   // Preisvarianten berechnen 
+
+            nettokilopreis = preis(); //gewicht, material, gewindeart, gewindelänge, schraubenkopf; KilopreisV kilopreisE
+            nettoeinzelpreis = nettoeinzelpreis / masse; 
+            netto50 = 50 * nettoeinzelpreis;
+            netto100 = 100 * nettoeinzelpreis;
+
+            einzelpreis = nettoeinzelpreis * mws;
+            kilopreis = nettokilopreis * mws; 
+            preis50 = netto50 * mws;
+            preis100 = netto100 *mws;
+        
+                
+
+
+                 // Ausgabe 
+
+            
+            Console. WriteLine("Preise:"); 
+            Console.WriteLine ();
+            Console.WriteLine("Nettopreise"); 
+            Console.WriteLine("Stückpreis:          " + Math.Round(nettoeinzelpreis, 2));
+            Console.WriteLine("Kilopreis:           " + Math.Round(nettokilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:      " + Math.Round(netto50, 2));
+            Console.WriteLine ("preis 100 Stück:    " + Math.Round(netto100, 2));
+            Console.WriteLine(); 
+            Console.WriteLine("Preise inkl. Mehrwertsteuer");
+            Console.WriteLine();
+            Console.WriteLine("Nettopreise"); 
+            Console.WriteLine("Stückpreis:          " + Math.Round(einzelpreis, 2));
+            Console.WriteLine("Kilopreis:           " + Math.Round(kilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:      " + Math.Round(preis50, 2));
+            Console.WriteLine ("preis 100 Stück:    " + Math.Round(preis100, 2));
+            
+       */
        
+
+            Console.ReadKey();
+
+
+        }   //Hauptprogramm Ende
+
         public static String kopftest()
         {
             String typ="";
@@ -170,117 +269,6 @@ namespace Sprint1
         }
 
 
-        static void Main(string[] args)
-        {
-
-            int schluesselbreite;
-            double material, masse;
-
-            String[] gewinde;
-            
-
-
-            // Methode Schraubkopf
-
-            Console.WriteLine("Welcher Schraubenype ist erwünscht?\nEs besteht die Auswahl zwischen Innensechskant und Außensechkant");
-
-            String kopftyp=kopftest();      //Hier wird in einer Methode die Eingabe über den Typ der Schraube getätigt und auf zulässigkeit geprüft
-            Console.WriteLine("Methode geht");
-            int schluesselbreite = breite_test();
-
-            
-
-
-
-            //Methode Gewinde
-
-
-
-            
-            
-            //Methode Festigkeit
-
-
-
-                
-
-
-            //Methode Masse
-
-                masse = 1; 
-
-            
-
-
-
-             //Methode Preis
-
-            double nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, kilopreis, preis50, preis100, mws; 
-
-            mws = 1.19;
-
-                   // Preisvarianten berechnen 
-
-            nettokilopreis = preis(); //gewicht, material, gewindeart, gewindelänge, schraubenkopf; KilopreisV kilopreisE
-            nettoeinzelpreis = nettoeinzelpreis / masse; 
-            netto50 = 50 * nettoeinzelpreis;
-            netto100 = 100 * nettoeinzelpreis;
-
-            einzelpreis = nettoeinzelpreis * mws;
-            kilopreis = nettokilopreis * mws; 
-            preis50 = netto50 * mws;
-            preis100 = netto100 *mws;
-        
-                
-
-
-                 // Ausgabe 
-
-            
-            Console. WriteLine("Preise:"); 
-            Console.WriteLine ();
-            Console.WriteLine("Nettopreise"); 
-            Console.WriteLine("Stückpreis:          " + Math.Round(nettoeinzelpreis, 2));
-            Console.WriteLine("Kilopreis:           " + Math.Round(nettokilopreis, 2));
-            Console.WriteLine("Preis 50 Stück:      " + Math.Round(netto50, 2));
-            Console.WriteLine ("preis 100 Stück:    " + Math.Round(netto100, 2));
-            Console.WriteLine(); 
-            Console.WriteLine("Preise inkl. Mehrwertsteuer");
-            Console.WriteLine();
-            Console.WriteLine("Nettopreise"); 
-            Console.WriteLine("Stückpreis:          " + Math.Round(einzelpreis, 2));
-            Console.WriteLine("Kilopreis:           " + Math.Round(kilopreis, 2));
-            Console.WriteLine("Preis 50 Stück:      " + Math.Round(preis50, 2));
-            Console.WriteLine ("preis 100 Stück:    " + Math.Round(preis100, 2));
-            
-       
-            
-
-
-
-            //Ende
-
-
-
-
-
-            Console.ReadKey();
-
-
-
-
-
-
-                   
-
-
-
-
-
-
-
-
-
-        }
+      
     }
 }
