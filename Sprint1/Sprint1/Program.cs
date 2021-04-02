@@ -205,7 +205,7 @@ namespace Sprint1
 
 
 
-        public static void Kilopreis(double gewicht,string material, string gewindeart, string gewindelänge, string schraubenkopf,)
+        public static void Preis(double gewicht,string material, string gewindeart, string gewindelänge, string schraubenkopf,)
 
         {
 
@@ -275,19 +275,13 @@ namespace Sprint1
 
             Console.WriteLine("Preise:");
             Console.WriteLine();
-            Console.WriteLine("Nettopreise");
-            Console.WriteLine("Stückpreis:          " + Math.Round(nettoeinzelpreis, 2));
-            Console.WriteLine("Kilopreis:           " + Math.Round(nettokilopreis, 2));
-            Console.WriteLine("Preis 50 Stück:      " + Math.Round(netto50, 2));
-            Console.WriteLine("preis 100 Stück:    " + Math.Round(netto100, 2));
+            Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Preise inkl. Mehrwertsteuer");
-            Console.WriteLine();
-            Console.WriteLine("Nettopreise");
-            Console.WriteLine("Stückpreis:          " + Math.Round(einzelpreis, 2));
-            Console.WriteLine("Kilopreis:           " + Math.Round(kilopreis, 2));
-            Console.WriteLine("Preis 50 Stück:      " + Math.Round(preis50, 2));
-            Console.WriteLine("preis 100 Stück:    " + Math.Round(preis100, 2));
+            Console.WriteLine("Stückpreis:          " + Math.Round(nettoeinzelpreis, 2) + "      Stückpreis:          " + Math.Round(einzelpreis, 2));
+            Console.WriteLine("Kilopreis:           " + Math.Round(nettokilopreis, 2) + "        Kilopreis:           " + Math.Round(kilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:      " + Math.Round(netto50, 2) + "               Preis 50 Stück:      " + Math.Round(preis50, 2));
+            Console.WriteLine("preis 100 Stück:    " + Math.Round(netto100, 2) + "               preis 100 Stück:     " + Math.Round(preis100, 2));
+
         }
 
 
