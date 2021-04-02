@@ -35,10 +35,20 @@ namespace Sprint1
 
 
 
-        public static double preis()
+        public static double Preis(double gewicht,int material int gewindeart, int gewinde, int gewindelänge, int schraubenkopf )
         {
-            //hier den Code reinschreiben
-            //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird
+           double preis = 0;
+           double kilopreis; 
+
+            if (material = 0)
+            {
+                kilopreis = 7.12 
+            }
+            else if (material = 1)
+            {
+                kilopreis = 16,78
+            }
+           preis = gewicht * kilopreis 
 
         }
 

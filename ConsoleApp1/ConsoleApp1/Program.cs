@@ -8,11 +8,15 @@ namespace ConsoleApp1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Test");
-            Console.ReadKey();
-        }//ist noch Impfstoff da?
+            double x = Console.ReadLine();
+
+            Console.WriteLine("Die Zahl ist" + x); 
+
+            Console.ReadKey(); 
+
+        }
 
     }
 }
