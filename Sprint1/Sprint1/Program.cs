@@ -16,6 +16,15 @@ namespace Sprint1
             
 
             //Methoden aufrufen
+            Material();     //Abfrage welches Material die Schraube hat
+            Schraubenkopf();    //Anfrage Welchen Schraubenkopf die Schraube hat
+            Gewinde();      //Abfrage Gewinde(M8,M10,..), Schrauben- und Gewindelänge und Gewindeart
+                            //Berechnung Schlüsselweite und Steigung
+            Preis();    //Berechnung des Preises für die gewünschte Menge an Schrauben
+            Festigkeit();   //Abfrage der Festigkeitsklasse des Materials + Berechnung der Festigkeit
+            Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
+            Ausgabe();  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
+
 
 
 
@@ -108,7 +117,7 @@ namespace Sprint1
 
         }   //Hauptprogramm Ende
 
-        public static String kopftest()
+        public static String Schraubenkopf()
         {
             String typ="";
             for (int i = 0; i == 0;)
@@ -133,37 +142,7 @@ namespace Sprint1
             return typ;                                                    //Benötigter  Wert wird zurückgegeben
         }
 
-        public static int breite_test()
-        {
-            Console.Write("Welche Schlüsselbreite möchten Sie haben?\nGeben Sie Ihren Wunsch vom als Zahl von 1 bis 20 ein!\nM:");
-
-            int breite =0;
-
-            for (int i = 0; i == 0;)
-            {
-                breite = Convert.ToInt32(Console.ReadLine());
-
-
-                if (breite >=1&&breite<=20)//Wenn die Eingabe für unseren FAll zulässig ist
-                {
-                    Console.WriteLine("Eingbe erfolgreich");
-                    break;                                                 //Endlosschleife wird verlassen
-                }
-                else
-                {
-                    Console.WriteLine("Eingabe fehlerhaft");                //Ausgabe, daraufhin wird Schleife wiederholt (wenn nötig, unendlich lang)
-                    Console.WriteLine("Erneut veruchen");
-                    
-                }
-
-                
-
-
-            }
-            return breite;
-
-
-        }
+        
         
         
         
