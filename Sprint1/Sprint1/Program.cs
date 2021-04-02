@@ -52,7 +52,7 @@ namespace Sprint1
                 }
                 else
                 {
-                    Console.WriteLine("Eingabe fehlerhaft");                //Ausgabe, dann wird Schleife wiederholt (wenn nötig, unendlich lang)
+                    Console.WriteLine("Eingabe fehlerhaft");                //Ausgabe, daraufhin wird Schleife wiederholt (wenn nötig, unendlich lang)
                     Console.WriteLine("Erneut veruchen");
                     
                 }
@@ -98,7 +98,7 @@ namespace Sprint1
         }
 
 
-        /*
+        
         public static double Preis(double gewicht,int material int gewindeart, int gewinde, int gewindelänge, int schraubenkopf )
         {
 
@@ -120,7 +120,7 @@ namespace Sprint1
            preis = gewicht * kilopreis 
 
 
-        }       */
+        }       
 
         public static double festigkeit()
         {
@@ -165,7 +165,7 @@ namespace Sprint1
 
 
             //Methode Preis
-            /*
+            
             double preis; 
 
             preis = Preis(); 
@@ -174,7 +174,7 @@ namespace Sprint1
             {
                 Console.WriteLine("Fehler: Ungültige E
             }
-            */
+            
 
             //Methode Festigkeit
 
