@@ -13,7 +13,7 @@ namespace Sprint1
 
             //Variablendeklariation für die Unterprogramme?
 
-            
+
 
             //Methoden aufrufen
             Material();     //Abfrage welches Material die Schraube hat
@@ -24,8 +24,6 @@ namespace Sprint1
             Festigkeit();   //Abfrage der Festigkeitsklasse des Materials + Berechnung der Festigkeit
             Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
             Ausgabe();  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
-
-
 
 
 
@@ -110,14 +108,14 @@ namespace Sprint1
             Console.WriteLine ("preis 100 Stück:    " + Math.Round(preis100, 2));
             
        */
-       
+
 
             Console.ReadKey();
 
 
         }   //Hauptprogramm Ende
 
-        public static String Schraubenkopf()
+        public static String kopftest()
         {
             String typ="";
             for (int i = 0; i == 0;)
@@ -142,7 +140,37 @@ namespace Sprint1
             return typ;                                                    //Benötigter  Wert wird zurückgegeben
         }
 
-        
+        public static int breite_test()
+        {
+            Console.Write("Welche Schlüsselbreite möchten Sie haben?\nGeben Sie Ihren Wunsch vom als Zahl von 1 bis 20 ein!\nM:");
+
+            int breite =0;
+
+            for (int i = 0; i == 0;)
+            {
+                breite = Convert.ToInt32(Console.ReadLine());
+
+
+                if (breite >=1&&breite<=20)//Wenn die Eingabe für unseren FAll zulässig ist
+                {
+                    Console.WriteLine("Eingbe erfolgreich");
+                    break;                                                 //Endlosschleife wird verlassen
+                }
+                else
+                {
+                    Console.WriteLine("Eingabe fehlerhaft");                //Ausgabe, daraufhin wird Schleife wiederholt (wenn nötig, unendlich lang)
+                    Console.WriteLine("Erneut veruchen");
+                    
+                }
+
+                
+
+
+            }
+            return breite;
+
+
+        }
         
         
         
@@ -177,13 +205,13 @@ namespace Sprint1
 
 
 
-        public static double Kilopreis(double gewicht,string material, string gewindeart, string gewindelänge, string schraubenkopf,)
+        public static void Kilopreis(double gewicht,string material, string gewindeart, string gewindelänge, string schraubenkopf,)
 
         {
 
         // Variablen festlegen
            double preis = 0;
-           double kilopreis; 
+           double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, kilopreis, preis50, preis100, mws; 
             
          // Aufpreise festlegen
          
@@ -227,7 +255,39 @@ namespace Sprint1
                 preis = preis + aufpreis_Feingewinde; 
             }
 
-           return preis; 
+
+            mws = 1.19;
+
+            // Preisvarianten berechnen 
+
+            nettokilopreis = preis();
+            nettoeinzelpreis = nettoeinzelpreis / masse;
+            netto50 = 50 * nettoeinzelpreis;
+            netto100 = 100 * nettoeinzelpreis;
+
+            einzelpreis = nettoeinzelpreis * mws;
+            kilopreis = nettokilopreis * mws;
+            preis50 = netto50 * mws;
+            preis100 = netto100 * mws;
+
+            // Ausgabe der Preise 
+
+
+            Console.WriteLine("Preise:");
+            Console.WriteLine();
+            Console.WriteLine("Nettopreise");
+            Console.WriteLine("Stückpreis:          " + Math.Round(nettoeinzelpreis, 2));
+            Console.WriteLine("Kilopreis:           " + Math.Round(nettokilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:      " + Math.Round(netto50, 2));
+            Console.WriteLine("preis 100 Stück:    " + Math.Round(netto100, 2));
+            Console.WriteLine();
+            Console.WriteLine("Preise inkl. Mehrwertsteuer");
+            Console.WriteLine();
+            Console.WriteLine("Nettopreise");
+            Console.WriteLine("Stückpreis:          " + Math.Round(einzelpreis, 2));
+            Console.WriteLine("Kilopreis:           " + Math.Round(kilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:      " + Math.Round(preis50, 2));
+            Console.WriteLine("preis 100 Stück:    " + Math.Round(preis100, 2));
         }
 
 
