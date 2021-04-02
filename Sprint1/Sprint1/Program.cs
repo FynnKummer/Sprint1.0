@@ -8,7 +8,69 @@ namespace Sprint1
 {
     class Program
     {
-        public static double schraubkopf(String form, int schluessel)
+       
+        public static String kopftest()
+        {
+            String typ="";
+            for (int i = 0; i == 0;)
+            {
+                typ = Console.ReadLine();
+
+                if (typ == "A" || typ == "a" || typ == "I" || typ == "i")//Wenn die Eingabe für unseren FAll zulässig ist
+                {
+                    Console.WriteLine("Eingbe erfolgreich");
+                    break;                                                 //Endlosschleife wird verlassen
+                }
+                else
+                {
+                    Console.WriteLine("Eingabe fehlerhaft");                //Ausgabe, dann wird SChleife wiederholt (wenn nötig, unendlich lang)
+                    Console.WriteLine("Erneut veruchen");
+                }
+
+
+            }
+            
+
+            return typ;                                                    //Benötigter  Wert wird zurückgegeben
+        }
+
+        public static int breite_test()
+        {
+            Console.Write("Welche Schlüsselbreite möchten Sie haben?\nGeben Sie Ihren Wunsch vom als Zahl von 1 bis 20 ein!\nM:");
+
+            int breite =0;
+
+            for (int i = 0; i == 0;)
+            {
+                breite = Convert.ToInt32(Console.ReadLine());
+
+
+                if (breite >=1&&breite<=20)//Wenn die Eingabe für unseren FAll zulässig ist
+                {
+                    Console.WriteLine("Eingbe erfolgreich");
+                    break;                                                 //Endlosschleife wird verlassen
+                }
+                else
+                {
+                    Console.WriteLine("Eingabe fehlerhaft");                //Ausgabe, dann wird Schleife wiederholt (wenn nötig, unendlich lang)
+                    Console.WriteLine("Erneut veruchen");
+                    
+                }
+
+                
+
+
+            }
+            return breite;
+
+
+        }
+        
+        
+        
+        
+        
+        public static double schraubkopf(String form, int schluesselbreite)
         {
 
             if (form == "I"||form=="i")       //Abfrage ob es sich um Außensechskant oder Innensechskant handelt
@@ -36,7 +98,7 @@ namespace Sprint1
         }
 
 
-
+        /*
         public static double Preis(double gewicht,int material int gewindeart, int gewinde, int gewindelänge, int schraubenkopf )
         {
 
@@ -58,7 +120,7 @@ namespace Sprint1
            preis = gewicht * kilopreis 
 
 
-        }
+        }       */
 
         public static double festigkeit()
         {
@@ -79,14 +141,23 @@ namespace Sprint1
 
         static void Main(string[] args)
         {
-            int schluesselbreite;
+            
+            
             double material;
             String[] gewinde;
 
 
-// Methode Schraubkopf
+            // Methode Schraubkopf
 
-           
+            Console.WriteLine("Welcher Schraubenype ist erwünscht?\nEs besteht die Auswahl zwischen Innensechskant und Außensechkant");
+
+            String kopftyp=kopftest();      //Hier wird in einer Methode die Eingabe über den Typ der Schraube getätigt und auf zulässigkeit geprüft
+            Console.WriteLine("Methode geht");
+            int schluesselbreite = breite_test();
+
+            
+
+
 
             //Methode Gewinde
 
@@ -94,7 +165,7 @@ namespace Sprint1
 
 
             //Methode Preis
-
+            /*
             double preis; 
 
             preis = Preis(); 
@@ -103,7 +174,7 @@ namespace Sprint1
             {
                 Console.WriteLine("Fehler: Ungültige E
             }
-
+            */
 
             //Methode Festigkeit
 
@@ -117,11 +188,11 @@ namespace Sprint1
 
 
             //Ende
-            Console.WriteLine("Geben Sie bitte die gewünschte Länge der Schraube in mm ein");
-            int schraube_laenge =Convert.ToInt32(Console.ReadLine());
 
-            
-            
+
+
+
+
             Console.ReadKey();
 
 
