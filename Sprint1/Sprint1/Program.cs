@@ -41,13 +41,17 @@ namespace Sprint1
            double preis = 0;
            double kilopreis; 
 
-            if (material = 0)
+            if (material == "V" || "v")
             {
                 kilopreis = 7.12 
             }
-            else if (material = 1)
+            else if (material == "E" || "e")
             {
                 kilopreis = 16,78
+            }
+            else
+            {
+                return -1
             }
            preis = gewicht * kilopreis 
 
@@ -101,7 +105,14 @@ namespace Sprint1
 
             //Methode Preis
 
+            double preis; 
 
+            preis = Preis(); 
+
+            if (preis == -1 )
+            {
+                Console.WriteLine("Fehler: Ungültige E
+            }
 
 
             //Methode Festigkeit
