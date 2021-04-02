@@ -37,27 +37,56 @@ namespace Sprint1
 
 
 
-        public static double Preis(double gewicht,int material int gewindeart, int gewinde, int gewindelänge, int schraubenkopf )
+        public static double Kilopreis(double gewicht,string material, string gewindeart, string gewindelänge, string schraubenkopf,)
         {
 
+        // Variablen festlegen
            double preis = 0;
            double kilopreis; 
+            
+         // Aufpreise festlegen
+         
+         const double aufpreis_Innensechskannt = 0.21;
+         const double aufpreis_Teilgewinde = 0.16;
+         const double aufpreis_Feingewinde = 0.27;
+         const double kilopreis_verzinkt = 7.12;
+         const double kilopreis_edelstahl = 16.78;
+
+         //Grundpreis nach Material
 
             if (material == "V" || "v")
-            {
-                kilopreis = 7.12 
+            {                                           // Verzinkete Schraube 
+                kilopreis = kilopreis_verzinkt;
             }
-            else if (material == "E" || "e")
-            {
-                kilopreis = 16,78
-            }
+         
             else
             {
-                return -1
+                kilopreis = kilopreis_edelstahl;                     // Edelstahlschraube 
             }
-           preis = gewicht * kilopreis 
+          
+        
+        // Aufpreise 
 
 
+            // Teilgewindelänge 
+
+           if (gewindelänge == "D" ||"d")
+            {
+                preis = preis + aufpreis_Teilgewinde;
+            }           
+        
+           // Innensechskannt
+           if (schraubenkopf == "I" || "i")
+            {
+                preis = preis + aufpreis_Innensechskannt;
+            }
+
+           if (gewindeart == "F" || "f")
+            {
+                preis = preis + aufpreis_Feingewinde; 
+            }
+
+           return preis; 
         }
 
         public static double festigkeit()
@@ -80,8 +109,9 @@ namespace Sprint1
         static void Main(string[] args)
         {
             int schluesselbreite;
-            double material;
+            double material, masse;
             String[] gewinde;
+            
 
 
 // Methode Schraubkopf
@@ -93,26 +123,61 @@ namespace Sprint1
 
 
 
-            //Methode Preis
-
-            double preis; 
-
-            preis = Preis(); 
-
-            if (preis == -1 )
-            {
-                Console.WriteLine("Fehler: Ungültige E
-            }
-
-
+            
+            
             //Methode Festigkeit
 
 
-
+                
 
             //Methode Masse
 
+                masse = 1; 
 
+
+
+             //Methode Preis
+
+            double nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, kilopreis, preis50, preis100, mws; 
+
+            mws = 1.19;
+
+                   // Preisvarianten berechnen 
+
+            nettokilopreis = preis(); //gewicht, material, gewindeart, gewindelänge, schraubenkopf; KilopreisV kilopreisE
+            nettoeinzelpreis = nettoeinzelpreis / masse; 
+            netto50 = 50 * nettoeinzelpreis;
+            netto100 = 100 * nettoeinzelpreis;
+
+            einzelpreis = nettoeinzelpreis * mws;
+            kilopreis = nettokilopreis * mws; 
+            preis50 = netto50 * mws;
+            preis100 = netto100 *mws;
+        
+                
+
+
+                 // Ausgabe 
+
+            
+            Console. WriteLine("Preise:"); 
+            Console.WriteLine ();
+            Console.WriteLine("Nettopreise"); 
+            Console.WriteLine("Stückpreis:          " + Math.Round(nettoeinzelpreis, 2));
+            Console.WriteLine("Kilopreis:           " + Math.Round(nettokilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:      " + Math.Round(netto50, 2));
+            Console.WriteLine ("preis 100 Stück:    " + Math.Round(netto100, 2));
+            Console.WriteLine(); 
+            Console.WriteLine("Preise inkl. Mehrwertsteuer");
+            Console.WriteLine();
+            Console.WriteLine("Nettopreise"); 
+            Console.WriteLine("Stückpreis:          " + Math.Round(einzelpreis, 2));
+            Console.WriteLine("Kilopreis:           " + Math.Round(kilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:      " + Math.Round(preis50, 2));
+            Console.WriteLine ("preis 100 Stück:    " + Math.Round(preis100, 2));
+            
+       
+            
 
 
 
