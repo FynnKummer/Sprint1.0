@@ -8,19 +8,21 @@ namespace Sprint1
 {
     class Program
     {
-        public static double schraubkopf(String form, int schluesselbreite)
+        public static double schraubkopf(String form, int schluessel)
         {
-            if (form == "I"||form=="i")
-            {
+
+            if (form == "I"||form=="i")       //Abfrage ob es sich um Außensechskant oder Innensechskant handelt
+            {                                   
+                                                
+                                                
+            }                                   
+            else if (form == "A"||form=="a")    
+            {                                   
+               
                 
-
             }
-            else if (form == "A"||form=="a")
-            {
-
-            }
-            else
-            {
+            else                            //Für den Fall einer Fehlerhaften eingabe 
+            { 
                 Console.WriteLine("Fehlerhafte Eingabe. Starten Sie das Programm neu");
             }
             return 1;
@@ -68,19 +70,7 @@ namespace Sprint1
 
 // Methode Schraubkopf
 
-            Console.WriteLine("Geben Sie ein, ob die Schraube einen Aussensechskant- oder Innensechskantkopf haben soll\nGeben Sie für Innensechskannt I und für Aussensechskant A in die Konsole ein!");
-            String schraubkopf = Console.ReadLine();
-            if (schraubkopf == "A" || schraubkopf == "I")
-            {
-                Console.WriteLine("Welcher Schluesselbreite ist gewuenscht?\nBitte in die Konsole eingeben!");
-                schluesselbreite=Convert.ToInt32(Console.ReadLine());
-            }
-            else if (schraubkopf == "I" || schraubkopf == "i")
-            {
-                Console.WriteLine("Welche Imbusgroesse ist gewuenscht?\nBitte in die Konsole eingeben!");
-                schluesselbreite = Convert.ToInt32(Console.ReadLine());
-
-            }
+           
 
             //Methode Gewinde
 
