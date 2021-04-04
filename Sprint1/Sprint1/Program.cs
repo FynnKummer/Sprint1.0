@@ -49,13 +49,13 @@ namespace Sprint1
             int gewindeart = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
             //Abfrage der Schraubenanzahl
-            Console.WriteLine("Welche Anzahl an Schrauben werden benötigt?");
+            Console.WriteLine("Welche Anzahl an Schrauben werden benötigt?");           // in preis mit aufnehmen 
             int menge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
             //Abfrage der Festigkeitsklasse 
             if (material == 1)  //für legierte/unlegierte Stähle
             { 
-                Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");
+                Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");               // nur Standrandartwerte? (Festigkeit unf Streckgrenze in einem) 
                 Console.WriteLine("Eingabewert * 100 N/mm²");
                 int Rm = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
@@ -67,11 +67,11 @@ namespace Sprint1
             {
                 Console.WriteLine("Welche Stahlsorte hat die Schraube?");
                 Console.WriteLine("'A' = Austenitischer Stahl");
-                Console.WriteLine("'A2' = Rostbeständige Schrauben");  
+                Console.WriteLine("'A2' = Rostbeständige Schrauben");                       // dachte nur Verzinkte und V2A
                 Console.WriteLine("'A4' = Rost- und säurebeständige Schrauben"); 
                 sorte = Console.ReadLine()); //String einlesen
 
-                Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");
+                Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");                    
                 Console.WriteLine("Eingabewert * 10 N/mm²");
                 int Rm = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
             }
