@@ -60,7 +60,7 @@ namespace Sprint1
                 int Rm = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
                 Console.WriteLine("Welche Streckgrenze hat die Schraube?");
-                Console.WriteLine(Rm + "Eingabewert * 10 N/mm²");
+                Console.WriteLine(Rm * "Eingabewert * 10 N/mm²");
                 Re = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
             } 
             else   //für nichtrostende Stähle
