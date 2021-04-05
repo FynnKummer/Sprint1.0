@@ -328,7 +328,7 @@ namespace Sprint1
         public static double masse()
         {
             //hier den Code reinschreiben
-            //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird g
+            //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird gdfsajfnsaf
 
             return 1; 
         }
