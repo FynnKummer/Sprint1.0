@@ -295,36 +295,115 @@ namespace _1.Sprint
             return 1;
         }
 
-        public static double Volumen(double schraubkopf, int laenge, int gewindelaenge, string Gewinde)
+        public static double Volumen(string typ, int laenge, int gewindelaenge, string Gewinde)
         {
+            double volumen_schraubenkopf;
             switch (Gewinde)
             {
-                case "M3":
-                    if (schraubkopf==A)
-                    break;
                 case "M4":
+                    if (typ == "A"|| typ == "a")
+                    {
+                        volumen_schraubenkopf = 108.9508;
 
-                    break;
+                    }
+                    else
+                    {
+                        volumen_schraubenkopf = 138.3500;
+;
+                    }
+                        break;
                 case "M5":
+                    if (typ == "A" || typ == "a")
+                    {
+                        volumen_schraubenkopf = 178.8570;
+
+                    }
+                    else
+                    {
+                        volumen_schraubenkopf = 249.0851;
+
+                    }
 
                     break;
                 case "M6":
+                    if (typ == "A" || typ == "a")
+                    {
+                        volumen_schraubenkopf = 317.2320;
+
+                    }
+                    else
+                    {
+                        volumen_schraubenkopf = 406.2859;
+
+                    }
 
                     break;
                 case "M8":
+                    if (typ == "A" || typ == "a")
+                    {
+                        volumen_schraubenkopf = 738.7050;
+
+                    }
+                    else
+                    {
+                        volumen_schraubenkopf = 937.1503;
+
+                    }
 
                     break;
                 case "M10":
+                    if (typ == "A" || typ == "a")
+                    {
+                        volumen_schraubenkopf = 1624.1050;
+
+                    }
+                    else
+                    {
+                        volumen_schraubenkopf = 1733.4893;
+
+                    }
 
                     break;
 
                 case "M12":
+                    if (typ == "A" || typ == "a")
+                    {
+                        volumen_schraubenkopf = 2313.3760;
+
+                    }
+                    else
+                    {
+                        volumen_schraubenkopf = 2534.0101;
+
+                    }
 
                     break;
                 case "M16":
+                    if (typ == "A" || typ == "a")
+                    {
+                        volumen_schraubenkopf = 4647.7100;
+;
+
+                    }
+                    else
+                    {
+                        volumen_schraubenkopf = 5540.8195;
+;
+
+                    }
 
                     break;
                 case "M20":
+                    if (typ == "A" || typ == "a")
+                    {
+                        volumen_schraubenkopf = 9492.9770;
+
+                    }
+                    else
+                    {
+                        volumen_schraubenkopf = 11634.3569;
+
+                    }
 
                     break;
             }
