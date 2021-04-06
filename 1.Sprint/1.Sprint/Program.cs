@@ -16,23 +16,17 @@ namespace _1.Sprint
             string sorte = "0"; //Variable für Stahlsorte falls Material = nichtrostende Stähle
 
             //Abfrage der Werte
+
+
             //Abfrage des Materials
             int material=abfrage_material();
 
-            
-
             //Abfrage des Schraubenkopfes
-            Console.WriteLine("Welchen Kopf hat die Schraube?");
-            Console.WriteLine("'A' = Außenseckskant");
-            Console.WriteLine("'I' = Innensechskant");
-            string typ = Console.ReadLine();      //String einlesen
+            String typ=abfrage_schraubenkopf();
 
-            //Abfrage des Gewindes (z.B. M8)
-            Console.WriteLine("Welches Gewinde hat die Schraube?");
-            Console.WriteLine("Mögliche Eingaben:");
-            Console.WriteLine("M3 M4 M5 M6 M8 M10 M12 M16 M20");
-            string gewinde = Console.ReadLine();      //String einlesen
-
+           //Abfrage des Gewindes (z.B. M8)
+            String gewinde = abfrage_gewinde();
+            
             //Abfrage der Schraubenlänge
             Console.WriteLine("Welche Länge hat die Schraube? (in mm)");
             int laenge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
@@ -42,10 +36,8 @@ namespace _1.Sprint
             int gewindelaenge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
             //Abfrage der Gewindeart (FG/SG)
-            Console.WriteLine("Welche Gewindeart hat die Schraube?");
-            Console.WriteLine("'1' = Standardgewinde");
-            Console.WriteLine("'2' = Feingewinde");
-            int gewindeart = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+            int gewindeart = abfrage_gewindeart();
+            
 
             //Abfrage der Schraubenanzahl
             Console.WriteLine("Welche Anzahl an Schrauben werden benötigt?");           // in preis mit aufnehmen 
@@ -332,5 +324,40 @@ namespace _1.Sprint
             return material;
         }
 
+        public static String abfrage_schraubenkopf()
+        {
+            Console.WriteLine("Welchen Kopf hat die Schraube?");
+            Console.WriteLine("'A' = Außenseckskant");
+            Console.WriteLine("'I' = Innensechskant");
+            string typ = Console.ReadLine();      //String einlesen
+
+            return typ;
+        }
+
+        public static String abfrage_gewinde()
+        {
+            Console.WriteLine("Welches Gewinde hat die Schraube?");
+            Console.WriteLine("Mögliche Eingaben:");
+            Console.WriteLine("M3 M4 M5 M6 M8 M10 M12 M16 M20");
+            string gewinde = Console.ReadLine();      //String einlesen
+
+            return gewinde;
+
+        }
+   
+        public static int abfrage_gewindeart()
+        {
+            Console.WriteLine("Welche Gewindeart hat die Schraube?");
+            Console.WriteLine("'1' = Standardgewinde");
+            Console.WriteLine("'2' = Feingewinde");
+            int gewindeart = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+
+            return gewindeart;
+        }
+    
+    
+    
+    
+    
     }
 }
