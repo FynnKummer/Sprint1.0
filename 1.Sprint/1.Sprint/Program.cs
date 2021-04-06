@@ -46,8 +46,8 @@ namespace _1.Sprint
             // Steigung(gewindeart);   //Berechnung Steigung
             // double preis=Preis(gewicht,material, menge, gewindeart,gewindelaenge, laenge, schraubenkopf);    //Berechnung des Preises für die gewünschte Menge an Schrauben
             // Festigkeit(Rm, Re, sorte);   //Berechnung der Festigkeit
-            //  Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
-            //  Ausgabe();  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
+            // Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
+            // Ausgabe(material);  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
 
 
 
@@ -313,6 +313,23 @@ namespace _1.Sprint
             return Fk;
         }
     
+        public static double Ausgabe(int menge; int material)
+        {
+            switch (material)
+            {
+                case 1: 
+                    string a = "Verzinkte Stahlschraube";
+                case 2:
+                    string a = "V2A Schraube";
+                case 3:
+                    string a = "V4A Schraube";
+            }
+            Console.WriteLine("Gewählte Schraube: " + );
+            Console.WriteLine("'1' = Standardgewinde");
+            Console.WriteLine("'2' = Feingewinde");
+
+            return 1;
+        }
     
     }
 }
