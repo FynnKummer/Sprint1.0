@@ -243,65 +243,38 @@ namespace _1.Sprint
 
         public static double masse(int material, double schraubkopf, int laenge, int gewindelaenge, string Gewinde)
         {
-            switch (material)
+            switch (Gewinde)
             {
-                case 1: switch (Gewinde)
-                    {
-                        case "M3":
-                                  
-                            break;
-                        case "M4":
-
-                            break;
-                        case "M5":
-
-                            break;
-                        case "M6":
-
-                            break;
-                        case "M8":
-
-                            break;
-                        case "M10":
-
-                            break;
-                            
-                        case "M12":
-
-                            break;
-                        case "M16":
-
-                            break;
-                        case "M20":
-
-                            break;
-                    }
+                case "M3":
 
                     break;
-                case 2: switch (Gewinde)
-                    {
-                        case "1":
-
-                            break;
-                        case "2":
-
-                            break;
-                    }
+                case "M4":
 
                     break;
-                case 3: switch (Gewinde)
-                    {
-                        case "1":
+                case "M5":
 
-                            break;
-                        case "2":
+                    break;
+                case "M6":
 
-                            break;
-                    }
+                    break;
+                case "M8":
+
+                    break;
+                case "M10":
 
                     break;
 
-            }  //hier den Code reinschreiben
+                case "M12":
+
+                    break;
+                case "M16":
+
+                    break;
+                case "M20":
+
+                    break;
+            }
+            //hier den Code reinschreiben
             //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird gdfsajfnsaf
 
             return 1;
