@@ -286,17 +286,76 @@ namespace _1.Sprint
         }
 
 
-        public static double festigkeit()
+        public static double festigkeit(string Fk)
         {
+            
             //hier den Code reinschreiben
             //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird
 
             return 1;
         }
 
-        public static double masse()
+        public static double masse(int material, double schraubkopf, int laenge, int gewindelaenge, string Gewinde)
         {
-            //hier den Code reinschreiben
+            switch (material)
+            {
+                case 1: switch (Gewinde)
+                    {
+                        case "M3":
+                                  
+                            break;
+                        case "M4":
+
+                            break;
+                        case "M5":
+
+                            break;
+                        case "M6":
+
+                            break;
+                        case "M8":
+
+                            break;
+                        case "M10":
+
+                            break;
+                            
+                        case "M12":
+
+                            break;
+                        case "M16":
+
+                            break;
+                        case "M20":
+
+                            break;
+                    }
+
+                    break;
+                case 2: switch (Gewinde)
+                    {
+                        case "1":
+
+                            break;
+                        case "2":
+
+                            break;
+                    }
+
+                    break;
+                case 3: switch (Gewinde)
+                    {
+                        case "1":
+
+                            break;
+                        case "2":
+
+                            break;
+                    }
+
+                    break;
+
+            }  //hier den Code reinschreiben
             //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird gdfsajfnsaf
 
             return 1;
