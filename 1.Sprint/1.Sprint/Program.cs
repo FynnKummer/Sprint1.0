@@ -48,13 +48,10 @@ namespace _1.Sprint
 
             if (material == 1)  //für legierte/unlegierte Stähle
             {
-                Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");               // nur Standrandartwerte? (Festigkeit unf Streckgrenze in einem) 
-                Console.WriteLine("Eingabewert * 100 N/mm²");
-                int Rm = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+                int Rm = abfrage_rm();
 
-                Console.WriteLine("Welche Streckgrenze hat die Schraube?");
-                Console.WriteLine(Rm + "Eingabewert * 10 N/mm²");
-                Re = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+                Re = abfrage_re(Rm);
+                
             }
             else   //für nichtrostende Stähle
             {
@@ -334,9 +331,22 @@ namespace _1.Sprint
             return gewindeart;
         }
     
+        public static int abfrage_rm()
+        {
+            Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");               // nur Standrandartwerte? (Festigkeit unf Streckgrenze in einem) 
+            Console.WriteLine("Eingabewert * 100 N/mm²");
+            int Rm = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+            return Rm;
+        }
     
-    
-    
+    public static int abfrage_re(int Rm)
+        {
+            Console.WriteLine("Welche Streckgrenze hat die Schraube?");
+            Console.WriteLine(Rm + "Eingabewert * 10 N/mm²");
+            int Re = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+
+            return Re;
+        }
     
     }
 }
