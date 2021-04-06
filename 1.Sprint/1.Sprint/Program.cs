@@ -12,31 +12,28 @@ namespace _1.Sprint
         {
             //Abfrage der Werte
             //Abfrage des Materials
-            int material = abfrage_material();
+            string material = abfrage_material();
 
             //Abfrage des Schraubenkopfes
-            String typ = abfrage_schraubenkopf();
+            string typ = abfrage_schraubenkopf();
 
            //Abfrage des Gewindes (z.B. M8)
-            String gewinde = abfrage_gewinde();
+            string gewinde = abfrage_gewinde();
             
             //Abfrage der Schraubenlänge
-            Console.WriteLine("Welche Länge hat die Schraube? (in mm)");
-            int laenge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+            int laenge = abfrage_laenge();
 
             //Abfrage der Gewindelänge
-            Console.WriteLine("Welche Gewindelänge hat die Schraube? (in mm)");
-            int gewindelaenge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+            int gewindelaenge = abfrage_gewindelaenge(laenge);
 
             //Abfrage der Gewindeart (FG/SG)
-            int gewindeart = abfrage_gewindeart();
+            string gewindeart = abfrage_gewindeart();
             
             //Abfrage der Schraubenanzahl
-            Console.WriteLine("Welche Anzahl an Schrauben werden benötigt?");           // in preis mit aufnehmen 
-            int menge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+            int menge = abfrage_menge();
 
             //Abfrage der Festigkeitsklasse 
-            String Fk = abfrage_festigkeit(material);              
+            string Fk = abfrage_festigkeit(material);              
 
 
             //Methoden aufrufen
@@ -47,9 +44,17 @@ namespace _1.Sprint
             // double preis=Preis(gewicht,material, menge, gewindeart,gewindelaenge, laenge, schraubenkopf);    //Berechnung des Preises für die gewünschte Menge an Schrauben
             // Festigkeit(Rm, Re, sorte);   //Berechnung der Festigkeit
             // Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
-            // Ausgabe(menge,material, gewinde, laenge gewindeart, gewindelaenge);  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
+            //Ausgabe(menge material, gewinde, laenge, gewindeart, gewindelaenge, typ, Fk);  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
 
 
+            //Ausgabe der Werte
+            string a = ausgabe_material(material);
+            string b = ausgabe_festigkeitsklasse(Fk);
+            string c = ausgabe_schraubenkopf(typ);
+            string d = ausgabe_gewindeart(gewindeart);
+            Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
+            Console.WriteLine("Technische Details:\n\t" );
+            
 
             int schluesselbreite;
             double  masse;
@@ -87,7 +92,7 @@ namespace _1.Sprint
 
                 masse = 1; 
 
-
+            
             Console.ReadKey();
 
 
@@ -334,98 +339,302 @@ namespace _1.Sprint
             return 1;
         }
         
-        public static int abfrage_material()
+        public static String abfrage_material()
         {           
+            bool loop = false;
+            string material = "";
+            do
+            { 
             Console.WriteLine("Welches Material hat die Schraube?");
             Console.WriteLine("'1' = Verzinkter Stahl");
             Console.WriteLine("'2' = V2A");
             Console.WriteLine("'3' = V4A");
-            int material = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
-
+            material = Console.ReadLine(); //Zahl einlesen
+         
+            if (material=="1" || material=="2" || material =="3")
+            {
+                loop = false;
+            }
+            else
+            {
+                Console.WriteLine("Falsche Eingabe");
+                loop = true;
+            }
+            } while (loop == true);
+            
             return material;
+              
         }
 
         public static String abfrage_schraubenkopf()
         {
+            bool loop = false;
+            string typ = "";
+            do
+            { 
             Console.WriteLine("Welchen Kopf hat die Schraube?");
             Console.WriteLine("'A' = Außenseckskant");
             Console.WriteLine("'I' = Innensechskant");
-            string typ = Console.ReadLine();      //String einlesen
+            typ = Console.ReadLine();      //String einlesen
+
+            if (typ=="A" || typ=="I")
+            {
+                loop = false;
+            }
+            else
+            {
+                Console.WriteLine("Falsche Eingabe");
+                loop = true;
+            }
+            } while (loop == true);
 
             return typ;
         }
 
         public static String abfrage_gewinde()
         {
+            bool loop = false;
+            string gewinde = "";
+            do
+            { 
             Console.WriteLine("Welches Gewinde hat die Schraube?");
             Console.WriteLine("Mögliche Eingaben:");
             Console.WriteLine("M3 M4 M5 M6 M8 M10 M12 M16 M20");
-            string gewinde = Console.ReadLine();      //String einlesen
+            gewinde = Console.ReadLine();      //String einlesen
+
+            if (gewinde=="M3" || gewinde=="M4" || gewinde=="M5" || gewinde=="M6" || gewinde=="M8" || gewinde=="M10" || gewinde=="M12" || gewinde=="M20")
+            {
+                loop = false;
+            }
+            else
+            {
+                Console.WriteLine("Falsche Eingabe");
+                loop = true;
+            }
+            } while (loop == true);
 
             return gewinde;
 
         }
    
-        public static int abfrage_gewindeart()
+        public static String abfrage_gewindeart()
         {
+            bool loop = false;
+            string gewindeart = "";
+            do
+            { 
             Console.WriteLine("Welche Gewindeart hat die Schraube?");
             Console.WriteLine("'1' = Standardgewinde");
             Console.WriteLine("'2' = Feingewinde");
-            int gewindeart = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+            gewindeart = Console.ReadLine(); //Zahl einlesen
+
+            if (gewindeart=="1" || gewindeart=="2")
+            {
+                loop = false;
+            }
+            else
+            {
+                Console.WriteLine("Falsche Eingabe");
+                loop = true;
+            }
+            } while (loop == true);
 
             return gewindeart;
         }
     
-        public static String abfrage_festigkeit(int material)
+        public static String abfrage_festigkeit(string material)
         {
-            string Fk = "0";
-            if (material == 1)
+            string Fk = "";
+            bool loop = false;
+            do
+            { 
+            switch (material)
             {
-                Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?"); 
-                Console.WriteLine("Mögliche Eingaben:");
-                Console.WriteLine("5.8 6.8 8.8 9.8 10.9 12.9");
-                Fk = Console.ReadLine(); //String einlesen 
+                case "1":
+                    Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?"); 
+                    Console.WriteLine("Mögliche Eingaben:");
+                    Console.WriteLine("5.8 6.8 8.8 9.8 10.9 12.9");
+                    Fk = Console.ReadLine(); //String einlesen 
+                    break;
+
+                case "2":  
+                    Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?"); 
+                    Console.WriteLine("Mögliche Eingaben:");
+                    Console.WriteLine("'1' = A2-50");
+                    Console.WriteLine("'2' = A2-70");
+                    Fk = Console.ReadLine(); //String einlesen 
+                    break;
+            
+                case "3":
+                    Fk = "3"; //"3" = A4-50
+                    break;
             }
-            else if (material == 2)
+
+            if (Fk=="1" || Fk=="2" || Fk=="3" || Fk=="5.8" || Fk=="6.8" || Fk=="8.8" || Fk=="9.8" || Fk=="10.9" || Fk=="12.9")
             {
-                Console.WriteLine("'1' = A2-50");
-                Console.WriteLine("'2' = A2-70");
-                Fk = Console.ReadLine(); //String einlesen 
+                loop = false;
             }
             else
             {
-                Fk = "3"; //"3" = A4-50
+                Console.WriteLine("Falsche Eingabe");
+                loop = true;
             }
+            } while (loop == true);
+
             return Fk;
         }
-    
-        public static double Ausgabe(int menge; int material; string gewinde; int laenge; int gewindeart, int gewindelaenge)
+        
+        public static int abfrage_laenge()
+        { 
+            string wert = "";
+            int laenge = 0;
+
+            bool loop = false;
+            do
+            { 
+                Console.WriteLine("Welche Länge hat die Schraube? (in mm)");
+                wert = Console.ReadLine(); //String einlesen
+                
+                if(wert.All(char.IsDigit))
+                {
+                    laenge = Convert.ToInt32(wert); //Zahl einlesen
+                    loop = false;
+                }
+                else
+                {
+                    Console.WriteLine("Falsche Eingabe");
+                    loop = true;
+                }
+            } while (loop == true);
+
+            return laenge;
+        }
+
+        public static int abfrage_gewindelaenge(int laenge)
+        { 
+            string wert = "";
+            int gewindelaenge = 0;
+
+            bool loop = false;
+            do
+            { 
+                Console.WriteLine("Welche Gewindelänge hat die Schraube? (in mm)");
+                wert = Console.ReadLine(); //String einlesen
+                
+                if(wert.All(char.IsDigit))
+                {
+                    gewindelaenge = Convert.ToInt32(wert); //Zahl einlesen
+                    loop = false;
+                }
+                else
+                {
+                    Console.WriteLine("Falsche Eingabe");
+                    loop = true;
+                }
+
+                if (gewindelaenge > laenge)
+                {
+                    Console.WriteLine("Das Gewinde kann nicht länger als die Schraube sein!");
+                    loop = true;
+                }
+            } while (loop == true);
+
+            return gewindelaenge;
+        }
+
+        public static int abfrage_menge()
+        { 
+            string wert = "";
+            int menge = 0;
+
+            bool loop = false;
+            do
+            { 
+                Console.WriteLine("Welche Anzahl an Schrauben werden benötigt?");
+                wert = Console.ReadLine(); //String einlesen
+                
+                if(wert.All(char.IsDigit))
+                {
+                    menge = Convert.ToInt32(wert); //Zahl einlesen
+                    loop = false;
+                }
+                else
+                {
+                    Console.WriteLine("Falsche Eingabe");
+                    loop = true;
+                }
+            } while (loop == true);
+
+            return menge;
+        }
+
+        public static String ausgabe_material(string material)
         {
+            string a = "0";
             switch (material)
             {
-                case 1: 
-                    string a = "Verzinkte Stahlschraube";
-                case 2:
-                    string a = "V2A Schraube";
-                case 3:
-                    string a = "V4A Schraube";
+                case "1": 
+                    a = "Verzinkte Stahlschraube";
+                    break;
+                case "2":
+                    a = "V2A Schraube";
+                    break;
+                case "3":
+                    a = "V4A Schraube";
+                    break;
             }
 
+            return a;
+        }
+
+        public static String ausgabe_festigkeitsklasse(string Fk)
+        {
+            if (Fk == "1")
+            {
+                Fk = "A2-50";
+            }
+            else if (Fk == "2")
+            {
+                Fk = "A2-70";
+            }
+            else if (Fk == "3")
+            {
+                Fk = "A4-50";
+            }
+
+            return Fk;
+        }
+
+        public static String ausgabe_gewindeart(string gewindeart)
+        {
+            string b = "0";
             switch (gewindeart)
             {
-                case 1:
-                    string b = "Standardgewinde";
-                case 2:
-                    string b = "Feingewinde";                 
+                case "1":
+                    b = "Standardgewinde";
+                    break;
+                case "2":
+                    b = "Feingewinde";  
+                    break;
             }
 
-            Console.WriteLine("Gewählte Schraube: " + menge + " x " + a + " " + typ + " " + gewinde + "x" + laenge + "mm");
-            Console.WriteLine("Gewinde: " + b);
-            Console.WriteLine("Gewindelänge: " + gewindelaenge + "mm");
-            Console.WriteLine("");
-
-            return 1;
+            return b;
         }
-    
+
+        public static String ausgabe_schraubenkopf(string typ)
+        {
+            string c = "0";
+            switch (typ)
+            {
+                case "A":
+                    c = "Außensechskant";
+                    break;
+                case "I":
+                    c = "Innensechskant"; 
+                    break;
+            }
+
+            return c;
+        }
     }
 }
