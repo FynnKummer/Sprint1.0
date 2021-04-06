@@ -10,19 +10,12 @@ namespace _1.Sprint
     {
         static void Main(string[] args)     //Hauptprogramm
         {
-
-            //Variablendeklariation
-            int Re = 0; //Variable für die Streckgrenze falls Matieral = unlegierter/legierter Stahl
-            string sorte = "0"; //Variable für Stahlsorte falls Material = nichtrostende Stähle
-
             //Abfrage der Werte
-
-
             //Abfrage des Materials
-            int material=abfrage_material();
+            int material = abfrage_material();
 
             //Abfrage des Schraubenkopfes
-            String typ=abfrage_schraubenkopf();
+            String typ = abfrage_schraubenkopf();
 
            //Abfrage des Gewindes (z.B. M8)
             String gewinde = abfrage_gewinde();
@@ -38,30 +31,14 @@ namespace _1.Sprint
             //Abfrage der Gewindeart (FG/SG)
             int gewindeart = abfrage_gewindeart();
             
-
             //Abfrage der Schraubenanzahl
             Console.WriteLine("Welche Anzahl an Schrauben werden benötigt?");           // in preis mit aufnehmen 
             int menge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
             //Abfrage der Festigkeitsklasse 
-           
+            Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?"); 
+            int Fk = abfrage_festigkeit(material);              
 
-            if (material == 1)  //für legierte/unlegierte Stähle
-            {
-                int Rm = abfrage_rm();
-
-                Re = abfrage_re(Rm);
-                
-            }
-            else   //für nichtrostende Stähle
-            {
-
-                sorte = Console.ReadLine(); //String einlesen
-
-                Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");
-                Console.WriteLine("Eingabewert * 10 N/mm²");
-                int Rm = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
-            }
 
             //Methoden aufrufen
 
@@ -273,8 +250,7 @@ namespace _1.Sprint
         }
 
         public static int abfrage_material()
-        {
-            
+        {           
             Console.WriteLine("Welches Material hat die Schraube?");
             Console.WriteLine("'1' = Verzinkter Stahl");
             Console.WriteLine("'2' = V2A");
@@ -315,22 +291,32 @@ namespace _1.Sprint
             return gewindeart;
         }
     
-        public static int abfrage_rm()
+        public static int abfrage_festigkeit(int material)
         {
-            Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");               // nur Standrandartwerte? (Festigkeit unf Streckgrenze in einem) 
-            Console.WriteLine("Eingabewert * 100 N/mm²");
-            int Rm = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
-            return Rm;
+            switch (material)
+            {
+                case 1:
+                    Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?"); 
+                    Console.WriteLine("Mögliche Eingaben:");
+                    Console.WriteLine("5.8 6.8 8.8 9.8 10.9 12.9");
+                    string Fk = Console.ReadLine()); //String einlesen 
+                    break;
+
+                case 2:
+                    Console.WriteLine("'1' = A2-50");
+                    Console.WriteLine("'2' = A2-70");
+                    string Fk = Console.ReadLine()); //String einlesen
+                    break;
+
+                case 3:
+                    string Fk = "3"; //"3" = A4-50
+                    break;
+            }
+            
+
+            return Fk;
         }
     
-    public static int abfrage_re(int Rm)
-        {
-            Console.WriteLine("Welche Streckgrenze hat die Schraube?");
-            Console.WriteLine(Rm + "Eingabewert * 10 N/mm²");
-            int Re = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
-
-            return Re;
-        }
     
     }
 }
