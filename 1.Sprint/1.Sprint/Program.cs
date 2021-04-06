@@ -52,7 +52,7 @@ namespace _1.Sprint
             Console.WriteLine("Welche Anzahl an Schrauben werden benötigt?");           // in preis mit aufnehmen 
             int menge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
-            //Abfrage der Festigkeitsklasse 
+            //Abfrage der Festigkeitsklasse S
             if (material == 1)  //für legierte/unlegierte Stähle
             {
                 Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");               // nur Standrandartwerte? (Festigkeit unf Streckgrenze in einem) 
@@ -77,6 +77,13 @@ namespace _1.Sprint
             }
 
             //Methoden aufrufen
+            Schluesseweite(gewinde);   //Berechnung Schlüsselweite
+            Steigung(gewindeart);   //Berechnung Steigung
+            Preis(material, menge, gewinde, laenge);    //Berechnung des Preises für die gewünschte Menge an Schrauben
+            Festigkeit(Rm, Re, sorte);   //Berechnung der Festigkeit
+            Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
+            Ausgabe();  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
+
             /*
             Schluesseweite(gewinde);   //Berechnung Schlüsselweite
             Steigung(gewindeart);   //Berechnung Steigung
