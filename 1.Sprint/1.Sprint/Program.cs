@@ -36,8 +36,7 @@ namespace _1.Sprint
             int menge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
             //Abfrage der Festigkeitsklasse 
-            Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?"); 
-            int Fk = abfrage_festigkeit(material);              
+            String Fk = abfrage_festigkeit(material);              
 
 
             //Methoden aufrufen
@@ -93,7 +92,7 @@ namespace _1.Sprint
 
 
         }   //Hauptprogramm Ende
-
+        
         public static String kopftest()
         {
             String typ = "";
@@ -248,7 +247,7 @@ namespace _1.Sprint
 
             return 1;
         }
-
+        
         public static int abfrage_material()
         {           
             Console.WriteLine("Welches Material hat die Schraube?");
@@ -291,29 +290,26 @@ namespace _1.Sprint
             return gewindeart;
         }
     
-        public static int abfrage_festigkeit(int material)
+        public static String abfrage_festigkeit(int material)
         {
-            switch (material)
+            string Fk = "0";
+            if (material == 1)
             {
-                case 1:
-                    Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?"); 
-                    Console.WriteLine("Mögliche Eingaben:");
-                    Console.WriteLine("5.8 6.8 8.8 9.8 10.9 12.9");
-                    string Fk = Console.ReadLine()); //String einlesen 
-                    break;
-
-                case 2:
-                    Console.WriteLine("'1' = A2-50");
-                    Console.WriteLine("'2' = A2-70");
-                    string Fk = Console.ReadLine()); //String einlesen
-                    break;
-
-                case 3:
-                    string Fk = "3"; //"3" = A4-50
-                    break;
+                Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?"); 
+                Console.WriteLine("Mögliche Eingaben:");
+                Console.WriteLine("5.8 6.8 8.8 9.8 10.9 12.9");
+                Fk = Console.ReadLine(); //String einlesen 
             }
-            
-
+            else if (material == 2)
+            {
+                Console.WriteLine("'1' = A2-50");
+                Console.WriteLine("'2' = A2-70");
+                Fk = Console.ReadLine(); //String einlesen 
+            }
+            else
+            {
+                Fk = "3"; //"3" = A4-50
+            }
             return Fk;
         }
     
