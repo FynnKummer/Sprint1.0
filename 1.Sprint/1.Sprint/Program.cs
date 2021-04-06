@@ -111,16 +111,6 @@ namespace _1.Sprint
 
                 masse = 1; 
 
-            
-
-
-
-             
-
-            
-            
-       
-
 
             Console.ReadKey();
 
@@ -151,11 +141,6 @@ namespace _1.Sprint
 
             return typ;                                                    //Benötigter  Wert wird zurückgegeben
         }
-
-
-
-
-
 
 
         public static double schraubkopf(String form, int schluesselbreite)
@@ -189,7 +174,6 @@ namespace _1.Sprint
 
             return 1;
         }
-
 
 
         public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf)
