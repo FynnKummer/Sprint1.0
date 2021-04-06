@@ -17,10 +17,9 @@ namespace _1.Sprint
 
             //Abfrage der Werte
             //Abfrage des Materials
-            Console.WriteLine("Welches Material hat die Schraube?");
-            Console.WriteLine("'1' = unlegierter/legierter Stahl");
-            Console.WriteLine("'2' = nichtrostender Stahl");
-            int material = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
+            int material=abfrage_material();
+
+            
 
             //Abfrage des Schraubenkopfes
             Console.WriteLine("Welchen Kopf hat die Schraube?");
@@ -31,7 +30,7 @@ namespace _1.Sprint
             //Abfrage des Gewindes (z.B. M8)
             Console.WriteLine("Welches Gewinde hat die Schraube?");
             Console.WriteLine("Mögliche Eingaben:");
-            Console.WriteLine("M1 M1,2 M1,6 M2 M2,5 M3 M4 M5 M6 M8 M10 M12 M16 M20");
+            Console.WriteLine("M3 M4 M5 M6 M8 M10 M12 M16 M20");
             string gewinde = Console.ReadLine();      //String einlesen
 
             //Abfrage der Schraubenlänge
@@ -53,6 +52,7 @@ namespace _1.Sprint
             int menge = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
             //Abfrage der Festigkeitsklasse 
+           
             if (material == 1)  //für legierte/unlegierte Stähle
             {
                 Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");               // nur Standrandartwerte? (Festigkeit unf Streckgrenze in einem) 
@@ -65,10 +65,7 @@ namespace _1.Sprint
             }
             else   //für nichtrostende Stähle
             {
-                Console.WriteLine("Welche Stahlsorte hat die Schraube?");
-                Console.WriteLine("'A' = Austenitischer Stahl");
-                Console.WriteLine("'A2' = Rostbeständige Schrauben");                       // dachte nur Verzinkte und V2A
-                Console.WriteLine("'A4' = Rost- und säurebeständige Schrauben");
+
                 sorte = Console.ReadLine(); //String einlesen
 
                 Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");
@@ -77,20 +74,20 @@ namespace _1.Sprint
             }
 
             //Methoden aufrufen
-            /*
-            Schluesseweite(gewinde);   //Berechnung Schlüsselweite
-            Steigung(gewindeart);   //Berechnung Steigung
-            Preis(material, menge, gewinde, laenge);    //Berechnung des Preises für die gewünschte Menge an Schrauben
-            Festigkeit(Rm, Re, sorte);   //Berechnung der Festigkeit
-            Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
-            Ausgabe();  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
 
-            */
+            //Schluesseweite(gewinde);   //Berechnung Schlüsselweite
+            // Steigung(gewindeart);   //Berechnung Steigung
+            // double preis=Preis(gewicht,material, menge, gewindeart,gewindelaenge, laenge, schraubenkopf);    //Berechnung des Preises für die gewünschte Menge an Schrauben
+            // Festigkeit(Rm, Re, sorte);   //Berechnung der Festigkeit
+            //  Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
+            //  Ausgabe();  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
 
-            /*int schluesselbreite;
-            double material, masse;
 
-            String[] gewinde;
+
+            int schluesselbreite;
+            double  masse;
+
+           // String gewinde = "" ;
             
 
 
@@ -100,7 +97,7 @@ namespace _1.Sprint
 
             String kopftyp=kopftest();      //Hier wird in einer Methode die Eingabe über den Typ der Schraube getätigt und auf zulässigkeit geprüft
             Console.WriteLine("Methode geht");
-            int schluesselbreite = breite_test();
+           // schluesselbreite = breite_test();
 
             
 
@@ -152,7 +149,7 @@ namespace _1.Sprint
 
             
             
-       */
+       
 
 
             Console.ReadKey();
@@ -212,10 +209,12 @@ namespace _1.Sprint
 
         }
 
+        
+        public static double Gewinde()
+        { 
         //Abfrage Gewinde(M8,M10,..), Schrauben- und Gewindelänge und Gewindeart
         //Berechnung Schlüsselweite und Steigung
-        public static double Gewinde()
-        {
+        
 
 
             return 1;
@@ -278,9 +277,9 @@ namespace _1.Sprint
 
             // Preisvarianten berechnen 
             
-            nettokilopreis = preis;               //  was soll hier hin
+            nettokilopreis = preis;              
             nettoeinzelpreis = nettokilopreis / masse();
-            netto50 = 50 * nettoeinzelpreis;               //  muss noch erstellt werden
+            netto50 = 50 * nettoeinzelpreis;               
             netto100 = 100 * nettoeinzelpreis;
 
             einzelpreis = nettoeinzelpreis * mws;
@@ -319,7 +318,17 @@ namespace _1.Sprint
             return 1;
         }
 
+        public static int abfrage_material()
+        {
+            
+            Console.WriteLine("Welches Material hat die Schraube?");
+            Console.WriteLine("'1' = Verzinkter Stahl");
+            Console.WriteLine("'2' = V2A");
+            Console.WriteLine("'3' = V4A");
+            int material = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
+            return material;
+        }
 
     }
 }
