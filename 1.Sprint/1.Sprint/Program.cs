@@ -279,7 +279,7 @@ namespace _1.Sprint
             // Preisvarianten berechnen 
             
             nettokilopreis = preis;               //  was soll hier hin
-            nettoeinzelpreis = nettoeinzelpreis / masse();
+            nettoeinzelpreis = nettokilopreis / masse();
             netto50 = 50 * nettoeinzelpreis;               //  muss noch erstellt werden
             netto100 = 100 * nettoeinzelpreis;
 
