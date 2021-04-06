@@ -11,6 +11,8 @@ namespace _1.Sprint
         static void Main(string[] args)     //Hauptprogramm
         {
 
+            Console.WriteLine("Hallo");
+            /*
             //Variablendeklariation
             int Re = 0; //Variable für die Streckgrenze falls Matieral = unlegierter/legierter Stahl
             string sorte = "0"; //Variable für Stahlsorte falls Material = nichtrostende Stähle
@@ -85,7 +87,7 @@ namespace _1.Sprint
             Ausgabe();  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
 
 
-
+//hier war 
             /*int schluesselbreite;
             double material, masse;
 
@@ -151,7 +153,7 @@ namespace _1.Sprint
 
             
             
-       */
+      //hier hört das auf 
 
 
             Console.ReadKey();
@@ -318,7 +320,7 @@ namespace _1.Sprint
             return 1; 
         }
 
-
+        */
       
     }
 }

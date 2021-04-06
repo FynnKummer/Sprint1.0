@@ -60,7 +60,7 @@ namespace _1.Sprint
                 int Rm = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
 
                 Console.WriteLine("Welche Streckgrenze hat die Schraube?");
-                Console.WriteLine(Rm * "Eingabewert * 10 N/mm²");
+                Console.WriteLine(Rm + "Eingabewert * 10 N/mm²");
                 Re = Convert.ToInt32(Console.ReadLine()); //Zahl einlesen
             }
             else   //für nichtrostende Stähle
@@ -69,7 +69,7 @@ namespace _1.Sprint
                 Console.WriteLine("'A' = Austenitischer Stahl");
                 Console.WriteLine("'A2' = Rostbeständige Schrauben");                       // dachte nur Verzinkte und V2A
                 Console.WriteLine("'A4' = Rost- und säurebeständige Schrauben");
-                sorte = Console.ReadLine()); //String einlesen
+                sorte = Console.ReadLine(); //String einlesen
 
                 Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");
                 Console.WriteLine("Eingabewert * 10 N/mm²");
@@ -77,6 +77,7 @@ namespace _1.Sprint
             }
 
             //Methoden aufrufen
+            /*
             Schluesseweite(gewinde);   //Berechnung Schlüsselweite
             Steigung(gewindeart);   //Berechnung Steigung
             Preis(material, menge, gewinde, laenge);    //Berechnung des Preises für die gewünschte Menge an Schrauben
@@ -84,7 +85,7 @@ namespace _1.Sprint
             Geometrie();    //Berechnung der Schraube aus den eingegebenen Daten
             Ausgabe();  //Konsolenaugabe der Schraubeninformationen(Preis, Gewicht...)
 
-
+            */
 
             /*int schluesselbreite;
             double material, masse;
@@ -222,13 +223,13 @@ namespace _1.Sprint
 
 
 
-        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf,)
+        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf)
 
         {
 
             // Variablen festlegen
             double preis = 0;
-            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, kilopreis, preis50, preis100, mws;
+            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, preis50, preis100, mws;
 
             // Aufpreise festlegen
 
@@ -240,7 +241,7 @@ namespace _1.Sprint
 
             //Grundpreis nach Material
 
-            if (material == "V" || "v")
+            if (material == "V" ||material== "v")
             {                                           // Verzinkete Schraube 
                 kilopreis = kilopreis_verzinkt;
             }
@@ -256,18 +257,18 @@ namespace _1.Sprint
 
             // Teilgewindelänge 
 
-            if (gewindelänge == "D" || "d")
+            if (gewindelänge == "D" ||gewindelänge== "d")
             {
                 preis = preis + aufpreis_Teilgewinde;
             }
 
             // Innensechskannt
-            if (schraubenkopf == "I" || "i")
+            if (schraubenkopf == "I" ||schraubenkopf== "i")
             {
                 preis = preis + aufpreis_Innensechskannt;
             }
 
-            if (gewindeart == "F" || "f")
+            if (gewindeart == "F" || gewindeart=="f")
             {
                 preis = preis + aufpreis_Feingewinde;
             }
@@ -276,10 +277,10 @@ namespace _1.Sprint
             mws = 1.19;
 
             // Preisvarianten berechnen 
-
-            nettokilopreis = preis();
-            nettoeinzelpreis = nettoeinzelpreis / masse;
-            netto50 = 50 * nettoeinzelpreis;
+            
+            nettokilopreis = preis;               //  was soll hier hin
+            nettoeinzelpreis = nettoeinzelpreis / masse();
+            netto50 = 50 * nettoeinzelpreis;               //  muss noch erstellt werden
             netto100 = 100 * nettoeinzelpreis;
 
             einzelpreis = nettoeinzelpreis * mws;
