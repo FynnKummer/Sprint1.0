@@ -295,12 +295,12 @@ namespace _1.Sprint
             return 1;
         }
 
-        public static double masse(int material, double schraubkopf, int laenge, int gewindelaenge, string Gewinde)
+        public static double Volumen(double schraubkopf, int laenge, int gewindelaenge, string Gewinde)
         {
             switch (Gewinde)
             {
                 case "M3":
-
+                    if (schraubkopf==A)
                     break;
                 case "M4":
 
