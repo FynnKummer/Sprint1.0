@@ -53,6 +53,7 @@ namespace _1.Sprint
 
             //Abfrage der Festigkeitsklasse 
            
+
             if (material == 1)  //für legierte/unlegierte Stähle
             {
                 Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");               // nur Standrandartwerte? (Festigkeit unf Streckgrenze in einem) 
@@ -74,6 +75,7 @@ namespace _1.Sprint
             }
 
             //Methoden aufrufen
+
 
             //Schluesseweite(gewinde);   //Berechnung Schlüsselweite
             // Steigung(gewindeart);   //Berechnung Steigung
