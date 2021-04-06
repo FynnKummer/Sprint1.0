@@ -69,7 +69,7 @@ namespace _1.Sprint
                 Console.WriteLine("'A' = Austenitischer Stahl");
                 Console.WriteLine("'A2' = Rostbeständige Schrauben");                       // dachte nur Verzinkte und V2A
                 Console.WriteLine("'A4' = Rost- und säurebeständige Schrauben");
-                sorte = Console.ReadLine()); //String einlesen
+                sorte = Console.ReadLine(); //String einlesen
 
                 Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");
                 Console.WriteLine("Eingabewert * 10 N/mm²");
