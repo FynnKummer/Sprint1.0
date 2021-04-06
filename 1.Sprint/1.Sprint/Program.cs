@@ -141,14 +141,68 @@ namespace _1.Sprint
         }
 
         
-        public static double Geometrie()
+        public static void Geometrie(int d, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf)
         { 
-        //Abfrage Gewinde(M8,M10,..), Schrauben- und Gewindelänge und Gewindeart
-        //Berechnung Schlüsselweite und Steigung
-        
+            double h3, r, d1, d2, d3, s, flankenwikel;
+            double p = 2;
+            string schraubenkopf_a, gewindetyp_a  // Ausgeschriebene Strings 
 
+        // Rechnungen 
 
-            return 1;
+         // Gewindetiefe   
+            h3 = 0.6134 * p;
+
+         // Rundung
+            r = 0.1443 * p;
+
+         //Flankendurchmesser 
+            d2 = d - 0.64595 * p;
+
+         //Kerndurchmesser 
+            d3 = d - 1.2269;
+
+         //Flankenwinkel 
+            flankenwikel = 60;
+
+         // Umwandlung der Strings 
+           
+            // Gewindetyp 
+            if (Gewindetyp == "1")
+            {
+                gewindetyp_a = "(Standartgewinde)"
+            }
+            else
+            {
+                gewindetyp_a = "(Feingewinde)"
+            }
+
+            // Schreubenkopf
+            if (schraubenkopf == "a" || schraubenkopf == "A")
+            {
+                schraubenkopf_a = "Außensechskant" 
+            }
+            else
+            {
+                schraubenkopf_a = "Innensechskant"
+            }
+
+         // Ausgabe
+
+            Console.WriteLine("Geometie:");
+            Console.WriteLine();
+            Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
+            Console.WriteLine("gewindelänge:         " + gewindelänge + "mm");
+            Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------------------------------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("Steigung:             " + p + " mm");
+            Console.WriteLine("Gewindetiefe:         " + Math.Round(h3,2) + "mm");
+            Console.WriteLine("Rundung:              " + r + " mm");
+            Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2,2) + "mm");
+            Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3,2) + "mm");
+            Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°");
+
         }
 
 
