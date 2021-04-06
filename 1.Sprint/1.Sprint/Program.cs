@@ -183,7 +183,7 @@ namespace _1.Sprint
         }
 
         
-        public static double Gewinde()
+        public static double Geometrie()
         { 
         //Abfrage Gewinde(M8,M10,..), Schrauben- und Gewindelänge und Gewindeart
         //Berechnung Schlüsselweite und Steigung
