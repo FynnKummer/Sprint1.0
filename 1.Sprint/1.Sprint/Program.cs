@@ -118,28 +118,7 @@ namespace _1.Sprint
 
 
 
-             //Methode Preis
-
-            double nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, kilopreis, preis50, preis100, mws; 
-
-            mws = 1.19;
-
-                   // Preisvarianten berechnen 
-
-            nettokilopreis = preis(); //gewicht, material, gewindeart, gewindelänge, schraubenkopf; KilopreisV kilopreisE
-            nettoeinzelpreis = nettoeinzelpreis / masse; 
-            netto50 = 50 * nettoeinzelpreis;
-            netto100 = 100 * nettoeinzelpreis;
-
-            einzelpreis = nettoeinzelpreis * mws;
-            kilopreis = nettokilopreis * mws; 
-            preis50 = netto50 * mws;
-            preis100 = netto100 *mws;
-        
-                
-
-
-                 // Ausgabe 
+             
 
             
             
