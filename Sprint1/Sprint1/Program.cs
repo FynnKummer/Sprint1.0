@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint1
+namespace _1.Sprint
 {
     class Program
     {
@@ -69,7 +69,7 @@ namespace Sprint1
                 Console.WriteLine("'A' = Austenitischer Stahl");
                 Console.WriteLine("'A2' = Rostbeständige Schrauben");                       // dachte nur Verzinkte und V2A
                 Console.WriteLine("'A4' = Rost- und säurebeständige Schrauben"); 
-                sorte = Console.ReadLine()); //String einlesen
+              //  sorte = Console.ReadLine(); //String einlesen
 
                 Console.WriteLine("Welche Zugfestigkeit hat die Schraube?");                    
                 Console.WriteLine("Eingabewert * 10 N/mm²");
@@ -222,7 +222,7 @@ namespace Sprint1
 
 
 
-        public static void Preis(double gewicht,string material, string gewindeart, string gewindelänge, string schraubenkopf,)
+        public static void Preis(double gewicht,string material, string gewindeart, string gewindelänge, string schraubenkopf)
 
         {
 
