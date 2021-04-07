@@ -158,7 +158,7 @@ namespace _1.Sprint
          // Umwandlung der Strings 
            
             // Gewindetyp 
-            if (Gewindetyp == "1")
+            if (gewindetyp == "1")
             {
                 gewindetyp_a = "(Standartgewinde)";
             }
@@ -197,7 +197,7 @@ namespace _1.Sprint
         }
 
 
-        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf)
+        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse)
 
         {
 
