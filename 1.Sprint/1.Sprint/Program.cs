@@ -362,7 +362,7 @@ namespace _1.Sprint
             double volumen_schaft;
 
 
-            switch (Gewinde) //unklar, ob alle volumina benannt werden
+            switch (Gewinde)
             {
                 case "M4":
                     if (typ == "A" || typ == "a")
