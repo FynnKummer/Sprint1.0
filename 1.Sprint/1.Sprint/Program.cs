@@ -325,9 +325,9 @@ namespace _1.Sprint
 
             switch (Gewinde)
             {
-                case "M3":
-                    if (typ == "A")
-                        break;
+                //case "M3":
+                //  if (typ == "A")
+                //      break;
 
                 case "M4":
                     if (typ == "A" || typ == "a")
