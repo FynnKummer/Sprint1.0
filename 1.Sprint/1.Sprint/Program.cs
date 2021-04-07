@@ -47,7 +47,7 @@ namespace _1.Sprint
 
             masse = masse_berechnen(dichte, vol);
 
-          Geometrie(gewindeart, gewindelaenge, laenge,gewinde,typ,vol,dichte);
+          Geometrie(gewi, gewindelaenge, laenge,gewinde,typ,vol,dichte);
 
 
 
@@ -230,14 +230,14 @@ namespace _1.Sprint
                 kilopreis = kilopreis_verzinkt;
             }
 
-            else if
+            else if(true)//hier fehl die Bedingung
             {
                 kilopreis = kilopreis_V2A;                     // Edelstahlschraube 
             }
 
             else
             {
-                kilopreis = kilopreis_V4A
+                kilopreis = kilopreis_V4A;
             }
 
 
@@ -268,40 +268,36 @@ namespace _1.Sprint
             
 
             
-            
-
-
-
-
+      
             // Preisvarianten berechnen 
             
             nettokilopreis = preis;              
             nettoeinzelpreis = nettokilopreis / masse;
             netto50 = 50 * nettoeinzelpreis;               
             netto100 = 100 * nettoeinzelpreis;
-            Nettobestellpreis = menge * nettoeinzelpreis 
+            Nettobestellpreis = menge * nettoeinzelpreis;
 
             einzelpreis = nettoeinzelpreis * mws;
             kilopreis = nettokilopreis * mws;
             preis50 = netto50 * mws;
             preis100 = netto100 * mws;
-            Bestellpreis = einzelpreis * menge 
+            Bestellpreis = einzelpreis * menge;
 
             // Ausgabe der Preise 
 
-            preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis, Nettobestellpreis, Bestellpreis);
+            preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis, Nettobestellpreis, Bestellpreis, menge);
 
             
 
         }
 
-        public static void preis_ausgabe (double nettoeinzelpreis,double nettokilopreis, double netto50, double netto100,double preis50, double preis100, double einzelpreis, double kilopreis, double Nettobestellpreis. double Bestellpreis, int menge)
+        public static void preis_ausgabe (double nettoeinzelpreis,double nettokilopreis, double netto50, double netto100,double preis50, double preis100, double einzelpreis, double kilopreis, double Nettobestellpreis, double Bestellpreis, int menge)
         {
             Console.WriteLine("Preise:");
             Console.WriteLine();
             Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Summe ("+ menge"Stück)   ") + Math.Round(Nettobestellpreis,2)) + "€" +  "         Summe (" +
+            Console.WriteLine("Summe ("+ menge+"Stück)   " + Math.Round(Nettobestellpreis,2) + "€" +  "         Summe (" );
             Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) +"€" +    "         Stückpreis:          " + Math.Round(einzelpreis, 2));
             Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) +"€" +      "         Kilopreis:           " + Math.Round(kilopreis, 2));
             Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "€" +            "         Preis 50 Stück:      " + Math.Round(preis50, 2));
