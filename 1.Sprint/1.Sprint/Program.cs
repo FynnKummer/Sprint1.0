@@ -150,7 +150,7 @@ namespace _1.Sprint
         { 
             double h3, r, d1, d2, d3, s, flankenwikel;
             double p = 2;
-            string schraubenkopf_a, gewindetyp_a  // Ausgeschriebene Strings 
+            string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings 
 
         // Rechnungen 
 
@@ -174,21 +174,21 @@ namespace _1.Sprint
             // Gewindetyp 
             if (Gewindetyp == "1")
             {
-                gewindetyp_a = "(Standartgewinde)"
+                gewindetyp_a = "(Standartgewinde)";
             }
             else
             {
-                gewindetyp_a = "(Feingewinde)"
+                gewindetyp_a = "(Feingewinde)";
             }
 
             // Schreubenkopf
             if (schraubenkopf == "a" || schraubenkopf == "A")
             {
-                schraubenkopf_a = "Außensechskant" 
+                schraubenkopf_a = "Außensechskant";
             }
             else
             {
-                schraubenkopf_a = "Innensechskant"
+                schraubenkopf_a = "Innensechskant";
             }
 
          // Ausgabe
@@ -300,13 +300,17 @@ namespace _1.Sprint
             return 1;
         }
 
-        public static double Volumen(double schraubkopf, int laenge, int gewindelaenge, string Gewinde)
+        public static double Volumen(String schraubkopf, int laenge, int gewindelaenge, string Gewinde)
         {
             switch (Gewinde)
             {
                 case "M3":
-                    if (schraubkopf==A)
+                    if (schraubkopf == "A")
+                    {
+
+                    }
                     break;
+
                 case "M4":
 
                     break;
