@@ -131,7 +131,7 @@ namespace _1.Sprint
             Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°");
         }
 
-        public static void Preis(string material, string gewindeart, int gewindelänge, string schraubenkopf, double masse, int menge)
+        public static void Preis(string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse, int menge)
         //double gewicht,
         {
             // Variablen festlegen
