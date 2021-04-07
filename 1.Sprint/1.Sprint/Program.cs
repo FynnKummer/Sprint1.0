@@ -184,7 +184,7 @@ namespace _1.Sprint
             Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
             Console.WriteLine("gewindelänge:         " + gewindelänge + "mm");
             Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
-            Console.WriteLine();
+            Console.WriteLine("Masse:                "   + "mm");
             Console.WriteLine("----------------------------------------------------------------------------------------");
             Console.WriteLine();
             Console.WriteLine("Steigung:             " + p + " mm");
@@ -295,21 +295,21 @@ namespace _1.Sprint
             
             if (material == "1")
             {
-                return 7.85;
+                return 0.0079;
             }
             else if (material == "2")
             {
-                return 7.90;
+                return 0.0079;
             }
             else
             {
-                return 8.0;
+                return 0.008;
             }
         }
 
         public static double masse_berechnen(double volumen, double dichte)
         {
-            double masse = volumen / dichte;
+            double masse = volumen * dichte;
 
             return masse;
         }
@@ -323,10 +323,11 @@ namespace _1.Sprint
             return 1;
         }
 
-        public static double Volumen(String typ, int laenge, int gewindelaenge, string Gewinde)
+        public static double Volumen(String typ, int laenge, int gewindelaenge, string Gewinde, double vol)
         {
 
             double volumen_schraubenkopf;
+            double volumen_schaft;
 
 
             switch (Gewinde)
@@ -339,12 +340,15 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 108.9508;
+                        volumen_schaft = 3.55 * gewindelaenge+(laenge-gewindelaenge)*4;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 138.3500;
-                        ;
+                        volumen_schaft = 3.55 * gewindelaenge + (laenge - gewindelaenge) * 4;
+                        vol = volumen_schraubenkopf + volumen_schaft;
                     }
                     break;
 
@@ -354,12 +358,15 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 178.8570;
+                        volumen_schaft = 4.48 * gewindelaenge + (laenge - gewindelaenge) * 5;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 249.0851;
-
+                        volumen_schaft = 4.48 * gewindelaenge + (laenge - gewindelaenge) * 5;
+                        vol = volumen_schraubenkopf + volumen_schaft;
                     }
                     break;
                 
@@ -368,12 +375,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 317.2320;
-
+                        volumen_schaft = 5.35 * gewindelaenge + (laenge - gewindelaenge) * 6;
+                        vol = volumen_schraubenkopf + volumen_schaft;
                     }
                     else
                     {
                         volumen_schraubenkopf = 406.2859;
-
+                        volumen_schaft = 5.35 * gewindelaenge + (laenge - gewindelaenge) * 6;
+                        vol = volumen_schraubenkopf + volumen_schaft;
                     }
 
                     break;
@@ -381,12 +390,15 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 738.7050;
+                        volumen_schaft = 7.19 * gewindelaenge + (laenge - gewindelaenge) * 8;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 937.1503;
-
+                        volumen_schaft = 7.19 * gewindelaenge + (laenge - gewindelaenge) * 8;
+                        vol = volumen_schraubenkopf + volumen_schaft;
                     }
 
                     break;
@@ -394,11 +406,15 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 1624.1050;
+                        volumen_schaft = 9.03 * gewindelaenge + (laenge - gewindelaenge) * 10;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 1733.4893;
+                        volumen_schaft = 9.03 * gewindelaenge + (laenge - gewindelaenge) * 10;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
 
@@ -408,11 +424,15 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 2313.3760;
+                        volumen_schaft = 10.86 * gewindelaenge + (laenge - gewindelaenge) * 12;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 2534.0101;
+                        volumen_schaft = 10.86 * gewindelaenge + (laenge - gewindelaenge) * 12;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
 
@@ -421,13 +441,17 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 4647.7100;
-                        ;
+                        volumen_schaft = 14.7 * gewindelaenge + (laenge - gewindelaenge) * 16;
+                        vol = volumen_schraubenkopf + volumen_schaft;
+                        
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 5540.8195;
-                        ;
+                        volumen_schaft = 14.7 * gewindelaenge + (laenge - gewindelaenge) * 16;
+                        vol = volumen_schraubenkopf + volumen_schaft;
+                        
 
                     }
 
@@ -436,11 +460,15 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 9492.9770;
+                        volumen_schaft = 18.38 * gewindelaenge + (laenge - gewindelaenge) * 20;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 11634.3569;
+                        volumen_schaft = 18.38 * gewindelaenge + (laenge - gewindelaenge) * 20;
+                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
 
@@ -454,7 +482,9 @@ namespace _1.Sprint
 
             return 1;
         }
-        
+    
+
+
         public static String abfrage_material()
         {           
             bool loop = false;
