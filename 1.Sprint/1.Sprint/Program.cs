@@ -15,7 +15,7 @@ namespace _1.Sprint
             string material = abfrage_material();
 
             //Abfrage des Schraubenkopfes
-            string typ = abfrage_schraubenkopf();
+            string typ = abfrage_schraubenkopf(); //Fälle um kleines a und i erweitern
 
            //Abfrage des Gewindes (z.B. M8)
             string gewinde = abfrage_gewinde();
@@ -24,13 +24,13 @@ namespace _1.Sprint
             int laenge = abfrage_laenge();
 
             //Abfrage der Gewindelänge
-            int gewindelaenge = abfrage_gewindelaenge(laenge);
+            int gewindelaenge = abfrage_gewindelaenge(laenge);// kann die Gewindelänge größer sein, als die Schraube lang ist 
 
             //Abfrage der Gewindeart (FG/SG)
             string gewindeart = abfrage_gewindeart();
             
             //Abfrage der Schraubenanzahl
-            int menge = abfrage_menge();
+            int menge = abfrage_menge();// gibts max oder min?
 
             //Abfrage der Festigkeitsklasse 
             string Fk = abfrage_festigkeit(material);
@@ -69,13 +69,13 @@ namespace _1.Sprint
             string d = ausgabe_gewindeart(gewindeart);
             Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
             Console.WriteLine("Technische Details:\n\t" );
-            
-
-            
 
 
-            
 
+
+
+
+            Console.ReadKey();
         }   //Hauptprogramm Ende
         
 
@@ -161,7 +161,7 @@ namespace _1.Sprint
             Console.WriteLine("Geometie:");
             Console.WriteLine();
             Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
-            Console.WriteLine("gewindelänge:         " + gewindelänge + "mm");
+            Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
 
             Console.WriteLine("Gewindedurchmesser:   " + d+ "mm");
             Console.WriteLine("Masse:                " +gewicht+ "g");
@@ -649,7 +649,7 @@ namespace _1.Sprint
                 loop = true;
             }
             } while (loop == true);
-
+            
             return Fk;
         }
         
