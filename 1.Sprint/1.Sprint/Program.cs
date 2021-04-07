@@ -302,9 +302,9 @@ namespace _1.Sprint
             return 1;
         }
 
-        public static double Volumen(String typ, int laenge, int gewindelaenge, string Gewinde, double vol)
+        public static double Volumen(String typ, int laenge, int gewindelaenge, string Gewinde)
         {
-
+            double vol;
             double volumen_schraubenkopf;
             double volumen_schaft;
 
