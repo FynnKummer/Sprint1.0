@@ -33,7 +33,19 @@ namespace _1.Sprint
             int menge = abfrage_menge();
 
             //Abfrage der Festigkeitsklasse 
-            string Fk = abfrage_festigkeit(material);              
+            string Fk = abfrage_festigkeit(material);
+
+            
+            //Volumen berechnen
+            double vol = Volumen(typ, laenge, gewindelaenge, gewinde);
+
+
+            //Masse berechnen
+            double dichte, masse; //Einheit 
+
+            dichte = dichte_abfrage(material);
+
+            masse = masse_berechnen(dichte, vol);
 
 
             //Methoden aufrufen
@@ -56,10 +68,6 @@ namespace _1.Sprint
             Console.WriteLine("Technische Details:\n\t" );
             
 
-            int schluesselbreite;
-            double  masse;
-
-           // String gewinde = "" ;
             
 
 
@@ -242,16 +250,7 @@ namespace _1.Sprint
 
             mws = 1.19;
 
-            //Volumen berechnen
-            double vol = Volumen();
-
-
-            //Masse berechnen
-            double dichte, masse; //Einheit 
             
-            dichte = dichte_abfrage(material);
-            
-            masse = masse_berechnen(dichte, vol);
 
             
             
@@ -262,7 +261,7 @@ namespace _1.Sprint
             // Preisvarianten berechnen 
             
             nettokilopreis = preis;              
-            nettoeinzelpreis = nettokilopreis / masse();
+            nettoeinzelpreis = nettokilopreis / masse;
             netto50 = 50 * nettoeinzelpreis;               
             netto100 = 100 * nettoeinzelpreis;
 
