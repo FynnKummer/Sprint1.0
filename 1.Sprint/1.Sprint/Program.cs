@@ -302,8 +302,8 @@ namespace _1.Sprint
 
         public static void festigkeit(string Fk)
         {
-            double Rm;
-            double Re;
+            double Rm=0;
+            double Re=0;
 
             switch (Fk)
             {
@@ -344,8 +344,9 @@ namespace _1.Sprint
                     Re = 210;
                     break;
             }
-            Festigkeit_Ausgabe(Rm, Re);
+            Festigkeit_Ausgabe(Re, Rm);
         }
+
         public static void Festigkeit_Ausgabe(double Rm, double Re)
         {
             Console.WriteLine("Elastizitätsgrenze:" + Re + "N/mm^2");
@@ -500,6 +501,8 @@ namespace _1.Sprint
                     }
 
                     break;
+
+
             }
 
             return vol;
