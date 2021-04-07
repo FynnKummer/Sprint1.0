@@ -47,7 +47,7 @@ namespace _1.Sprint
 
             masse = masse_berechnen(dichte, vol);
 
-          Geometrie(gewinde, gewindelaenge, laenge,gewinde,typ,vol,dichte);
+          Geometrie(gewinde, gewindelaenge, laenge,gewindeart,typ,vol,dichte);
 
 
 
