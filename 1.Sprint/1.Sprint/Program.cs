@@ -15,7 +15,7 @@ namespace _1.Sprint
             string material = abfrage_material();
 
             //Abfrage des Schraubenkopfes
-            string typ = abfrage_schraubenkopf(); //Fälle um kleines a und i erweitern
+            string typ = abfrage_schraubenkopf(); 
 
            //Abfrage des Gewindes (z.B. M8)
             string gewinde = abfrage_gewinde();
@@ -24,13 +24,13 @@ namespace _1.Sprint
             int laenge = abfrage_laenge();
 
             //Abfrage der Gewindelänge
-            int gewindelaenge = abfrage_gewindelaenge(laenge);// kann die Gewindelänge größer sein, als die Schraube lang ist 
+            int gewindelaenge = abfrage_gewindelaenge(laenge);
 
             //Abfrage der Gewindeart (FG/SG)
             string gewindeart = abfrage_gewindeart();
             
             //Abfrage der Schraubenanzahl
-            int menge = abfrage_menge();// gibts max oder min?
+            int menge = abfrage_menge();
 
             //Abfrage der Festigkeitsklasse 
             string Fk = abfrage_festigkeit(material);
