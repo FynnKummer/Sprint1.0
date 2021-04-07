@@ -700,21 +700,20 @@ namespace _1.Sprint
 
         public static String ausgabe_material(string material)  //Der Variable dem richtigen Ausgabestring zuweisen
         {
-            string a = "0";
             switch (material)
             {
                 case "1": 
-                    a = "Verzinkte Stahlschraube";
+                    material = "Verzinkte Stahlschraube";
                     break;
                 case "2":
-                    a = "V2A Schraube";
+                    material = "V2A Schraube";
                     break;
                 case "3":
-                    a = "V4A Schraube";
+                    material = "V4A Schraube";
                     break;
             }
 
-            return a;
+            return material;
         }
 
         public static String ausgabe_festigkeitsklasse(string Fk) //Der Variable dem richtigen Ausgabestring zuweisen
@@ -737,34 +736,32 @@ namespace _1.Sprint
 
         public static String ausgabe_gewindeart(string gewindeart) //Der Variable dem richtigen Ausgabestring zuweisen
         {
-            string b = "0";
             switch (gewindeart)
             {
                 case "1":
-                    b = "Standardgewinde";
+                    gewindeart = "Standardgewinde";
                     break;
                 case "2":
-                    b = "Feingewinde";  
+                    gewindeart = "Feingewinde";  
                     break;
             }
 
-            return b;
+            return gewindeart;
         }
 
         public static String ausgabe_schraubenkopf(string typ) //Der Variable dem richtigen Ausgabestring zuweisen
         {
-            string c = "0";
             switch (typ)
             {
                 case "A":
-                    c = "Außensechskant";
+                    typ = "Außensechskant";
                     break;
                 case "I":
-                    c = "Innensechskant"; 
+                    typ = "Innensechskant"; 
                     break;
             }
 
-            return c;
+            return typ;
         }
     }
 }
