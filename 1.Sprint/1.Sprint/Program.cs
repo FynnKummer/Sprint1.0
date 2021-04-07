@@ -35,7 +35,7 @@ namespace _1.Sprint
             //Abfrage der Festigkeitsklasse 
             string Fk = abfrage_festigkeit(material);
 
-            
+            Console.WriteLine("hallo");
             //Volumen berechnen
             double vol = Volumen(typ, laenge, gewindelaenge, gewinde);
 
@@ -47,6 +47,7 @@ namespace _1.Sprint
 
             masse = masse_berechnen(dichte, vol);
 
+            
 
             //Methoden aufrufen
 
@@ -66,49 +67,14 @@ namespace _1.Sprint
             string d = ausgabe_gewindeart(gewindeart);
             Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
             Console.WriteLine("Technische Details:\n\t" );
-            
-
-            
 
 
-            // Methode Schraubkopf
-
-            Console.WriteLine("Welcher Schraubenype ist erwünscht?\nEs besteht die Auswahl zwischen Innensechskant und Außensechkant");
-
-            String kopftyp=kopftest();      //Hier wird in einer Methode die Eingabe über den Typ der Schraube getätigt und auf zulässigkeit geprüft
-            Console.WriteLine("Methode geht");
-           // schluesselbreite = breite_test();
-
-      
 
 
+            Console.ReadKey();
         }   //Hauptprogramm Ende
         
-        public static String kopftest()
-        {
-            String typ = "";
-            for (int i = 0; i == 0;)
-            {
-                typ = Console.ReadLine();
-
-                if (typ == "A" || typ == "a" || typ == "I" || typ == "i")//Wenn die Eingabe für unseren FAll zulässig ist
-                {
-                    Console.WriteLine("Eingbe erfolgreich");
-                    break;                                                 //Endlosschleife wird verlassen
-                }
-                else
-                {
-                    Console.WriteLine("Eingabe fehlerhaft");                //Ausgabe, dann wird SChleife wiederholt (wenn nötig, unendlich lang)
-                    Console.WriteLine("Erneut veruchen");
-                }
-
-
-            }
-
-
-            return typ;                                                    //Benötigter  Wert wird zurückgegeben
-        }
-
+   
 
         public static double schraubkopf(String form, int schluesselbreite)
         {
@@ -596,7 +562,7 @@ namespace _1.Sprint
                 loop = true;
             }
             } while (loop == true);
-
+            
             return Fk;
         }
         
