@@ -69,7 +69,9 @@ namespace _1.Sprint
             string c = ausgabe_schraubenkopf(typ);
             string d = ausgabe_gewindeart(gewindeart);
             Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
-            Console.WriteLine("Technische Details:\n\t" );
+            Console.WriteLine("Technische Details:\n\t");
+
+            Preis(material, gewindeart, gewindeart, gewindelaenge, typ, masse, menge);
 
 
 
@@ -178,8 +180,8 @@ namespace _1.Sprint
 
         }
 
-        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse, int menge)
-
+        public static void Preis( string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse, int menge)
+        //double gewicht,
         {
 
             // Variablen festlegen
