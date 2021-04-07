@@ -47,7 +47,7 @@ namespace _1.Sprint
 
             masse = masse_berechnen(dichte, vol);
 
-          Geometrie(gewi, gewindelaenge, laenge,gewinde,typ,vol,dichte);
+          Geometrie(gewinde, gewindelaenge, laenge,gewinde,typ,vol,dichte);
 
 
 
@@ -101,15 +101,22 @@ namespace _1.Sprint
 
         }
 
-        public static void Geometrie(int d, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
+        public static void Geometrie(String gewinde, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
         { 
             double h3, r, d1, d2, d3, s, flankenwikel;
             double p = 2;
-            string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings 
+            string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
+
+            String[] feld;
+
+            feld= gewinde.Split('M');
+           int d = Int32.Parse(feld[1]);
+
+           
 
         // Rechnungen 
 
-         // Gewindetiefe   
+            // Gewindetiefe   
             h3 = 0.6134 * p;
 
          // Rundung
