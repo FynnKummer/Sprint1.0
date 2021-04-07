@@ -13,9 +13,9 @@ namespace _1.Sprint
             //Abfrage der Werte
             //Abfrage des Materials
             string material = abfrage_material();                                      //wenn Gewindelänge =Länge die Ausgabe auf "xx länge mit durchgehende Gewinde§ anpassen
-
+                                                                                       // Preis fehlt noch in der Ausgabe
             //Abfrage des Schraubenkopfes
-            string typ = abfrage_schraubenkopf(); //Fälle um kleines a und i erweitern
+            string typ = abfrage_schraubenkopf(); 
 
            //Abfrage des Gewindes (z.B. M8)
             string gewinde = abfrage_gewinde();
@@ -24,17 +24,18 @@ namespace _1.Sprint
             int laenge = abfrage_laenge();
 
             //Abfrage der Gewindelänge
-            int gewindelaenge = abfrage_gewindelaenge(laenge);// kann die Gewindelänge größer sein, als die Schraube lang ist 
+            int gewindelaenge = abfrage_gewindelaenge(laenge);
 
             //Abfrage der Gewindeart (FG/SG)
             string gewindeart = abfrage_gewindeart();
             
             //Abfrage der Schraubenanzahl
-            int menge = abfrage_menge();// gibts max oder min?
+            int menge = abfrage_menge();
 
             //Abfrage der Festigkeitsklasse 
             string Fk = abfrage_festigkeit(material);
 
+            
             
             //Volumen berechnen
             double vol = Volumen(typ, laenge, gewindelaenge, gewinde);
@@ -365,14 +366,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 108.9508;
-                        volumen_schaft = Math.PI/(4*(3.55*3.55)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI/ (4 * (4 * 4));
+                        volumen_schaft = 3.55 * gewindelaenge + (laenge - gewindelaenge) * 4;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 138.3500;
-                        volumen_schaft = Math.PI / (4 * (3.55 * 3.55)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (4 * 4));
+                        volumen_schaft = 3.55 * gewindelaenge + (laenge - gewindelaenge) * 4;
                         vol = volumen_schraubenkopf + volumen_schaft;
                         ;
                     }
@@ -384,14 +385,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 178.8570;
-                        volumen_schaft = Math.PI / (4 * (4.48 * 4.48)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (5 * 5));
+                        volumen_schaft = 4.48 * gewindelaenge + (laenge - gewindelaenge) * 5;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 249.0851;
-                        volumen_schaft = Math.PI / (4 * (4.48 * 4.48))* gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (5 * 5));
+                        volumen_schaft = 4.48 * gewindelaenge + (laenge - gewindelaenge) * 5;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
@@ -402,14 +403,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 317.2320;
-                        volumen_schaft = Math.PI / (4 * (5.35 * 5.35))* gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (6 * 6));
+                        volumen_schaft = 5.35 * gewindelaenge + (laenge - gewindelaenge) * 6;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 406.2859;
-                        volumen_schaft = Math.PI / (4 * (5.35 * 5.35))* gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (6 * 6));
+                        volumen_schaft = 5.35 * gewindelaenge + (laenge - gewindelaenge) * 6;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
@@ -419,14 +420,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 738.7050;
-                        volumen_schaft = Math.PI / (4 * (7.19 * 7.19))* gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (8 * 8));
+                        volumen_schaft = 7.19 * gewindelaenge + (laenge - gewindelaenge) * 8;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 937.1503;
-                            volumen_schaft = Math.PI / (4 * (7.19 * 7.19))* gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (8 * 8));
+                            volumen_schaft = 7.19 * gewindelaenge + (laenge - gewindelaenge) * 8;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
@@ -436,14 +437,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 1624.1050;
-                        volumen_schaft = Math.PI / (4 * (9.03 * 9.03)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (10 * 10));
+                        volumen_schaft = 9.03 * gewindelaenge + (laenge - gewindelaenge) * 10;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 1733.4893;
-                        volumen_schaft = Math.PI / (4 * (9.03 * 9.03)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (10 * 10));
+                        volumen_schaft = 9.03 * gewindelaenge + (laenge - gewindelaenge) * 10;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
@@ -454,14 +455,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 2313.3760;
-                        volumen_schaft = Math.PI / (4 * (10.86 * 10.86)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (12 * 12));
+                        volumen_schaft = 10.86 * gewindelaenge + (laenge - gewindelaenge) * 12;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 2534.0101;
-                        volumen_schaft = Math.PI / (4 * (10.86 * 10.86)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (12 * 12));
+                        volumen_schaft = 10.86 * gewindelaenge + (laenge - gewindelaenge) * 12;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
@@ -471,14 +472,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 4647.7100;
-                        volumen_schaft = Math.PI / (4 * (14.7 * 14.7)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (16 * 16));
+                        volumen_schaft = 14.7 * gewindelaenge + (laenge - gewindelaenge) * 16;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 5540.8195;
-                        volumen_schaft = Math.PI / (4 * (14.7 * 14.7)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (16 * 16));
+                        volumen_schaft = 14.7 * gewindelaenge + (laenge - gewindelaenge) * 16;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
@@ -488,14 +489,14 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 9492.9770;
-                        volumen_schaft = Math.PI / (4 * (18.38 * 18.38)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (20 * 20));
+                        volumen_schaft = 18.38 * gewindelaenge + (laenge - gewindelaenge) * 20;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 11634.3569;
-                        volumen_schaft = Math.PI / (4 * (18.38 * 18.38)) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / (4 * (20 * 20));
+                        volumen_schaft = 18.38 * gewindelaenge + (laenge - gewindelaenge) * 20;
                         vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
