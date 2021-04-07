@@ -80,7 +80,7 @@ namespace _1.Sprint
            // schluesselbreite = breite_test();
 
       
-
+            Console.ReadKey();
 
         }   //Hauptprogramm Ende
         
@@ -203,7 +203,7 @@ namespace _1.Sprint
 
             // Variablen festlegen
             double preis = 0;
-            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, preis50, preis100, mws;
+            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, preis50, preis100;
 
             // Aufpreise festlegen
 
@@ -211,7 +211,9 @@ namespace _1.Sprint
             const double aufpreis_Teilgewinde = 0.16;
             const double aufpreis_Feingewinde = 0.27;
             const double kilopreis_verzinkt = 7.12;
-            const double kilopreis_edelstahl = 16.78;
+            const double kilopreis_V2A = 16.78;
+            const double kilopreis_V4A = 22.56;
+            const double mws = 1.19;
 
             //Grundpreis nach Material
 
@@ -220,9 +222,14 @@ namespace _1.Sprint
                 kilopreis = kilopreis_verzinkt;
             }
 
+            else if
+            {
+                kilopreis = kilopreis_V2A;                     // Edelstahlschraube 
+            }
+
             else
             {
-                kilopreis = kilopreis_edelstahl;                     // Edelstahlschraube 
+                kilopreis = kilopreis_V4A
             }
 
 
@@ -248,7 +255,7 @@ namespace _1.Sprint
             }
 
 
-            mws = 1.19;
+            
 
             
 
