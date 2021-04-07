@@ -197,13 +197,13 @@ namespace _1.Sprint
         }
 
 
-        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse)
+        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse, int menge)
 
         {
 
             // Variablen festlegen
             double preis = 0;
-            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, preis50, preis100;
+            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis;
 
             // Aufpreise festlegen
 
@@ -271,30 +271,33 @@ namespace _1.Sprint
             nettoeinzelpreis = nettokilopreis / masse;
             netto50 = 50 * nettoeinzelpreis;               
             netto100 = 100 * nettoeinzelpreis;
+            Nettobestellpreis = menge * nettoeinzelpreis 
 
             einzelpreis = nettoeinzelpreis * mws;
             kilopreis = nettokilopreis * mws;
             preis50 = netto50 * mws;
             preis100 = netto100 * mws;
+            Bestellpreis = einzelpreis * menge 
 
             // Ausgabe der Preise 
 
-            preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis);
+            preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis, Nettobestellpreis, Bestellpreis);
 
             
 
         }
 
-        public static void preis_ausgabe (double nettoeinzelpreis,double nettokilopreis, double netto50, double netto100,double preis50, double preis100, double einzelpreis, double kilopreis)
+        public static void preis_ausgabe (double nettoeinzelpreis,double nettokilopreis, double netto50, double netto100,double preis50, double preis100, double einzelpreis, double kilopreis, double Nettobestellpreis. double Bestellpreis, int menge)
         {
             Console.WriteLine("Preise:");
             Console.WriteLine();
             Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Stückpreis:          " + Math.Round(nettoeinzelpreis, 2) + "      Stückpreis:          " + Math.Round(einzelpreis, 2));
-            Console.WriteLine("Kilopreis:           " + Math.Round(nettokilopreis, 2) + "        Kilopreis:           " + Math.Round(kilopreis, 2));
-            Console.WriteLine("Preis 50 Stück:      " + Math.Round(netto50, 2) + "               Preis 50 Stück:      " + Math.Round(preis50, 2));
-            Console.WriteLine("preis 100 Stück:    " + Math.Round(netto100, 2) + "               preis 100 Stück:     " + Math.Round(preis100, 2));
+            Console.WriteLine("Summe ("+ menge"Stück)   ") + Math.Round(Nettobestellpreis,2)) + "€" +  "         Summe (" +
+            Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) +"€" +    "         Stückpreis:          " + Math.Round(einzelpreis, 2));
+            Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) +"€" +      "         Kilopreis:           " + Math.Round(kilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "€" +            "         Preis 50 Stück:      " + Math.Round(preis50, 2));
+            Console.WriteLine("preis 100 Stück:         " + Math.Round(netto100, 2) + "€" +           "         Preis 100 Stück:     " + Math.Round(preis100, 2));
         }
 
         public static double dichte_abfrage(String material)
