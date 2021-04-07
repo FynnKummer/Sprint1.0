@@ -12,7 +12,7 @@ namespace _1.Sprint
         {
             //Abfrage der Werte
             //Abfrage des Materials
-            string material = abfrage_material();
+            string material = abfrage_material();                                      //wenn Gewindelänge =Länge die Ausgabe auf "xx länge mit durchgehende Gewinde§ anpassen
 
             //Abfrage des Schraubenkopfes
             string typ = abfrage_schraubenkopf(); 
