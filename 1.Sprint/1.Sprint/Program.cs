@@ -47,7 +47,7 @@ namespace _1.Sprint
 
             masse = masse_berechnen(dichte, vol);
 
-          Geometrie(gewinde, gewindelaenge, laenge,gewindeart,typ,vol,dichte);
+          geometrie(gewinde, gewindelaenge, laenge,gewindeart,typ,vol,dichte);
 
 
 
@@ -101,9 +101,9 @@ namespace _1.Sprint
 
         }
 
-        public static void Geometrie(String gewinde, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
+        public static void geometrie(String gewinde, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
         { 
-            double h3, r, d1, d2, d3, s, flankenwikel;
+            double h3, r, d2, d3, flankenwikel;
             double p = 2;
             string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
 
