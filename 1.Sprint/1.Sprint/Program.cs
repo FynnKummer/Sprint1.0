@@ -295,7 +295,7 @@ namespace _1.Sprint
 
         public static double festigkeit(string Fk)
         {
-           if  
+            
             //hier den Code reinschreiben
             //Fehlermeldung sind normal und bleiben bis return xy; ergänzt wird
 
@@ -306,7 +306,7 @@ namespace _1.Sprint
         {
 
             double volumen_schraubenkopf;
-            double volumen_schaft
+            double volumen_schaft;
 
 
             switch (Gewinde)
@@ -457,7 +457,7 @@ namespace _1.Sprint
                     break;
             }
 
-            return ;
+            return 1;
         }
         
         public static String abfrage_material()
