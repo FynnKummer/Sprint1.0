@@ -47,9 +47,9 @@ namespace _1.Sprint
 
             masse = masse_berechnen(dichte, vol);
 
-            Geometrie(gewindeart, gewindelaenge, laenge,gewinde,typ,vol,dichte);
+          Geometrie(gewindeart, gewindelaenge, laenge,gewinde,typ,vol,dichte);
 
-            
+
 
             //Methoden aufrufen
 
@@ -69,14 +69,49 @@ namespace _1.Sprint
             string d = ausgabe_gewindeart(gewindeart);
             Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
             Console.WriteLine("Technische Details:\n\t" );
+            
+
+            
 
 
+            // Methode Schraubkopf
 
+            Console.WriteLine("Welcher Schraubenype ist erwünscht?\nEs besteht die Auswahl zwischen Innensechskant und Außensechkant");
 
+            String kopftyp=kopftest();      //Hier wird in einer Methode die Eingabe über den Typ der Schraube getätigt und auf zulässigkeit geprüft
+            Console.WriteLine("Methode geht");
+           // schluesselbreite = breite_test();
+
+      
             Console.ReadKey();
+
         }   //Hauptprogramm Ende
         
-   
+        public static String kopftest()
+        {
+            String typ = "";
+            for (int i = 0; i == 0;)
+            {
+                typ = Console.ReadLine();
+
+                if (typ == "A" || typ == "a" || typ == "I" || typ == "i")//Wenn die Eingabe für unseren FAll zulässig ist
+                {
+                    Console.WriteLine("Eingbe erfolgreich");
+                    break;                                                 //Endlosschleife wird verlassen
+                }
+                else
+                {
+                    Console.WriteLine("Eingabe fehlerhaft");                //Ausgabe, dann wird SChleife wiederholt (wenn nötig, unendlich lang)
+                    Console.WriteLine("Erneut veruchen");
+                }
+
+
+            }
+
+
+            return typ;                                                    //Benötigter  Wert wird zurückgegeben
+        }
+
 
         public static double schraubkopf(String form, int schluesselbreite)
         {
@@ -154,8 +189,10 @@ namespace _1.Sprint
             Console.WriteLine();
             Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
             Console.WriteLine("gewindelänge:         " + gewindelänge + "mm");
+
             Console.WriteLine("Gewindedurchmesser:   " + d+ "mm");
             Console.WriteLine("Masse:                " +gewicht+ "g");
+
             Console.WriteLine("----------------------------------------------------------------------------------------");
             Console.WriteLine();
             Console.WriteLine("Steigung:             " + p + " mm");
@@ -168,13 +205,13 @@ namespace _1.Sprint
         }
 
 
-        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse)
+        public static void Preis(double gewicht, string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse, int menge)
 
         {
 
             // Variablen festlegen
             double preis = 0;
-            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, einzelpreis, preis50, preis100, mws;
+            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis;
 
             // Aufpreise festlegen
 
@@ -182,7 +219,9 @@ namespace _1.Sprint
             const double aufpreis_Teilgewinde = 0.16;
             const double aufpreis_Feingewinde = 0.27;
             const double kilopreis_verzinkt = 7.12;
-            const double kilopreis_edelstahl = 16.78;
+            const double kilopreis_V2A = 16.78;
+            const double kilopreis_V4A = 22.56;
+            const double mws = 1.19;
 
             //Grundpreis nach Material
 
@@ -191,9 +230,14 @@ namespace _1.Sprint
                 kilopreis = kilopreis_verzinkt;
             }
 
+            else if
+            {
+                kilopreis = kilopreis_V2A;                     // Edelstahlschraube 
+            }
+
             else
             {
-                kilopreis = kilopreis_edelstahl;                     // Edelstahlschraube 
+                kilopreis = kilopreis_V4A
             }
 
 
@@ -219,7 +263,7 @@ namespace _1.Sprint
             }
 
 
-            mws = 1.19;
+            
 
             
 
@@ -235,30 +279,33 @@ namespace _1.Sprint
             nettoeinzelpreis = nettokilopreis / masse;
             netto50 = 50 * nettoeinzelpreis;               
             netto100 = 100 * nettoeinzelpreis;
+            Nettobestellpreis = menge * nettoeinzelpreis 
 
             einzelpreis = nettoeinzelpreis * mws;
             kilopreis = nettokilopreis * mws;
             preis50 = netto50 * mws;
             preis100 = netto100 * mws;
+            Bestellpreis = einzelpreis * menge 
 
             // Ausgabe der Preise 
 
-            preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis);
+            preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis, Nettobestellpreis, Bestellpreis);
 
             
 
         }
 
-        public static void preis_ausgabe (double nettoeinzelpreis,double nettokilopreis, double netto50, double netto100,double preis50, double preis100, double einzelpreis, double kilopreis)
+        public static void preis_ausgabe (double nettoeinzelpreis,double nettokilopreis, double netto50, double netto100,double preis50, double preis100, double einzelpreis, double kilopreis, double Nettobestellpreis. double Bestellpreis, int menge)
         {
             Console.WriteLine("Preise:");
             Console.WriteLine();
             Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Stückpreis:          " + Math.Round(nettoeinzelpreis, 2) + "      Stückpreis:          " + Math.Round(einzelpreis, 2));
-            Console.WriteLine("Kilopreis:           " + Math.Round(nettokilopreis, 2) + "        Kilopreis:           " + Math.Round(kilopreis, 2));
-            Console.WriteLine("Preis 50 Stück:      " + Math.Round(netto50, 2) + "               Preis 50 Stück:      " + Math.Round(preis50, 2));
-            Console.WriteLine("preis 100 Stück:    " + Math.Round(netto100, 2) + "               preis 100 Stück:     " + Math.Round(preis100, 2));
+            Console.WriteLine("Summe ("+ menge"Stück)   ") + Math.Round(Nettobestellpreis,2)) + "€" +  "         Summe (" +
+            Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) +"€" +    "         Stückpreis:          " + Math.Round(einzelpreis, 2));
+            Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) +"€" +      "         Kilopreis:           " + Math.Round(kilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "€" +            "         Preis 50 Stück:      " + Math.Round(preis50, 2));
+            Console.WriteLine("preis 100 Stück:         " + Math.Round(netto100, 2) + "€" +           "         Preis 100 Stück:     " + Math.Round(preis100, 2));
         }
 
         public static double dichte_abfrage(String material)
@@ -266,21 +313,21 @@ namespace _1.Sprint
             
             if (material == "1")
             {
-                return 0.0079;
+                return 7.85;
             }
             else if (material == "2")
             {
-                return 0.0079;
+                return 7.90;
             }
             else
             {
-                return 0.008;
+                return 8.0;
             }
         }
 
         public static double masse_berechnen(double volumen, double dichte)
         {
-            double masse = volumen * dichte;
+            double masse = volumen / dichte;
 
             return masse;
         }
@@ -296,9 +343,8 @@ namespace _1.Sprint
 
         public static double Volumen(String typ, int laenge, int gewindelaenge, string Gewinde)
         {
-            double vol;
+
             double volumen_schraubenkopf;
-            double volumen_schaft;
 
 
             switch (Gewinde)
@@ -311,15 +357,12 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 108.9508;
-                        volumen_schaft = 3.55 * gewindelaenge+(laenge-gewindelaenge)*4;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 138.3500;
-                        volumen_schaft = 3.55 * gewindelaenge + (laenge - gewindelaenge) * 4;
-                        vol = volumen_schraubenkopf + volumen_schaft;
+                        ;
                     }
                     break;
 
@@ -329,15 +372,12 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 178.8570;
-                        volumen_schaft = 4.48 * gewindelaenge + (laenge - gewindelaenge) * 5;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 249.0851;
-                        volumen_schaft = 4.48 * gewindelaenge + (laenge - gewindelaenge) * 5;
-                        vol = volumen_schraubenkopf + volumen_schaft;
+
                     }
                     break;
                 
@@ -346,14 +386,12 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 317.2320;
-                        volumen_schaft = 5.35 * gewindelaenge + (laenge - gewindelaenge) * 6;
-                        vol = volumen_schraubenkopf + volumen_schaft;
+
                     }
                     else
                     {
                         volumen_schraubenkopf = 406.2859;
-                        volumen_schaft = 5.35 * gewindelaenge + (laenge - gewindelaenge) * 6;
-                        vol = volumen_schraubenkopf + volumen_schaft;
+
                     }
 
                     break;
@@ -361,15 +399,12 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 738.7050;
-                        volumen_schaft = 7.19 * gewindelaenge + (laenge - gewindelaenge) * 8;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 937.1503;
-                        volumen_schaft = 7.19 * gewindelaenge + (laenge - gewindelaenge) * 8;
-                        vol = volumen_schraubenkopf + volumen_schaft;
+
                     }
 
                     break;
@@ -377,15 +412,11 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 1624.1050;
-                        volumen_schaft = 9.03 * gewindelaenge + (laenge - gewindelaenge) * 10;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 1733.4893;
-                        volumen_schaft = 9.03 * gewindelaenge + (laenge - gewindelaenge) * 10;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
 
@@ -395,15 +426,11 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 2313.3760;
-                        volumen_schaft = 10.86 * gewindelaenge + (laenge - gewindelaenge) * 12;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 2534.0101;
-                        volumen_schaft = 10.86 * gewindelaenge + (laenge - gewindelaenge) * 12;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
 
@@ -412,17 +439,13 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 4647.7100;
-                        volumen_schaft = 14.7 * gewindelaenge + (laenge - gewindelaenge) * 16;
-                        vol = volumen_schraubenkopf + volumen_schaft;
-                        
+                        ;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 5540.8195;
-                        volumen_schaft = 14.7 * gewindelaenge + (laenge - gewindelaenge) * 16;
-                        vol = volumen_schraubenkopf + volumen_schaft;
-                        
+                        ;
 
                     }
 
@@ -431,15 +454,11 @@ namespace _1.Sprint
                     if (typ == "A" || typ == "a")
                     {
                         volumen_schraubenkopf = 9492.9770;
-                        volumen_schaft = 18.38 * gewindelaenge + (laenge - gewindelaenge) * 20;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
                     else
                     {
                         volumen_schraubenkopf = 11634.3569;
-                        volumen_schaft = 18.38 * gewindelaenge + (laenge - gewindelaenge) * 20;
-                        vol = volumen_schraubenkopf + volumen_schaft;
 
                     }
 
@@ -453,9 +472,7 @@ namespace _1.Sprint
 
             return 1;
         }
-    
-
-
+        
         public static String abfrage_material()
         {           
             bool loop = false;
@@ -597,7 +614,7 @@ namespace _1.Sprint
                 loop = true;
             }
             } while (loop == true);
-            
+
             return Fk;
         }
         
