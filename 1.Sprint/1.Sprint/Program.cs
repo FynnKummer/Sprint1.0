@@ -35,7 +35,7 @@ namespace _1.Sprint
             //Abfrage der Festigkeitsklasse 
             string Fk = abfrage_festigkeit(material);
 
-            Console.WriteLine("hallo");
+            
             //Volumen berechnen
             double vol = Volumen(typ, laenge, gewindelaenge, gewinde);
 
@@ -46,6 +46,8 @@ namespace _1.Sprint
             dichte = dichte_abfrage(material);
 
             masse = masse_berechnen(dichte, vol);
+
+            Geometrie(gewindeart, gewindelaenge, laenge,gewinde,typ,vol,dichte);
 
             
 
@@ -98,7 +100,7 @@ namespace _1.Sprint
         }
 
         
-        public static void Geometrie(int d, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf)
+        public static void Geometrie(int d, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
         { 
             double h3, r, d1, d2, d3, s, flankenwikel;
             double p = 2;
@@ -142,6 +144,9 @@ namespace _1.Sprint
             {
                 schraubenkopf_a = "Innensechskant";
             }
+            //Gewicht
+            double gewicht;
+            gewicht = masse_berechnen(volumen, dichte);
 
          // Ausgabe
 
@@ -149,8 +154,8 @@ namespace _1.Sprint
             Console.WriteLine();
             Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
             Console.WriteLine("gewindelänge:         " + gewindelänge + "mm");
-            Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
-            Console.WriteLine("Masse:                "   + "mm");
+            Console.WriteLine("Gewindedurchmesser:   " + d+ "mm");
+            Console.WriteLine("Masse:                " +gewicht+ "g");
             Console.WriteLine("----------------------------------------------------------------------------------------");
             Console.WriteLine();
             Console.WriteLine("Steigung:             " + p + " mm");
