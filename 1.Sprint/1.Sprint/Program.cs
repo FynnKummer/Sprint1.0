@@ -71,29 +71,7 @@ namespace _1.Sprint
             Console.WriteLine("Methode geht");
            // schluesselbreite = breite_test();
 
-            
-
-
-
-            //Methode Gewinde
-
-
-
-            
-            
-            //Methode Festigkeit
-
-
-
-                
-
-
-            //Methode Masse
-
-                masse = 1; 
-
-            
-            Console.ReadKey();
+      
 
 
         }   //Hauptprogramm Ende
@@ -264,6 +242,23 @@ namespace _1.Sprint
 
             mws = 1.19;
 
+            //Volumen berechnen
+            double vol = Volumen();
+
+
+            //Masse berechnen
+            double dichte, masse; //Einheit 
+            
+            dichte = dichte_abfrage(material);
+            
+            masse = masse_berechnen(dichte, vol);
+
+            
+            
+
+
+
+
             // Preisvarianten berechnen 
             
             nettokilopreis = preis;              
@@ -290,6 +285,29 @@ namespace _1.Sprint
 
         }
 
+        public static double dichte_abfrage(String material)
+        {
+            
+            if (material == "1")
+            {
+                return 7.85;
+            }
+            else if (material == "2")
+            {
+                return 7.90;
+            }
+            else
+            {
+                return 8.0;
+            }
+        }
+
+        public static double masse_berechnen(double volumen, double dichte)
+        {
+            double masse = volumen / dichte;
+
+            return masse;
+        }
 
         public static double festigkeit(string Fk)
         {
