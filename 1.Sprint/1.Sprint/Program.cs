@@ -55,7 +55,7 @@ namespace _1.Sprint
             Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
             Console.WriteLine("Technische Details:\n\t");
 
-            //Preis(material, gewindeart, gewindelaenge, typ, masse, menge);
+            Preis(material, gewindeart, gewindelaenge, laenge, typ, masse, menge);
            
             Console.ReadKey();
         }   //Hauptprogramm Ende
@@ -132,7 +132,7 @@ namespace _1.Sprint
             Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°");
         }
 
-        public static void Preis(string material, string gewindeart, string gewindelänge, string schraubenkopf, double masse, int menge)
+        public static void Preis(string material, string gewindeart, int gewindelänge, int laenge,  string schraubenkopf, double masse, int menge)
         //double gewicht,
         {
             // Variablen festlegen
@@ -168,7 +168,7 @@ namespace _1.Sprint
 
             // Teilgewindelänge 
 
-            if (gewindelänge == "D" ||gewindelänge== "d")
+            if (gewindelänge !=laenge)
             {
                 preis = preis + aufpreis_Teilgewinde;
             }
