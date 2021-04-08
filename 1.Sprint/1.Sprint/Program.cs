@@ -36,16 +36,11 @@ namespace _1.Sprint
             //Abfrage der Festigkeitsklasse 
             string Fk = abfrage_festigkeit(material);
 
+            Console.Clear();    //Konsole bereinigen
+
             //Berechnung der Werte
             //Volumen berechnen
             double vol = Volumen(typ, laenge, gewindelaenge, gewinde);
-
-
-            //Masse berechnen
-            double dichte, masse; //Einheit 
-            dichte = dichte_abfrage(material);
-            masse = masse_berechnen(dichte, vol);
-            geometrie(gewinde, gewindelaenge, laenge,gewindeart,typ,vol,dichte);
 
             //Ausgabe der Eingabewerte
             string a = ausgabe_material(material);  
@@ -53,7 +48,13 @@ namespace _1.Sprint
             string c = ausgabe_schraubenkopf(typ);
             string d = ausgabe_gewindeart(gewindeart);
             Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
-            Console.WriteLine("Technische Details:\n\t");
+
+
+            //Masse berechnen
+            double dichte, masse; //Einheit 
+            dichte = dichte_abfrage(material);
+            masse = masse_berechnen(dichte, vol);
+            geometrie(gewinde, gewindelaenge, laenge,gewindeart,typ,vol,dichte);
 
             Preis(material, gewindeart, gewindelaenge, laenge, typ, masse, menge);
            
@@ -114,7 +115,7 @@ namespace _1.Sprint
 
             // Ausgabe
 
-            Console.WriteLine("Geometie:");
+            Console.WriteLine("Technische Details:");
             Console.WriteLine();
             Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
             Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
@@ -122,7 +123,7 @@ namespace _1.Sprint
             Console.WriteLine("Gewindedurchmesser:   " + d+ "mm");
             Console.WriteLine("Masse:                " +gewicht+ "g");
 
-            Console.WriteLine("----------------------------------------------------------------------------------------");
+            //Console.WriteLine("----------------------------------------------------------------------------------------");
             Console.WriteLine();
             Console.WriteLine("Steigung:             " + p + " mm");
             Console.WriteLine("Gewindetiefe:         " + Math.Round(h3,2) + "mm");
