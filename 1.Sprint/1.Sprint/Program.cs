@@ -149,12 +149,12 @@ namespace _1.Sprint
             const double mws = 1.19;
 
             //Grundpreis nach Material
-            if (material == "V" ||material== "v")
+            if (material.Equals("1"))
             {                                           // Verzinkete Schraube 
                 kilopreis = kilopreis_verzinkt;
             }
 
-            else if(true)//hier fehl die Bedingung
+            else if (material.Equals("2")) //hier fehl die Bedingung
             {
                 kilopreis = kilopreis_V2A;                     // Edelstahlschraube 
             }
@@ -174,12 +174,12 @@ namespace _1.Sprint
             }
 
             // Innensechskannt
-            if (schraubenkopf == "I" ||schraubenkopf== "i")
+            if (schraubenkopf.Equals("I", StringComparison.InvariantCultureIgnoreCase))
             {
                 preis = preis + aufpreis_Innensechskannt;
             }
 
-            if (gewindeart == "F" || gewindeart=="f")
+            if (gewindeart.Equals("F", StringComparison.InvariantCultureIgnoreCase))
             {
                 preis = preis + aufpreis_Feingewinde;
             }
