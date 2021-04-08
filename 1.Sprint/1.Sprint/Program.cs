@@ -137,7 +137,7 @@ namespace _1.Sprint
         {
             // Variablen festlegen
             double preis = 0;
-            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis;
+            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis, massekilo;
 
             // Aufpreise festlegen
             const double aufpreis_Innensechskannt = 0.21;
@@ -151,17 +151,17 @@ namespace _1.Sprint
             //Grundpreis nach Material
             if (material.Equals("1"))
             {                                           // Verzinkete Schraube 
-                kilopreis = kilopreis_verzinkt;
+                preis = kilopreis_verzinkt;
             }
 
             else if (material.Equals("2")) //hier fehl die Bedingung
             {
-                kilopreis = kilopreis_V2A;                     // Edelstahlschraube 
+                preis = kilopreis_V2A;                     // Edelstahlschraube 
             }
 
             else
             {
-                kilopreis = kilopreis_V4A;
+                preis = kilopreis_V4A;
             }
 
             // Aufpreise 
@@ -186,8 +186,10 @@ namespace _1.Sprint
    
             // Preisvarianten berechnen 
            
+            massekilo = 0.001 * masse;
+
             nettokilopreis = preis;              
-            nettoeinzelpreis = nettokilopreis / masse;
+            nettoeinzelpreis = nettokilopreis * massekilo;
             netto50 = 50 * nettoeinzelpreis;               
             netto100 = 100 * nettoeinzelpreis;
             Nettobestellpreis = menge * nettoeinzelpreis;
@@ -197,6 +199,7 @@ namespace _1.Sprint
             preis50 = netto50 * mws;
             preis100 = netto100 * mws;
             Bestellpreis = einzelpreis * menge;
+
 
             // Ausgabe der Preise 
             preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis, Nettobestellpreis, Bestellpreis, menge);
@@ -208,7 +211,7 @@ namespace _1.Sprint
             Console.WriteLine();
             Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Summe ("+ menge+"Stück)   " + Math.Round(Nettobestellpreis,2) + "€" +  "         Summe (" );
+            Console.WriteLine("Summe        ("+ menge+"Stück)   " + Math.Round(Nettobestellpreis,2) + "€" +  "           Summe (" );
             Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) +"€" +    "         Stückpreis:          " + Math.Round(einzelpreis, 2));
             Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) +"€" +      "         Kilopreis:           " + Math.Round(kilopreis, 2));
             Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "€" +            "         Preis 50 Stück:      " + Math.Round(preis50, 2));
@@ -764,5 +767,7 @@ namespace _1.Sprint
 
             return typ;
         }
+
+     
     }
 }
