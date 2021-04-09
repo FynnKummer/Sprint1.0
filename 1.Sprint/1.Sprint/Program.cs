@@ -55,6 +55,7 @@ namespace _1.Sprint
             masse = masse_berechnen(dichte, vol);
             geometrie(gewinde, gewindelaenge, laenge,gewindeart,typ,vol,dichte, menge);
 
+            //Preis berechnen und ausgeben
             Preis(material, gewindeart, gewindelaenge, laenge, typ, masse, menge);
            
             Console.ReadKey();
@@ -66,8 +67,7 @@ namespace _1.Sprint
             double p = 0;
             string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
             
-            String[] feld= gewinde.Split('M');
-            
+            String[] feld= gewinde.Split('M');           
             int d = Int32.Parse(feld[1]);
 
             //Gewindesteigung
@@ -148,7 +148,6 @@ namespace _1.Sprint
                 }
             }
 
-
             // Rechnungen 
             // Gewindetiefe   
             h3 = 0.6134 * p;
@@ -166,7 +165,6 @@ namespace _1.Sprint
             flankenwikel = 60;
 
             // Umwandlung der Strings 
-
             // Gewindetyp 
             if (gewindetyp == "1")
             {
@@ -186,6 +184,7 @@ namespace _1.Sprint
             {
                 schraubenkopf_a = "Innensechskant";
             }
+
             //Gewicht
             double gewicht;
             gewicht = masse_berechnen(volumen, dichte);
@@ -806,6 +805,4 @@ namespace _1.Sprint
             return typ;
         }    
     }
-
-  
 }
