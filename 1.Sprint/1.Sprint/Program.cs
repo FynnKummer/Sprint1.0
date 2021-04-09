@@ -71,10 +71,52 @@ namespace _1.Sprint
             feld= gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
 
+            //Gewindesteigung
+            if (gewindetyp.Equals("1"))
+            {
+                switch (gewinde)
+                {
+                    case "M4":
+
+                        break;
+
+                    case "M5":
+
+                        break;
+
+                    case "M6":
+
+                        break;
+
+                    case "M8":
+
+                        break;
+
+                    case "M10":
+
+                        break;
+
+
+                    case "M12":
+
+                        break;
+
+                    case "M16":
+
+                        break;
+
+
+                    case "M20":
+
+                        break;
+
+                }
+            }
+
             // Rechnungen 
 
-            // Gewindetiefe   
-            h3 = 0.6134 * p;
+                // Gewindetiefe   
+                h3 = 0.6134 * p;
 
             // Rundung
             r = 0.1443 * p;
