@@ -15,7 +15,6 @@ namespace _1.Sprint
             string material = abfrage_material();                                      //wenn Gewindelänge =Länge die Ausgabe auf "xx länge mit durchgehende Gewinde§ anpassen
                                                                                        // Preis fehlt noch in der Ausgabe
             //Abfrage des Schraubenkopfes                                              // Statt == in den if Anweisungen equals Methode....Groß und Kleinschreibung ist dann egal
-
             string typ = abfrage_schraubenkopf();
 
             //Abfrage des Gewindes (z.B. M8)
