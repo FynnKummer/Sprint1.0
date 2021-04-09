@@ -55,14 +55,14 @@ namespace _1.Sprint
             double dichte, masse; //Einheit 
             dichte = dichte_abfrage(material);
             masse = masse_berechnen(dichte, vol);
-            geometrie(gewinde, gewindelaenge, laenge,gewindeart,typ,vol,dichte);
+            geometrie(gewinde, gewindelaenge, laenge,gewindeart,typ,vol,dichte, menge);
 
             Preis(material, gewindeart, gewindelaenge, laenge, typ, masse, menge);
            
             Console.ReadKey();
         }   //Hauptprogramm Ende
 
-        public static void geometrie(String gewinde, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
+        public static void geometrie(String gewinde, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte, double menge)
         {
             double h3, r, d2, d3, flankenwikel;
             double p = 0;
@@ -184,7 +184,7 @@ namespace _1.Sprint
                     gewindetyp_a = "(Feingewinde)";
                 }
 
-                // Schreubenkopf
+                // Schrubenkopf
                 if (schraubenkopf == "a" || schraubenkopf == "A")
                 {
                     schraubenkopf_a = "Außensechskant";
@@ -196,6 +196,8 @@ namespace _1.Sprint
                 //Gewicht
                 double gewicht;
                 gewicht = masse_berechnen(volumen, dichte);
+                double gesamtgewicht;
+                gesamtgewicht = gesamtgewicht_berechnen(gewicht, menge);
 
                 // Ausgabe
 
@@ -205,7 +207,10 @@ namespace _1.Sprint
                 Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
 
                 Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
-                Console.WriteLine("Masse:                " + gewicht + "g");
+
+                Console.WriteLine("Masse pro Stück:      " + Math.Round(gewicht,2) + "g");
+                Console.WriteLine("Gesamtgewicht:        " + Math.Round(gesamtgewicht, 2) + "g");
+
 
                 //Console.WriteLine("----------------------------------------------------------------------------------------");
                 //Console.WriteLine();
@@ -297,7 +302,7 @@ namespace _1.Sprint
             Console.WriteLine();
             Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Summe        ("+ menge+"Stück)   " + Math.Round(Nettobestellpreis,2) + "EUR" +  "           Summe (" );
+            Console.WriteLine("Summe        ("+ menge + " Stück)   " + Math.Round(Nettobestellpreis,2) + "EUR" +  "           Summe (" );
             Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) +"EUR" +    "         Stückpreis:          " + Math.Round(einzelpreis, 2));
             Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) +"EUR" +      "         Kilopreis:           " + Math.Round(kilopreis, 2));
             Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "EUR" +            "         Preis 50 Stück:      " + Math.Round(preis50, 2));
@@ -326,6 +331,13 @@ namespace _1.Sprint
             double masse = volumen * dichte;
 
             return masse;
+        }
+
+        public static double gesamtgewicht_berechnen(double masse, double menge)
+        {
+            double gesamtgewicht = masse * menge;
+
+            return gesamtgewicht;
         }
 
         public static void festigkeit(string Fk)
@@ -672,7 +684,6 @@ namespace _1.Sprint
             return false;
         }
         
-    
         public static String abfrage_festigkeit(string material)
         {
             string Fk = ""; //Variable für die Abgfrage der Festigkeitsklasse
