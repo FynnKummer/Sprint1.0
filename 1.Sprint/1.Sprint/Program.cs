@@ -47,7 +47,7 @@ namespace _1.Sprint
             string b = ausgabe_festigkeitsklasse(Fk);
             string c = ausgabe_schraubenkopf(typ);
             string d = ausgabe_gewindeart(gewindeart);
-            Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
+            Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde\n");
 
 
             //Masse berechnen
@@ -205,13 +205,13 @@ namespace _1.Sprint
             Console.WriteLine("Masse:                " +gewicht+ "g");
 
             //Console.WriteLine("----------------------------------------------------------------------------------------");
-            Console.WriteLine();
+            //Console.WriteLine();
             Console.WriteLine("Steigung:             " + p + " mm");
             Console.WriteLine("Gewindetiefe:         " + Math.Round(h3,2) + "mm");
             Console.WriteLine("Rundung:              " + r + " mm");
             Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2,2) + "mm");
             Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3,2) + "mm");
-            Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°");
+            Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
         }
 
         public static void Preis(string material, string gewindeart, int gewindelänge, int laenge,  string schraubenkopf, double masse, int menge)
