@@ -702,7 +702,7 @@ namespace _1.Sprint
                         break;
                 }
 
-            if (feld_legit(festigkeitsklassen,Fk))  //Richtige Eingabe
+            if (feld_legit(festigkeitsklassen,Fk))  //Richtige Eingaben
             {
                 loop = false;
             }
