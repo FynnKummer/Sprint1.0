@@ -16,10 +16,11 @@ namespace _1.Sprint
                                                                                        // Preis fehlt noch in der Ausgabe
             //Abfrage des Schraubenkopfes                                              // Statt == in den if Anweisungen equals Methode....Groß und Kleinschreibung ist dann egal
 
-            string typ = abfrage_schraubenkopf(); 
+            string typ = abfrage_schraubenkopf();
 
-           //Abfrage des Gewindes (z.B. M8)
-            string gewinde = abfrage_gewinde();
+            //Abfrage des Gewindes (z.B. M8)
+            String[] feld = { "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20" };
+            string gewinde = abfrage_gewinde(feld);
             
             //Abfrage der Schraubenlänge
             int laenge = abfrage_laenge();
@@ -62,13 +63,13 @@ namespace _1.Sprint
         }   //Hauptprogramm Ende
 
         public static void geometrie(String gewinde, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
-        { 
+        {
             double h3, r, d2, d3, flankenwikel;
             double p = 0;
             string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
             String[] feld;
 
-            feld= gewinde.Split('M');
+            feld = gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
 
             //Gewindesteigung
@@ -97,7 +98,7 @@ namespace _1.Sprint
                         break;
 
                     case "M12":
-                        p = 1,75;
+                        p = 1.75;
                         break;
 
                     case "M16":
@@ -124,12 +125,14 @@ namespace _1.Sprint
                         p = 0.5;
                         break;
 
+
                     case "M6":
                         p = 0.75;
                         break;
 
                     case "M8":
                         p = 0.75;
+
                         break;
 
                     case "M10":
@@ -149,73 +152,74 @@ namespace _1.Sprint
                     case "M20":
                         p = 1.5;
                         break;
-            }
+                }
 
 
-            // Rechnungen 
+                // Rechnungen 
 
                 // Gewindetiefe   
                 h3 = 0.6134 * p;
 
-            // Rundung
-            r = 0.1443 * p;
+                // Rundung
+                r = 0.1443 * p;
 
-            //Flankendurchmesser 
-            d2 = d - 0.64595 * p;
+                //Flankendurchmesser 
+                d2 = d - 0.64595 * p;
 
-            //Kerndurchmesser 
-            d3 = d - 1.2269;
+                //Kerndurchmesser 
+                d3 = d - 1.2269;
 
-            //Flankenwinkel 
-            flankenwikel = 60;
+                //Flankenwinkel 
+                flankenwikel = 60;
 
-            // Umwandlung der Strings 
-           
-            // Gewindetyp 
-            if (gewindetyp == "1")
-            {
-                gewindetyp_a = "(Standardgewinde)";
+                // Umwandlung der Strings 
+
+                // Gewindetyp 
+                if (gewindetyp == "1")
+                {
+                    gewindetyp_a = "(Standardgewinde)";
+                }
+                else
+                {
+                    gewindetyp_a = "(Feingewinde)";
+                }
+
+                // Schreubenkopf
+                if (schraubenkopf == "a" || schraubenkopf == "A")
+                {
+                    schraubenkopf_a = "Außensechskant";
+                }
+                else
+                {
+                    schraubenkopf_a = "Innensechskant";
+                }
+                //Gewicht
+                double gewicht;
+                gewicht = masse_berechnen(volumen, dichte);
+
+                // Ausgabe
+
+                Console.WriteLine("Technische Details:");
+                Console.WriteLine();
+                Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
+                Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
+
+                Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
+                Console.WriteLine("Masse:                " + gewicht + "g");
+
+                //Console.WriteLine("----------------------------------------------------------------------------------------");
+                //Console.WriteLine();
+                Console.WriteLine("Steigung:             " + p + " mm");
+                Console.WriteLine("Gewindetiefe:         " + Math.Round(h3, 2) + "mm");
+                Console.WriteLine("Rundung:              " + r + " mm");
+                Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2, 2) + "mm");
+                Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + "mm");
+                Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
             }
-            else
-            {
-                gewindetyp_a = "(Feingewinde)";
-            }
-
-            // Schreubenkopf
-            if (schraubenkopf == "a" || schraubenkopf == "A")
-            {
-                schraubenkopf_a = "Außensechskant";
-            }
-            else
-            {
-                schraubenkopf_a = "Innensechskant";
-            }
-            //Gewicht
-            double gewicht;
-            gewicht = masse_berechnen(volumen, dichte);
-
-            // Ausgabe
-
-            Console.WriteLine("Technische Details:");
-            Console.WriteLine();
-            Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
-            Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
-
-            Console.WriteLine("Gewindedurchmesser:   " + d+ "mm");
-            Console.WriteLine("Masse:                " +gewicht+ "g");
-
-            //Console.WriteLine("----------------------------------------------------------------------------------------");
-            //Console.WriteLine();
-            Console.WriteLine("Steigung:             " + p + " mm");
-            Console.WriteLine("Gewindetiefe:         " + Math.Round(h3,2) + "mm");
-            Console.WriteLine("Rundung:              " + r + " mm");
-            Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2,2) + "mm");
-            Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3,2) + "mm");
-            Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
         }
 
         public static void Preis(string material, string gewindeart, int gewindelänge, int laenge,  string schraubenkopf, double masse, int menge)
-        //double gewicht,
+       
         {
             // Variablen festlegen
             double preis = 0;
@@ -303,11 +307,11 @@ namespace _1.Sprint
         public static double dichte_abfrage(String material)
         {
             
-            if (material == "1")
+            if (material.Equals( "1"))
             {
                 return 0.0079;
             }
-            else if (material == "2")
+            else if (material.Equals("2"))
             {
                 return 0.0079;
             }
@@ -565,7 +569,7 @@ namespace _1.Sprint
                 Console.WriteLine("'3' = V4A");
                 material = Console.ReadLine(); //String einlesen
          
-                if (material=="1" || material=="2" || material =="3")   //Richtige Eingabe
+                if (material.Equals("1" )|| material.Equals("2") || material.Equals("3"))   //Richtige Eingabe
                 {
                     loop = false;
                 }
@@ -591,7 +595,7 @@ namespace _1.Sprint
                 Console.WriteLine("'I' = Innensechskant");
                 typ = Console.ReadLine();      //String einlesen
 
-                if (typ=="A" || typ=="I")   //Richtige Eingabe
+                if (typ.Equals("A") || typ.Equals("I"))   //Richtige Eingabe
                 {
                     loop = false;
                 }
@@ -605,7 +609,7 @@ namespace _1.Sprint
             return typ;
         }
 
-        public static String abfrage_gewinde()
+        public static String abfrage_gewinde(String[] feld)
         {
             bool loop = false;  //Variable für die Schleife
             string gewinde = "";    //Variable für die Abgfrage des Gewindes
@@ -617,7 +621,7 @@ namespace _1.Sprint
                 Console.WriteLine("M4 M5 M6 M8 M10 M12 M16 M20");
                 gewinde = Console.ReadLine();      //String einlesen
 
-                if (gewinde=="M3" || gewinde=="M4" || gewinde=="M5" || gewinde=="M6" || gewinde=="M8" || gewinde=="M10" || gewinde=="M12" || gewinde == "M16"|| gewinde=="M20")    //Richtige Eingabe
+                if (feld_legit(feld, gewinde))    //Richtige Eingabe
                 {
                     loop = false;
                 }
@@ -643,7 +647,7 @@ namespace _1.Sprint
                 Console.WriteLine("'2' = Feingewinde");
                 gewindeart = Console.ReadLine(); //String einlesen
 
-                if (gewindeart=="1" || gewindeart=="2") //Richtige Eingabe
+                if (gewindeart.Equals("1")|| gewindeart.Equals("2")) //Richtige Eingabe
                 {
                     loop = false;
                 }
@@ -656,12 +660,24 @@ namespace _1.Sprint
 
             return gewindeart;
         }
+
+        public static Boolean feld_legit(String[] feld, String p)
+        {
+            for(int i = 0; i < feld.Length; i++)
+            {
+                if (p.Equals(feld[i])){
+                    return true;
+                }
+            }
+            return false;
+        }
+        
     
         public static String abfrage_festigkeit(string material)
         {
             string Fk = ""; //Variable für die Abgfrage der Festigkeitsklasse
             bool loop = false;  //Variable für die Schleife
-
+            String[] festigkeitsklassen={ "5.8" , "6.8", "8.8", "9.8" , "10.9" , "12.9"};
             do //Schleife bis ein richtiger Wert eigegeben wird
             { 
                 switch (material) //Abfrage der Festigkeitsklasse abhängig vom Material
@@ -686,7 +702,7 @@ namespace _1.Sprint
                         break;
                 }
 
-            if (Fk=="1" || Fk=="2" || Fk=="3" || Fk=="5.8" || Fk=="6.8" || Fk=="8.8" || Fk=="9.8" || Fk=="10.9" || Fk=="12.9")  //Richtige Eingabe
+            if (Fk.Equals(feld_legit(festigkeitsklassen,Fk)))  //Richtige Eingabe
             {
                 loop = false;
             }
@@ -804,15 +820,15 @@ namespace _1.Sprint
 
         public static String ausgabe_festigkeitsklasse(string Fk) //Der Variable dem richtigen Ausgabestring zuweisen
         {
-            if (Fk == "1")
+            if (Fk.Equals( "1"))
             {
                 Fk = "A2-50";
             }
-            else if (Fk == "2")
+            else if (Fk.Equals( "2"))
             {
                 Fk = "A2-70";
             }
-            else if (Fk == "3")
+            else if (Fk.Equals("3"))
             {
                 Fk = "A4-50";
             }
