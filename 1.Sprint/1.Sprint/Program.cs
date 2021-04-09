@@ -24,7 +24,7 @@ namespace _1.Sprint
             //Abfrage der Schraubenlänge
             int laenge = abfrage_laenge();
 
-            //Abfrage der Gewindelänge
+            //Abfrage der Gewindelängen
             int gewindelaenge = abfrage_gewindelaenge(laenge);
 
             //Abfrage der Gewindeart (FG/SG)
