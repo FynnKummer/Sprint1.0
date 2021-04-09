@@ -67,9 +67,9 @@ namespace _1.Sprint
             double h3, r, d2, d3, flankenwikel;
             double p = 0;
             string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
-            String[] feld;
-
-            feld = gewinde.Split('M');
+            
+            String[] feld= gewinde.Split('M');
+            
             int d = Int32.Parse(feld[1]);
 
             //Gewindesteigung
@@ -113,7 +113,7 @@ namespace _1.Sprint
                 }
             }
 
-            if (gewindetyp.Equals("2"))
+            if (gewindetyp.Equals("2"))//Die if schleife wird zu spät beendet
             {
                 switch (gewinde)
                 {
