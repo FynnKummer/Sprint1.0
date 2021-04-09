@@ -677,7 +677,7 @@ namespace _1.Sprint
         {
             string Fk = ""; //Variable für die Abgfrage der Festigkeitsklasse
             bool loop = false;  //Variable für die Schleife
-            String[] festigkeitsklassen={ "5.8" , "6.8", "8.8", "9.8" , "10.9" , "12.9"};
+            String[] festigkeitsklassen={"1" , "2", "3", "5.8" , "6.8", "8.8", "9.8" , "10.9" , "12.9"};
             do //Schleife bis ein richtiger Wert eigegeben wird
             { 
                 switch (material) //Abfrage der Festigkeitsklasse abhängig vom Material
