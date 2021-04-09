@@ -48,7 +48,7 @@ namespace _1.Sprint
             string b = ausgabe_festigkeitsklasse(Fk);
             string c = ausgabe_schraubenkopf(typ);
             string d = ausgabe_gewindeart(gewindeart);
-            Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde");
+            Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde\n");
 
 
             //Masse berechnen
@@ -63,13 +63,13 @@ namespace _1.Sprint
         }   //Hauptprogramm Ende
 
         public static void geometrie(String gewinde, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
-        { 
+        {
             double h3, r, d2, d3, flankenwikel;
-            double p = 2;
+            double p = 0;
             string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
             String[] feld;
 
-            feld= gewinde.Split('M');
+            feld = gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
 
             //Gewindesteigung
@@ -78,102 +78,144 @@ namespace _1.Sprint
                 switch (gewinde)
                 {
                     case "M4":
-
+                        p = 0.7;
                         break;
 
                     case "M5":
-
+                        p = 0.8;
                         break;
 
                     case "M6":
-
+                        p = 1;
                         break;
 
                     case "M8":
-
+                        p = 1.25;
                         break;
 
                     case "M10":
-
+                        p = 1.5;
                         break;
 
-
                     case "M12":
-
+                        p = 1.75;
                         break;
 
                     case "M16":
-
+                        p = 2;
                         break;
 
 
                     case "M20":
-                        
+                        p = 2.5;
                         break;
 
                 }
             }
 
-            // Rechnungen 
+            if (gewindetyp.Equals("2"))
+            {
+                switch (gewinde)
+                {
+                    case "M4":
+                        p = 0.5;
+                        break;
+
+                    case "M5":
+                        p = 0.5;
+                        break;
+
+
+                    case "M6":
+                        p = 0.75;
+                        break;
+
+                    case "M8":
+                        p = 0.75;
+
+                        break;
+
+                    case "M10":
+                        p = 1;
+                        break;
+
+
+                    case "M12":
+                        p = 1.25;
+                        break;
+
+                    case "M16":
+                        p = 1.5;
+                        break;
+
+
+                    case "M20":
+                        p = 1.5;
+                        break;
+                }
+
+
+                // Rechnungen 
 
                 // Gewindetiefe   
                 h3 = 0.6134 * p;
 
-            // Rundung
-            r = 0.1443 * p;
+                // Rundung
+                r = 0.1443 * p;
 
-            //Flankendurchmesser 
-            d2 = d - 0.64595 * p;
+                //Flankendurchmesser 
+                d2 = d - 0.64595 * p;
 
-            //Kerndurchmesser 
-            d3 = d - 1.2269;
+                //Kerndurchmesser 
+                d3 = d - 1.2269;
 
-            //Flankenwinkel 
-            flankenwikel = 60;
+                //Flankenwinkel 
+                flankenwikel = 60;
 
-            // Umwandlung der Strings 
-           
-            // Gewindetyp 
-            if (gewindetyp == "1")
-            {
-                gewindetyp_a = "(Standardgewinde)";
+                // Umwandlung der Strings 
+
+                // Gewindetyp 
+                if (gewindetyp == "1")
+                {
+                    gewindetyp_a = "(Standardgewinde)";
+                }
+                else
+                {
+                    gewindetyp_a = "(Feingewinde)";
+                }
+
+                // Schreubenkopf
+                if (schraubenkopf == "a" || schraubenkopf == "A")
+                {
+                    schraubenkopf_a = "Außensechskant";
+                }
+                else
+                {
+                    schraubenkopf_a = "Innensechskant";
+                }
+                //Gewicht
+                double gewicht;
+                gewicht = masse_berechnen(volumen, dichte);
+
+                // Ausgabe
+
+                Console.WriteLine("Technische Details:");
+                Console.WriteLine();
+                Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
+                Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
+
+                Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
+                Console.WriteLine("Masse:                " + gewicht + "g");
+
+                //Console.WriteLine("----------------------------------------------------------------------------------------");
+                //Console.WriteLine();
+                Console.WriteLine("Steigung:             " + p + " mm");
+                Console.WriteLine("Gewindetiefe:         " + Math.Round(h3, 2) + "mm");
+                Console.WriteLine("Rundung:              " + r + " mm");
+                Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2, 2) + "mm");
+                Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + "mm");
+                Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
             }
-            else
-            {
-                gewindetyp_a = "(Feingewinde)";
-            }
-
-            // Schreubenkopf
-            if (schraubenkopf == "a" || schraubenkopf == "A")
-            {
-                schraubenkopf_a = "Außensechskant";
-            }
-            else
-            {
-                schraubenkopf_a = "Innensechskant";
-            }
-            //Gewicht
-            double gewicht;
-            gewicht = masse_berechnen(volumen, dichte);
-
-            // Ausgabe
-
-            Console.WriteLine("Technische Details:");
-            Console.WriteLine();
-            Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
-            Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
-
-            Console.WriteLine("Gewindedurchmesser:   " + d+ "mm");
-            Console.WriteLine("Masse:                " +gewicht+ "g");
-
-            //Console.WriteLine("----------------------------------------------------------------------------------------");
-            Console.WriteLine();
-            Console.WriteLine("Steigung:             " + p + " mm");
-            Console.WriteLine("Gewindetiefe:         " + Math.Round(h3,2) + "mm");
-            Console.WriteLine("Rundung:              " + r + " mm");
-            Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2,2) + "mm");
-            Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3,2) + "mm");
-            Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°");
         }
 
         public static void Preis(string material, string gewindeart, int gewindelänge, int laenge,  string schraubenkopf, double masse, int menge)
