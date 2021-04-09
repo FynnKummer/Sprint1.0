@@ -536,7 +536,7 @@ namespace _1.Sprint
                 Console.WriteLine("M4 M5 M6 M8 M10 M12 M16 M20");
                 gewinde = Console.ReadLine();      //String einlesen
 
-                if (gewinde=="M3" || gewinde=="M4" || gewinde=="M5" || gewinde=="M6" || gewinde=="M8" || gewinde=="M10" || gewinde=="M12" || gewinde=="M20")    //Richtige Eingabe
+                if (gewinde=="M3" || gewinde=="M4" || gewinde=="M5" || gewinde=="M6" || gewinde=="M8" || gewinde=="M10" || gewinde=="M12" || gewinde == "M16"|| gewinde=="M20")    //Richtige Eingabe
                 {
                     loop = false;
                 }
