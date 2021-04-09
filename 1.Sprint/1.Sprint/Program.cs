@@ -297,11 +297,11 @@ namespace _1.Sprint
             Console.WriteLine();
             Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Summe        ("+ menge+"Stück)   " + Math.Round(Nettobestellpreis,2) + "€" +  "           Summe (" );
-            Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) +"€" +    "         Stückpreis:          " + Math.Round(einzelpreis, 2));
-            Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) +"€" +      "         Kilopreis:           " + Math.Round(kilopreis, 2));
-            Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "€" +            "         Preis 50 Stück:      " + Math.Round(preis50, 2));
-            Console.WriteLine("preis 100 Stück:         " + Math.Round(netto100, 2) + "€" +           "         Preis 100 Stück:     " + Math.Round(preis100, 2));
+            Console.WriteLine("Summe        ("+ menge+"Stück)   " + Math.Round(Nettobestellpreis,2) + "EUR" +  "           Summe (" );
+            Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) +"EUR" +    "         Stückpreis:          " + Math.Round(einzelpreis, 2));
+            Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) +"EUR" +      "         Kilopreis:           " + Math.Round(kilopreis, 2));
+            Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "EUR" +            "         Preis 50 Stück:      " + Math.Round(preis50, 2));
+            Console.WriteLine("preis 100 Stück:         " + Math.Round(netto100, 2) + "EUR" +           "         Preis 100 Stück:     " + Math.Round(preis100, 2));
         }
 
         public static double dichte_abfrage(String material)
@@ -677,7 +677,7 @@ namespace _1.Sprint
         {
             string Fk = ""; //Variable für die Abgfrage der Festigkeitsklasse
             bool loop = false;  //Variable für die Schleife
-            String[] festigkeitsklassen={ "5.8" , "6.8", "8.8", "9.8" , "10.9" , "12.9"};
+            String[] festigkeitsklassen={"1" , "2", "3", "5.8" , "6.8", "8.8", "9.8" , "10.9" , "12.9"};
             do //Schleife bis ein richtiger Wert eigegeben wird
             { 
                 switch (material) //Abfrage der Festigkeitsklasse abhängig vom Material
