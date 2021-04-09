@@ -135,7 +135,7 @@ namespace _1.Sprint
             // Gewindetyp 
             if (gewindetyp == "1")
             {
-                gewindetyp_a = "(Standartgewinde)";
+                gewindetyp_a = "(Standardgewinde)";
             }
             else
             {
@@ -347,7 +347,7 @@ namespace _1.Sprint
             switch (Gewinde)
             {
                 case "M4":
-                    if (typ == "A" || typ == "a")
+                    if (Gewinde.Equals ("A"))
                     {
                         volumen_schraubenkopf = 108.9508;
 
@@ -368,7 +368,7 @@ namespace _1.Sprint
                     break;
              
                 case "M5":
-                    if (typ == "A" || typ == "a")
+                    if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 178.8570;
 
@@ -389,7 +389,7 @@ namespace _1.Sprint
                     break;
                                
                 case "M6":
-                    if (typ == "A" || typ == "a")
+                    if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 317.2320;
 
@@ -411,7 +411,7 @@ namespace _1.Sprint
                     break;
 
                 case "M8":
-                    if (typ == "A" || typ == "a")
+                    if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 738.7050;
 
@@ -431,7 +431,7 @@ namespace _1.Sprint
                     break;
 
                 case "M10":
-                    if (typ == "A" || typ == "a")
+                    if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 1624.1050;
 
@@ -451,7 +451,7 @@ namespace _1.Sprint
                     break;
 
                 case "M12":
-                    if (typ == "A" || typ == "a")
+                    if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 2313.3760;
 
@@ -470,7 +470,7 @@ namespace _1.Sprint
                     break;
 
                 case "M16":
-                    if (typ == "A" || typ == "a")
+                    if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 4647.7100;
 
@@ -490,7 +490,7 @@ namespace _1.Sprint
                     break;
 
                 case "M20":
-                    if (typ == "A" || typ == "a")
+                    if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 9492.9770;
 
@@ -578,7 +578,7 @@ namespace _1.Sprint
                 Console.WriteLine("M4 M5 M6 M8 M10 M12 M16 M20");
                 gewinde = Console.ReadLine();      //String einlesen
 
-                if (gewinde=="M3" || gewinde=="M4" || gewinde=="M5" || gewinde=="M6" || gewinde=="M8" || gewinde=="M10" || gewinde=="M12" || gewinde=="M20")    //Richtige Eingabe
+                if (gewinde=="M3" || gewinde=="M4" || gewinde=="M5" || gewinde=="M6" || gewinde=="M8" || gewinde=="M10" || gewinde=="M12" || gewinde == "M16"|| gewinde=="M20")    //Richtige Eingabe
                 {
                     loop = false;
                 }
