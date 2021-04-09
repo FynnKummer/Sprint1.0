@@ -77,36 +77,36 @@ namespace _1.Sprint
                 switch (gewinde)
                 {
                     case "M4":
-                        p = 0.7
+                        p = 0.7;
                         break;
 
                     case "M5":
-                        p = 0.8
+                        p = 0.8;
                         break;
 
                     case "M6":
-                        p = 1
+                        p = 1;
                         break;
 
                     case "M8":
-                        p = 1.25
+                        p = 1.25;
                         break;
 
                     case "M10":
-                        p = 1.5
+                        p = 1.5;
                         break;
 
                     case "M12":
-                        p = 1,75
+                        p = 1,75;
                         break;
 
                     case "M16":
-                        p = 2
+                        p = 2;
                         break;
 
 
                     case "M20":
-                        p = 2.5
+                        p = 2.5;
                         break;
 
                 }
@@ -117,37 +117,37 @@ namespace _1.Sprint
                 switch (gewinde)
                 {
                     case "M4":
-                        p = 0.5
+                        p = 0.5;
                         break;
 
                     case "M5":
-                        p = 0.5
+                        p = 0.5;
                         break;
 
                     case "M6":
-                        p = 0.75
+                        p = 0.75;
                         break;
 
                     case "M8":
-                        p = 0.75
+                        p = 0.75;
                         break;
 
                     case "M10":
-                        p = 1
+                        p = 1;
                         break;
 
 
                     case "M12":
-                        p = 1.25
+                        p = 1.25;
                         break;
 
                     case "M16":
-                        p = 1.5
+                        p = 1.5;
                         break;
 
 
                     case "M20":
-                        p = 1.5
+                        p = 1.5;
                         break;
             }
 
