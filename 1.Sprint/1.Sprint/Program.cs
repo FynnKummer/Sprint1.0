@@ -263,7 +263,7 @@ namespace _1.Sprint
             Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
         }
 
-        public static void Preis(string material, string gewindeart, int gewindelänge, int laenge, string schraubenkopf, double masse, int menge)
+        public static void Preis(string material, string gewindeart, int gewindelänge, int laenge, string schraubenkopf, double masse, int menge) 
         {
             // Variablen festlegen
             double preis = 0;
@@ -305,6 +305,7 @@ namespace _1.Sprint
                 preis = preis + aufpreis_Innensechskannt;
             }
 
+            // Feingewinde 
             if (gewindeart.Equals("F", StringComparison.InvariantCultureIgnoreCase))
             {
                 preis = preis + aufpreis_Feingewinde;
