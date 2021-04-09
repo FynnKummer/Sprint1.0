@@ -153,6 +153,7 @@ namespace _1.Sprint
                         p = 1.5;
                         break;
                 }
+            }
 
 
                 // Rechnungen 
@@ -221,7 +222,7 @@ namespace _1.Sprint
                 Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + "mm");
                 Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
             }
-        }
+        
 
         public static void Preis(string material, string gewindeart, int gewindelänge, int laenge,  string schraubenkopf, double masse, int menge)
        
