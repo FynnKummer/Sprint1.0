@@ -64,7 +64,7 @@ namespace _1.Sprint
         public static void geometrie(String gewinde, double gewindelänge, double Schraubenlänge, string gewindetyp, string schraubenkopf, double volumen, double dichte)
         { 
             double h3, r, d2, d3, flankenwikel;
-            double p = 2;
+            double p = 0;
             string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
             String[] feld;
 
@@ -77,41 +77,80 @@ namespace _1.Sprint
                 switch (gewinde)
                 {
                     case "M4":
-
+                        p = 0.7
                         break;
 
                     case "M5":
-
+                        p = 0.8
                         break;
 
                     case "M6":
-
+                        p = 1
                         break;
 
                     case "M8":
-
+                        p = 1.25
                         break;
 
                     case "M10":
-
+                        p = 1.5
                         break;
 
-
                     case "M12":
-
+                        p = 1,75
                         break;
 
                     case "M16":
-
+                        p = 2
                         break;
 
 
                     case "M20":
-
+                        p = 2.5
                         break;
 
                 }
             }
+
+            if (gewindetyp.Equals("2"))
+            {
+                switch (gewinde)
+                {
+                    case "M4":
+                        p = 0.5
+                        break;
+
+                    case "M5":
+                        p = 0.5
+                        break;
+
+                    case "M6":
+                        p = 0.75
+                        break;
+
+                    case "M8":
+                        p = 0.75
+                        break;
+
+                    case "M10":
+                        p = 1
+                        break;
+
+
+                    case "M12":
+                        p = 1.25
+                        break;
+
+                    case "M16":
+                        p = 1.5
+                        break;
+
+
+                    case "M20":
+                        p = 1.5
+                        break;
+            }
+
 
             // Rechnungen 
 
