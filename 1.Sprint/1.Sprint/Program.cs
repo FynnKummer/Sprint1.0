@@ -47,7 +47,7 @@ namespace _1.Sprint
             string b = ausgabe_festigkeitsklasse(Fk);
             string c = ausgabe_schraubenkopf(typ);
             string d = ausgabe_gewindeart(gewindeart);
-            Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde\n");
+            Console.WriteLine("\nGewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde\n");
 
             //Masse berechnen
             double dichte, masse; //Einheit 
