@@ -235,9 +235,9 @@ namespace _1.Sprint
             const double aufpreis_Innensechskannt = 0.21;
             const double aufpreis_Teilgewinde = 0.16;
             const double aufpreis_Feingewinde = 0.27;
-            const double kilopreis_verzinkt = 7.12;
-            const double kilopreis_V2A = 16.78;
-            const double kilopreis_V4A = 22.56;
+            const double kilopreis_verzinkt = 12.12;
+            const double kilopreis_V2A = 26.78;
+            const double kilopreis_V4A = 35.56;
             const double mws = 1.19;
 
             //Grundpreis nach Material
