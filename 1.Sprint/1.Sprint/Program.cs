@@ -205,7 +205,7 @@ namespace _1.Sprint
                 Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
 
                 Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
-                Console.WriteLine("Masse:                " + gewicht + "g");
+                Console.WriteLine("Masse:                " + Math.Round(gewicht,2) + "g");
 
                 //Console.WriteLine("----------------------------------------------------------------------------------------");
                 //Console.WriteLine();
