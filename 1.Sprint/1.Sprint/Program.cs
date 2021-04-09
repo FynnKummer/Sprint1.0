@@ -207,12 +207,10 @@ namespace _1.Sprint
                 Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
 
                 Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
-<<<<<<< Updated upstream
-                Console.WriteLine("Masse:                " + Math.Round(gewicht,2) + "g");
-=======
-                Console.WriteLine("Masse pro Stück:      " + gewicht + "g");
-                Console.WriteLine("Gesamtgewicht:        " + gesamtgewicht + "g");
->>>>>>> Stashed changes
+
+                Console.WriteLine("Masse pro Stück:      " + Math.Round(gewicht,2) + "g");
+                Console.WriteLine("Gesamtgewicht:        " + Math.Round(gesamtgewicht, 2) + "g");
+
 
                 //Console.WriteLine("----------------------------------------------------------------------------------------");
                 //Console.WriteLine();
@@ -304,7 +302,7 @@ namespace _1.Sprint
             Console.WriteLine();
             Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Summe        ("+ menge+"Stück)   " + Math.Round(Nettobestellpreis,2) + "EUR" +  "           Summe (" );
+            Console.WriteLine("Summe        ("+ menge + " Stück)   " + Math.Round(Nettobestellpreis,2) + "EUR" +  "           Summe (" );
             Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) +"EUR" +    "         Stückpreis:          " + Math.Round(einzelpreis, 2));
             Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) +"EUR" +      "         Kilopreis:           " + Math.Round(kilopreis, 2));
             Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "EUR" +            "         Preis 50 Stück:      " + Math.Round(preis50, 2));
