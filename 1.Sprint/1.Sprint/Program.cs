@@ -50,7 +50,6 @@ namespace _1.Sprint
             string d = ausgabe_gewindeart(gewindeart);
             Console.WriteLine("Gewählte Schraube: " + a + " " + b + " " + c + " " + d + " " + gewinde + "x" + laenge + "mm mit " + gewindelaenge + "mm Gewinde\n");
 
-
             //Masse berechnen
             double dichte, masse; //Einheit 
             dichte = dichte_abfrage(material);
@@ -105,11 +104,9 @@ namespace _1.Sprint
                         p = 2;
                         break;
 
-
                     case "M20":
                         p = 2.5;
                         break;
-
                 }
             }
 
@@ -125,7 +122,6 @@ namespace _1.Sprint
                         p = 0.5;
                         break;
 
-
                     case "M6":
                         p = 0.75;
                         break;
@@ -139,7 +135,6 @@ namespace _1.Sprint
                         p = 1;
                         break;
 
-
                     case "M12":
                         p = 1.25;
                         break;
@@ -148,7 +143,6 @@ namespace _1.Sprint
                         p = 1.5;
                         break;
 
-
                     case "M20":
                         p = 1.5;
                         break;
@@ -156,76 +150,65 @@ namespace _1.Sprint
             }
 
 
-                // Rechnungen 
+            // Rechnungen 
+            // Gewindetiefe   
+            h3 = 0.6134 * p;
 
-                // Gewindetiefe   
-                h3 = 0.6134 * p;
+            // Rundung
+            r = 0.1443 * p;
 
-                // Rundung
-                r = 0.1443 * p;
+            //Flankendurchmesser 
+            d2 = d - 0.64595 * p;
 
-                //Flankendurchmesser 
-                d2 = d - 0.64595 * p;
+            //Kerndurchmesser 
+            d3 = d - 1.2269;
 
-                //Kerndurchmesser 
-                d3 = d - 1.2269;
+            //Flankenwinkel 
+            flankenwikel = 60;
 
-                //Flankenwinkel 
-                flankenwikel = 60;
+            // Umwandlung der Strings 
 
-                // Umwandlung der Strings 
-
-                // Gewindetyp 
-                if (gewindetyp == "1")
-                {
-                    gewindetyp_a = "(Standardgewinde)";
-                }
-                else
-                {
-                    gewindetyp_a = "(Feingewinde)";
-                }
-
-                // Schrubenkopf
-                if (schraubenkopf == "a" || schraubenkopf == "A")
-                {
-                    schraubenkopf_a = "Außensechskant";
-                }
-                else
-                {
-                    schraubenkopf_a = "Innensechskant";
-                }
-                //Gewicht
-                double gewicht;
-                gewicht = masse_berechnen(volumen, dichte);
-                double gesamtgewicht;
-                gesamtgewicht = gesamtgewicht_berechnen(gewicht, menge);
-
-                // Ausgabe
-
-                Console.WriteLine("Technische Details:");
-                Console.WriteLine();
-                Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
-                Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
-
-                Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
-
-                Console.WriteLine("Masse pro Stück:      " + Math.Round(gewicht,2) + "g");
-                Console.WriteLine("Gesamtgewicht:        " + Math.Round(gesamtgewicht, 2) + "g");
-
-
-                //Console.WriteLine("----------------------------------------------------------------------------------------");
-                //Console.WriteLine();
-                Console.WriteLine("Steigung:             " + p + " mm");
-                Console.WriteLine("Gewindetiefe:         " + Math.Round(h3, 2) + "mm");
-                Console.WriteLine("Rundung:              " + r + " mm");
-                Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2, 2) + "mm");
-                Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + "mm");
-                Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
+            // Gewindetyp 
+            if (gewindetyp == "1")
+            {
+                gewindetyp_a = "(Standardgewinde)";
             }
-        
+            else
+            {
+                gewindetyp_a = "(Feingewinde)";
+            }
 
-        public static void Preis(string material, string gewindeart, int gewindelänge, int laenge,  string schraubenkopf, double masse, int menge)
-       
+            // Schrubenkopf
+            if (schraubenkopf == "a" || schraubenkopf == "A")
+            {
+                schraubenkopf_a = "Außensechskant";
+            }
+            else
+            {
+                schraubenkopf_a = "Innensechskant";
+            }
+            //Gewicht
+            double gewicht;
+            gewicht = masse_berechnen(volumen, dichte);
+            double gesamtgewicht;
+            gesamtgewicht = gesamtgewicht_berechnen(gewicht, menge);
+
+            // Ausgabe
+            Console.WriteLine("Technische Details:\n");
+            Console.WriteLine("Schraubenlänge:       " + Schraubenlänge + "mm");
+            Console.WriteLine("Gewindelänge:         " + gewindelänge + "mm");
+            Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
+            Console.WriteLine("Masse pro Stück:      " + Math.Round(gewicht,2) + "g");
+            Console.WriteLine("Gesamtgewicht:        " + Math.Round(gesamtgewicht, 2) + "g");
+            Console.WriteLine("Steigung:             " + p + " mm");
+            Console.WriteLine("Gewindetiefe:         " + Math.Round(h3, 2) + "mm");
+            Console.WriteLine("Rundung:              " + r + " mm");
+            Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2, 2) + "mm");
+            Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + "mm");
+            Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
+        }
+        
+        public static void Preis(string material, string gewindeart, int gewindelänge, int laenge,  string schraubenkopf, double masse, int menge)   
         {
             // Variablen festlegen
             double preis = 0;
@@ -235,9 +218,9 @@ namespace _1.Sprint
             const double aufpreis_Innensechskannt = 0.21;
             const double aufpreis_Teilgewinde = 0.16;
             const double aufpreis_Feingewinde = 0.27;
-            const double kilopreis_verzinkt = 7.12;
-            const double kilopreis_V2A = 16.78;
-            const double kilopreis_V4A = 22.56;
+            const double kilopreis_verzinkt = 12.12;
+            const double kilopreis_V2A = 26.78;
+            const double kilopreis_V4A = 35.56;
             const double mws = 1.19;
 
             //Grundpreis nach Material
@@ -245,21 +228,17 @@ namespace _1.Sprint
             {                                           // Verzinkete Schraube 
                 preis = kilopreis_verzinkt;
             }
-
             else if (material.Equals("2")) //hier fehl die Bedingung
             {
                 preis = kilopreis_V2A;                     // Edelstahlschraube 
             }
-
             else
             {
                 preis = kilopreis_V4A;
             }
 
             // Aufpreise 
-
             // Teilgewindelänge 
-
             if (gewindelänge !=laenge)
             {
                 preis = preis + aufpreis_Teilgewinde;
@@ -276,8 +255,7 @@ namespace _1.Sprint
                 preis = preis + aufpreis_Feingewinde;
             }
    
-            // Preisvarianten berechnen 
-           
+            // Preisvarianten berechnen            
             massekilo = 0.001 * masse;
 
             nettokilopreis = preis;              
@@ -291,7 +269,6 @@ namespace _1.Sprint
             preis50 = netto50 * mws;
             preis100 = netto100 * mws;
             Bestellpreis = einzelpreis * menge;
-
 
             // Ausgabe der Preise 
             preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis, Nettobestellpreis, Bestellpreis, menge);
@@ -311,8 +288,7 @@ namespace _1.Sprint
         }
 
         public static double dichte_abfrage(String material)
-        {
-            
+        {           
             if (material.Equals( "1"))
             {
                 return 0.0079;
@@ -330,14 +306,12 @@ namespace _1.Sprint
         public static double masse_berechnen(double volumen, double dichte)
         {
             double masse = volumen * dichte;
-
             return masse;
         }
 
         public static double gesamtgewicht_berechnen(double masse, double menge)
         {
             double gesamtgewicht = masse * menge;
-
             return gesamtgewicht;
         }
 
@@ -406,20 +380,14 @@ namespace _1.Sprint
                     if (Gewinde.Equals ("A"))
                     {
                         volumen_schraubenkopf = 108.9508;
-
                         volumen_schaft = Math.PI / 4 * (3.55 * 3.55) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (4 * 4);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
-
                     }
                     else
                     {
                         volumen_schraubenkopf = 138.3500;
-
                         volumen_schaft = Math.PI / 4 * (3.55 * 3.55) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (4 * 4);
-
-                        vol = volumen_schraubenkopf + volumen_schaft;
-                        ;
+                        vol = volumen_schraubenkopf + volumen_schaft;                       
                     }
                     break;
              
@@ -427,20 +395,14 @@ namespace _1.Sprint
                     if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 178.8570;
-
                         volumen_schaft = Math.PI / 4 * (4.48 * 4.48) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (5 * 5);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
-
                     }
                     else
                     {
                         volumen_schraubenkopf = 249.0851;
-
                         volumen_schaft = Math.PI / 4 * (4.48 * 4.48)* gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (5 * 5);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
-
                     }
                     break;
                                
@@ -448,61 +410,44 @@ namespace _1.Sprint
                     if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 317.2320;
-
                         volumen_schaft = Math.PI / 4 * (5.35 * 5.35)* gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (6 * 6);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
-
                     }
                     else
                     {
                         volumen_schraubenkopf = 406.2859;
-
                         volumen_schaft = Math.PI / 4 * (5.35 * 5.35)* gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (6 * 6);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
-
                     }
-
                     break;
 
                 case "M8":
                     if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 738.7050;
-
                         volumen_schaft = Math.PI / 4 * (7.19 * 7.19)* gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (8 * 8);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
                     else
                     {
                         volumen_schraubenkopf = 937.1503;
-
                         volumen_schaft = Math.PI / 4 * (7.19 * 7.19)* gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (8 * 8);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
-
                     break;
 
                 case "M10":
                     if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 1624.1050;
-
                         volumen_schaft = Math.PI / 4 * (9.03 * 9.03) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (10 * 10);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
                     else
                     {
                         volumen_schraubenkopf = 1733.4893;
-
                         volumen_schaft = Math.PI / 4 * (9.03 * 9.03) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (10 * 10);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
-
                     }
                     break;
 
@@ -510,62 +455,47 @@ namespace _1.Sprint
                     if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 2313.3760;
-
                         volumen_schaft = Math.PI / 4 * (10.86 * 10.86) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (12 * 12);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
                     else
                     {
                         volumen_schraubenkopf = 2534.0101;
                         volumen_schaft = Math.PI / 4 * (10.86 * 10.86) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (12 * 12);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
-
                     break;
 
                 case "M16":
                     if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 4647.7100;
-
                         volumen_schaft = Math.PI / 4 * (14.7 * 14.7) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (16 * 16);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
                     else
                     {
                         volumen_schraubenkopf = 5540.8195;
-
                         volumen_schaft = Math.PI / 4 * (14.7 * 14.7) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (16 * 16);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
-
                     break;
 
                 case "M20":
                     if (Gewinde.Equals("A"))
                     {
                         volumen_schraubenkopf = 9492.9770;
-
                         volumen_schaft = Math.PI / 4 * (18.38 * 18.38) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (20 * 20);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
                     else
                     {
                         volumen_schraubenkopf = 11634.3569;
-
                         volumen_schaft = Math.PI / 4 * (18.38 * 18.38) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (20 * 20);
-
                         vol = volumen_schraubenkopf + volumen_schaft;
                     }
-
                     break;
             }
-
             return vol;
         }
         
@@ -591,8 +521,7 @@ namespace _1.Sprint
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
                 }
-            } while (loop == true);
-            
+            } while (loop == true);            
             return material;            
         }
 
@@ -618,7 +547,6 @@ namespace _1.Sprint
                     loop = true;
                 }
             } while (loop == true);
-
             return typ;
         }
 
@@ -690,6 +618,7 @@ namespace _1.Sprint
             string Fk = ""; //Variable für die Abgfrage der Festigkeitsklasse
             bool loop = false;  //Variable für die Schleife
             String[] festigkeitsklassen={"1" , "2", "3", "5.8" , "6.8", "8.8", "9.8" , "10.9" , "12.9"};
+           
             do //Schleife bis ein richtiger Wert eigegeben wird
             { 
                 switch (material) //Abfrage der Festigkeitsklasse abhängig vom Material
@@ -876,9 +805,7 @@ namespace _1.Sprint
             }
 
             return typ;
-        }
-
-     
+        }    
     }
 
   
