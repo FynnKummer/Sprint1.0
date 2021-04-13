@@ -15,7 +15,7 @@ namespace _1.Sprint
             string material = Methoden.abfrage_material();                                      //wenn Gewindelänge =Länge die Ausgabe auf "xx länge mit durchgehende Gewinde§ anpassen
                                                                                        // Preis fehlt noch in der Ausgabe
             //Abfrage des Schraubenkopfes                                              // Statt == in den if Anweisungen equals Methode....Groß und Kleinschreibung ist dann egal
-            string typ = Methoden.abfrage_schraubenkopf();
+            string typ = Methoden.abfrage_schraubenkopf();                              // 
 
             //Abfrage des Gewindes (z.B. M8)
             String[] feld = { "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20" };
