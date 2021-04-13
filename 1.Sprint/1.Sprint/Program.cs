@@ -331,16 +331,18 @@ namespace _1.Sprint
         }
 
         public static void preis_ausgabe(double nettoeinzelpreis, double nettokilopreis, double netto50, double netto100, double preis50, double preis100, double einzelpreis, double kilopreis, double Nettobestellpreis, double Bestellpreis, int menge)
-        {
+        {string summenenstring = "Summe (" + menge + "Stück):";
+
             Console.WriteLine("Preise:");
             Console.WriteLine();
             Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("Summe        (" + menge + " Stück)   " + Math.Round(Nettobestellpreis, 2) + "EUR" + "           Summe (");
-            Console.WriteLine("Stückpreis:              " + Math.Round(nettoeinzelpreis, 2) + "EUR" + "         Stückpreis:          " + Math.Round(einzelpreis, 2));
-            Console.WriteLine("Kilopreis:               " + Math.Round(nettokilopreis, 2) + "EUR" + "         Kilopreis:           " + Math.Round(kilopreis, 2));
-            Console.WriteLine("Preis 50 Stück:          " + Math.Round(netto50, 2) + "EUR" + "         Preis 50 Stück:      " + Math.Round(preis50, 2));
-            Console.WriteLine("preis 100 Stück:         " + Math.Round(netto100, 2) + "EUR" + "         Preis 100 Stück:     " + Math.Round(preis100, 2));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", summenenstring,  Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Stückpreis:",Math.Round(nettoeinzelpreis, 2),"            ", Math.Round(einzelpreis, 2));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
+          
         }
 
         public static double dichte_abfrage(String material)
