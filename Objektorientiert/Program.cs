@@ -13,7 +13,7 @@ namespace Objektorientiert
 
             Schraube a = new Schraube(); //erstellen eines Objektes des Typs Schraube
 
-            //Abfrage der Werte
+            //Abfrage der Werte                                                                             laenge auf 150 begrenzen. Auch in der Frage ergänzen
             //Abfrage des Materials
             a.mat();    //Abfrage des Materials                                                                                                                                                         
             a.type();   //Abfrage des 
@@ -29,9 +29,8 @@ namespace Objektorientiert
             //Ausgabe der Eingabewerte
             string e = Methoden.ausgabe_material(a.material);
             string b = Methoden.ausgabe_festigkeitsklasse(a.festigkeit);
-            string c = a.ausgabe_schraubenkopf();
-            string d = a.ausgabe_gewindeart();
-            Console.WriteLine("\nGewählte Schraube: " + e + " " + b + " " + c + " " + d + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
+
+            Console.WriteLine("\nGewählte Schraube: " + e + " " + b + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
 
             //Werte Berechnen
             a.density();
@@ -235,16 +234,16 @@ namespace Objektorientiert
         public void type()
         {
             bool loop = false;  //Variable für die Schleife
-            string typ = "";    //Variable für die Abgfrage des Schraubenkopfes
+            
 
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
                 Console.WriteLine("Welchen Kopf hat die Schraube?");
                 Console.WriteLine("'A' = Außenseckskant");
                 Console.WriteLine("'I' = Innensechskant");
-                typ = Console.ReadLine();      //String einlesen
+                this.typ = Console.ReadLine();      //String einlesen
 
-                if (typ.Equals("A") || typ.Equals("I"))   //Richtige Eingabe
+                if (this.typ.Equals("A") || this.typ.Equals("I"))   //Richtige Eingabe
                 {
                     loop = false;
                 }
@@ -254,7 +253,7 @@ namespace Objektorientiert
                     loop = true;
                 }
             } while (loop == true);
-            this.typ = typ;
+           
         }
 
         public void gew()
@@ -296,7 +295,7 @@ namespace Objektorientiert
                 Console.WriteLine("'2' = Feingewinde");
                 this.gewindeart = Console.ReadLine(); //String einlesen
 
-                if (gewindeart.Equals("1") || gewindeart.Equals("2")) //Richtige Eingabe
+                if (this.gewindeart.Equals("1") || this.gewindeart.Equals("2")) //Richtige Eingabe
                 {
                     loop = false;
                 }
