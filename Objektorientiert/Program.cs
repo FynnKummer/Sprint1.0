@@ -16,9 +16,8 @@ namespace Objektorientiert
             //Abfrage der Werte
             //Abfrage des Materials
             a.mat();    //Abfrage des Materials                                                                                                                                                         
-            a.type();   //Abfrage des Schraubenkopfes           
-            String[] feld = { "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20" };
-            a.gew(feld);    //Abfrage des Gewindes (z.B. M8)           
+            a.type();   //Abfrage des 
+            a.gew();    //Abfrage des Gewindes (z.B. M8)           
             a.len();    //Abfrage der Schraubenlänge           
             a.gewlen(); //Abfrage der Gewindelängen           
             a.gewart(); //Abfrage der Gewindeart (FG/SG)           
@@ -258,8 +257,9 @@ namespace Objektorientiert
             this.typ = typ;
         }
 
-        public void gew(String[] feld)
+        public void gew()
         {
+            String[] feld = { "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20" };
             bool loop = false;  //Variable für die Schleife
 
 
