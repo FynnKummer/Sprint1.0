@@ -232,7 +232,7 @@ namespace ConsoleApp3
         public void mat()
         {
             bool loop = false;  //Variable für die Schleife
-            string material = "";   //Variable für die Abgfrage des Schraubenmaterials
+            
 
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
