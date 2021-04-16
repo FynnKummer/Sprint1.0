@@ -12,41 +12,20 @@ namespace Objektorientiert
         {
 
             Schraube a = new Schraube(); //erstellen eines Objektes des Typs Schraube
+
             //Abfrage der Werte
             //Abfrage des Materials
-            a.mat();                                      //wenn Gewindelänge =Länge die Ausgabe auf "xx länge mit durchgehende Gewinde§ anpassen
-                                                          // Preis fehlt noch in der Ausgabe
-                                                          //Abfrage des Schraubenkopfes                                              // Statt == in den if Anweisungen equals Methode....Groß und Kleinschreibung ist dann egal
-            a.type();                              // 
-
-            //Abfrage des Gewindes (z.B. M8)
+            a.mat();    //Abfrage des Materials                                                                                                                                                         
+            a.type();   //Abfrage des Schraubenkopfes           
             String[] feld = { "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20" };
-            a.gew(feld);
+            a.gew(feld);    //Abfrage des Gewindes (z.B. M8)           
+            a.len();    //Abfrage der Schraubenlänge           
+            a.gewlen(); //Abfrage der Gewindelängen           
+            a.gewart(); //Abfrage der Gewindeart (FG/SG)           
+            a.amount(); //Abfrage der Schraubenanzahl          
+            a.fest();   //Abfrage der Festigkeitsklasse 
 
-            //Abfrage der Schraubenlänge
-            a.len();
-
-            //Abfrage der Gewindelängen
-            a.gewlen();
-
-            //Abfrage der Gewindeart (FG/SG)
-            a.gewart();
-            
-
-            //Abfrage der Schraubenanzahl
-            a.amount();
-
-            //Abfrage der Festigkeitsklasse 
-            a.fest();
-
-
-
-            // Console.Clear();    //Konsole bereinigen
-
-            //Berechnung der Werte
-            //Volumen berechnen
-
-
+            Console.Clear();    //Konsole bereinigen
 
             //Ausgabe der Eingabewerte
             string e = Methoden.ausgabe_material(a.material);
@@ -55,20 +34,18 @@ namespace Objektorientiert
             string d = a.ausgabe_gewindeart();
             Console.WriteLine("\nGewählte Schraube: " + e + " " + b + " " + c + " " + d + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
 
-            //Masse berechnen
+            //Werte Berechnen
             a.density();
             a.vol();
             a.masse = a.dichte / a.volumen;
 
-
             a.geometrie();
 
             //Preis berechnen und ausgeben
-            a.Preis();
+            a.Preis();  
 
             Console.ReadKey();
         }   //Hauptprogramm Ende
-
 
     }
     class Methoden
