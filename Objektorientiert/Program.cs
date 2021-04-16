@@ -711,16 +711,16 @@ namespace Objektorientiert
 
             // Ausgabe
             Console.WriteLine("Technische Details:\n");
-            Console.WriteLine("Schraubenlänge:       " + this.laenge + "mm");
-            Console.WriteLine("Gewindelänge:         " + this.gewindelaenge + "mm");
+            Console.WriteLine("Schraubenlänge:       " + this.laenge + " mm");
+            Console.WriteLine("Gewindelänge:         " + this.gewindelaenge + " mm");
             Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
-            Console.WriteLine("Masse pro Stück:      " + Math.Round(this.masse, 2) + "g");
-            Console.WriteLine("Gesamtgewicht:        " + Math.Round(this.gesamtgewicht, 2) + "g");
+            Console.WriteLine("Masse pro Stück:      " + Math.Round(this.masse, 2) + " g");
+            Console.WriteLine("Gesamtgewicht:        " + Math.Round(this.gesamtgewicht, 2) + " g");
             Console.WriteLine("Steigung:             " + p + " mm");
-            Console.WriteLine("Gewindetiefe:         " + Math.Round(h3, 2) + "mm");
+            Console.WriteLine("Gewindetiefe:         " + Math.Round(h3, 2) + " mm");
             Console.WriteLine("Rundung:              " + r + " mm");
-            Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2, 2) + "mm");
-            Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + "mm");
+            Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2, 2) + " mm");
+            Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + " mm");
             Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
         }
 
