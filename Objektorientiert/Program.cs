@@ -683,9 +683,7 @@ namespace Objektorientiert
             // Rechnungen 
             // Gewindetiefe   
             h3 = 0.6134 * p;
-            Console.WriteLine(p);
-            Console.WriteLine(p);
-            Console.WriteLine(p);
+           
 
 
             // Rundung
@@ -827,16 +825,18 @@ namespace Objektorientiert
 
         public String ausgabe_gewindeart() //Der Variable dem richtigen Ausgabestring zuweisen
         {
+
             switch (this.gewindeart)
             {
                 case "1":
-                    this.gewindeart = "Standardgewinde";
-                    break;
+                    return "Standardgewinde";
+                    
                 case "2":
-                    this.gewindeart = "Feingewinde";
-                    break;
+                    return "Feingewinde";
+                    
             }
-            return this.gewindeart;
+
+            return "Fehler in ausgabe_gewindeart()";
         }
 
 
