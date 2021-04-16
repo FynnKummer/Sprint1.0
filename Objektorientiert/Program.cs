@@ -603,7 +603,7 @@ namespace Objektorientiert
             int d = Int32.Parse(feld[1]);
 
             //Gewindesteigung
-            if (this.gewindeart.Equals("1"))
+            if (gewindeart.Equals("1"))
             {
                 switch (this.gewinde)
                 {
@@ -838,9 +838,6 @@ namespace Objektorientiert
 
             return "Fehler in ausgabe_gewindeart()";
         }
-
-
-
 
     }
 
