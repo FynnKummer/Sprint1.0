@@ -40,7 +40,7 @@ namespace ConsoleApp3
 
             
 
-            Console.Clear();    //Konsole bereinigen
+           // Console.Clear();    //Konsole bereinigen
 
             //Berechnung der Werte
             //Volumen berechnen
@@ -56,6 +56,8 @@ namespace ConsoleApp3
 
             //Masse berechnen
             a.masse = a.dichte * a.volumen;
+
+            Console.WriteLine(a.gewinde);
             
             
             a.geometrie();
@@ -71,12 +73,6 @@ namespace ConsoleApp3
     class Methoden
     {
 
-        
-
-        
-
-       
-       
         public static void preis_ausgabe(double nettoeinzelpreis, double nettokilopreis, double netto50, double netto100, double preis50, double preis100, double einzelpreis, double kilopreis, double Nettobestellpreis, double Bestellpreis, int menge)
         {
             string summenenstring = "Summe (" + menge + "Stück):";
@@ -92,11 +88,6 @@ namespace ConsoleApp3
             Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
 
         }
-
-        
-        
-
-
 
         public static void festigkeit(string Fk)
         {
@@ -187,15 +178,6 @@ namespace ConsoleApp3
             return Fk;
         }
 
-       
-
-       
-
-
-
-
-
-
 
     }
 
@@ -224,8 +206,7 @@ namespace ConsoleApp3
 
         public void len()
         {
-            string wert = "";   //Variable für den Eingabewert
-            int laenge = 0; //Variable für die Abgfrage der Schraubenlänge
+            string wert = "";   //Variable für den 
             bool loop = false;  //Variable für die Schleife
 
             do //Schleife bis ein richtiger Wert bzw. eine Zahl eingelesen wird
@@ -235,7 +216,7 @@ namespace ConsoleApp3
 
                 if (wert.All(char.IsDigit)) //Der eingelesene String ist eine Zahl
                 {
-                    laenge = Convert.ToInt32(wert); //String zu einer Zahl konvertieren
+                    this.laenge = Convert.ToInt32(wert); //String zu einer Zahl konvertieren
                     loop = false;
                 }
                 else //Der eingelesene String ist keine Zahlt
@@ -245,7 +226,7 @@ namespace ConsoleApp3
                 }
             } while (loop == true);
 
-            this.laenge=laenge;
+            
         }
 
         public void mat()
@@ -259,9 +240,9 @@ namespace ConsoleApp3
                 Console.WriteLine("'1' = Verzinkter Stahl");
                 Console.WriteLine("'2' = V2A");
                 Console.WriteLine("'3' = V4A");
-                material = Console.ReadLine(); //String einlesen
+                this.material = Console.ReadLine(); //String einlesen
 
-                if (material.Equals("1") || material.Equals("2") || material.Equals("3"))   //Richtige Eingabe
+                if (this.material.Equals("1") || this.material.Equals("2") || this.material.Equals("3"))   //Richtige Eingabe
                 {
                     loop = false;
                 }
@@ -271,7 +252,7 @@ namespace ConsoleApp3
                     loop = true;
                 }
             } while (loop == true);
-            this.material= material;
+            
         }
 
         public void type()
@@ -302,16 +283,16 @@ namespace ConsoleApp3
         public void gew(String[] feld)
         {
             bool loop = false;  //Variable für die Schleife
-            string gewinde = "";    //Variable für die Abgfrage des Gewindes
+            
 
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
                 Console.WriteLine("Welches Gewinde hat die Schraube?");
                 Console.WriteLine("Mögliche Eingaben:");
                 Console.WriteLine("M4 M5 M6 M8 M10 M12 M16 M20");
-                gewinde = Console.ReadLine();      //String einlesen
+                this.gewinde = Console.ReadLine();      //String einlesen
 
-                if (feld_legit(feld,gewinde))    //Richtige Eingabe
+                if (feld_legit(feld,this.gewinde))    //Richtige Eingabe
                 {
                     loop = false;
                 }
@@ -322,7 +303,7 @@ namespace ConsoleApp3
                 }
             } while (loop == true);
 
-            this.gewinde =gewinde;
+           
         }
 
         public void gewart()
@@ -618,7 +599,7 @@ namespace ConsoleApp3
             double p = 0;
             string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
 
-            String[] feld = gewinde.Split('M');
+            String[] feld = this.gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
 
             //Gewindesteigung
