@@ -202,6 +202,12 @@ namespace Objektorientiert
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
                 }
+
+                 if (this.laenge > 150) //Falscher Wert
+                {
+                    Console.WriteLine("Die Schraube kann nicht länger als 150mm sein!");
+                    loop = true;
+                }
             } while (loop == true);
 
 
