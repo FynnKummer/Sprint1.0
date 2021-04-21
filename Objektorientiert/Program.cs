@@ -16,8 +16,9 @@ namespace Objektorientiert
             a.len();    //Abfrage und Festlegung des Schraubenlänge           
             a.gewlen(); //Abfrage und Festlegung des Gewindelängen           
             a.gewart(); //Abfrage und Festlegung des Gewindeart (FG/SG)           
-            a.amount(); //Abfrage und Festlegung des Schraubenanzahl          
             a.fest();   //Abfrage und Festlegung des Festigkeitsklasse 
+            a.amount(); //Abfrage und Festlegung des Schraubenanzahl          
+            
 
             Console.Clear();    //Konsole bereinigen
 
@@ -28,9 +29,7 @@ namespace Objektorientiert
 
             Console.WriteLine("\nGewählte Schraube: " + a.mataus + " " + a.festaus + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
 
-            //Ausgabe der Festigkeiten der Schraube
-            a.festigkeitausgabe();
-
+            
 
             //Werte Berechnen
             a.density();
@@ -38,6 +37,11 @@ namespace Objektorientiert
             a.masse = a.dichte / a.volumen;
 
             a.geometrie();
+
+            //Ausgabe der Festigkeiten der Schraube
+            a.festigkeitausgabe();
+
+            Console.WriteLine();
 
             //Preis berechnen und ausgeben
             a.Preis();
@@ -646,18 +650,18 @@ namespace Objektorientiert
             this.gesamtgewicht = this.masse * this.menge;
 
             // Ausgabe
-            Console.WriteLine("Technische Details:\n");
-            Console.WriteLine("Schraubenlänge:       " + this.laenge + " mm");
-            Console.WriteLine("Gewindelänge:         " + this.gewindelaenge + " mm");
-            Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
-            Console.WriteLine("Masse pro Stück:      " + Math.Round(this.masse, 2) + " g");
-            Console.WriteLine("Gesamtgewicht:        " + Math.Round(this.gesamtgewicht, 2) + " g");
-            Console.WriteLine("Steigung:             " + this.gewindesteigung + " mm");
-            Console.WriteLine("Gewindetiefe:         " + Math.Round(h3, 2) + " mm");
-            Console.WriteLine("Rundung:              " + r + " mm");
-            Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2, 2) + " mm");
-            Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + " mm");
-            Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
+            Console.WriteLine(" Technische Details:\n");
+            Console.WriteLine(" Schraubenlänge:       " + this.laenge + " mm");
+            Console.WriteLine(" Gewindelänge:         " + this.gewindelaenge + " mm");
+            Console.WriteLine(" Gewindedurchmesser:   " + d + "mm");
+            Console.WriteLine(" Masse pro Stück:      " + Math.Round(this.masse, 2) + " g");
+            Console.WriteLine(" Gesamtgewicht:        " + Math.Round(this.gesamtgewicht, 2) + " g");
+            Console.WriteLine(" Steigung:             " + this.gewindesteigung + " mm");
+            Console.WriteLine(" Gewindetiefe:         " + Math.Round(h3, 2) + " mm");
+            Console.WriteLine(" Rundung:              " + r + " mm");
+            Console.WriteLine(" Flankendurchmesser:   " + Math.Round(d2, 2) + " mm");
+            Console.WriteLine(" Kerndurchmesser:      " + Math.Round(d3, 2) + " mm");
+            Console.WriteLine(" Flankenwinkel:        " + flankenwikel + "°\n");
         }
         
         public void Preis()
