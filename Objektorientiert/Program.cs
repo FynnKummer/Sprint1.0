@@ -333,7 +333,7 @@ namespace Objektorientiert
                     gewindelaenge = Convert.ToInt32(wert); //String zu einer Zahl konvertieren
                     loop = false;
                 }
-                else //Der eingelesene String ist keine Zahlt
+                else //Der eingelesene String ist keine Zahl
                 {
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
