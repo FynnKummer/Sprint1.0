@@ -134,40 +134,6 @@ namespace Objektorientiert
         public double masse;
         public double gesamtgewicht;
 
-        public void len()
-        {
-            string wert = "";   //Variable für den 
-            bool loop = false;  //Variable für die Schleife
-
-            do //Schleife bis ein richtiger Wert bzw. eine Zahl eingelesen wird
-            {
-                Console.WriteLine("Welche Länge hat die Schraube? (in mm)");
-                wert = Console.ReadLine(); //String einlesen
-
-                if (wert.All(char.IsDigit)) //Der eingelesene String ist eine Zahl
-                {
-                    this.laenge = Convert.ToInt32(wert); //String zu einer Zahl konvertieren
-                    loop = false;
-                }
-                else //Der eingelesene String ist keine Zahlt
-                {
-                    Console.WriteLine("Falsche Eingabe");
-                    loop = true;
-                }
-
-                if (this.laenge > 150) //Falscher Wert
-                {
-                    Console.WriteLine("Die Schraube kann nicht länger als 150mm sein!");
-                    loop = true;
-                }
-                else if (this.laenge < 4)
-                {
-                    Console.WriteLine("Die Schraube kann nicht unter 4mm lang sein!");
-                    loop = true;
-                }
-            } while (loop == true);
-        }
-
         public void mat()
         {
             bool loop = false;  //Variable für die Schleife
@@ -241,6 +207,72 @@ namespace Objektorientiert
 
         }
 
+        public void len()
+        {
+            string wert = "";   //Variable für den 
+            bool loop = false;  //Variable für die Schleife
+
+            do //Schleife bis ein richtiger Wert bzw. eine Zahl eingelesen wird
+            {
+                Console.WriteLine("Welche Länge hat die Schraube? (in mm)");
+                wert = Console.ReadLine(); //String einlesen
+
+                if (wert.All(char.IsDigit)) //Der eingelesene String ist eine Zahl
+                {
+                    this.laenge = Convert.ToInt32(wert); //String zu einer Zahl konvertieren
+                    loop = false;
+                }
+                else //Der eingelesene String ist keine Zahlt
+                {
+                    Console.WriteLine("Falsche Eingabe");
+                    loop = true;
+                }
+
+                if (this.laenge > 150) //Falscher Wert
+                {
+                    Console.WriteLine("Die Schraube kann nicht länger als 150mm sein!");
+                    loop = true;
+                }
+                else if (this.laenge < 4)
+                {
+                    Console.WriteLine("Die Schraube kann nicht unter 4mm lang sein!");
+                    loop = true;
+                }
+            } while (loop == true);
+        }
+
+        public void gewlen()
+        {
+            string wert = "";   //Variable für den Eingabewert
+            int gewindelaenge = 0;  //Variable für die Abgfrage der Gewindelänge
+            bool loop = false;  //Variable für die Schleife
+
+            do //Schleife bis ein richtiger Wert bzw. eine Zahl eingelesen wird
+            {
+                Console.WriteLine("Welche Gewindelänge hat die Schraube? (in mm)");
+                wert = Console.ReadLine(); //String einlesen
+
+                if (wert.All(char.IsDigit)) //Der eingelesene String ist eine Zahl
+                {
+                    gewindelaenge = Convert.ToInt32(wert); //String zu einer Zahl konvertieren
+                    loop = false;
+                }
+                else //Der eingelesene String ist keine Zahl
+                {
+                    Console.WriteLine("Falsche Eingabe");
+                    loop = true;
+                }
+
+                if (gewindelaenge > this.laenge) //Falscher Wert
+                {
+                    Console.WriteLine("Das Gewinde kann nicht länger als die Schraube sein!");
+                    loop = true;
+                }
+            } while (loop == true);
+
+            this.gewindelaenge = gewindelaenge;
+        }
+
         public void gewart()
         {
             bool loop = false;  //Variable für die Schleife
@@ -290,54 +322,6 @@ namespace Objektorientiert
             this.menge = menge;
         }
 
-        public void gewlen()
-        {
-            string wert = "";   //Variable für den Eingabewert
-            int gewindelaenge = 0;  //Variable für die Abgfrage der Gewindelänge
-            bool loop = false;  //Variable für die Schleife
-
-            do //Schleife bis ein richtiger Wert bzw. eine Zahl eingelesen wird
-            {
-                Console.WriteLine("Welche Gewindelänge hat die Schraube? (in mm)");
-                wert = Console.ReadLine(); //String einlesen
-
-                if (wert.All(char.IsDigit)) //Der eingelesene String ist eine Zahl
-                {
-                    gewindelaenge = Convert.ToInt32(wert); //String zu einer Zahl konvertieren
-                    loop = false;
-                }
-                else //Der eingelesene String ist keine Zahl
-                {
-                    Console.WriteLine("Falsche Eingabe");
-                    loop = true;
-                }
-
-                if (gewindelaenge > this.laenge) //Falscher Wert
-                {
-                    Console.WriteLine("Das Gewinde kann nicht länger als die Schraube sein!");
-                    loop = true;
-                }
-            } while (loop == true);
-
-            this.gewindelaenge = gewindelaenge;
-        }
-
-        public void density()
-        {
-            if (this.material.Equals("1"))
-            {
-                this.dichte = 0.0079;
-            }
-            else if (this.material.Equals("2"))
-            {
-                this.dichte = 0.0079;
-            }
-            else
-            {
-                this.dichte = 0.008;
-            }
-        }
-
         public void fest()
         {
             string Fk = ""; //Variable für die Abgfrage der Festigkeitsklasse
@@ -382,16 +366,90 @@ namespace Objektorientiert
             this.festigkeit = Fk;
         }
 
-        public Boolean feld_legit(String[] feld, string a)
+
+
+        // Bestimmungen von Werten & Ausgabe 
+
+        public void ausgabe_festigkeitsklasse() //Der Variable dem richtigen Ausgabestring zuweisen
         {
-            for (int i = 0; i < feld.Length; i++)
+            if (this.festigkeit.Equals("1"))
             {
-                if (a.Equals(feld[i]))
-                {
-                    return true;
-                }
+                this.festaus = "A2-50";
             }
-            return false;
+            else if (this.festigkeit.Equals("2"))
+            {
+                this.festaus = "A2-70";
+            }
+            else if (this.festigkeit.Equals("3"))
+            {
+                this.festaus = "A4-50";
+            }
+
+
+        }
+
+        public void ausgabe_material()  //Der Variable dem richtigen Ausgabestring zuweisen
+        {
+            switch (this.material)
+            {
+                case "1":
+                    this.mataus = "Verzinkte Stahlschraube";
+                    break;
+                case "2":
+                    this.mataus = "V2A Schraube";
+                    break;
+                case "3":
+                    this.mataus = "V4A Schraube";
+                    break;
+            }
+
+
+        }
+
+        public String ausgabe_schraubenkopf() //Der Variable dem richtigen Ausgabestring zuweisen
+        {
+            switch (this.typ)
+            {
+                case "A":
+                    this.typ = "Außensechskant";
+                    break;
+                case "I":
+                    this.typ = "Innensechskant";
+                    break;
+            }
+
+            return typ;
+        }
+
+        public String ausgabe_gewindeart() //Der Variable dem richtigen Ausgabestring zuweisen
+        {
+
+            switch (this.gewindeart)
+            {
+                case "1":
+                    return "Standardgewinde";
+
+                case "2":
+                    return "Feingewinde";
+            }
+
+            return "Fehler in ausgabe_gewindeart()";
+        }
+
+        public void density()
+        {
+            if (this.material.Equals("1"))
+            {
+                this.dichte = 0.0079;
+            }
+            else if (this.material.Equals("2"))
+            {
+                this.dichte = 0.0079;
+            }
+            else
+            {
+                this.dichte = 0.008;
+            }
         }
 
         public void vol()
@@ -660,7 +718,7 @@ namespace Objektorientiert
             Console.WriteLine("Kerndurchmesser:      " + Math.Round(d3, 2) + " mm");
             Console.WriteLine("Flankenwinkel:        " + flankenwikel + "°\n");
         }
-
+        
         public void Preis()
         {
             // Variablen festlegen
@@ -728,70 +786,16 @@ namespace Objektorientiert
             Methoden.preis_ausgabe(nettoeinzelpreis, nettokilopreis, netto50, netto100, preis50, preis100, einzelpreis, kilopreis, Nettobestellpreis, Bestellpreis, this.menge);
         }
 
-        public String ausgabe_schraubenkopf() //Der Variable dem richtigen Ausgabestring zuweisen
+        public Boolean feld_legit(String[] feld, string a)
         {
-            switch (this.typ)
+            for (int i = 0; i < feld.Length; i++)
             {
-                case "A":
-                    this.typ = "Außensechskant";
-                    break;
-                case "I":
-                    this.typ = "Innensechskant";
-                    break;
+                if (a.Equals(feld[i]))
+                {
+                    return true;
+                }
             }
-
-            return typ;
-        }
-
-        public String ausgabe_gewindeart() //Der Variable dem richtigen Ausgabestring zuweisen
-        {
-
-            switch (this.gewindeart)
-            {
-                case "1":
-                    return "Standardgewinde";
-
-                case "2":
-                    return "Feingewinde";
-            }
-
-            return "Fehler in ausgabe_gewindeart()";
-        }
-
-        public void ausgabe_festigkeitsklasse() //Der Variable dem richtigen Ausgabestring zuweisen
-        {
-            if (this.festigkeit.Equals("1"))
-            {
-                this.festaus = "A2-50";
-            }
-            else if (this.festigkeit.Equals("2"))
-            {
-                this.festaus = "A2-70";
-            }
-            else if (this.festigkeit.Equals("3"))
-            {
-                this.festaus = "A4-50";
-            }
-
-
-        }
-
-        public void ausgabe_material()  //Der Variable dem richtigen Ausgabestring zuweisen
-        {
-            switch (this.material)
-            {
-                case "1":
-                    this.mataus = "Verzinkte Stahlschraube";
-                    break;
-                case "2":
-                    this.mataus = "V2A Schraube";
-                    break;
-                case "3":
-                    this.mataus = "V4A Schraube";
-                    break;
-            }
-
-
+            return false;
         }
     }
 }
