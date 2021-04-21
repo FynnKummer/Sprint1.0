@@ -121,7 +121,6 @@ namespace Objektorientiert
         public String schluesselbreite;
         public String typ;
         public String festigkeit;
-        public String festigkeitsklasse;
         public String festaus;//Festigekeitsklasse ausgeschrieben
 
         public String gewindeart;
