@@ -178,32 +178,7 @@ namespace Objektorientiert
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
                 }
-            } while (loop == true);
-
-        public void gew()
-        {
-            String[] feld = { "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20" };
-            bool loop = false;  //Variable für die Schleife
-
-            do //Schleife bis ein richtiger Wert eigegeben wird
-            {
-                Console.WriteLine("Welches Gewinde hat die Schraube?");
-                Console.WriteLine("Mögliche Eingaben:");
-                Console.WriteLine("M4 M5 M6 M8 M10 M12 M16 M20");
-                this.gewinde = Console.ReadLine();      //String einlesen
-
-                if (feld_legit(feld, this.gewinde))    //Richtige Eingabe
-                {
-                    loop = false;
-                }
-                else //falsche Eingabe
-                {
-                    Console.WriteLine("Falsche Eingabe");
-                    loop = true;
-                }
-            } while (loop == true);
-
-        }   
+            } while (loop == true);  
         }    //Abfrage und Festlegung des Gewindes (z.B. M8) 
 
         public void len()
@@ -800,8 +775,8 @@ namespace Objektorientiert
                     Re = 210;
                     break;
             }
-            Console.WriteLine(" Elastizitätsgrenze:   " + Re + " N/mm^2");
-            Console.WriteLine(" Zugfestigkeit:        " + Rm +  "N/mm^2");
+            Console.WriteLine(" Elastizitätsgrenze:   " + Re + " N/mm²");
+            Console.WriteLine(" Zugfestigkeit:        " + Rm +  "N/mm²");
             Console.WriteLine();
         }
     }
