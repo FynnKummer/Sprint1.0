@@ -360,7 +360,7 @@ namespace Objektorientiert
             return "Feingewinde";
         }
 
-        public void density()
+        public void density()  //Zuweisung der Dichte
         {
             if (this.material.Equals("1"))
             {
@@ -376,7 +376,7 @@ namespace Objektorientiert
             }
         }
 
-        public void vol()
+        public void vol() //Berechnung des Volumens
         {
             double volumen_schraubenkopf;
             double volumen_schaft;
