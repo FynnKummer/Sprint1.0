@@ -49,7 +49,7 @@ namespace Objektorientiert
         public int menge;
         public int laenge;
         public double volumen;
-        public String schluesselbreite;
+        public int schluesselbreite;
         public String typ;
         public String festigkeit;
         public String festaus;//Festigkeitsklasse ausgeschrieben
@@ -512,41 +512,49 @@ namespace Objektorientiert
             String[] feld = this.gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
 
-            //Gewindesteigung
+            //Gewindesteigung + Schlüsselbreite
             if (gewindeart.Equals("1"))
             {
                 switch (this.gewinde)
                 {
                     case "M4":
                         this.gewindesteigung = 0.7;
+                        this.schluesselbreite = 7;
                         break;
 
                     case "M5":
                         this.gewindesteigung = 0.8;
+                        this.schluesselbreite = 8;
                         break;
 
                     case "M6":
                         this.gewindesteigung = 1;
+                        this.schluesselbreite = 10;
                         break;
 
                     case "M8":
                         this.gewindesteigung = 1.25;
+                        this.schluesselbreite = 13;
                         break;
 
                     case "M10":
                         this.gewindesteigung = 1.5;
+                        this.schluesselbreite = 17;
                         break;
 
                     case "M12":
                         this.gewindesteigung = 1.75;
+                        this.schluesselbreite = 19;
                         break;
 
                     case "M16":
                         this.gewindesteigung = 2;
+                        this.schluesselbreite = 24;
                         break;
 
                     case "M20":
                         this.gewindesteigung = 2.5;
+                        this.schluesselbreite = 30;
                         break;
                 }
             }
@@ -626,6 +634,7 @@ namespace Objektorientiert
             Console.WriteLine(" Technische Details:\n");
             Console.WriteLine(" Schraubenlänge:       " + this.laenge + " mm");
             Console.WriteLine(" Gewindelänge:         " + this.gewindelaenge + " mm");
+            Console.WriteLine(" Schlüsselweite:       " + this.schluesselbreite + "mm");
             Console.WriteLine(" Gewindedurchmesser:   " + d + " mm");
             Console.WriteLine(" Masse pro Stück:      " + Math.Round(this.masse, 2) + " g");
             Console.WriteLine(" Gesamtgewicht:        " + Math.Round(this.gesamtgewicht, 2) + " g");
@@ -703,9 +712,9 @@ namespace Objektorientiert
             // Ausgabe der Preise            
             string summenenstring = "Summe (" + this.menge + "Stück):";
 
-            Console.WriteLine("Preise:");
+            Console.WriteLine(" Preise:");
             Console.WriteLine();
-            Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
+            Console.WriteLine("  Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
             Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
             Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
