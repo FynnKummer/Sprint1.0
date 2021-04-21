@@ -19,18 +19,13 @@ namespace Objektorientiert
             a.fest();   //Abfrage und Festlegung des Festigkeitsklasse 
             a.amount(); //Abfrage und Festlegung des Schraubenanzahl          
             
-
             Console.Clear();    //Konsole bereinigen
 
             //Ausgabe der Eingabewerte
             a.ausgabe_festigkeitsklasse();
             a.ausgabe_material();
-
-
             Console.WriteLine("\nGewählte Schraube: " + a.mataus + " " + a.festaus + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
-
-            
-
+          
             //Werte Berechnen
             a.density();
             a.vol();
@@ -48,10 +43,6 @@ namespace Objektorientiert
 
             Console.ReadKey();
         }   //Hauptprogramm Ende
-    }
-    class Methoden
-    {
-
     }
 
     class Schraube
@@ -265,7 +256,6 @@ namespace Objektorientiert
 
         public void fest()
         {
-            string Fk = ""; //Variable für die Abgfrage der Festigkeitsklasse
             bool loop = false;  //Variable für die Schleife
             String[] festigkeitsklassen = { "1", "2", "3", "5.8", "6.8", "8.8", "9.8", "10.9", "12.9" };
 
@@ -303,8 +293,6 @@ namespace Objektorientiert
                     loop = true;
                 }
             } while (loop == true);
-
-            this.festigkeit = Fk;
         }
 
         // Bestimmungen von Werten & Ausgabe 
@@ -323,8 +311,10 @@ namespace Objektorientiert
             {
                 this.festaus = "A4-50";
             }
-
-
+            else
+            {
+                this.festaus = this.festigkeit;
+            }
         }
 
         public void ausgabe_material()  //Der Variable dem richtigen Ausgabestring zuweisen
@@ -341,8 +331,6 @@ namespace Objektorientiert
                     this.mataus = "V4A Schraube";
                     break;
             }
-
-
         }
 
         public String ausgabe_schraubenkopf() //Der Variable dem richtigen Ausgabestring zuweisen
@@ -362,7 +350,6 @@ namespace Objektorientiert
 
         public String ausgabe_gewindeart() //Der Variable dem richtigen Ausgabestring zuweisen
         {
-
             switch (this.gewindeart)
             {
                 case "1":
@@ -524,8 +511,6 @@ namespace Objektorientiert
         {
             double h3, r, d2, d3, flankenwikel;
 
-
-
             String[] feld = this.gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
 
@@ -609,13 +594,9 @@ namespace Objektorientiert
 
             // Rechnungen   
             h3 = 0.6134 * this.gewindesteigung;    // Gewindetiefe 
-
             r = 0.1443 * this.gewindesteigung; // Rundung
-
             d2 = d - 0.64595 * this.gewindesteigung;   //Flankendurchmesser 
-
             d3 = d - 1.2269;    //Kerndurchmesser 
-
             flankenwikel = 60;  //Flankenwinkel 
 
             // Umwandlung der Strings 
@@ -721,21 +702,18 @@ namespace Objektorientiert
             preis100 = netto100 * mws;
             Bestellpreis = einzelpreis * menge;
 
-            // Ausgabe der Preise 
-            
-                string summenenstring = "Summe (" + this.menge + "Stück):";
+            // Ausgabe der Preise            
+            string summenenstring = "Summe (" + this.menge + "Stück):";
 
-                Console.WriteLine("Preise:");
-                Console.WriteLine();
-                Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
-                Console.WriteLine();
-                Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
-                Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
-                Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
-                Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
-                Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
-            
-
+            Console.WriteLine("Preise:");
+            Console.WriteLine();
+            Console.WriteLine("Nettopreise                                  Preise inkl. Mehrwertsteuer");
+            Console.WriteLine();
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
+            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));            
         }
 
         public Boolean feld_legit(String[] feld, string a)
