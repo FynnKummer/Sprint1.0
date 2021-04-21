@@ -185,10 +185,15 @@ namespace Objektorientiert
                 }
 
                  if (this.laenge > 150) //Falscher Wert
-                {
+                 {
                     Console.WriteLine("Die Schraube kann nicht länger als 150mm sein!");
                     loop = true;
-                }
+                 }
+                 else if (this.laenge <= 4)
+                 {
+                    Console.WriteLine("Die Schraube kann nicht unter 4mm lang sein!");
+                    loop = true;
+                 }
             } while (loop == true);
         }
 
@@ -330,7 +335,7 @@ namespace Objektorientiert
                     gewindelaenge = Convert.ToInt32(wert); //String zu einer Zahl konvertieren
                     loop = false;
                 }
-                else //Der eingelesene String ist keine Zahlt
+                else //Der eingelesene String ist keine Zahl
                 {
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
