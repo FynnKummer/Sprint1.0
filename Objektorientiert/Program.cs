@@ -297,7 +297,6 @@ namespace Objektorientiert
             this.menge = menge;
         } //Abfrage und Festlegung des Schraubenanzahl 
 
-       
         // Bestimmung von Werten & Ausgabe 
 
         public void ausgabe_festigkeitsklasse() //Der Variable den richtigen Ausgabestring zuweisen
