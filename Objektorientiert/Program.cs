@@ -88,11 +88,6 @@ namespace Objektorientiert
             Console.WriteLine("Zugfestigkeit:" + Rm + "N/mm^2");
         }
 
-
-
-
-
-
     }
 
     class Schraube
