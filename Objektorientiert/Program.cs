@@ -48,9 +48,55 @@ namespace Objektorientiert
     class Methoden
     {
        
+
        
 
 
+
+
+        public static void festigkeit(string Fk)
+        {
+            double Rm = 0;
+            double Re = 0;
+
+            switch (Fk)
+            {
+                case "5.8":
+                    Rm = 500;
+                    Re = 400;
+                    break;
+                case "6.8":
+                    Rm = 600;
+                    Re = 480;
+                    break;
+                case "8.8":
+                    Rm = 800;
+                    Re = 640;
+                    break;
+                case "9.8":
+                    Rm = 900;
+                    Re = 720;
+                    break;
+                case "10.9":
+                    Rm = 1000;
+                    Re = 900;
+                    break;
+                case "12.9":
+                    Rm = 1200;
+                    Re = 1080;
+                    break;
+                case "2":    //v2a
+                    Rm = 700;
+                    Re = 450;
+                    break;
+                case "3":     //v4a
+                    Rm = 500;
+                    Re = 210;
+                    break;
+            }
+            Console.WriteLine("Elastizitätsgrenze:" + Re + "N/mm^2");
+            Console.WriteLine("Zugfestigkeit:" + Rm + "N/mm^2");
+        }
 
 
     }
