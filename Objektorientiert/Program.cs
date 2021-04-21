@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Objektorientiert
 {
@@ -25,9 +22,11 @@ namespace Objektorientiert
             Console.Clear();    //Konsole bereinigen
 
             //Ausgabe der Eingabewerte
-            
-            
-            Console.WriteLine("\nGewählte Schraube: " + a.mataus + " " + a.festigkeitsklasse + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
+            a.ausgabe_festigkeitsklasse();
+            a.ausgabe_material();
+
+
+            Console.WriteLine("\nGewählte Schraube: " + a.mataus + " " + a.festaus + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
 
             //Werte Berechnen
             a.density();
@@ -37,7 +36,7 @@ namespace Objektorientiert
             a.geometrie();
 
             //Preis berechnen und ausgeben
-            a.Preis();  
+            a.Preis();
 
             Console.ReadKey();
         }   //Hauptprogramm Ende
@@ -105,13 +104,13 @@ namespace Objektorientiert
             }
             Console.WriteLine("Elastizitätsgrenze:" + Re + "N/mm^2");
             Console.WriteLine("Zugfestigkeit:" + Rm + "N/mm^2");
-        } 
+        }
 
-      
 
-       
 
-        
+
+
+
     }
 
     class Schraube
@@ -123,6 +122,7 @@ namespace Objektorientiert
         public String typ;
         public String festigkeit;
         public String festigkeitsklasse;
+        public String festaus;//Festigekeitsklasse ausgeschrieben
 
         public String gewindeart;
         public int gewindelaenge;
@@ -156,16 +156,16 @@ namespace Objektorientiert
                     loop = true;
                 }
 
-                 if (this.laenge > 150) //Falscher Wert
-                 {
+                if (this.laenge > 150) //Falscher Wert
+                {
                     Console.WriteLine("Die Schraube kann nicht länger als 150mm sein!");
                     loop = true;
-                 }
-                 else if (this.laenge < 4)
-                 {
+                }
+                else if (this.laenge < 4)
+                {
                     Console.WriteLine("Die Schraube kann nicht unter 4mm lang sein!");
                     loop = true;
-                 }
+                }
             } while (loop == true);
         }
 
@@ -197,7 +197,7 @@ namespace Objektorientiert
         public void type()
         {
             bool loop = false;  //Variable für die Schleife
-            
+
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
                 Console.WriteLine("Welchen Kopf hat die Schraube?");
@@ -214,7 +214,7 @@ namespace Objektorientiert
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
                 }
-            } while (loop == true);         
+            } while (loop == true);
         }
 
         public void gew()
@@ -245,7 +245,7 @@ namespace Objektorientiert
         public void gewart()
         {
             bool loop = false;  //Variable für die Schleife
-            
+
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
                 Console.WriteLine("Welche Gewindeart hat die Schraube?");
@@ -262,7 +262,7 @@ namespace Objektorientiert
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
                 }
-            } while (loop == true);          
+            } while (loop == true);
         }
 
         public void amount()
@@ -521,14 +521,14 @@ namespace Objektorientiert
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
                     break;
-            }            
+            }
         }
 
         public void geometrie()
         {
             double h3, r, d2, d3, flankenwikel;
-            
-            
+
+
 
             String[] feld = this.gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
@@ -613,7 +613,7 @@ namespace Objektorientiert
 
             // Rechnungen   
             h3 = 0.6134 * this.gewindesteigung;    // Gewindetiefe 
-           
+
             r = 0.1443 * this.gewindesteigung; // Rundung
 
             d2 = d - 0.64595 * this.gewindesteigung;   //Flankendurchmesser 
@@ -751,9 +751,9 @@ namespace Objektorientiert
             {
                 case "1":
                     return "Standardgewinde";
-                    
+
                 case "2":
-                    return "Feingewinde";                  
+                    return "Feingewinde";
             }
 
             return "Fehler in ausgabe_gewindeart()";
@@ -761,20 +761,20 @@ namespace Objektorientiert
 
         public void ausgabe_festigkeitsklasse() //Der Variable dem richtigen Ausgabestring zuweisen
         {
-            if (this.festigkeitsklasse.Equals("1"))
+            if (this.festigkeit.Equals("1"))
             {
-                this.festigkeitsklasse = "A2-50";
+                this.festaus = "A2-50";
             }
-            else if (this.festigkeitsklasse.Equals("2"))
+            else if (this.festigkeit.Equals("2"))
             {
-                this.festigkeitsklasse = "A2-70";
+                this.festaus = "A2-70";
             }
-            else if (this.festigkeitsklasse.Equals("3"))
+            else if (this.festigkeit.Equals("3"))
             {
-                this.festigkeitsklasse = "A4-50";
+                this.festaus = "A4-50";
             }
 
-            
+
         }
 
         public void ausgabe_material()  //Der Variable dem richtigen Ausgabestring zuweisen
@@ -792,7 +792,7 @@ namespace Objektorientiert
                     break;
             }
 
-            
+
         }
     }
 }
