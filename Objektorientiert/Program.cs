@@ -11,12 +11,12 @@ namespace Objektorientiert
 
             //Abfrage der Werte                                                  
             a.mat();    //Abfrage und Festlegung des Materials                                                                                                                                                         
+            a.fest();   //Abfrage und Festlegung des Festigkeitsklasse 
             a.type();   //Abfrage und Festlegung des Schraubenkopfes
             a.gew();    //Abfrage und Festlegung des Gewindes (z.B. M8)           
             a.len();    //Abfrage und Festlegung des Schraubenlänge           
             a.gewlen(); //Abfrage und Festlegung des Gewindelängen           
             a.gewart(); //Abfrage und Festlegung des Gewindeart (FG/SG)           
-            a.fest();   //Abfrage und Festlegung des Festigkeitsklasse 
             a.amount(); //Abfrage und Festlegung des Schraubenanzahl          
             
 
