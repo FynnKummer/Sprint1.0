@@ -47,10 +47,6 @@ namespace Objektorientiert
     }
     class Methoden
     {
-       
-
-
-        
 
     }
 
@@ -306,8 +302,6 @@ namespace Objektorientiert
 
             this.festigkeit = Fk;
         }
-
-
 
         // Bestimmungen von Werten & Ausgabe 
 
@@ -740,7 +734,6 @@ namespace Objektorientiert
 
         }
 
-
         public Boolean feld_legit(String[] feld, string a)
         {
             for (int i = 0; i < feld.Length; i++)
@@ -802,4 +795,3 @@ namespace Objektorientiert
         }
     }
 }
-
