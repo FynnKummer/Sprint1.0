@@ -75,10 +75,6 @@ namespace Objektorientiert
                     Rm = 1200;
                     Re = 1080;
                     break;
-                case "1":     //v4a
-                    Rm = 500;
-                    Re = 210;
-                    break;
                 case "2":    //v2a
                     Rm = 700;
                     Re = 450;
