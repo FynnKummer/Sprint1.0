@@ -44,6 +44,7 @@ namespace Objektorientiert
     class Methoden
     {
        
+<<<<<<< HEAD
         public static void festigkeit(string Fk)
         {
             double Rm = 0;
@@ -91,6 +92,12 @@ namespace Objektorientiert
             Console.WriteLine("Elastizitätsgrenze:" + Re + "N/mm^2");
             Console.WriteLine("Zugfestigkeit:" + Rm + "N/mm^2");
         }
+=======
+       
+
+
+
+>>>>>>> parent of 172c8b9 (Merge branch 'main' of https://github.com/FynnKummer/Sprint1.0 into main)
 
     }
 
