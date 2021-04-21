@@ -797,7 +797,7 @@ namespace Objektorientiert
                     Re = 210;
                     break;
             }
-            Console.WriteLine("\nElastizitätsgrenze:" + Re + " N/mm^2");
+            Console.WriteLine("Elastizitätsgrenze:" + Re + " N/mm^2");
             Console.WriteLine("Zugfestigkeit:" + Rm +  "N/mm^2");
         }
     }
