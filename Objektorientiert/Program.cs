@@ -554,7 +554,7 @@ namespace Objektorientiert
         {
             double h3, r, d2, d3, flankenwikel;
             double p = 0;
-            string schraubenkopf_a, gewindetyp_a; // Ausgeschriebene Strings
+            
 
             String[] feld = this.gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
@@ -652,21 +652,21 @@ namespace Objektorientiert
             // Gewindetyp 
             if (this.gewindeart == "1")
             {
-                gewindetyp_a = "(Standardgewinde)";
+                this.gewindeart = "(Standardgewinde)";
             }
             else
             {
-                gewindetyp_a = "(Feingewinde)";
+                this.gewindeart = "(Feingewinde)";
             }
 
             // Schrubenkopf
             if (this.typ == "a" || this.typ == "A")
             {
-                schraubenkopf_a = "Außensechskant";
+                this.typ = "Außensechskant";
             }
             else
             {
-                schraubenkopf_a = "Innensechskant";
+                this.typ = "Innensechskant";
             }
 
             //Gewicht
