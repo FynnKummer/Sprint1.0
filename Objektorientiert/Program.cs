@@ -353,16 +353,11 @@ namespace Objektorientiert
 
         public String ausgabe_gewindeart() //Der Variable dem richtigen Ausgabestring zuweisen
         {
-            switch (this.gewindeart)
+            if (this.gewindeart.Equals("1"))
             {
-                case "1":
-                    return "Standardgewinde";
-
-                case "2":
-                    return "Feingewinde";
+                return "Standardgewinde";
             }
-
-            return "Fehler in ausgabe_gewindeart()";
+            return "Feingewinde";
         }
 
         public void density()
@@ -631,7 +626,7 @@ namespace Objektorientiert
             Console.WriteLine(" Technische Details:\n");
             Console.WriteLine(" Schraubenlänge:       " + this.laenge + " mm");
             Console.WriteLine(" Gewindelänge:         " + this.gewindelaenge + " mm");
-            Console.WriteLine(" Gewindedurchmesser:   " + d + "mm");
+            Console.WriteLine(" Gewindedurchmesser:   " + d + " mm");
             Console.WriteLine(" Masse pro Stück:      " + Math.Round(this.masse, 2) + " g");
             Console.WriteLine(" Gesamtgewicht:        " + Math.Round(this.gesamtgewicht, 2) + " g");
             Console.WriteLine(" Steigung:             " + this.gewindesteigung + " mm");
