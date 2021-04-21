@@ -51,10 +51,6 @@ namespace Objektorientiert
     }
     class Methoden
     {
-       
-
-
-        
 
     }
 
@@ -310,8 +306,6 @@ namespace Objektorientiert
 
             this.festigkeit = Fk;
         }
-
-
 
         // Bestimmungen von Werten & Ausgabe 
 
@@ -744,7 +738,6 @@ namespace Objektorientiert
 
         }
 
-
         public Boolean feld_legit(String[] feld, string a)
         {
             for (int i = 0; i < feld.Length; i++)
@@ -801,9 +794,8 @@ namespace Objektorientiert
                     Re = 210;
                     break;
             }
-            Console.WriteLine("Elastizitätsgrenze:" + Re + "N/mm^2");
-            Console.WriteLine("Zugfestigkeit:" + Rm + "N/mm^2");
+            Console.WriteLine("Elastizitätsgrenze:" + Re + " N/mm^2");
+            Console.WriteLine("Zugfestigkeit:" + Rm +  "N/mm^2");
         }
     }
 }
-
