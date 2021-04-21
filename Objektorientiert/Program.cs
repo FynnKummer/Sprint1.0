@@ -10,14 +10,14 @@ namespace Objektorientiert
             Schraube a = new Schraube(); //erstellen eines Objektes des Typs Schraube
 
             //Abfrage der Werte                                                  
-            a.mat();    //Abfrage und Festlegungdes Materials                                                                                                                                                         
-            a.type();   //Abfrage und Festlegungdes Schraubenkopfes
-            a.gew();    //Abfrage und Festlegungdes Gewindes (z.B. M8)           
-            a.len();    //Abfrage und Festlegungdes Schraubenlänge           
-            a.gewlen(); //Abfrage und FestlegungdesGewindelängen           
-            a.gewart(); //Abfrage und Festlegungdes Gewindeart (FG/SG)           
-            a.amount(); //Abfrage und Festlegungdes Schraubenanzahl          
-            a.fest();   //Abfrage und Festlegungdes Festigkeitsklasse 
+            a.mat();    //Abfrage und Festlegung des Materials                                                                                                                                                         
+            a.type();   //Abfrage und Festlegung des Schraubenkopfes
+            a.gew();    //Abfrage und Festlegung des Gewindes (z.B. M8)           
+            a.len();    //Abfrage und Festlegung des Schraubenlänge           
+            a.gewlen(); //Abfrage und Festlegung des Gewindelängen           
+            a.gewart(); //Abfrage und Festlegung des Gewindeart (FG/SG)           
+            a.amount(); //Abfrage und Festlegung des Schraubenanzahl          
+            a.fest();   //Abfrage und Festlegung des Festigkeitsklasse 
 
             Console.Clear();    //Konsole bereinigen
 
