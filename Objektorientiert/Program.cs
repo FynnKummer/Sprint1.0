@@ -103,14 +103,11 @@ namespace Objektorientiert
                     Re = 210;
                     break;
             }
-            Festigkeit_Ausgabe(Re, Rm);
-        } //muss eventuel wieder in Methoden zurück
-
-        public static void Festigkeit_Ausgabe(double Rm, double Re)
-        {
             Console.WriteLine("Elastizitätsgrenze:" + Re + "N/mm^2");
             Console.WriteLine("Zugfestigkeit:" + Rm + "N/mm^2");
-        }
+        } 
+
+      
 
         public static String ausgabe_material(string material)  //Der Variable dem richtigen Ausgabestring zuweisen
         {
@@ -553,7 +550,7 @@ namespace Objektorientiert
         public void geometrie()
         {
             double h3, r, d2, d3, flankenwikel;
-            double p = 0;
+            
             
 
             String[] feld = this.gewinde.Split('M');
@@ -565,35 +562,35 @@ namespace Objektorientiert
                 switch (this.gewinde)
                 {
                     case "M4":
-                        p = 0.7;
+                        this.gewindesteigung = 0.7;
                         break;
 
                     case "M5":
-                        p = 0.8;
+                        this.gewindesteigung = 0.8;
                         break;
 
                     case "M6":
-                        p = 1;
+                        this.gewindesteigung = 1;
                         break;
 
                     case "M8":
-                        p = 1.25;
+                        this.gewindesteigung = 1.25;
                         break;
 
                     case "M10":
-                        p = 1.5;
+                        this.gewindesteigung = 1.5;
                         break;
 
                     case "M12":
-                        p = 1.75;
+                        this.gewindesteigung = 1.75;
                         break;
 
                     case "M16":
-                        p = 2;
+                        this.gewindesteigung = 2;
                         break;
 
                     case "M20":
-                        p = 2.5;
+                        this.gewindesteigung = 2.5;
                         break;
                 }
             }
@@ -603,46 +600,46 @@ namespace Objektorientiert
                 switch (this.gewinde)
                 {
                     case "M4":
-                        p = 0.5;
+                        this.gewindesteigung = 0.5;
                         break;
 
                     case "M5":
-                        p = 0.5;
+                        this.gewindesteigung = 0.5;
                         break;
 
                     case "M6":
-                        p = 0.75;
+                        this.gewindesteigung = 0.75;
                         break;
 
                     case "M8":
-                        p = 0.75;
+                        this.gewindesteigung = 0.75;
 
                         break;
 
                     case "M10":
-                        p = 1;
+                        this.gewindesteigung = 1;
                         break;
 
                     case "M12":
-                        p = 1.25;
+                        this.gewindesteigung = 1.25;
                         break;
 
                     case "M16":
-                        p = 1.5;
+                        this.gewindesteigung = 1.5;
                         break;
 
                     case "M20":
-                        p = 1.5;
+                        this.gewindesteigung = 1.5;
                         break;
                 }
             }
 
             // Rechnungen   
-            h3 = 0.6134 * p;    // Gewindetiefe 
+            h3 = 0.6134 * this.gewindesteigung;    // Gewindetiefe 
            
-            r = 0.1443 * p; // Rundung
+            r = 0.1443 * this.gewindesteigung; // Rundung
 
-            d2 = d - 0.64595 * p;   //Flankendurchmesser 
+            d2 = d - 0.64595 * this.gewindesteigung;   //Flankendurchmesser 
 
             d3 = d - 1.2269;    //Kerndurchmesser 
 
@@ -680,7 +677,7 @@ namespace Objektorientiert
             Console.WriteLine("Gewindedurchmesser:   " + d + "mm");
             Console.WriteLine("Masse pro Stück:      " + Math.Round(this.masse, 2) + " g");
             Console.WriteLine("Gesamtgewicht:        " + Math.Round(this.gesamtgewicht, 2) + " g");
-            Console.WriteLine("Steigung:             " + p + " mm");
+            Console.WriteLine("Steigung:             " + this.gewindesteigung + " mm");
             Console.WriteLine("Gewindetiefe:         " + Math.Round(h3, 2) + " mm");
             Console.WriteLine("Rundung:              " + r + " mm");
             Console.WriteLine("Flankendurchmesser:   " + Math.Round(d2, 2) + " mm");
