@@ -65,6 +65,9 @@ namespace Objektorientiert
         public double masse;
         public double gesamtgewicht;
 
+
+        //Abfrage von Werten
+
         public void mat()
         {
             bool loop = false;  //Variable für die Schleife
@@ -88,7 +91,7 @@ namespace Objektorientiert
                 }
             } while (loop == true);
 
-        }
+        }    //Abfrage und Festlegung des Materials  
 
         public void fest()
         {
@@ -129,7 +132,7 @@ namespace Objektorientiert
                     loop = true;
                 }
             } while (loop == true);
-        }
+        }   //Abfrage und Festlegung des Festigkeitsklasse 
 
         public void type()
         {
@@ -152,7 +155,7 @@ namespace Objektorientiert
                     loop = true;
                 }
             } while (loop == true);
-        }
+        }   //Abfrage und Festlegung des Schraubenkopfes
 
         public void gew()
         {
@@ -177,7 +180,31 @@ namespace Objektorientiert
                 }
             } while (loop == true);
 
-        }
+        public void gew()
+        {
+            String[] feld = { "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20" };
+            bool loop = false;  //Variable für die Schleife
+
+            do //Schleife bis ein richtiger Wert eigegeben wird
+            {
+                Console.WriteLine("Welches Gewinde hat die Schraube?");
+                Console.WriteLine("Mögliche Eingaben:");
+                Console.WriteLine("M4 M5 M6 M8 M10 M12 M16 M20");
+                this.gewinde = Console.ReadLine();      //String einlesen
+
+                if (feld_legit(feld, this.gewinde))    //Richtige Eingabe
+                {
+                    loop = false;
+                }
+                else //falsche Eingabe
+                {
+                    Console.WriteLine("Falsche Eingabe");
+                    loop = true;
+                }
+            } while (loop == true);
+
+        }   
+        }    //Abfrage und Festlegung des Gewindes (z.B. M8) 
 
         public void len()
         {
@@ -212,7 +239,7 @@ namespace Objektorientiert
                 }
                
             } while (loop == true);
-        }
+        }    //Abfrage und Festlegung des Schraubenlänge 
 
         public void gewlen()
         {
@@ -244,7 +271,7 @@ namespace Objektorientiert
             } while (loop == true);
 
             this.gewindelaenge = gewindelaenge;
-        }
+        } //Abfrage und Festlegung des Gewindelängen 
 
         public void gewart()
         {
@@ -267,7 +294,7 @@ namespace Objektorientiert
                     loop = true;
                 }
             } while (loop == true);
-        }
+        } //Abfrage und Festlegung des Gewindeart (FG/SG) 
 
         public void amount()
         {
@@ -293,10 +320,9 @@ namespace Objektorientiert
             } while (loop == true);
 
             this.menge = menge;
-        }
+        } //Abfrage und Festlegung des Schraubenanzahl 
 
-        
-
+       
         // Bestimmungen von Werten & Ausgabe 
 
         public void ausgabe_festigkeitsklasse() //Der Variable dem richtigen Ausgabestring zuweisen
