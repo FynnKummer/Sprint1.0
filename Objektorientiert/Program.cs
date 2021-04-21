@@ -716,11 +716,11 @@ namespace Objektorientiert
             Console.WriteLine();
             Console.WriteLine("  Nettopreise                                  Preise inkl. Mehrwertsteuer");
             Console.WriteLine();
-            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
-            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
-            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
-            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
-            Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));            
+            Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
+            Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
+            Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
+            Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
+            Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));            
         }
 
         public Boolean feld_legit(String[] feld, string a)
