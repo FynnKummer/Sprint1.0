@@ -36,7 +36,6 @@ namespace Objektorientiert
             //Ausgabe der Festigkeiten der Schraube
             a.festigkeitausgabe();
 
-            Console.WriteLine();
 
             //Preis berechnen und ausgeben
             a.Preis();
@@ -89,6 +88,47 @@ namespace Objektorientiert
                 }
             } while (loop == true);
 
+        }
+
+        public void fest()
+        {
+            bool loop = false;  //Variable für die Schleife
+            String[] festigkeitsklassen = { "1", "2", "3", "5.8", "6.8", "8.8", "9.8", "10.9", "12.9" };
+
+            do //Schleife bis ein richtiger Wert eigegeben wird
+            {
+                switch (this.material) //Abfrage der Festigkeitsklasse abhängig vom Material
+                {
+                    case "1":
+                        Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?");
+                        Console.WriteLine("Mögliche Eingaben:");
+                        Console.WriteLine("5.8 6.8 8.8 9.8 10.9 12.9");
+                        this.festigkeit = Console.ReadLine(); //String einlesen 
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?");
+                        Console.WriteLine("Mögliche Eingaben:");
+                        Console.WriteLine("'1' = A2-50");
+                        Console.WriteLine("'2' = A2-70");
+                        this.festigkeit = Console.ReadLine(); //String einlesen 
+                        break;
+
+                    case "3":
+                        this.festigkeit = "3"; //"3" = A4-50
+                        break;
+                }
+
+                if (feld_legit(festigkeitsklassen, this.festigkeit))  //Richtige Eingaben
+                {
+                    loop = false;
+                }
+                else //Falsche Eingabe
+                {
+                    Console.WriteLine("Falsche Eingabe");
+                    loop = true;
+                }
+            } while (loop == true);
         }
 
         public void type()
@@ -170,6 +210,7 @@ namespace Objektorientiert
                     Console.WriteLine("Die Schraube kann nicht unter 4mm lang sein!");
                     loop = true;
                 }
+               
             } while (loop == true);
         }
 
@@ -254,46 +295,7 @@ namespace Objektorientiert
             this.menge = menge;
         }
 
-        public void fest()
-        {
-            bool loop = false;  //Variable für die Schleife
-            String[] festigkeitsklassen = { "1", "2", "3", "5.8", "6.8", "8.8", "9.8", "10.9", "12.9" };
-
-            do //Schleife bis ein richtiger Wert eigegeben wird
-            {
-                switch (this.material) //Abfrage der Festigkeitsklasse abhängig vom Material
-                {
-                    case "1":
-                        Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?");
-                        Console.WriteLine("Mögliche Eingaben:");
-                        Console.WriteLine("5.8 6.8 8.8 9.8 10.9 12.9");
-                        this.festigkeit = Console.ReadLine(); //String einlesen 
-                        break;
-
-                    case "2":
-                        Console.WriteLine("Welche Festigkeitsklasse hat die Schraube?");
-                        Console.WriteLine("Mögliche Eingaben:");
-                        Console.WriteLine("'1' = A2-50");
-                        Console.WriteLine("'2' = A2-70");
-                        this.festigkeit = Console.ReadLine(); //String einlesen 
-                        break;
-
-                    case "3":
-                        this.festigkeit = "3"; //"3" = A4-50
-                        break;
-                }
-
-                if (feld_legit(festigkeitsklassen, this.festigkeit))  //Richtige Eingaben
-                {
-                    loop = false;
-                }
-                else //Falsche Eingabe
-                {
-                    Console.WriteLine("Falsche Eingabe");
-                    loop = true;
-                }
-            } while (loop == true);
-        }
+        
 
         // Bestimmungen von Werten & Ausgabe 
 
@@ -774,6 +776,7 @@ namespace Objektorientiert
             }
             Console.WriteLine(" Elastizitätsgrenze:   " + Re + " N/mm^2");
             Console.WriteLine(" Zugfestigkeit:        " + Rm +  "N/mm^2");
+            Console.WriteLine();
         }
     }
 }
