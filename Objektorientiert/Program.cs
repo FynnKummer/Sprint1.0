@@ -25,9 +25,9 @@ namespace Objektorientiert
             Console.Clear();    //Konsole bereinigen
 
             //Ausgabe der Eingabewerte
-            string e = Methoden.ausgabe_material(a.material);
-            string b = Methoden.ausgabe_festigkeitsklasse(a.festigkeit);
-            Console.WriteLine("\nGewählte Schraube: " + e + " " + b + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
+            
+            
+            Console.WriteLine("\nGewählte Schraube: " + a.mataus + " " + a.festigkeitsklasse + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
 
             //Werte Berechnen
             a.density();
@@ -90,15 +90,15 @@ namespace Objektorientiert
                     Rm = 1200;
                     Re = 1080;
                     break;
-                case "1":
+                case "1":     //v4a
                     Rm = 500;
                     Re = 210;
                     break;
-                case "2":
+                case "2":    //v2a
                     Rm = 700;
                     Re = 450;
                     break;
-                case "3":
+                case "3":     //v4a
                     Rm = 500;
                     Re = 210;
                     break;
@@ -109,41 +109,9 @@ namespace Objektorientiert
 
       
 
-        public static String ausgabe_material(string material)  //Der Variable dem richtigen Ausgabestring zuweisen
-        {
-            switch (material)
-            {
-                case "1":
-                    material = "Verzinkte Stahlschraube";
-                    break;
-                case "2":
-                    material = "V2A Schraube";
-                    break;
-                case "3":
-                    material = "V4A Schraube";
-                    break;
-            }
+       
 
-            return material;
-        }
-
-        public static String ausgabe_festigkeitsklasse(string Fk) //Der Variable dem richtigen Ausgabestring zuweisen
-        {
-            if (Fk.Equals("1"))
-            {
-                Fk = "A2-50";
-            }
-            else if (Fk.Equals("2"))
-            {
-                Fk = "A2-70";
-            }
-            else if (Fk.Equals("3"))
-            {
-                Fk = "A4-50";
-            }
-
-            return Fk;
-        }
+        
     }
 
     class Schraube
@@ -154,11 +122,15 @@ namespace Objektorientiert
         public String schluesselbreite;
         public String typ;
         public String festigkeit;
+        public String festigkeitsklasse;
+
         public String gewindeart;
         public int gewindelaenge;
         public double gewindesteigung;
         public String gewinde;
+
         public String material;
+        public String mataus;//material ausgeschrieben
         public double dichte;
         public double masse;
         public double gesamtgewicht;
@@ -785,6 +757,42 @@ namespace Objektorientiert
             }
 
             return "Fehler in ausgabe_gewindeart()";
+        }
+
+        public void ausgabe_festigkeitsklasse() //Der Variable dem richtigen Ausgabestring zuweisen
+        {
+            if (this.festigkeitsklasse.Equals("1"))
+            {
+                this.festigkeitsklasse = "A2-50";
+            }
+            else if (this.festigkeitsklasse.Equals("2"))
+            {
+                this.festigkeitsklasse = "A2-70";
+            }
+            else if (this.festigkeitsklasse.Equals("3"))
+            {
+                this.festigkeitsklasse = "A4-50";
+            }
+
+            
+        }
+
+        public void ausgabe_material()  //Der Variable dem richtigen Ausgabestring zuweisen
+        {
+            switch (this.material)
+            {
+                case "1":
+                    this.mataus = "Verzinkte Stahlschraube";
+                    break;
+                case "2":
+                    this.mataus = "V2A Schraube";
+                    break;
+                case "3":
+                    this.mataus = "V4A Schraube";
+                    break;
+            }
+
+            
         }
     }
 }
