@@ -10,13 +10,11 @@ namespace Objektorientiert
     {
         static void Main(string[] args)     //Hauptprogramm
         {
-
             Schraube a = new Schraube(); //erstellen eines Objektes des Typs Schraube
 
-            //Abfrage der Werte                                                                             laenge auf 150 begrenzen. Auch in der Frage ergänzen
-            //Abfrage des Materials
+            //Abfrage der Werte                                                  
             a.mat();    //Abfrage des Materials                                                                                                                                                         
-            a.type();   //Abfrage des 
+            a.type();   //Abfrage des Schraubenkopfes
             a.gew();    //Abfrage des Gewindes (z.B. M8)           
             a.len();    //Abfrage der Schraubenlänge           
             a.gewlen(); //Abfrage der Gewindelängen           
@@ -29,7 +27,6 @@ namespace Objektorientiert
             //Ausgabe der Eingabewerte
             string e = Methoden.ausgabe_material(a.material);
             string b = Methoden.ausgabe_festigkeitsklasse(a.festigkeit);
-
             Console.WriteLine("\nGewählte Schraube: " + e + " " + b + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
 
             //Werte Berechnen
@@ -44,11 +41,9 @@ namespace Objektorientiert
 
             Console.ReadKey();
         }   //Hauptprogramm Ende
-
     }
     class Methoden
     {
-
         public static void preis_ausgabe(double nettoeinzelpreis, double nettokilopreis, double netto50, double netto100, double preis50, double preis100, double einzelpreis, double kilopreis, double Nettobestellpreis, double Bestellpreis, int menge)
         {
             string summenenstring = "Summe (" + menge + "Stück):";
@@ -62,7 +57,6 @@ namespace Objektorientiert
             Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
             Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
             Console.WriteLine("  {0,-18} {1,8:c} EUR {2} {0,-18} {3,8:c} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
-
         }
 
         public static void festigkeit(string Fk)
@@ -153,32 +147,24 @@ namespace Objektorientiert
 
             return Fk;
         }
-
-
     }
 
     class Schraube
     {
-
         public int menge;
-
         public int laenge;
         public double volumen;
         public String schluesselbreite;
         public String typ;
         public String festigkeit;
-
         public String gewindeart;
         public int gewindelaenge;
         public double gewindesteigung;
         public String gewinde;
-
         public String material;
         public double dichte;
         public double masse;
-
         public double gesamtgewicht;
-
 
         public void len()
         {
@@ -207,14 +193,11 @@ namespace Objektorientiert
                     loop = true;
                 }
             } while (loop == true);
-
-
         }
 
         public void mat()
         {
             bool loop = false;  //Variable für die Schleife
-
 
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
@@ -241,7 +224,6 @@ namespace Objektorientiert
         {
             bool loop = false;  //Variable für die Schleife
             
-
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
                 Console.WriteLine("Welchen Kopf hat die Schraube?");
@@ -258,15 +240,13 @@ namespace Objektorientiert
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
                 }
-            } while (loop == true);
-           
+            } while (loop == true);         
         }
 
         public void gew()
         {
             String[] feld = { "M4", "M5", "M6", "M8", "M10", "M12", "M16", "M20" };
             bool loop = false;  //Variable für die Schleife
-
 
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
@@ -286,14 +266,12 @@ namespace Objektorientiert
                 }
             } while (loop == true);
 
-
         }
 
         public void gewart()
         {
             bool loop = false;  //Variable für die Schleife
             
-
             do //Schleife bis ein richtiger Wert eigegeben wird
             {
                 Console.WriteLine("Welche Gewindeart hat die Schraube?");
@@ -310,9 +288,7 @@ namespace Objektorientiert
                     Console.WriteLine("Falsche Eingabe");
                     loop = true;
                 }
-            } while (loop == true);
-
-           
+            } while (loop == true);          
         }
 
         public void amount()
@@ -571,8 +547,7 @@ namespace Objektorientiert
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
                     break;
-            }
-            
+            }            
         }
 
         public void geometrie()
@@ -662,23 +637,16 @@ namespace Objektorientiert
                 }
             }
 
-            // Rechnungen 
-            // Gewindetiefe   
-            h3 = 0.6134 * p;
+            // Rechnungen   
+            h3 = 0.6134 * p;    // Gewindetiefe 
            
+            r = 0.1443 * p; // Rundung
 
+            d2 = d - 0.64595 * p;   //Flankendurchmesser 
 
-            // Rundung
-            r = 0.1443 * p;
+            d3 = d - 1.2269;    //Kerndurchmesser 
 
-            //Flankendurchmesser 
-            d2 = d - 0.64595 * p;
-
-            //Kerndurchmesser 
-            d3 = d - 1.2269;
-
-            //Flankenwinkel 
-            flankenwikel = 60;
+            flankenwikel = 60;  //Flankenwinkel 
 
             // Umwandlung der Strings 
             // Gewindetyp 
@@ -702,10 +670,7 @@ namespace Objektorientiert
             }
 
             //Gewicht
-
             this.masse = this.volumen * this.dichte;
-
-
             this.gesamtgewicht = this.masse * this.menge;
 
             // Ausgabe
@@ -814,16 +779,11 @@ namespace Objektorientiert
                     return "Standardgewinde";
                     
                 case "2":
-                    return "Feingewinde";
-                    
+                    return "Feingewinde";                  
             }
 
             return "Fehler in ausgabe_gewindeart()";
         }
-
     }
-
-
-
 }
 
