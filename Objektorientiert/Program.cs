@@ -7,7 +7,7 @@ namespace Objektorientiert
     {
         static void Main(string[] args)     //Hauptprogramm
         {
-            Schraube a = new Schraube(); //erstellen eines Objektes des Typs Schraube
+            Schraube a = new Schraube(); //Erstellen eines Objektes des Typs Schraube
 
             //Abfrage der Werte                                                  
             a.mat();    //Abfrage und Festlegung des Materials                                                                                                                                                         
