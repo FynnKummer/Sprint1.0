@@ -24,7 +24,7 @@ namespace Objektorientiert
             //Ausgabe der Eingabewerte
             a.ausgabe_festigkeitsklasse();
             a.ausgabe_material();
-            Console.WriteLine("\nGewählte Schraube: " + a.mataus + " " + a.festaus + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
+            Console.WriteLine("\nGewählte Schraube: " + a.mataus + " Festigkeitsklasse: " + a.festaus + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
           
             //Werte berechnen
             a.density();
