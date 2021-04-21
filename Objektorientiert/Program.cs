@@ -364,15 +364,15 @@ namespace Objektorientiert
         {
             if (this.material.Equals("1"))
             {
-                this.dichte = 0.0079;
+                this.dichte = 0.0079; //Verzinkt
             }
             else if (this.material.Equals("2"))
             {
-                this.dichte = 0.0079;
+                this.dichte = 0.0079; //V2A
             }
             else
             {
-                this.dichte = 0.008;
+                this.dichte = 0.008; //V4A
             }
         }
 
@@ -384,13 +384,13 @@ namespace Objektorientiert
             switch (this.gewinde)
             {
                 case "M4":
-                    if (this.typ.Equals("A"))
+                    if (this.typ.Equals("A")) //Für Außensechskant
                     {
                         volumen_schraubenkopf = 108.9508;
                         volumen_schaft = Math.PI / 4 * (3.55 * 3.55) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (4 * 4);
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
-                    else
+                    else //Für Innensechskant
                     {
                         volumen_schraubenkopf = 138.3500;
                         volumen_schaft = Math.PI / 4 * (3.55 * 3.55) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (4 * 4);
@@ -399,13 +399,13 @@ namespace Objektorientiert
                     break;
 
                 case "M5":
-                    if (this.typ.Equals("A"))
+                    if (this.typ.Equals("A")) //Für Außensechskant
                     {
                         volumen_schraubenkopf = 178.8570;
                         volumen_schaft = Math.PI / 4 * (4.48 * 4.48) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (5 * 5);
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
-                    else
+                    else //Für Innensechskant
                     {
                         volumen_schraubenkopf = 249.0851;
                         volumen_schaft = Math.PI / 4 * (4.48 * 4.48) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (5 * 5);
@@ -414,13 +414,13 @@ namespace Objektorientiert
                     break;
 
                 case "M6":
-                    if (this.typ.Equals("A"))
+                    if (this.typ.Equals("A")) //Für Außensechskant
                     {
                         volumen_schraubenkopf = 317.2320;
                         volumen_schaft = Math.PI / 4 * (5.35 * 5.35) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (6 * 6);
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
-                    else
+                    else //Für Innensechskant
                     {
                         volumen_schraubenkopf = 406.2859;
                         volumen_schaft = Math.PI / 4 * (5.35 * 5.35) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (6 * 6);
@@ -429,13 +429,13 @@ namespace Objektorientiert
                     break;
 
                 case "M8":
-                    if (this.typ.Equals("A"))
+                    if (this.typ.Equals("A")) //Für Außensechskant
                     {
                         volumen_schraubenkopf = 738.7050;
                         volumen_schaft = Math.PI / 4 * (7.19 * 7.19) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (8 * 8);
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
-                    else
+                    else //Für Innensechskant
                     {
                         volumen_schraubenkopf = 937.1503;
                         volumen_schaft = Math.PI / 4 * (7.19 * 7.19) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (8 * 8);
@@ -444,13 +444,13 @@ namespace Objektorientiert
                     break;
 
                 case "M10":
-                    if (this.typ.Equals("A"))
+                    if (this.typ.Equals("A")) //Für Außensechskant
                     {
                         volumen_schraubenkopf = 1624.1050;
                         volumen_schaft = Math.PI / 4 * (9.03 * 9.03) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (10 * 10);
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
-                    else
+                    else //Für Innensechskant
                     {
                         volumen_schraubenkopf = 1733.4893;
                         volumen_schaft = Math.PI / 4 * (9.03 * 9.03) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (10 * 10);
@@ -459,13 +459,13 @@ namespace Objektorientiert
                     break;
 
                 case "M12":
-                    if (this.typ.Equals("A"))
+                    if (this.typ.Equals("A")) //Für Außensechskant
                     {
                         volumen_schraubenkopf = 2313.3760;
                         volumen_schaft = Math.PI / 4 * (10.86 * 10.86) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (12 * 12);
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
-                    else
+                    else //Für Innensechskant
                     {
                         volumen_schraubenkopf = 2534.0101;
                         volumen_schaft = Math.PI / 4 * (10.86 * 10.86) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (12 * 12);
@@ -474,13 +474,13 @@ namespace Objektorientiert
                     break;
 
                 case "M16":
-                    if (this.typ.Equals("A"))
+                    if (this.typ.Equals("A")) //Für Außensechskant
                     {
                         volumen_schraubenkopf = 4647.7100;
                         volumen_schaft = Math.PI / 4 * (14.7 * 14.7) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (16 * 16);
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
-                    else
+                    else //Für Innensechskant
                     {
                         volumen_schraubenkopf = 5540.8195;
                         volumen_schaft = Math.PI / 4 * (14.7 * 14.7) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (16 * 16);
@@ -489,13 +489,13 @@ namespace Objektorientiert
                     break;
 
                 case "M20":
-                    if (this.typ.Equals("A"))
+                    if (this.typ.Equals("A")) //Für Außensechskant
                     {
                         volumen_schraubenkopf = 9492.9770;
                         volumen_schaft = Math.PI / 4 * (18.38 * 18.38) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (20 * 20);
                         this.volumen = volumen_schraubenkopf + volumen_schaft;
                     }
-                    else
+                    else //Für Innensechskant
                     {
                         volumen_schraubenkopf = 11634.3569;
                         volumen_schaft = Math.PI / 4 * (18.38 * 18.38) * gewindelaenge + (laenge - gewindelaenge) * Math.PI / 4 * (20 * 20);
