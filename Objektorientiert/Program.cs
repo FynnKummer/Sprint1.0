@@ -50,7 +50,7 @@ namespace Objektorientiert
         public int laenge;
         public double volumen;
         public int schluesselbreite;
-        public String typ;
+        public String typ;      //Innensechskant/Ausßensechskant
         public String festigkeit;
         public String festaus;//Festigkeitsklasse ausgeschrieben
 
@@ -643,7 +643,7 @@ namespace Objektorientiert
             Console.WriteLine(" Flankendurchmesser:   " + Math.Round(d2, 2) + " mm");
             Console.WriteLine(" Kerndurchmesser:      " + Math.Round(d3, 2) + " mm");
             Console.WriteLine(" Flankenwinkel:        " + flankenwikel + "°\n");
-        }
+        } //Berechnungen der Geometrie + Ausgabe davon
         
         public void Preis()
         {
@@ -720,7 +720,7 @@ namespace Objektorientiert
             Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
             Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
             Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));            
-        }
+        }//Berechnung des Preises + Ausgabe davon
 
         public Boolean feld_legit(String[] feld, string a)
         {
@@ -732,7 +732,7 @@ namespace Objektorientiert
                 }
             }
             return false;
-        }
+        }// Methode zum Prüfen, ob die Eingabe in einer Methode aus der möglichen Auswahl ist
 
         public void festigkeitausgabe()
         {
@@ -781,6 +781,6 @@ namespace Objektorientiert
             Console.WriteLine(" Elastizitätsgrenze:   " + Re + " N/mm²");
             Console.WriteLine(" Zugfestigkeit:        " + Rm +  "N/mm²");
             Console.WriteLine();
-        }
+        }// Berechnung der Festigkeit + Ausgabe
     }
 }
