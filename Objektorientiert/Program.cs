@@ -56,7 +56,7 @@ namespace Objektorientiert
 
     class Schraube
     {
-        public String name;
+        public String name; // Vom Benutzer festgeleter Name für die Schraube
         public int menge;
         public int laenge;
         public double volumen;
@@ -76,7 +76,7 @@ namespace Objektorientiert
         public double masse;
         public double gesamtgewicht;
 
-        public Schraube(String name)
+        public Schraube(String name) // Konstruktor
         {
             this.name = name;
         }
