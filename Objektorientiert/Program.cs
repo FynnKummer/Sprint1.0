@@ -7,38 +7,48 @@ namespace Objektorientiert
     {
         static void Main(string[] args)     //Hauptprogramm
         {
-            Schraube a = new Schraube(); //Erstellen eines Objektes des Typs Schraube
-
-            //Abfrage der Werte                                                  
-            a.mat();    //Abfrage und Festlegung des Materials                                                                                                                                                         
-            a.fest();   //Abfrage und Festlegung des Festigkeitsklasse 
-            a.type();   //Abfrage und Festlegung des Schraubenkopfes
-            a.gew();    //Abfrage und Festlegung des Gewindes (z.B. M8)           
-            a.len();    //Abfrage und Festlegung des Schraubenlänge           
-            a.gewlen(); //Abfrage und Festlegung des Gewindelängen           
-            a.gewart(); //Abfrage und Festlegung des Gewindeart (FG/SG)           
-            a.amount(); //Abfrage und Festlegung des Schraubenanzahl          
+            Console.WriteLine("Wie viel verscheidene Schrauben möchten Sie konfigurieren");
             
-            Console.Clear();    //Konsole bereinigen
+            Schraube[] arr = new Schraube[Convert.ToInt32(Console.ReadLine())];
 
-            //Ausgabe der Eingabewerte
-            a.ausgabe_festigkeitsklasse();
-            a.ausgabe_material();
-            Console.WriteLine("\nGewählte Schraube: " + a.mataus + " Festigkeitsklasse: " + a.festaus + " " + a.ausgabe_schraubenkopf() + " " + a.ausgabe_gewindeart() + " " + a.gewinde + "x" + a.laenge + "mm mit " + a.gewindelaenge + "mm Gewinde\n");
-          
-            //Werte berechnen
-            a.density();
-            a.vol();
-            a.masse = a.dichte / a.volumen;
-
-            a.geometrie();
-
-            //Ausgabe der Festigkeiten der Schraube
-            a.festigkeitausgabe();
+            for (int s = 0; s < arr.Length; s++)
+            {
+                Console.WriteLine("Gegen Sie den Namen der " + (s+1) + ". Schraube ein");
+                arr[s] = new Schraube(Console.ReadLine());
 
 
-            //Preis berechnen und ausgeben
-            a.Preis();
+                //Abfrage der Werte                                                  
+                arr[s].mat();    //Abfrage und Festlegung des Materials                                                                                                                                                         
+                arr[s].fest();   //Abfrage und Festlegung des Festigkeitsklasse 
+                arr[s].type();   //Abfrage und Festlegung des Schraubenkopfes
+                arr[s].gew();    //Abfrage und Festlegung des Gewindes (z.B. M8)           
+                arr[s].len();    //Abfrage und Festlegung des Schraubenlänge           
+                arr[s].gewlen(); //Abfrage und Festlegung des Gewindelängen           
+                arr[s].gewart(); //Abfrage und Festlegung des Gewindeart (FG/SG)           
+                arr[s].amount(); //Abfrage und Festlegung des Schraubenanzahl          
+
+                Console.Clear();    //Konsole bereinigen
+
+                //Ausgabe der Eingabewerte
+                arr[s].ausgabe_festigkeitsklasse();
+                arr[s].ausgabe_material();
+                Console.WriteLine("\nGewählte Schraube: " + arr[s].mataus + " Festigkeitsklasse: " + arr[s].festaus + " " + arr[s].ausgabe_schraubenkopf() + " " + arr[s].ausgabe_gewindeart() + " " + arr[s].gewinde + "x" + arr[s].laenge + "mm mit " + arr[s].gewindelaenge + "mm Gewinde\n");
+
+                //Werte berechnen
+                arr[s].density();
+                arr[s].vol();
+                arr[s].masse = arr[s].dichte / arr[s].volumen;
+
+                arr[s].geometrie();
+
+                //Ausgabe der Festigkeiten der Schraube
+                arr[s].festigkeitausgabe();
+
+
+                //Preis berechnen und ausgeben
+                arr[s].Preis();
+
+            }
 
             Console.ReadKey();
         }   //Hauptprogramm Ende
@@ -46,6 +56,7 @@ namespace Objektorientiert
 
     class Schraube
     {
+        public String name; // Vom Benutzer festgeleter Name für die Schraube
         public int menge;
         public int laenge;
         public double volumen;
@@ -64,6 +75,11 @@ namespace Objektorientiert
         public double dichte;
         public double masse;
         public double gesamtgewicht;
+
+        public Schraube(String name) // Konstruktor
+        {
+            this.name = name;
+        }
 
 
         //Abfrage von Werten
