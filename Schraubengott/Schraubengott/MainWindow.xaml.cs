@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace Schraubengott
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -25,6 +25,14 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-     
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string a= cbmat.SelectedItem.ToString();
+            if (a=="Verzinkter Stahl")
+            {
+                cbfk.Items.Add = "5.8";
+            }
+
+        }
     }
 }

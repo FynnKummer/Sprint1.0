@@ -5,56 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-<<<<<<< Updated upstream
-        Title="Schraubenkonfigurator" Height="445.761" Width="846.625" Icon="vykres_-_din_931.jpg" ResizeMode="NoResize">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="207*"/>
-            <ColumnDefinition Width="635*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Welches Material hat die Schraube?" HorizontalAlignment="Left" Margin="47,53,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <ComboBox HorizontalAlignment="Left" Margin="119.333,57,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="1">
-            <ComboBoxItem x:Name="hallo" Content = "Verzinkter Stahl" />
-            <ComboBoxItem Content = "V2A" />
-            <ComboBoxItem Content = "V4A" />
-        </ComboBox>
-        <Label Content="Welche Festigkeitsklasse hat die Schraube?" HorizontalAlignment="Left" Margin="47,100,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label Content="Welchen Schraubenkopf hat die Schraube" HorizontalAlignment="Left" Margin="47,149,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label Content="Welches Gewinde hat die Schraube?" HorizontalAlignment="Left" Margin="47,205,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <ComboBox HorizontalAlignment="Left" Margin="119.333,100,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="1" RenderTransformOrigin="0.453,2.924">
-            <ComboBoxItem x:Name="hallo1" Content = "Verzinkter Stahl" />
-            <ComboBoxItem Content = "V2A" />
-            <ComboBoxItem Content = "V4A" />
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="119.333,153,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="1">
-            <ComboBoxItem x:Name="hallo2" Content = "Verzinkter Stahl" />
-            <ComboBoxItem Content = "V2A" />
-            <ComboBoxItem Content = "V4A" />
-            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
-                <ComboBoxItem x:Name="hallo3" Content = "Verzinkter Stahl" />
-                <ComboBoxItem Content = "V2A" />
-                <ComboBoxItem Content = "V4A" />
-            </ComboBox>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="119.333,209,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="1">
-            <ComboBoxItem x:Name="hallo4" Content = "Verzinkter Stahl" />
-            <ComboBoxItem Content = "V2A" />
-            <ComboBoxItem Content = "V4A" />
-        </ComboBox>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="153" Margin="291.333,57,0,0" VerticalAlignment="Top" Width="333" Source="vykres_-_din_931.jpg" RenderTransformOrigin="0.499,0.83"/>
-        <Label Content="Hier Ausgabe" Grid.Column="1" HorizontalAlignment="Left" Height="93" Margin="338.333,274,0,0" VerticalAlignment="Top" Width="238"/>
+        Title="Schraubenkonfigurator" Height="464.761" Width="846.625" Icon="vykres_-_din_931.jpg" ResizeMode="NoResize">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="207*"/>
+			<ColumnDefinition Width="635*"/>
+		</Grid.ColumnDefinitions>
+		<Image Grid.Column="1" HorizontalAlignment="Left" Height="153" Margin="291.333,57,0,0" VerticalAlignment="Top" Width="333" Source="vykres_-_din_931.jpg" RenderTransformOrigin="0.499,0.83"/>
+		<Image HorizontalAlignment="Left" Margin="34,57,0,29" Width="144" Source="vykres_-_din_931.jpg"/>
+		<TabControl Grid.Column="1" HorizontalAlignment="Left" Height="325" Margin="27.333,36,0,0" VerticalAlignment="Top" Width="575">
+			<TabItem Header="TabItem" Margin="-2,0"/>
+			<TabItem Header="TabItem"/>
+		</TabControl>
+		<TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="419.333,366,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="146"/>
 
 
-    </Grid>
-=======
-        Title="MainWindow" Height="450" Width="800">
-    <TabControl HorizontalAlignment="Left" Height="289" Margin="235,52,0,0" VerticalAlignment="Top" Width="492">
-        <TabItem Header="TabItem">
-            <Grid Background="#FFE5E5E5"/>
-        </TabItem>
-        <TabItem Header="TabItem">
-            <Grid Background="#FFE5E5E5"/>
-        </TabItem>
-    </TabControl>
->>>>>>> Stashed changes
+	</Grid>
+
 </Window>

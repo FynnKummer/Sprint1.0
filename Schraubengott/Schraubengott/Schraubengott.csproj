@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1252BBAC-EBDF-4F51-A541-C0D1B93FB693}</ProjectGuid>
+    <ProjectGuid>{25EE7853-B192-4E07-A902-664EFBF09656}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Sprint_2</RootNamespace>
-    <AssemblyName>Sprint 2</AssemblyName>
+    <RootNamespace>Schraubengott</RootNamespace>
+    <AssemblyName>Schraubengott</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -96,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="vykres_-_din_931.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Untitled - 2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
