@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sprint_2"
         mc:Ignorable="d"
+<<<<<<< Updated upstream
         Title="MainWindow" Height="450" Width="800" Background="#FFFFFAE1" Foreground="White">
     <Grid OpacityMask="White">
         <Grid.ColumnDefinitions>
@@ -24,6 +25,20 @@
             <ComboBoxItem Content="Carsten Stahl" HorizontalAlignment="Left" Width="118"/>
 
         </ComboBox>
+=======
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="WhatsApp Image 2021-04-26 at 10.58.36.jpeg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="WhatsApp Image 2021-04-26 at 10.58.36.jpeg"/>
+        </Grid.Background>
+        <Grid.OpacityMask>
+            <ImageBrush TileMode="FlipX"/>
+        </Grid.OpacityMask>
+        <Button Content="Hör auf" HorizontalAlignment="Left" Margin="710,392,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+>>>>>>> Stashed changes
 
     </Grid>
 </Window>
