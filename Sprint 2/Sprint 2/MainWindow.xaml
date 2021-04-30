@@ -5,11 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sprint_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#FFFFEBEB">
     <Grid OpacityMask="#FFB9FDFF">
         <Label Content="Welches Material? " HorizontalAlignment="Left" Margin="50,38,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="V2A Stahl" HorizontalAlignment="Left" Margin="354,44,0,0" VerticalAlignment="Top"/>
-        <Button Content="Hör auf" HorizontalAlignment="Left" Margin="709,170,0,0" VerticalAlignment="Top" Width="75"/>
+        <CheckBox Content="V2A Stahl" HorizontalAlignment="Left" Margin="354,44,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+        <Button Content="Hör auf" HorizontalAlignment="Left" Margin="710,392,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <CheckBox Content="V4A Stahl" HorizontalAlignment="Left" Margin="496,44,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1"/>
+        <CheckBox Content="Carsten Stahl" HorizontalAlignment="Left" Margin="636,44,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="322,122,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Verzinkter Stahl" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="V2A" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="V4A" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Carsten Stahl" HorizontalAlignment="Left" Width="118"/>
+            
+        </ComboBox>
 
     </Grid>
 </Window>
