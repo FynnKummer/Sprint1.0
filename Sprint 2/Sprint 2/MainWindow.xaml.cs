@@ -25,9 +25,6 @@ namespace Sprint_2
             InitializeComponent();
         }
 
-        private void CheckBox_Checked()
-        {
-
-        }
+       
     }
 }
