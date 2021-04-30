@@ -1,0 +1,41 @@
+﻿<Window x:Class="Schraubengott.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Schraubengott"
+        mc:Ignorable="d"
+        Title="Schraubengott" Height="501" Width="840" Icon="Untitled - 2.ico" ResizeMode="NoResize" WindowState="Minimized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="782*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Margin="21.667,0,0,65" Width="134" Source="vykres_-_din_931.jpg" Height="346" VerticalAlignment="Bottom" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="641.667,361,0,0" TextWrapping="Wrap" Text="Preis" VerticalAlignment="Top" Width="153" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="702.667,423,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="584.667,423,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="456.667,423,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
+        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="294" Margin="235.667,62,0,0" VerticalAlignment="Top" Width="559">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Material:" HorizontalAlignment="Left" Height="31" Margin="10,10,0,0" VerticalAlignment="Top" Width="59"/>
+                    <ComboBox x:Name="cbmat" HorizontalAlignment="Left" Height="31" Margin="74,10,0,0" VerticalAlignment="Top" Width="97" SelectionChanged="ComboBox_SelectionChanged">
+                        <ComboBoxItem Content="Verzinkter Stahl"/>
+                        <ComboBoxItem Content="V2A"/>
+                        <ComboBoxItem Content="V4A"/>
+                    </ComboBox>
+                    <ComboBox x:Name="cbfk" HorizontalAlignment="Left" Height="31" Margin="373,10,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="ComboBox_SelectionChanged">
+                        <ComboBoxItem Content="5.8"/>
+                        <ComboBoxItem Content="6.8"/>
+                    </ComboBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <Label Content="Festigkeitsklasse:" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="483.667,105,0,0" VerticalAlignment="Top" Width="113"/>
+
+    </Grid>
+</Window>
