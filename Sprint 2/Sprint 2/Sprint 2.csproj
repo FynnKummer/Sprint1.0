@@ -100,5 +100,8 @@
   <ItemGroup>
     <Resource Include="209-logo-jade-hs404x200.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="vykres_-_din_931.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

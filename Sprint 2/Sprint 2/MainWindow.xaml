@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
+<<<<<<< Updated upstream
         Title="Schraubenkonfigurator" Height="445.761" Width="846.625" Icon="vykres_-_din_931.jpg" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -45,4 +46,15 @@
 
 
     </Grid>
+=======
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl HorizontalAlignment="Left" Height="289" Margin="235,52,0,0" VerticalAlignment="Top" Width="492">
+        <TabItem Header="TabItem">
+            <Grid Background="#FFE5E5E5"/>
+        </TabItem>
+        <TabItem Header="TabItem">
+            <Grid Background="#FFE5E5E5"/>
+        </TabItem>
+    </TabControl>
+>>>>>>> Stashed changes
 </Window>
