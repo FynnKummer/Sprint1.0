@@ -6,17 +6,19 @@
         xmlns:local="clr-namespace:Sprint_2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Background>
-        <ImageBrush ImageSource="WhatsApp Image 2021-04-26 at 10.58.36.jpeg"/>
-    </Window.Background>
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="WhatsApp Image 2021-04-26 at 10.58.36.jpeg"/>
-        </Grid.Background>
-        <Grid.OpacityMask>
-            <ImageBrush TileMode="FlipX"/>
-        </Grid.OpacityMask>
-        <Button Content="Hör auf" HorizontalAlignment="Left" Margin="710,392,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-
-    </Grid>
+    <TabControl HorizontalAlignment="Left" Height="306" Margin="189,81,0,0" VerticalAlignment="Top" Width="541">
+        <TabItem Header="TabItem">
+            <Grid HorizontalAlignment="Right" Margin="0,0,-0.333,0" Width="535" Background="{DynamicResource {x:Static SystemColors.InactiveBorderBrushKey}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="63*"/>
+                    <ColumnDefinition Width="452*"/>
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Left" Height="333" Margin="-160,-41,0,-14.667" VerticalAlignment="Top" Width="115"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="TabItem">
+            <Grid Background="#FFE5E5E5"/>
+        </TabItem>
+    </TabControl>
 </Window>
