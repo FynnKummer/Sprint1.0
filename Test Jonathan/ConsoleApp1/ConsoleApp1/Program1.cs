@@ -4,19 +4,26 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ConsoleApp1
 {
-    class Program
+    class ExcelControll
     {
         static void Main()
         {
-             emailsenden("Test 2");    
-
             new ExcelControll();
-            {
-                Microsoft.Offi
-            }
+        }
+
+        ExcelControll()
+        {
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = true;
+            excelApp.Workbooks.Add();
+
+            Excel._Worksheet mySheet = (Excel.Worksheet)excelApp.ActiveSheet;
+
+            mySheet.Cells[1, "A"] = "Hallo Welt";
         }
 
          public static void emailsenden( string text)
@@ -62,8 +69,5 @@ namespace ConsoleApp1
 
     }
 
-    class ExcelControll
-    {
-        
-    }
 }
+
