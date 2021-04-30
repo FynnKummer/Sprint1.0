@@ -9,7 +9,7 @@
     <Window.Background>
         <ImageBrush ImageSource="WhatsApp Image 2021-04-26 at 10.58.36.jpeg"/>
     </Window.Background>
-    <Grid>
+    <Grid Cursor="AppStarting">
         <Grid.Background>
             <ImageBrush ImageSource="WhatsApp Image 2021-04-26 at 10.58.36.jpeg"/>
         </Grid.Background>
