@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Sprint_2._0
+namespace WpfApp1
 {
     /// <summary>
     /// Interaktionslogik für "App.xaml"

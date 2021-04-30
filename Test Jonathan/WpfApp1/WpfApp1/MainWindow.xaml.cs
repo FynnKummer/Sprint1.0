@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sprint_2._0
+namespace WpfApp1
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml

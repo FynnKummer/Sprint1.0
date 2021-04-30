@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E66EC423-DEB4-44EA-99ED-0AB96B40941A}</ProjectGuid>
+    <ProjectGuid>{27DA6588-54E0-4D54-A17B-6BBC461F69B7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Sprint_2._0</RootNamespace>
-    <AssemblyName>Sprint 2.0</AssemblyName>
+    <RootNamespace>WpfApp1</RootNamespace>
+    <AssemblyName>WpfApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
