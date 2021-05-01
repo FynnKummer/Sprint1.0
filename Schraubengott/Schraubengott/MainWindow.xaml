@@ -11,23 +11,30 @@
             <ColumnDefinition Width="11*"/>
             <ColumnDefinition Width="782*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Margin="21.667,0,0,65" Width="134" Source="vykres_-_din_931.jpg" Height="346" VerticalAlignment="Bottom" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="641.667,361,0,0" TextWrapping="Wrap" Text="Preis" VerticalAlignment="Top" Width="153" Grid.Column="1"/>
-        <Button Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Height="23" Margin="702.667,423,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="btn_exit_Click" />
-        <Button Content="Ich bin fertig Mama" HorizontalAlignment="Left" Height="23" Margin="584.667,423,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="456.667,423,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
-        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="294" Margin="235.667,62,0,0" VerticalAlignment="Top" Width="559">
+        <Image HorizontalAlignment="Left" Margin="52.5,0,0,150.5" Width="183" Source="vykres_-_din_931.jpg" Height="366" VerticalAlignment="Bottom" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="809.5,501,0,0" TextWrapping="Wrap" Text="Preis" VerticalAlignment="Top" Width="153" Grid.Column="1"/>
+        <Button Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="927.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="btn_exit_Click" />
+        <Button Content="Ich bin fertig Mama" HorizontalAlignment="Left" Height="23" Margin="765.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="616.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
+        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="412" Margin="235.5,62,0,0" VerticalAlignment="Top" Width="761">
             <TabItem Header="Schraube 1">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Material:" HorizontalAlignment="Left" Height="31" Margin="10,10,0,0" VerticalAlignment="Top" Width="59"/>
+                    <Label Content="Festigkeitsklasse:" HorizontalAlignment="Left" Height="24" Margin="403,10,0,0" VerticalAlignment="Top" Width="113"/>
+
                     <ComboBox x:Name="cbmat" HorizontalAlignment="Left" Height="31" Margin="74,10,0,0" VerticalAlignment="Top" Width="97" SelectionChanged="ComboBox_SelectionChanged">
                         <ComboBoxItem Content="Verzinkter Stahl"/>
                         <ComboBoxItem Content="V2A"/>
                         <ComboBoxItem Content="V4A"/>
                     </ComboBox>
-                    <ComboBox x:Name="cbfk" HorizontalAlignment="Left" Height="31" Margin="373,10,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBox x:Name="cbfk" HorizontalAlignment="Left" Height="32" Margin="537,10,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="ComboBox_SelectionChanged">
                         <ComboBoxItem Content="5.8"/>
                         <ComboBoxItem Content="6.8"/>
+                        <ComboBoxItem Content="8.8"/>
+                        <ComboBoxItem Content="9.8"/>
+                        <ComboBoxItem Content="10.8"/>
+                        <ComboBoxItem Content="12.8"/>
+                        
                     </ComboBox>
                     <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="92,131,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="cb_gewinde" HorizontalAlignment="Left" Margin="99,79,0,0" VerticalAlignment="Top" Width="80" >
@@ -41,15 +48,14 @@
                         <ComboBoxItem Content="M20" HorizontalAlignment="Left" Width="118"/>
                     </ComboBox>
                     <Label Content="Gewinde" HorizontalAlignment="Left" Margin="13,75,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="403,204,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="36" Margin="403,230,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="140"/>
+                    <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="403,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.971,4.298"/>
+                    <TextBox HorizontalAlignment="Left" Height="36" Margin="593,324,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="140"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Schraube 2">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-        <Label Content="Festigkeitsklasse:" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="483.667,105,0,0" VerticalAlignment="Top" Width="113"/>
 
     </Grid>
 
