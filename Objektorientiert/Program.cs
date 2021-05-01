@@ -854,7 +854,7 @@ namespace Objektorientiert
 
             for (int i = 1; i >= anzahl; i++)
             {
-                mySheet.Cells[3, i + 1] = Program.arr[i - 1].Schraube.laenge + " mm";
+                mySheet.Cells[3, i + 1] = "";
                 mySheet.Cells[4, i+1] = "Schlüsselweite";
                 mySheet.Cells[5, i+1] = "Gewindedurchmesser";
                 mySheet.Cells[6, i+1] = "Masse pro Stück";
