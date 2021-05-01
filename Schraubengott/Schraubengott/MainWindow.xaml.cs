@@ -30,9 +30,14 @@ namespace Schraubengott
             string a= cbmat.SelectedItem.ToString();
             if (a=="Verzinkter Stahl")
             {
-                cbfk.Items.Add = "5.8";
+                //cbfk.Items.Add = "5.8";
             }
 
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
