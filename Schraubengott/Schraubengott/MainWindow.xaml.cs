@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,7 +29,7 @@ namespace Schraubengott
             InitializeComponent();
         }
 
-            private void btn_exit_Click(object sender, RoutedEventArgs e)
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
@@ -43,12 +44,12 @@ namespace Schraubengott
             }
             else if (cbmat.SelectedValue.ToString() == "V4A")
             {
-                comboBox1.Items.Clear(); 
+                comboBox1.Items.Clear();
                 comboBox1.Items.Add("V4A 70");
             }
             else if (cbmat.SelectedValue.ToString() == "Verzinkter Stahl")
             {
-                comboBox1.Items.Clear(); 
+                comboBox1.Items.Clear();
                 comboBox1.Items.Add("5.8");
                 comboBox1.Items.Add("6.8");
                 comboBox1.Items.Add("8.8");
@@ -57,16 +58,24 @@ namespace Schraubengott
                 comboBox1.Items.Add("12.9");
             }
         }
-    }
 
-    class material : ObservableCollection<string>
-    {
-        public material()
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            TextBox a_textBox = (TextBox)sender;
+            string a_newText = string.Empty;
 
-            Add("Verzinkter Stahl");
-            Add("V2A");
-            Add("V4A");
+            for (int i = 0; i < a_textBox.Text.Length; i++)
+            {
+                if (Regex.IsMatch(a_textBox.Text[i].ToString(), "^[0-9]+$"))
+                {
+                    a_newText += a_textBox.Text[i];
+                }
+               
+            }
+
+            a_textBox.Text = a_newText;
+            a_textBox.SelectionStart = a_textBox.Text.Length;
         }
+
     }
 }

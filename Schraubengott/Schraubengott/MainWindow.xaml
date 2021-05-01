@@ -18,9 +18,20 @@
         <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="616.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"  />
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="412" Margin="235.5,62,0,0" VerticalAlignment="Top" Width="761">
             <TabItem Header="Schraube 1">
-                <Grid Background="#FFE5E5E5">
-                    <Label Content="Material:" HorizontalAlignment="Left" Height="31" Margin="13,10,0,0" VerticalAlignment="Top" Width="59"/>
-                    <Label Content="Festigkeitsklasse:" HorizontalAlignment="Left" Height="24" Margin="13,41,0,0" VerticalAlignment="Top" Width="113"/>
+                <Grid>
+                    <Grid.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFFAFCFE"/>
+                            <GradientStop Color="#FFDDE0E4" Offset="0.626"/>
+
+                        </RadialGradientBrush>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="416*"/>
+                        <ColumnDefinition Width="339*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Material:" HorizontalAlignment="Left" Height="30" Margin="13,10,0,0" VerticalAlignment="Top" Width="59"/>
+                    <Label Content="Festigkeitsklasse:" HorizontalAlignment="Left" Height="30" Margin="13,45,0,0" VerticalAlignment="Top" Width="113"/>
 
 
                     <ComboBox Name="cbmat"   IsEditable="true" SelectedValuePath="Content"
@@ -32,14 +43,14 @@
 
                     </ComboBox>
                     <ComboBox Name="comboBox1" IsEditable="true"
-                                IsReadOnly="true"   HorizontalAlignment="Left" Height="24" Margin="126,41,0,0" VerticalAlignment="Top" Width="140"   >
+                                IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="126,45,0,0" VerticalAlignment="Top" Width="140"   >
 
 
 
                     </ComboBox>
-                    <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="292,114,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="126,150,0,0" VerticalAlignment="Top" Height="16" Width="87"/>
                     <ComboBox x:Name="cb_gewinde" IsEditable="true"
-                                IsReadOnly="true" HorizontalAlignment="Left" Margin="126,104,0,0" VerticalAlignment="Top" Width="140" >
+                                IsReadOnly="true" HorizontalAlignment="Left" Margin="126,115,0,0" VerticalAlignment="Top" Width="140" Height="26">
                         <ComboBoxItem Content="M4" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="M5" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="M6" HorizontalAlignment="Left" Width="118"/>
@@ -49,20 +60,24 @@
                         <ComboBoxItem Content="M16" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="M20" HorizontalAlignment="Left" Width="118"/>
                     </ComboBox>
-                    <Label Content="Gewinde" HorizontalAlignment="Left" Margin="16,99,0,0" VerticalAlignment="Top" Height="27"/>
-                    <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="403,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.971,4.298"/>
-                    <TextBox HorizontalAlignment="Left" Height="36" Margin="593,324,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="140"/>
-                    <Label Content="Kopf:" HorizontalAlignment="Left" Height="24" Margin="13,70,0,0" VerticalAlignment="Top" Width="113"/>
+                    <Label Content="Gewinde" HorizontalAlignment="Left" Margin="13,115,0,0" VerticalAlignment="Top" Height="30" Width="56"/>
+                    <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="13,320,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.971,4.298" Height="26" Width="86"/>
+                    <TextBox HorizontalAlignment="Left" Height="53" Margin="126,320,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="274"/>
+                    <Label Content="Kopf:" HorizontalAlignment="Left" Height="30" Margin="13,80,0,0" VerticalAlignment="Top" Width="113"/>
                     <ComboBox x:Name="cb_sk" IsEditable="true"
-                        IsReadOnly="true" HorizontalAlignment="Left" Margin="126,72,0,0" VerticalAlignment="Top" Width="140" >
+                        IsReadOnly="true" HorizontalAlignment="Left" Margin="126,80,0,0" VerticalAlignment="Top" Width="140" Height="26" >
                         <ComboBoxItem Content="Außensechskant"/>
                         <ComboBoxItem Content="Innensechskant" />
 
                     </ComboBox>
-                    <Label Content="Schraubenlänge:" HorizontalAlignment="Left" Height="24" Margin="13,131,0,0" VerticalAlignment="Top" Width="113"/>
-                    <Label Content="Gewindekänge:" HorizontalAlignment="Left" Height="24" Margin="13,160,0,0" VerticalAlignment="Top" Width="113"/>
-                    <Label Content="mm" HorizontalAlignment="Left" Height="32" Margin="271,137,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219"/>
-                    <TextBox HorizontalAlignment="Left" Height="24" Margin="197,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99"/>
+                    <Label Content="Schraubenlänge:" HorizontalAlignment="Left" Height="30" Margin="13,185,0,0" VerticalAlignment="Top" Width="113"/>
+                    <Label Content="Gewindekänge:" HorizontalAlignment="Left" Height="30" Margin="13,220,0,0" VerticalAlignment="Top" Width="113"/>
+                    <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="227,185,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219"/>
+                    <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="153,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
+                    <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="153,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
+                    <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="227,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219"/>
+                    <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" VerticalAlignment="Top" Width="113"/>
+                    <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="153,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
 
                 </Grid>
             </TabItem>
