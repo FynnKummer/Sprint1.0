@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Schraubengott"
         mc:Ignorable="d"
-        Title="Schraubengott" Height="501" Width="840" Icon="Untitled - 2.ico" ResizeMode="NoResize" WindowState="Minimized">
+        Title="Schraubengott" Height="652.912" Width="1067.25" Icon="Untitled - 2.ico" ResizeMode="NoResize" WindowState="Minimized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"/>
@@ -42,14 +42,18 @@
                     </ComboBox>
                     <Label Content="Gewinde" HorizontalAlignment="Left" Margin="13,75,0,0" VerticalAlignment="Top"/>
                     <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="403,204,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="403,235,0,0" TextWrapping="Wrap" Text="Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="36" Margin="403,230,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="140"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Schraube 1">
+            <TabItem Header="Schraube 2">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
         <Label Content="Festigkeitsklasse:" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="483.667,105,0,0" VerticalAlignment="Top" Width="113"/>
 
     </Grid>
+
+
 </Window>
+    
+
