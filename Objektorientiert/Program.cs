@@ -52,6 +52,8 @@ namespace Objektorientiert
                 arr[s].Preis();
 
             }
+            
+            ExcelControll.Excel_erstellen();
 
             Console.ReadKey();
         }   //Hauptprogramm Ende
@@ -805,6 +807,7 @@ namespace Objektorientiert
 
     class ExcelControll
     {
+        public int bestellnummer;
         // Konstuktor 
 
         public static void Excel_erstellen()
@@ -850,45 +853,41 @@ namespace Objektorientiert
             mySheet.Cells[22, 1] = "Summe";
             mySheet.Cells[23, 1] = "Stückpreis";
 
-            // Werte der Schrauben in Tabelle eingeben 
 
-            for (int i = 1; i >= anzahl; i++)
-            {
-                mySheet.Cells[3, i + 1] = "";
-                mySheet.Cells[4, i+1] = "Schlüsselweite";
-                mySheet.Cells[5, i+1] = "Gewindedurchmesser";
-                mySheet.Cells[6, i+1] = "Masse pro Stück";
-                mySheet.Cells[7, i+1] = "Gesamtgewicht";
-                mySheet.Cells[8, i+1] = "Steigung";
-                mySheet.Cells[9, i+1] = "Gewindetiefe";
-                mySheet.Cells[10, i+1] = "Rundung";
-                mySheet.Cells[11, i+1] = "Flankendurchmesser";
-                mySheet.Cells[12, i+1] = "Flankenwinkel";
-                mySheet.Cells[13, i+1] = "";
-                mySheet.Cells[14, i+1] = "Elastizitätzgrenze";
-                mySheet.Cells[15, i+1] = "Zugfestigkeit";
-                mySheet.Cells[16, i+1] = "";
-                mySheet.Cells[17, i+1] = "Preis (Netto)";
-                mySheet.Cells[18, i+1] = "Summe";
-                mySheet.Cells[19, i+1] = "Stückpreis";
-                mySheet.Cells[20, i+1] = "";
-                mySheet.Cells[21, i+1] = "Preis (Brutto)";
-                mySheet.Cells[22, i+1] = "Summe";
-                mySheet.Cells[23, i+1] = "Stückpreis";
-            }
-
-
-
-            // Design  
-
-            // Schrauben Durchnummerieren 
+            // Listenformat einführen 
             mySheet.Range["A1", "E25"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
+
+            // Werte der Schrauben in Tabelle eingeben 
 
             for (int i = 1; i <= anzahl; i++)
             {
-                mySheet.Cells[1, 1 + i] = "Schraube " + i + "    ";
-            }
+                mySheet.Cells[1, i + 1] = "Schraubennahme S" + i;
+                mySheet.Cells[3, i+1] = "Schraubenlänge S" + i;
+                mySheet.Cells[4, i+1] = "Schlüsselweite S" + i;
+                mySheet.Cells[5, i+1] = "Gewindedurchmesser S" + i;
+                mySheet.Cells[6, i+1] = "Masse pro Stück S" + i;
+                mySheet.Cells[7, i+1] = "Gesamtgewicht S" + i;
+                mySheet.Cells[8, i+1] = "Steigung S" + i;
+                mySheet.Cells[9, i+1] = "Gewindetiefe S" + i;
+                mySheet.Cells[10, i+1] = "Rundung S" + i;
+                mySheet.Cells[11, i+1] = "Flankendurchmesser S" + i;
+                mySheet.Cells[12, i+1] = "Flankenwinkel S" + i;
+                mySheet.Cells[13, i+1] = "";
+                mySheet.Cells[14, i+1] = "Elastizitätzgrenze S" + i;
+                mySheet.Cells[15, i+1] = "Zugfestigkeit S" + i;
+                mySheet.Cells[16, i+1] = "";
+                mySheet.Cells[17, i+1] = "Preis (Netto) S" + i;
+                mySheet.Cells[18, i+1] = "Summe S" + i;
+                mySheet.Cells[19, i+1] = "Stückpreis S" + i;
+                mySheet.Cells[20, i+1] = "";
+                mySheet.Cells[21, i+1] = "Preis (Brutto) S" + i;
+                mySheet.Cells[22, i+1] = "Summe S" + i;
+                mySheet.Cells[23, i+1] = "Stückpreis S" + i;
 
+                mySheet.Cells[25, i + 1].AddComment("Anmerkung S " + i);
+
+            }
+ 
 
             // Zellenbreite an Text anpassen 
             for (int i = 1; i < 9; i++)
@@ -896,14 +895,80 @@ namespace Objektorientiert
                 mySheet.Columns[i].AutoFit();
             }
 
-            // Excel abspeichern 
-            mySheet.SaveAs(@"C:\Excel\Bestellung.xlsx");
 
+            // Excel abspeichern für Email  
+
+                // Bestellnummer 
+
+                Random nummer = new Random();
+                bestellnummer = nummer.Next(10000000, 99999999);
+
+                
+
+            mySheet.SaveAs(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer)+".xlsx");
+
+            //Exel Speichern für Kunden 
+
+           /* string Pfad = @"C:\Desktop\";
+
+            mySheet.SaveAs(Pfad+@"\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
+           */
 
             // Excel muss noch geschlossen werden 
 
+            
+
+            Console.ReadKey();
             Console.ReadKey();
             Console.WriteLine("Email senden");
+
+            Emailsenden(bestellnummer);
+
+        }
+
+        public static void Emailsenden(int bestellnummer)
+
+        {
+            string text = "Anfrage";
+            string betreff = "Anfrage";
+            string server = "mail.gmx.net";
+            int port = 587;
+            string user = "456263856";
+            string passwort = "1Q2w3e4r5t6z7u8_";
+
+            MailMessage Mail = new MailMessage();
+
+            //Absender
+            Mail.From = new MailAddress("hsp.anfragen@gmx.net");
+
+            //Empfänger 
+            Mail.To.Add("jonathan.rietig@aol.de");
+
+            // Betreff
+
+            Mail.Subject = betreff;
+
+            Mail.Body = text;
+
+            Attachment Tabelle = new Attachment(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
+
+            Mail.Attachments.Add(Tabelle);
+
+
+            // Abseneserver 
+            SmtpClient mailClient = new SmtpClient(server);
+
+            mailClient.UseDefaultCredentials = false;
+            mailClient.EnableSsl = true;
+            mailClient.Port = port;
+            mailClient.Credentials = new System.Net.NetworkCredential(user, passwort);
+
+            mailClient.Send(Mail);
+
+
+
+            Console.WriteLine("Fertig");
+            Console.ReadKey();
 
         }
 
