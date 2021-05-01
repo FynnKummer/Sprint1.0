@@ -14,6 +14,9 @@ namespace ConsoleApp1
         static void Main()
         {
             ExcelControll.Excel_erstellen();
+
+            ExcelControll.emailsenden();
+            
         }
     }
 
@@ -32,6 +35,8 @@ namespace ConsoleApp1
             excelApp.Workbooks.Add();
 
             Excel._Worksheet mySheet = (Excel.Worksheet)excelApp.ActiveSheet;
+
+            
 
             // Kategorien festlegen
 
@@ -58,6 +63,15 @@ namespace ConsoleApp1
             mySheet.Cells[22,1] = "Summe";
             mySheet.Cells[23,1] = "Stückpreis";
 
+
+
+
+            // Werte Eintragen 
+
+            
+
+
+
            // Design festlegen 
             mySheet.Range["A1","E25"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
 
@@ -72,13 +86,20 @@ namespace ConsoleApp1
                 mySheet.Columns[i].AutoFit();
             }
             
+            mySheet.SaveAs(@"C:\Excel\Bestellung.xlsx");
 
+            
+
+           Console.ReadKey();
+           Console.ReadKey();
+           Console.WriteLine("Email senden");
+            
         }
 
-         public static void emailsenden( string text)
+         public static void emailsenden()
 
         {
-            
+            string text = "Anfrage";
             string betreff = "Anfrage";
             string server = "mail.gmx.net";
             int port = 587;
@@ -99,6 +120,9 @@ namespace ConsoleApp1
 
             Mail.Body = text;
 
+           Attachment Tabelle = new Attachment(@"C:\Excel\Bestellung.xlsx");
+
+            Mail.Attachments.Add(Tabelle);
           
 
             // Abseneserver 
@@ -110,6 +134,8 @@ namespace ConsoleApp1
             mailClient.Credentials = new System.Net.NetworkCredential(user, passwort);
             
             mailClient.Send(Mail);
+
+           
 
             Console.WriteLine("Fertig");
             Console.ReadKey();

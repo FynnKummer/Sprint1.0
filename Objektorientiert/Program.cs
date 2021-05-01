@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Linq;
+using System.Net.Mail;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Objektorientiert
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)     //Hauptprogramm
+        public static void Main(string[] args)     //Hauptprogramm
         {
             Console.WriteLine("Wie viel verscheidene Schrauben möchten Sie konfigurieren");
             
-            Schraube[] arr = new Schraube[Convert.ToInt32(Console.ReadLine())];
+             Schraube[] arr = new Schraube[Convert.ToInt32(Console.ReadLine())];
+
 
             for (int s = 0; s < arr.Length; s++)
             {
                 Console.WriteLine("Gegen Sie den Namen der " + (s+1) + ". Schraube ein");
-                arr[s] = new Schraube(Console.ReadLine());
+                 arr[s] = new Schraube(Console.ReadLine());
 
 
                 //Abfrage der Werte                                                  
@@ -799,4 +802,112 @@ namespace Objektorientiert
             Console.WriteLine();
         }// Berechnung der Festigkeit + Ausgabe
     }
+
+    class ExcelControll
+    {
+        // Konstuktor 
+
+        public static void Excel_erstellen()
+        {
+            new ExcelControll();
+        }
+
+        ExcelControll()
+        {
+            // Erstellen einer Neuen Exelmappe 
+            int anzahl = 4;
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = true;
+            excelApp.Workbooks.Add();
+
+            // Hinzufügen einer Seite? 
+            Excel._Worksheet mySheet = (Excel.Worksheet)excelApp.ActiveSheet;
+
+
+
+            // Kategorien festlegen
+
+            mySheet.Cells[2, 1] = "Techniche Details";
+            mySheet.Cells[3, 1] = "Schraubenlänge";
+            mySheet.Cells[4, 1] = "Schlüsselweite";
+            mySheet.Cells[5, 1] = "Gewindedurchmesser";
+            mySheet.Cells[6, 1] = "Masse pro Stück";
+            mySheet.Cells[7, 1] = "Gesamtgewicht";
+            mySheet.Cells[8, 1] = "Steigung";
+            mySheet.Cells[9, 1] = "Gewindetiefe";
+            mySheet.Cells[10, 1] = "Rundung";
+            mySheet.Cells[11, 1] = "Flankendurchmesser";
+            mySheet.Cells[12, 1] = "Flankenwinkel";
+            mySheet.Cells[13, 1] = "";
+            mySheet.Cells[14, 1] = "Elastizitätzgrenze";
+            mySheet.Cells[15, 1] = "Zugfestigkeit";
+            mySheet.Cells[16, 1] = "";
+            mySheet.Cells[17, 1] = "Preis (Netto)";
+            mySheet.Cells[18, 1] = "Summe";
+            mySheet.Cells[19, 1] = "Stückpreis";
+            mySheet.Cells[20, 1] = "";
+            mySheet.Cells[21, 1] = "Preis (Brutto)";
+            mySheet.Cells[22, 1] = "Summe";
+            mySheet.Cells[23, 1] = "Stückpreis";
+
+            // Werte der Schrauben in Tabelle eingeben 
+
+            for (int i = 1; i >= anzahl; i++)
+            {
+                mySheet.Cells[3, i + 1] = Program.arr[i - 1].Schraube.laenge + " mm";
+                mySheet.Cells[4, i+1] = "Schlüsselweite";
+                mySheet.Cells[5, i+1] = "Gewindedurchmesser";
+                mySheet.Cells[6, i+1] = "Masse pro Stück";
+                mySheet.Cells[7, i+1] = "Gesamtgewicht";
+                mySheet.Cells[8, i+1] = "Steigung";
+                mySheet.Cells[9, i+1] = "Gewindetiefe";
+                mySheet.Cells[10, i+1] = "Rundung";
+                mySheet.Cells[11, i+1] = "Flankendurchmesser";
+                mySheet.Cells[12, i+1] = "Flankenwinkel";
+                mySheet.Cells[13, i+1] = "";
+                mySheet.Cells[14, i+1] = "Elastizitätzgrenze";
+                mySheet.Cells[15, i+1] = "Zugfestigkeit";
+                mySheet.Cells[16, i+1] = "";
+                mySheet.Cells[17, i+1] = "Preis (Netto)";
+                mySheet.Cells[18, i+1] = "Summe";
+                mySheet.Cells[19, i+1] = "Stückpreis";
+                mySheet.Cells[20, i+1] = "";
+                mySheet.Cells[21, i+1] = "Preis (Brutto)";
+                mySheet.Cells[22, i+1] = "Summe";
+                mySheet.Cells[23, i+1] = "Stückpreis";
+            }
+
+
+
+            // Design  
+
+            // Schrauben Durchnummerieren 
+            mySheet.Range["A1", "E25"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
+
+            for (int i = 1; i <= anzahl; i++)
+            {
+                mySheet.Cells[1, 1 + i] = "Schraube " + i + "    ";
+            }
+
+
+            // Zellenbreite an Text anpassen 
+            for (int i = 1; i < 9; i++)
+            {
+                mySheet.Columns[i].AutoFit();
+            }
+
+            // Excel abspeichern 
+            mySheet.SaveAs(@"C:\Excel\Bestellung.xlsx");
+
+
+            // Excel muss noch geschlossen werden 
+
+            Console.ReadKey();
+            Console.WriteLine("Email senden");
+
+        }
+
+    }
+
+
 }
