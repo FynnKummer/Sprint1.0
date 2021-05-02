@@ -92,6 +92,14 @@ namespace Schraubengott
             s.gewindeart = "1";
         }
 
+        private void btnauswahl_Click(object sender, RoutedEventArgs e)
+        {
+            TextBlock txt = new TextBlock();
+            Border bord = new Border();
+
+            bord.BorderBrush = BorderBrush;
+            bord.BorderThickness = 1;
+        }
     }
     class Schraube
     {
