@@ -72,7 +72,7 @@
                     </ComboBox>
 
                     <Label Content="Schraubenlänge:" HorizontalAlignment="Left" Height="30" Margin="13,185,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
-                    <Label Content="Gewindekänge:" HorizontalAlignment="Left" Height="30" Margin="13,220,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
+                    <Label Content="Gewindelänge:" HorizontalAlignment="Left" Height="30" Margin="13,220,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="137,185,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
                     <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="63,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
                     <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="63,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
