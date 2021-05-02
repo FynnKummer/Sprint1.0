@@ -32,7 +32,7 @@ namespace Schraubengott
             
         }
 
-        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        private void btnexit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
@@ -41,24 +41,24 @@ namespace Schraubengott
         {
             if (cbmat.SelectedValue.ToString() == "V2A")
             {
-                comboBox1.Items.Clear();
-                comboBox1.Items.Add("V2A 50");
-                comboBox1.Items.Add("V2A 70");
+                cbfk.Items.Clear();
+                cbfk.Items.Add("V2A 50");
+                cbfk.Items.Add("V2A 70");
             }
             else if (cbmat.SelectedValue.ToString() == "V4A")
             {
-                comboBox1.Items.Clear();
-                comboBox1.Items.Add("V4A 70");
+                cbfk.Items.Clear();
+                cbfk.Items.Add("V4A 70");
             }
             else if (cbmat.SelectedValue.ToString() == "Verzinkter Stahl")
             {
-                comboBox1.Items.Clear();
-                comboBox1.Items.Add("5.8");
-                comboBox1.Items.Add("6.8");
-                comboBox1.Items.Add("8.8");
-                comboBox1.Items.Add("9.8");
-                comboBox1.Items.Add("10.9");
-                comboBox1.Items.Add("12.9");
+                cbfk.Items.Clear();
+                cbfk.Items.Add("5.8");
+                cbfk.Items.Add("6.8");
+                cbfk.Items.Add("8.8");
+                cbfk.Items.Add("9.8");
+                cbfk.Items.Add("10.9");
+                cbfk.Items.Add("12.9");
             }
         }
     
