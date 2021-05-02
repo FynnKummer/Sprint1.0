@@ -17,7 +17,7 @@
         <Button Content="Ich bin fertig Mama" HorizontalAlignment="Left" Height="23" Margin="765.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="616.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"  />
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="412" Margin="235.5,62,0,0" VerticalAlignment="Top" Width="761">
-            <TabItem Header="Schraube 1">
+            <TabItem Header="Konfigurieren">
                 <Grid>
                     <Grid.Background>
                         <RadialGradientBrush>
@@ -27,16 +27,16 @@
                         </RadialGradientBrush>
                     </Grid.Background>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="89*"/>
-                        <ColumnDefinition Width="327*"/>
-                        <ColumnDefinition Width="339*"/>
+                        <ColumnDefinition Width="84*"/>
+                        <ColumnDefinition Width="341*"/>
+                        <ColumnDefinition Width="330*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Material:" HorizontalAlignment="Left" Height="30" Margin="13,10,0,0" VerticalAlignment="Top" Width="59"/>
                     <Label Content="Festigkeitsklasse:" HorizontalAlignment="Left" Height="30" Margin="13,45,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
 
 
                     <ComboBox Name="cbmat"   IsEditable="true" SelectedValuePath="Content"
-                                IsReadOnly="true" SelectionChanged="cbmat_SelectionChanged_1" HorizontalAlignment="Left" Height="26" Margin="37,10,0,0" VerticalAlignment="Top" Width="140" Grid.Column="1">
+                                IsReadOnly="true" SelectionChanged="cbmat_SelectionChanged_1" HorizontalAlignment="Left" Height="26" Margin="36,10,0,0" VerticalAlignment="Top" Width="140" Grid.Column="1">
                         <ComboBoxItem Content="Verzinkter Stahl"/>
                         <ComboBoxItem Content="V2A"/>
                         <ComboBoxItem Content="V4A"/>
@@ -44,14 +44,14 @@
 
                     </ComboBox>
                     <ComboBox Name="comboBox1" IsEditable="true"
-                                IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="37,45,0,0" VerticalAlignment="Top" Width="140" Grid.Column="1"   >
+                                IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="36,45,0,0" VerticalAlignment="Top" Width="140" Grid.Column="1"   >
 
 
 
                     </ComboBox>
-                    <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="37,150,0,0" VerticalAlignment="Top" Height="16" Width="87" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.Column="1"/>
+                    <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="36,150,0,0" VerticalAlignment="Top" Height="16" Width="87" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.Column="1"/>
                     <ComboBox x:Name="cb_gewinde" IsEditable="true"
-                                IsReadOnly="true" HorizontalAlignment="Left" Margin="37,115,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1">
+                                IsReadOnly="true" HorizontalAlignment="Left" Margin="36,115,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1">
                         <ComboBoxItem Content="M4" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="M5" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="M6" HorizontalAlignment="Left" Width="118"/>
@@ -63,10 +63,10 @@
                     </ComboBox>
                     <Label Content="Gewinde" HorizontalAlignment="Left" Margin="13,115,0,0" VerticalAlignment="Top" Height="30" Width="56"/>
                     <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="13,320,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.971,4.298" Height="26" Width="86" Grid.ColumnSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="53" Margin="37,320,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+                    <TextBox HorizontalAlignment="Left" Height="53" Margin="36,320,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
                     <Label Content="Kopf:" HorizontalAlignment="Left" Height="30" Margin="13,80,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <ComboBox x:Name="cb_sk" IsEditable="true"
-                        IsReadOnly="true" HorizontalAlignment="Left" Margin="37,80,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1" >
+                        IsReadOnly="true" HorizontalAlignment="Left" Margin="36,80,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1" >
                         <ComboBoxItem Content="Außensechskant"/>
                         <ComboBoxItem Content="Innensechskant" />
 
@@ -74,21 +74,20 @@
 
                     <Label Content="Schraubenlänge:" HorizontalAlignment="Left" Height="30" Margin="13,185,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <Label Content="Gewindekänge:" HorizontalAlignment="Left" Height="30" Margin="13,220,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
-                    <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="138,185,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
-                    <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="64,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
-                    <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="64,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
-                    <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="138,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
+                    <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="137,185,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
+                    <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="63,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
+                    <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="63,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
+                    <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="137,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
                     <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
-                    <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="64,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
-                    <Label x:Name="label1" Content="(Standartgewinde)" HorizontalAlignment="Left" Height="29" Margin="207,115,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="63,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
 
-                    
+
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Schraube 2">
+            <TabItem Header="Auswahl">
                 <Grid Background="#FFE5E5E5"/>
-                
+
 
             </TabItem>
         </TabControl>

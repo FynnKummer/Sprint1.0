@@ -83,12 +83,12 @@ namespace Schraubengott
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            label1.Content = "(Feingewinde)";
+           
             s.gewindeart = "2";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            label1.Content = "(Standardgewinde)";
+           
             s.gewindeart = "1";
         }
 
