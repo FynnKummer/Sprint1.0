@@ -35,7 +35,7 @@
 
 
                     <ComboBox Name="cbmat"   IsEditable="true" SelectedValuePath="Content"
-                                IsReadOnly="true" SelectionChanged="cbmat_SelectionChanged_1" HorizontalAlignment="Left" Height="26" Margin="126,10,0,0" VerticalAlignment="Top" Width="140"   >
+                                IsReadOnly="true" SelectionChanged="cbmat_SelectionChanged_1" HorizontalAlignment="Left" Height="26" Margin="126,10,0,0" VerticalAlignment="Top" Width="140">
                         <ComboBoxItem Content="Verzinkter Stahl"/>
                         <ComboBoxItem Content="V2A"/>
                         <ComboBoxItem Content="V4A"/>
@@ -48,7 +48,7 @@
 
 
                     </ComboBox>
-                    <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="126,150,0,0" VerticalAlignment="Top" Height="16" Width="87"/>
+                    <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="126,150,0,0" VerticalAlignment="Top" Height="16" Width="87" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
                     <ComboBox x:Name="cb_gewinde" IsEditable="true"
                                 IsReadOnly="true" HorizontalAlignment="Left" Margin="126,115,0,0" VerticalAlignment="Top" Width="140" Height="26">
                         <ComboBoxItem Content="M4" HorizontalAlignment="Left" Width="118"/>
@@ -78,6 +78,7 @@
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="227,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219"/>
                     <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" VerticalAlignment="Top" Width="113"/>
                     <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="153,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
+                    <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Height="29" Margin="280,150,0,0" VerticalAlignment="Top" Width="120"/>
 
                 </Grid>
             </TabItem>

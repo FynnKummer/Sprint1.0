@@ -58,6 +58,7 @@ namespace Schraubengott
                 comboBox1.Items.Add("12.9");
             }
         }
+    
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -77,5 +78,13 @@ namespace Schraubengott
             a_textBox.SelectionStart = a_textBox.Text.Length;
         }
 
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            label1.Content = "Feingewinde";
+        }
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            label1.Content = "Standardgewinde";
+        }
     }
 }
