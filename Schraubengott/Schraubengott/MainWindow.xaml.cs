@@ -26,8 +26,6 @@ namespace Schraubengott
     {
         
 
-        
-
         public MainWindow()
         {
             Schraube[] schrauben = new Schraube[1];
@@ -100,13 +98,51 @@ namespace Schraubengott
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
         {
-            TextBlock txt = new TextBlock();
-            Border bord = new Border();
+            if (tab_4.Visibility == Visibility.Visible)
+            {
+                tab_5.Visibility = Visibility.Visible;
+            }
+            if (tab_3.Visibility == Visibility.Visible)
+            {
+                tab_4.Visibility = Visibility.Visible;
+            }
+            if (tab_2.Visibility == Visibility.Visible)
+            {
+                tab_3.Visibility = Visibility.Visible;
+            }
+            if (tab_1.Visibility == Visibility.Visible)
+            {
+                tab_2.Visibility = Visibility.Visible;
+            }
+            if (tab_1.Visibility == Visibility.Collapsed)
+            {
+                tab_1.Visibility = Visibility.Visible;
+            }
+        }
 
-            bord.BorderBrush = BorderBrush;
-            bord.BorderThickness = 1;
+        private void btndelete1_Click(object sender, RoutedEventArgs e)
+        {
+            tab_1.Visibility = Visibility.Collapsed;
+        }
+        private void btndelete2_Click(object sender, RoutedEventArgs e)
+        {
+            tab_2.Visibility = Visibility.Collapsed;
+        }
+        private void btndelete3_Click(object sender, RoutedEventArgs e)
+        {
+            tab_3.Visibility = Visibility.Collapsed;
+        }
+        private void btndelete4_Click(object sender, RoutedEventArgs e)
+        {
+            tab_4.Visibility = Visibility.Collapsed;
+        }
+        private void btndelete5_Click(object sender, RoutedEventArgs e)
+        {
+            tab_5.Visibility = Visibility.Collapsed;
         }
     }
+
+
     class Schraube
     {
         public String name; // Vom Benutzer festgeleter Name für die Schraube
