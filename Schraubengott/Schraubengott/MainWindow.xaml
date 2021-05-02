@@ -15,7 +15,7 @@
         <Button Name="btnexit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="927.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="btnexit_Click" />
         <Button Content="Ich bin fertig Mama" HorizontalAlignment="Left" Height="23" Margin="765.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="616.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"  />
-        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="412" Margin="235.5,62,0,0" VerticalAlignment="Top" Width="761">
+        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="433" Margin="235.333,62,0,0" VerticalAlignment="Top" Width="761">
             <TabItem Header="Konfigurieren">
                 <Grid>
                     <Grid.Background>
@@ -61,8 +61,8 @@
                         <ComboBoxItem Content="M20" HorizontalAlignment="Left" Width="118"/>
                     </ComboBox>
                     <Label Content="Gewinde" HorizontalAlignment="Left" Margin="13,115,0,0" VerticalAlignment="Top" Height="30" Width="56"/>
-                    <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="13,320,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.971,4.298" Height="26" Width="86" Grid.ColumnSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="53" Margin="36,320,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
+                    <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="13,306,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.971,4.298" Height="26" Width="86" Grid.ColumnSpan="2"/>
+                    <TextBox HorizontalAlignment="Left" Height="53" Margin="36,306,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
                     <Label Content="Kopf:" HorizontalAlignment="Left" Height="30" Margin="13,80,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <ComboBox x:Name="cbkopf" IsEditable="true"
                         IsReadOnly="true" HorizontalAlignment="Left" Margin="36,80,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1" >
@@ -72,25 +72,34 @@
                     </ComboBox>
 
                     <Label Content="Schraubenlänge:" HorizontalAlignment="Left" Height="30" Margin="13,185,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
-                    <Label Content="Gewindekänge:" HorizontalAlignment="Left" Height="30" Margin="13,220,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
+                    <Label Content="Gewindelänge:" HorizontalAlignment="Left" Height="30" Margin="13,220,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="137,185,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
                     <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="63,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
                     <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="63,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="137,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
                     <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="63,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
+                    <Button x:Name="btnuebernehmen" Content="Übernehmen" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="214,375,0,0" VerticalAlignment="Top" Width="96" Foreground="Black" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+                    <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="2" HorizontalAlignment="Left" Height="20" Margin="174.333,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
 
 
 
                 </Grid>
             </TabItem>
             <TabItem Header="Auswahl">
-                <Grid Background="#FFE5E5E5"/>
+                <ScrollViewer >
+                    <Grid Background="#FFE5E5E5">
+                  
+                </Grid>
+    </ScrollViewer>
 
 
-            </TabItem>
+    </TabItem>
         </TabControl>
-        <Label x:Name="preislbl" Content="Preis: " Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="765.333,500,0,0" VerticalAlignment="Top" Width="194"/>
+
+        <Label x:Name="preislbl" Content="preislbl" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="765.333,500,0,0" VerticalAlignment="Top" Width="194"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="89" Margin="288.333,131,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="323"/>
+
 
     </Grid>
 

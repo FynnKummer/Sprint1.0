@@ -98,6 +98,14 @@ namespace Schraubengott
             //s.gewindeart = "Standartgewinde";
         }
 
+        private void btnauswahl_Click(object sender, RoutedEventArgs e)
+        {
+            TextBlock txt = new TextBlock();
+            Border bord = new Border();
+
+            bord.BorderBrush = BorderBrush;
+            bord.BorderThickness = 1;
+        }
     }
     class Schraube
     {
