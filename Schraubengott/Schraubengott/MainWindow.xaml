@@ -12,8 +12,7 @@
             <ColumnDefinition Width="782*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Margin="52.5,0,0,150.5" Width="183" Source="vykres_-_din_931.jpg" Height="366" VerticalAlignment="Bottom" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="809.5,501,0,0" TextWrapping="Wrap" Text="Preis" VerticalAlignment="Top" Width="153" Grid.Column="1"/>
-        <Button Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="927.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="btn_exit_Click" />
+        <Button Name="btnexit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="927.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="btnexit_Click" />
         <Button Content="Ich bin fertig Mama" HorizontalAlignment="Left" Height="23" Margin="765.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="616.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"  />
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="412" Margin="235.5,62,0,0" VerticalAlignment="Top" Width="761">
@@ -43,14 +42,14 @@
 
 
                     </ComboBox>
-                    <ComboBox Name="comboBox1" IsEditable="true"
+                    <ComboBox Name="cbfk" IsEditable="true"
                                 IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="36,45,0,0" VerticalAlignment="Top" Width="140" Grid.Column="1"   >
 
 
 
                     </ComboBox>
                     <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="36,150,0,0" VerticalAlignment="Top" Height="16" Width="87" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.Column="1"/>
-                    <ComboBox x:Name="cb_gewinde" IsEditable="true"
+                    <ComboBox x:Name="cbgewinde" IsEditable="true"
                                 IsReadOnly="true" HorizontalAlignment="Left" Margin="36,115,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1">
                         <ComboBoxItem Content="M4" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="M5" HorizontalAlignment="Left" Width="118"/>
@@ -65,7 +64,7 @@
                     <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="13,320,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.971,4.298" Height="26" Width="86" Grid.ColumnSpan="2"/>
                     <TextBox HorizontalAlignment="Left" Height="53" Margin="36,320,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="274" Grid.Column="1"/>
                     <Label Content="Kopf:" HorizontalAlignment="Left" Height="30" Margin="13,80,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
-                    <ComboBox x:Name="cb_sk" IsEditable="true"
+                    <ComboBox x:Name="cbkopf" IsEditable="true"
                         IsReadOnly="true" HorizontalAlignment="Left" Margin="36,80,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1" >
                         <ComboBoxItem Content="Außensechskant"/>
                         <ComboBoxItem Content="Innensechskant" />
@@ -91,6 +90,7 @@
 
             </TabItem>
         </TabControl>
+        <Label x:Name="preislbl" Content="preislbl" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="765.333,500,0,0" VerticalAlignment="Top" Width="194"/>
 
     </Grid>
 
