@@ -24,14 +24,18 @@ namespace Schraubengott
     /// </summary>
     public partial class MainWindow : Window
     {
-        Schraube[] schrauben = new Schraube[1];
-        schrauben[0]= new Schraube();
+        
+
+        
 
         public MainWindow()
         {
-
+            Schraube[] schrauben = new Schraube[1];
+            schrauben[0] = new Schraube();
+            Schraube s = new Schraube();
             InitializeComponent();
             
+
         }
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
@@ -86,12 +90,12 @@ namespace Schraubengott
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
            
-            s.gewindeart = "Feingewinde";
+            //s.gewindeart = "Feingewinde";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
            
-            s.gewindeart = "Standartgewinde";
+            //s.gewindeart = "Standartgewinde";
         }
 
     }
@@ -117,5 +121,8 @@ namespace Schraubengott
         public double masse;
         public double gesamtgewicht;
     }
+
+    
+    
 
     }

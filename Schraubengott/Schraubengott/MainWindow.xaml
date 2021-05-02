@@ -90,7 +90,7 @@
 
             </TabItem>
         </TabControl>
-        <Label x:Name="preislbl" Content="preislbl" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="765.333,500,0,0" VerticalAlignment="Top" Width="194"/>
+        <Label x:Name="preislbl" Content="Preis: " Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="765.333,500,0,0" VerticalAlignment="Top" Width="194"/>
 
     </Grid>
 
