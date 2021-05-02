@@ -78,7 +78,6 @@
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="227,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219"/>
                     <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" VerticalAlignment="Top" Width="113"/>
                     <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="153,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
-                    <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Height="29" Margin="280,150,0,0" VerticalAlignment="Top" Width="120"/>
 
                 </Grid>
             </TabItem>
