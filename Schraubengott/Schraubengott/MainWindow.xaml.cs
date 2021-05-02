@@ -24,9 +24,12 @@ namespace Schraubengott
     /// </summary>
     public partial class MainWindow : Window
     {
+        Schraube s = new Schraube();
         public MainWindow()
         {
+
             InitializeComponent();
+            
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
@@ -80,11 +83,37 @@ namespace Schraubengott
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            label1.Content = "Feingewinde";
+            label1.Content = "(Feingewinde)";
+            s.gewindeart = "2";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            label1.Content = "Standardgewinde";
+            label1.Content = "(Standardgewinde)";
+            s.gewindeart = "1";
         }
+
     }
-}
+    class Schraube
+    {
+        public String name; // Vom Benutzer festgeleter Name für die Schraube
+        public int menge;
+        public int laenge;
+        public double volumen;
+        public int schluesselbreite;
+        public String typ;      //Innensechskant/Ausßensechskant
+        public String festigkeit;
+        public String festaus;//Festigkeitsklasse ausgeschrieben
+
+        public String gewindeart;
+        public int gewindelaenge;
+        public double gewindesteigung;
+        public String gewinde;
+
+        public String material;
+        public String mataus;//Material ausgeschrieben
+        public double dichte;
+        public double masse;
+        public double gesamtgewicht;
+    }
+
+    }
