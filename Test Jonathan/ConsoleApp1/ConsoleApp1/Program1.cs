@@ -11,6 +11,7 @@ namespace ConsoleApp1
 
     class Programm
     {
+
         static void Main()
 
         {
