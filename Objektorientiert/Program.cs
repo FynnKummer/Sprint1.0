@@ -946,7 +946,7 @@ namespace Objektorientiert
             mySheet.SaveAs(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer)+".xlsx");
 
 
-           //excelApp.Workbooks.Close();
+            excelApp.Workbooks.Close();
 
             //Exel Speichern für Kunden 
 
@@ -983,7 +983,7 @@ namespace Objektorientiert
             Mail.From = new MailAddress("hsp.anfragen@gmx.net");
 
             //Empfänger 
-            Mail.To.Add("jonathan.rietig@aol.de");
+            Mail.To.Add("hsp.anfragen@gmx.net");
 
             // Betreff
 
