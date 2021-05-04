@@ -24,14 +24,15 @@ namespace Schraubengott
     /// </summary>
     public partial class MainWindow : Window
     {
-        Schraube[] schrauben = new Schraube[1];
-        schrauben[0]= new Schraube();
+       
 
         public MainWindow()
         {
-
+            
+           
             InitializeComponent();
             
+
         }
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
@@ -83,10 +84,10 @@ namespace Schraubengott
             a_textBox.SelectionStart = a_textBox.Text.Length;
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
            
-            s.gewindeart = "Feingewinde";
+           Class1.feld[0].gewindeart = "Feingewinde";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
@@ -94,28 +95,56 @@ namespace Schraubengott
             s.gewindeart = "Standartgewinde";
         }
 
-    }
-    class Schraube
-    {
-        public String name; // Vom Benutzer festgeleter Name für die Schraube
-        public int menge;
-        public int laenge;
-        public double volumen;
-        public int schluesselbreite;
-        public String typ;      //Innensechskant/Ausßensechskant
-        public String festigkeit;
-        public String festaus;//Festigkeitsklasse ausgeschrieben
+        private void btnauswahl_Click(object sender, RoutedEventArgs e)
+        {
+            if (tab_4.Visibility == Visibility.Visible)
+            {
+                tab_5.Visibility = Visibility.Visible;
+            }
+            if (tab_3.Visibility == Visibility.Visible)
+            {
+                tab_4.Visibility = Visibility.Visible;
+            }
+            if (tab_2.Visibility == Visibility.Visible)
+            {
+                tab_3.Visibility = Visibility.Visible;
+            }
+            if (tab_1.Visibility == Visibility.Visible)
+            {
+                tab_2.Visibility = Visibility.Visible;
+            }
+            if (tab_1.Visibility == Visibility.Collapsed)
+            {
+                tab_1.Visibility = Visibility.Visible;
+            }
+        }
 
-        public String gewindeart;
-        public int gewindelaenge;
-        public double gewindesteigung;
-        public String gewinde;
-
-        public String material;
-        public String mataus;//Material ausgeschrieben
-        public double dichte;
-        public double masse;
-        public double gesamtgewicht;
+        private void btndelete1_Click(object sender, RoutedEventArgs e)
+        {
+            tab_1.Visibility = Visibility.Collapsed;
+        }
+        private void btndelete2_Click(object sender, RoutedEventArgs e)
+        {
+            tab_2.Visibility = Visibility.Collapsed;
+        }
+        private void btndelete3_Click(object sender, RoutedEventArgs e)
+        {
+            tab_3.Visibility = Visibility.Collapsed;
+        }
+        private void btndelete4_Click(object sender, RoutedEventArgs e)
+        {
+            tab_4.Visibility = Visibility.Collapsed;
+        }
+        private void btndelete5_Click(object sender, RoutedEventArgs e)
+        {
+            tab_5.Visibility = Visibility.Collapsed;
+        }
     }
+
+
+    
+
+    
+    
 
     }
