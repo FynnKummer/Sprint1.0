@@ -895,7 +895,7 @@ namespace Objektorientiert
 
             for (int i = 0; i < arr.Length; i++)
             {
-                mySheet.Cells[2, i+2] = arr[i].name;
+                mySheet.Cells[1, i+2] = arr[i].name;
                 mySheet.Cells[3, i+2] = arr[i].laenge+" mm";
                 mySheet.Cells[4, i+2] = arr[i].gewindelaenge+" mm";
                 mySheet.Cells[5, i+2] = arr[i].schluesselbreite+" mm";
@@ -922,7 +922,7 @@ namespace Objektorientiert
 
                 mySheet.Cells[27, i+2] = arr[i].menge;
 
-                mySheet.Cells[28, i + 1].AddComment("Anmerkung S " + i);
+                mySheet.Cells[28, i + 2].AddComment("Anmerkung S " + i);
 
             }
  
