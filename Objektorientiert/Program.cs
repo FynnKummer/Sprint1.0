@@ -74,12 +74,26 @@ namespace Objektorientiert
         public int gewindelaenge;
         public double gewindesteigung;
         public String gewinde;
+        public double gewindetiefe;  //  belegt 
+        public double gewinderundung; //  belegt 
+        public double flankendurchmesser; //  belegt 
+        public double kerndurchmesser; //  belegt 
+        public double flankenwinkel;  //belegt
+ 
+        public double elastizitätsgrenze; // belegt
+        public double Zugfestigkeit; //belegt
+
 
         public String material;
         public String mataus;//Material ausgeschrieben
         public double dichte;
         public double masse;
         public double gesamtgewicht;
+
+        public double preis_summe;  //
+        public double stückpreis; //
+        public double nettopreis_Summe;  // belegt
+        public double nettoeinzelpreis;  //belegt
 
         public Schraube(String name) // Konstruktor
         {
@@ -625,6 +639,14 @@ namespace Objektorientiert
             d3 = d - 1.2269;    //Kerndurchmesser 
             flankenwikel = 60;  //Flankenwinkel 
 
+            // Speichern in Schraube 
+
+            this.gewindetiefe = h3;
+            this.gewinderundung = r;
+            this.flankendurchmesser = d2; 
+            this.kerndurchmesser = d3;
+            this.flankenwinkel = flankenwikel;
+
             // Umwandlung der Strings 
             // Gewindetyp 
             if (this.gewindeart == "1")
@@ -729,6 +751,13 @@ namespace Objektorientiert
             preis100 = netto100 * mws;
             Bestellpreis = einzelpreis * menge;
 
+            // Objekt 
+
+            this.preis_summe = Bestellpreis;
+            this.stückpreis = einzelpreis; 
+            this.nettopreis_Summe = Nettobestellpreis; 
+            this.nettoeinzelpreis = nettoeinzelpreis; 
+
             // Ausgabe der Preise            
             string summenenstring = "Summe (" + this.menge + "Stück):";
 
@@ -799,6 +828,9 @@ namespace Objektorientiert
                     Re = 210;
                     break;
             }
+            this.elastizitätsgrenze = Re; 
+            this.Zugfestigkeit = Rm;
+
             Console.WriteLine(" Elastizitätsgrenze:   " + Re + " N/mm²");
             Console.WriteLine(" Zugfestigkeit:        " + Rm +  "N/mm²");
             Console.WriteLine();
@@ -818,7 +850,6 @@ namespace Objektorientiert
         ExcelControll(Schraube[]arr)
         {
             // Erstellen einer Neuen Exelmappe 
-            int anzahl = 4;
             Excel.Application excelApp = new Excel.Application();
             excelApp.Visible = true;
             excelApp.Workbooks.Add();
@@ -832,59 +863,66 @@ namespace Objektorientiert
 
             mySheet.Cells[2, 1] = "Techniche Details";
             mySheet.Cells[3, 1] = "Schraubenlänge";
-            mySheet.Cells[4, 1] = "Schlüsselweite";
-            mySheet.Cells[5, 1] = "Gewindedurchmesser";
-            mySheet.Cells[6, 1] = "Masse pro Stück";
-            mySheet.Cells[7, 1] = "Gesamtgewicht";
-            mySheet.Cells[8, 1] = "Steigung";
-            mySheet.Cells[9, 1] = "Gewindetiefe";
-            mySheet.Cells[10, 1] = "Rundung";
-            mySheet.Cells[11, 1] = "Flankendurchmesser";
-            mySheet.Cells[12, 1] = "Flankenwinkel";
-            mySheet.Cells[13, 1] = "";
-            mySheet.Cells[14, 1] = "Elastizitätzgrenze";
-            mySheet.Cells[15, 1] = "Zugfestigkeit";
-            mySheet.Cells[16, 1] = "";
-            mySheet.Cells[17, 1] = "Preis (Netto)";
-            mySheet.Cells[18, 1] = "Summe";
-            mySheet.Cells[19, 1] = "Stückpreis";
-            mySheet.Cells[20, 1] = "";
-            mySheet.Cells[21, 1] = "Preis (Brutto)";
-            mySheet.Cells[22, 1] = "Summe";
-            mySheet.Cells[23, 1] = "Stückpreis";
+            mySheet.Cells[4 ,1] = "Gewindelänge";
+            mySheet.Cells[5, 1] = "Schlüsselweite";
+            mySheet.Cells[6, 1] = "Gewindedurchmesser";
+            mySheet.Cells[7, 1] = "Masse pro Stück";
+            mySheet.Cells[8, 1] = "Gesamtgewicht";
+            mySheet.Cells[9, 1] = "Gewindesteigung";
+            mySheet.Cells[10, 1] = "Gewindetiefe";
+            mySheet.Cells[11, 1] = "Rundung";
+            mySheet.Cells[12, 1] = "Flankendurchmesser";
+            mySheet.Cells[13, 1] = "Kerndurchmesser";
+            mySheet.Cells[14, 1] = "Flankenwinkel";
+            mySheet.Cells[15, 1] = "";
+            mySheet.Cells[16, 1] = "Elastizitätzgrenze";
+            mySheet.Cells[17, 1] = "Zugfestigkeit";
+            mySheet.Cells[18, 1] = "";
+            mySheet.Cells[19, 1] = "Preis (Netto)";
+            mySheet.Cells[20, 1] = "Summe";
+            mySheet.Cells[21, 1] = "Stückpreis";
+            mySheet.Cells[22, 1] = "";
+            mySheet.Cells[23, 1] = "Preis (Brutto)";
+            mySheet.Cells[24, 1] = "Summe";
+            mySheet.Cells[25, 1] = "Stückpreis";
+            mySheet.Cells[27, 1] = "Menge";
 
 
             // Listenformat einführen 
-            mySheet.Range["A1", "E25"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
+            mySheet.Range["A1", "E29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
 
             // Werte der Schrauben in Tabelle eingeben 
 
             for (int i = 0; i < arr.Length; i++)
             {
                 mySheet.Cells[2, i+2] = arr[i].name;
-                mySheet.Cells[3, i+2] = arr[i].laenge;
-                mySheet.Cells[4, i+2] = arr[i].schluesselbreite;
-                mySheet.Cells[5, i+2] = arr[i].gewinde;
-                mySheet.Cells[6, i+2] = arr[i].masse;
-                mySheet.Cells[7, i+2] = arr[i].gesamtgewicht;
-                mySheet.Cells[8, i+2] = arr[i].gewindesteigung;
-                mySheet.Cells[9, i+2] = "Gewindetiefe";
-                mySheet.Cells[10, i+2] = "Rundung S" + i;
-                mySheet.Cells[11, i+2] = "Flankendurchmesser S" + i;
-                mySheet.Cells[12, i+2] = "Flankenwinkel S" + i;
-                mySheet.Cells[13, i+2] = "";
-                mySheet.Cells[14, i+2] = "Elastizitätzgrenze S" + i;
-                mySheet.Cells[15, i+2] = "Zugfestigkeit S" + i;
-                mySheet.Cells[16, i+2] = "";
-                mySheet.Cells[17, i+2] = "Preis (Netto) S" + i;
-                mySheet.Cells[18, i+2] = "Summe S" + i;
-                mySheet.Cells[19, i+2] = "Stückpreis S" + i;
-                mySheet.Cells[20, i+2] = "";
-                mySheet.Cells[21, i+2] = "Preis (Brutto) S" + i;
-                mySheet.Cells[22, i+2] = "Summe S" + i;
-                mySheet.Cells[23, i+2] = "Stückpreis S" + i;
+                mySheet.Cells[3, i+2] = arr[i].laenge+" mm";
+                mySheet.Cells[4, i+2] = arr[i].gewindelaenge+" mm";
+                mySheet.Cells[5, i+2] = arr[i].schluesselbreite+" mm";
+                mySheet.Cells[6, i+2] = arr[i].gewinde;
+                mySheet.Cells[7, i+2] = Math.Round(arr[i].masse,2)+ " g";
+                mySheet.Cells[8, i+2] = Math.Round(arr[i].gesamtgewicht,2)+" g";
+                mySheet.Cells[9, i+2] = Math.Round(arr[i].gewindesteigung,2)+ " mm";
+                mySheet.Cells[10, i+2]= Math.Round(arr[i].gewindetiefe,2) + " mm";
+                mySheet.Cells[11, i+2] = Math.Round(arr[i].gewinderundung,2) + " mm";
+                mySheet.Cells[12, i+2] = Math.Round(arr[i].flankendurchmesser,2)+" mm";
+                mySheet.Cells[13, i+2] = Math.Round(arr[i].kerndurchmesser,2) + " mm";
+                mySheet.Cells[14, i+2] = Math.Round(arr[i].flankenwinkel,2)+"°";
+                
+                mySheet.Cells[16, i+2] = Math.Round(arr[i].elastizitätsgrenze,2) +" N/mm²";
+                mySheet.Cells[17, i+2] = Math.Round(arr[i].Zugfestigkeit,2)+ " N/mm²";
+                
+                
+                mySheet.Cells[20, i+2] = Math.Round(arr[i].nettopreis_Summe,2) + "€";
+                mySheet.Cells[21, i+2] = Math.Round(arr[i].nettoeinzelpreis,2)+ "€";
+               
+                
+                mySheet.Cells[24, i+2] = Math.Round(arr[i].preis_summe,2) + "€";
+                mySheet.Cells[25, i+2] = Math.Round(arr[i].stückpreis,2)+ "€";
 
-                mySheet.Cells[25, i + 1].AddComment("Anmerkung S " + i);
+                mySheet.Cells[27, i+2] = arr[i].menge;
+
+                mySheet.Cells[28, i + 1].AddComment("Anmerkung S " + i);
 
             }
  
