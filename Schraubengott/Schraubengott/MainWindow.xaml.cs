@@ -24,13 +24,12 @@ namespace Schraubengott
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+       
 
         public MainWindow()
         {
-            Schraube[] schrauben = new Schraube[1];
-            schrauben[0] = new Schraube();
-            Schraube s = new Schraube();
+            
+           
             InitializeComponent();
             
 
@@ -85,15 +84,15 @@ namespace Schraubengott
             a_textBox.SelectionStart = a_textBox.Text.Length;
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
            
-            //s.gewindeart = "Feingewinde";
+           Schraube.feld[0].gewindeart = "Feingewinde";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
            
-            //s.gewindeart = "Standartgewinde";
+            s.gewindeart = "Standartgewinde";
         }
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
@@ -143,28 +142,7 @@ namespace Schraubengott
     }
 
 
-    class Schraube
-    {
-        public String name; // Vom Benutzer festgeleter Name für die Schraube
-        public int menge;
-        public int laenge;
-        public double volumen;
-        public int schluesselbreite;
-        public String typ;      //Innensechskant/Ausßensechskant
-        public String festigkeit;
-        public String festaus;//Festigkeitsklasse ausgeschrieben
-
-        public String gewindeart;
-        public int gewindelaenge;
-        public double gewindesteigung;
-        public String gewinde;
-
-        public String material;
-        public String mataus;//Material ausgeschrieben
-        public double dichte;
-        public double masse;
-        public double gesamtgewicht;
-    }
+    
 
     
     
