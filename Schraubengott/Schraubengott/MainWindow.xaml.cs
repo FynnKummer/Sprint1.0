@@ -87,7 +87,7 @@ namespace Schraubengott
         public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
            
-           Schraube.feld[0].gewindeart = "Feingewinde";
+           Class1.feld[0].gewindeart = "Feingewinde";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
