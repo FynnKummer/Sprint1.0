@@ -142,9 +142,7 @@ namespace Schraubengott
                 case 4:
                     tab_5.Visibility = Visibility.Visible;
                     break;
-            }
-
-           
+            }         
         }
 
         private void btndelete1_Click(object sender, RoutedEventArgs e)
