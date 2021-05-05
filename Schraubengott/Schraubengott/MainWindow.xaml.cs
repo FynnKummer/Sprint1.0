@@ -144,6 +144,7 @@ namespace Schraubengott
             tab_5.Visibility = Visibility.Collapsed;
         }
 
+
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //festigkeitsklasse
@@ -157,6 +158,11 @@ namespace Schraubengott
         private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //gewinde
+
+        private void btnuebernehmen_Click(object sender, RoutedEventArgs e)
+        {
+
+
         }
     }
 
