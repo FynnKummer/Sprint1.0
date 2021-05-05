@@ -41,5 +41,45 @@ namespace Schraubengott
         public double stückpreis; //
         public double nettopreis_Summe;  // belegt
         public double nettoeinzelpreis;  //belegt
+
+        //Auswahlen der Comboboxen den Variablen zuweisen
+        public void gewinde_festlegen(String gew)
+        {
+            this.gewinde = gew;
+        }
+        public void kopf_festlegen(String kopf)
+        {
+            this.typ = kopf;
+
+        }
+        public void festigkeit_festlegen(String fest)
+        {
+            this.festigkeit = fest;
+        }
+
+        //Eingaben der Textboxen den Variablen zuweisen
+        public void laenge_festlegen(int laenge)
+        {
+
+        }
+        public void gewlen_festlegen(int gewlen)
+        {
+
+        }
+
+
+        //Berechnungen 
+        public void masse_berechnen()
+        {
+
+        }
+        public void vol_berechnen()
+        {
+
+        }
+        public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
+        {
+
+        }
     }
 }
