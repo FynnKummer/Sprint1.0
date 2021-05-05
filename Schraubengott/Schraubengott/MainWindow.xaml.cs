@@ -25,14 +25,15 @@ namespace Schraubengott
     public partial class MainWindow : Window
     {
         Schraube[] feld = new Schraube[1];
+        // hier noch ne Random Nummer erzeugen lassen für ne Bestell und Kudnennummer
 
 
         public MainWindow()
         {
             feld[0] = new Schraube();
-           
+
             InitializeComponent();
-            
+
 
         }
 
@@ -68,7 +69,7 @@ namespace Schraubengott
                 feld[0].material = "Verzinkter Stahl";
             }
         }
-    
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -81,7 +82,7 @@ namespace Schraubengott
                 {
                     a_newText += a_textBox.Text[i];
                 }
-               
+
             }
 
             a_textBox.Text = a_newText;
@@ -90,12 +91,12 @@ namespace Schraubengott
 
         public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-           
-           feld[0].gewindeart = "Feingewinde";
+
+            feld[0].gewindeart = "Feingewinde";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-           
+
             feld[0].gewindeart = "Standartgewinde";
         }
 
@@ -159,17 +160,17 @@ namespace Schraubengott
         {
             //gewinde
 
+            
+        }
         private void btnuebernehmen_Click(object sender, RoutedEventArgs e)
         {
 
 
         }
+
+        private void btnuebernehmen_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
-
-
-    
-
-    
-    
-
-    }
+}
