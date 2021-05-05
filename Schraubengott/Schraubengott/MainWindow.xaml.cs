@@ -140,6 +140,11 @@ namespace Schraubengott
         {
             tab_5.Visibility = Visibility.Collapsed;
         }
+
+        private void btnuebernehmen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 
