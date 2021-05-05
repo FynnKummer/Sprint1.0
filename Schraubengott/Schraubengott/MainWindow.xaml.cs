@@ -25,6 +25,7 @@ namespace Schraubengott
     public partial class MainWindow : Window
     {
         Schraube[] feld = new Schraube[1];
+        int nr = 0;
         // hier noch ne Random Nummer erzeugen lassen für ne Bestell und Kudnennummer
 
 
@@ -49,13 +50,13 @@ namespace Schraubengott
                 cbfk.Items.Clear();
                 cbfk.Items.Add("V2A 50");
                 cbfk.Items.Add("V2A 70");
-                feld[0].material = "V2A";
+                feld[nr].material = "V2A";
             }
             else if (cbmat.SelectedValue.ToString() == "V4A")
             {
                 cbfk.Items.Clear();
                 cbfk.Items.Add("V4A 70");
-                feld[0].material = "V4A";
+                feld[nr].material = "V4A";
             }
             else if (cbmat.SelectedValue.ToString() == "Verzinkter Stahl")
             {
@@ -66,7 +67,7 @@ namespace Schraubengott
                 cbfk.Items.Add("9.8");
                 cbfk.Items.Add("10.9");
                 cbfk.Items.Add("12.9");
-                feld[0].material = "Verzinkter Stahl";
+                feld[nr].material = "Verzinkter Stahl";
             }
         }
 
@@ -92,12 +93,12 @@ namespace Schraubengott
         public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
-            feld[0].gewindeart = "Feingewinde";
+            feld[nr].gewindeart = "Feingewinde";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
 
-            feld[0].gewindeart = "Standartgewinde";
+            feld[nr].gewindeart = "Standartgewinde";
         }
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
@@ -149,28 +150,29 @@ namespace Schraubengott
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //festigkeitsklasse
+            feld[nr].festigkeit_festlegen(cbfk.SelectedItem.ToString());
         }
 
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //kopf
+            feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
         }
 
         private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //gewinde
 
+            feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
+
             
         }
-        private void btnuebernehmen_Click(object sender, RoutedEventArgs e)
-        {
-
-
-        }
-
         private void btnuebernehmen_Click_1(object sender, RoutedEventArgs e)
         {
 
+
         }
+
+        
     }
 }
