@@ -26,7 +26,7 @@ namespace Schraubengott
     {
         Schraube[] feld = new Schraube[5];
         int nr = 0;                             //Variable für den Index des Feldes Schraube
-        int new_screw_btn = 0;
+        int new_screw_int = 1;
         // hier noch ne Random Nummer erzeugen lassen für ne Bestell und Kudnennummer
 
 
@@ -206,11 +206,49 @@ namespace Schraubengott
         {
             cmb_nr.Visibility = Visibility.Visible;
 
-            if (new_screw_btn == 0)
+
+            
+            
+                new_screw.Content = (new_screw_int+1)+ ". Schraube erstellen";
+                switch (new_screw_int)
+                {
+                    case 1:
+                        new_screw.Content = "2. Schraube erstellen";
+                        screw1.Visibility = Visibility.Visible;
+                        new_screw_int++;
+                        break;
+
+                    case 2:
+                        screw2.Visibility = Visibility.Visible;
+                        new_screw_int++;
+
+                        break;
+
+                    case 3:
+                        screw3.Visibility = Visibility.Visible;
+                        new_screw_int++;
+                        break;
+
+                    case 4:
+                        screw4.Visibility = Visibility.Visible;
+                        new_screw_int++;
+                        break;
+
+                    case 5:
+                        screw5.Visibility = Visibility.Visible;
+                        new_screw_int++;
+                        break;
+     
+
+                }
+            if (new_screw_int == 6)
             {
-                new_screw.Content = "2. Schraube erstellen";
-                screw1.Visibility = Visibility.Visible;
+                new_screw.Visibility = Visibility.Collapsed;
+
             }
+            
+
+
 
 
         }
