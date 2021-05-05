@@ -8,5 +8,7 @@ namespace Schraubengott
 {
     class Schraube
     {
+        public int menge;
+        public String gewindeart;
     }
 }
