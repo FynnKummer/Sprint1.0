@@ -24,11 +24,12 @@ namespace Schraubengott
     /// </summary>
     public partial class MainWindow : Window
     {
-       
+        Schraube[] feld = new Schraube[1];
+
 
         public MainWindow()
         {
-            
+            feld[0] = new Schraube();
            
             InitializeComponent();
             
@@ -87,12 +88,12 @@ namespace Schraubengott
         public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
            
-           Class1.feld[0].gewindeart = "Feingewinde";
+           feld[0].gewindeart = "Feingewinde";
         }
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
            
-            s.gewindeart = "Standartgewinde";
+            feld[0].gewindeart = "Standartgewinde";
         }
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
