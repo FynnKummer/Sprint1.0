@@ -213,7 +213,7 @@ namespace Schraubengott
                 switch (new_screw_int)
                 {
                     case 1:
-                        new_screw.Content = "2. Schraube erstellen";
+                        
                         screw1.Visibility = Visibility.Visible;
                         new_screw_int++;
                         break;
