@@ -169,7 +169,7 @@ namespace Schraubengott
         }
         private void btnuebernehmen_Click_1(object sender, RoutedEventArgs e)
         {
-
+            feld[nr].laenge = txtlaenge.Text; // konvert to int
 
         }
 
