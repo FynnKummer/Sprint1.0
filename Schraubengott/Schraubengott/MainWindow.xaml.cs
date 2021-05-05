@@ -48,11 +48,13 @@ namespace Schraubengott
                 cbfk.Items.Clear();
                 cbfk.Items.Add("V2A 50");
                 cbfk.Items.Add("V2A 70");
+                feld[0].material = "V2A";
             }
             else if (cbmat.SelectedValue.ToString() == "V4A")
             {
                 cbfk.Items.Clear();
                 cbfk.Items.Add("V4A 70");
+                feld[0].material = "V4A";
             }
             else if (cbmat.SelectedValue.ToString() == "Verzinkter Stahl")
             {
@@ -63,6 +65,7 @@ namespace Schraubengott
                 cbfk.Items.Add("9.8");
                 cbfk.Items.Add("10.9");
                 cbfk.Items.Add("12.9");
+                feld[0].material = "Verzinkter Stahl";
             }
         }
     
@@ -139,6 +142,21 @@ namespace Schraubengott
         private void btndelete5_Click(object sender, RoutedEventArgs e)
         {
             tab_5.Visibility = Visibility.Collapsed;
+        }
+
+        private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //festigkeitsklasse
+        }
+
+        private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //kopf
+        }
+
+        private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //gewinde
         }
     }
 
