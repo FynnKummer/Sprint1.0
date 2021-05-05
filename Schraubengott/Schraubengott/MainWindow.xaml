@@ -184,6 +184,15 @@
 
         <Label x:Name="preislbl" Content="preislbl" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="765.333,500,0,0" VerticalAlignment="Top" Width="194"/>
         <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="411.5,-39,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Visibility="Collapsed" Name="cmb_nr" Grid.Column="1" HorizontalAlignment="Left" Margin="52.5,62,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_nr_SelectionChanged">
+            <ComboBoxItem x:Name="screw1" Visibility="Collapsed" Content="Schraube 1" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="screw2" Visibility="Collapsed" Content="Schraube 2" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="screw3" Visibility="Collapsed" Content="Schraube 3" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="screw4" Visibility="Collapsed" Content="Schraube 4" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="screw5" Visibility="Collapsed" Content="Schraube 5" HorizontalAlignment="Left" Width="118"/>
+
+        </ComboBox>
+        <Button x:Name="new_screw" Content="1.Schraube Konfigurieren" Grid.Column="1" HorizontalAlignment="Left" Margin="211.5,36,0,0" VerticalAlignment="Top" Width="76" Height="21" Click="new_screw_Click"/>
 
 
 

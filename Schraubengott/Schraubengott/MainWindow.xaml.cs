@@ -24,8 +24,9 @@ namespace Schraubengott
     /// </summary>
     public partial class MainWindow : Window
     {
-        Schraube[] feld = new Schraube[1];
-        int nr = 0;
+        Schraube[] feld = new Schraube[5];
+        int nr = 0;                             //Variable für den Index des Feldes Schraube
+        int new_screw_btn = 0;
         // hier noch ne Random Nummer erzeugen lassen für ne Bestell und Kudnennummer
 
 
@@ -169,10 +170,49 @@ namespace Schraubengott
         }
         private void btnuebernehmen_Click_1(object sender, RoutedEventArgs e)
         {
-            feld[nr].laenge = txtlaenge.Text; // konvert to int
+           // feld[nr].laenge = txtlaenge.Text; // konvert to int
 
         }
 
-        
+        private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
+        {
+            switch (cmb_nr.SelectedItem.ToString())
+            {
+                case "Schraube 1":
+                    //nr ist schon 0
+                    break;
+
+                case "Schraube 2":
+                    nr = 1;
+                    break;
+
+                case "Schraube 3":
+                    nr = 2;
+                    break;
+
+                case "Schraube 4":
+                    nr = 3;
+                    break;
+
+                case "Schraube 5":
+                    nr = 4;
+                    break;
+
+            }
+                
+        }
+
+        private void new_screw_Click(object sender, RoutedEventArgs e)
+        {
+            cmb_nr.Visibility = Visibility.Visible;
+
+            if (new_screw_btn == 0)
+            {
+                new_screw.Content = "2. Schraube erstellen";
+                screw1.Visibility = Visibility.Visible;
+            }
+
+
+        }
     }
 }
