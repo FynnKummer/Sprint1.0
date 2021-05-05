@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Schraubengott"
         mc:Ignorable="d"
-        Title="Schraubengott" Height="652.912" Width="1067.25" Icon="Untitled - 2.ico" ResizeMode="NoResize" WindowState="Minimized">
+        Title="Schraubengott" Height="652.912" Width="1067.25" Icon="Untitled - 2.ico" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"/>
@@ -28,8 +28,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="84*"/>
                         <ColumnDefinition Width="50*"/>
-                        <ColumnDefinition Width="291*"/>
-                        <ColumnDefinition Width="330*"/>
+                        <ColumnDefinition Width="271*"/>
+                        <ColumnDefinition Width="350*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Material:" HorizontalAlignment="Left" Height="30" Margin="13,10,0,0" VerticalAlignment="Top" Width="59"/>
                     <Label Content="Festigkeitsklasse:" HorizontalAlignment="Left" Height="30" Margin="13,45,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
