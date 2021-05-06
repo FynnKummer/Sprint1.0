@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Schraubengott"
         mc:Ignorable="d"
-        Title="Schraubengott" Height="652.912" Width="1067.25" Icon="Untitled - 2.ico" ResizeMode="CanMinimize">
+        Title="Schraubengott" Height="652.912" Width="1067.25" Icon="Symbol.ico" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"/>
