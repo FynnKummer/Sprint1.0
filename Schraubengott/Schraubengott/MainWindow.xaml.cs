@@ -236,6 +236,10 @@ namespace Schraubengott
             //if (schraubenlenge < gewindelenge)
             //{
             //    gewindelengetextbox.Background = Brushes.Red;           wenn die Gewindelänge nicht zur Schraubenlänge passt, wird die Gewindelängetextbox rot
+            //
+            //
+            //
+            //
             //}
             
 
@@ -251,6 +255,9 @@ namespace Schraubengott
                         screw1.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw1;
                         new_screw_int++;
+                    //Keine Sorge, das kommt noch an die Richtige Stelle
+                    MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatible", "Fehlerhafte Eingabe", MessageBoxButton.OK,MessageBoxImage.Error);
+                   
                         break;
 
                     case 2:
