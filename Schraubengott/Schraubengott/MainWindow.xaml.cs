@@ -277,13 +277,13 @@ namespace Schraubengott
             //
             //
             //}
-            
+
+           
 
 
-            
-            
-                new_screw.Content = (new_screw_int+1)+ ". Schraube erstellen";
-                
+
+            //new_screw.Content = (new_screw_int+1)+ ". Schraube erstellen";
+
             switch (new_screw_int)
                 {
                     case 1:
@@ -291,6 +291,8 @@ namespace Schraubengott
                         screw1.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw1;
                         new_screw_int++;
+                    new_screw.Content = "weitere Schrabue erstelln";
+
                     tab_konfig.Header = "1. Konfiguration";
 
                     //Keine Sorge, das kommt noch an die Richtige Stelle
@@ -302,6 +304,7 @@ namespace Schraubengott
                         screw2.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw2;
                         new_screw_int++;
+                    new_screw.Content = "weitere Schrabue erstelln";
                     tab_konfig.Header = "2. Konfiguration";
 
                     break;
@@ -310,6 +313,7 @@ namespace Schraubengott
                         screw3.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw3;
                         new_screw_int++;
+                    new_screw.Content = "weitere Schrabue erstelln";
                     tab_konfig.Header = "3. Konfiguration";
                     break;
 
@@ -317,6 +321,7 @@ namespace Schraubengott
                         screw4.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw4;
                         new_screw_int++;
+                    new_screw.Content = "weitere Schrabue erstelln";
                     tab_konfig.Header = "4. Konfiguration";
                     break;
 
@@ -324,6 +329,7 @@ namespace Schraubengott
                         screw5.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw5;
                         new_screw_int++;
+                    new_screw.Content = "letzte Schrabue erstelln";
                     tab_konfig.Header = "5. Konfiguration";
                     new_screw.Visibility = Visibility.Collapsed;
 
