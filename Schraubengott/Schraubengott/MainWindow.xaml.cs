@@ -207,22 +207,28 @@ namespace Schraubengott
             {
                 case "Schraube 1":
                     //nr ist schon 0
+                    tab_konfig.Header = "1. Konfiguration"; // Hier muss noch was geändert werden, dass sich der Tabheader immer der aktuellen Schraube anpasst
+
                     break;
 
                 case "Schraube 2":
                     nr = 1;
+                  
                     break;
 
                 case "Schraube 3":
                     nr = 2;
+                    
                     break;
 
                 case "Schraube 4":
                     nr = 3;
+                  
                     break;
 
                 case "Schraube 5":
                     nr = 4;
+                    
                     break;
 
             }
@@ -255,6 +261,8 @@ namespace Schraubengott
                         screw1.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw1;
                         new_screw_int++;
+                    tab_konfig.Header = "1. Konfiguration";
+
                     //Keine Sorge, das kommt noch an die Richtige Stelle
                     MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.\nKeine Sorge, kommt noch an die richtige Stelle", "Fehlerhafte Eingabe", MessageBoxButton.OK,MessageBoxImage.Error);
                    
@@ -264,26 +272,30 @@ namespace Schraubengott
                         screw2.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw2;
                         new_screw_int++;
+                    tab_konfig.Header = "2. Konfiguration";
 
-                        break;
+                    break;
 
                     case 3:
                         screw3.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw3;
                         new_screw_int++;
-                        break;
+                    tab_konfig.Header = "3. Konfiguration";
+                    break;
 
                     case 4:
                         screw4.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw4;
                         new_screw_int++;
-                        break;
+                    tab_konfig.Header = "4. Konfiguration";
+                    break;
 
                     case 5:
                         screw5.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw5;
                         new_screw_int++;
-                        new_screw.Visibility = Visibility.Collapsed;
+                    tab_konfig.Header = "5. Konfiguration";
+                    new_screw.Visibility = Visibility.Collapsed;
 
 
                     break;
