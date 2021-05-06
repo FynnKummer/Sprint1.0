@@ -203,32 +203,39 @@ namespace Schraubengott
 
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
-            switch (cmb_nr.SelectedItem.ToString())
+            lbl1.Content = cmb_nr.SelectedIndex;
+
+            switch (cmb_nr.SelectedIndex)
             {
-                case "Schraube 1":
+                
+                case 0:
                     //nr ist schon 0
+                    
                     tab_konfig.Header = "1. Konfiguration"; // Hier muss noch was geändert werden, dass sich der Tabheader immer der aktuellen Schraube anpasst
 
                     break;
 
-                case "Schraube 2":
+                case 1:
                     nr = 1;
-                  
+                    tab_konfig.Header = "2. Konfiguration";
+
                     break;
 
-                case "Schraube 3":
+                case 2:
                     nr = 2;
-                    
+                    tab_konfig.Header = "3. Konfiguration";
+
                     break;
 
-                case "Schraube 4":
+                case 3:
                     nr = 3;
-                  
+                    tab_konfig.Header = "4. Konfiguration";
+
                     break;
 
-                case "Schraube 5":
+                case 4:
                     nr = 4;
-                    
+                    tab_konfig.Header = "5. Konfiguration";
                     break;
 
             }
