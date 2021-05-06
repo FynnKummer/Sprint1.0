@@ -156,6 +156,9 @@ namespace Schraubengott
             laengelabel.Content = feld[nr].laenge;
             gewlenlabel.Content = feld[nr]. gewindelaenge;
             mengelabel.Content = feld[nr].menge;
+            Bemerkung.Content = text.Text;
+            preis.Content = feld[nr].preis_summe;
+            einzelpreis.Content = feld[nr].stückpreis;
             sweitelabel.Content = feld[nr].schluesselbreite;
             masselabel.Content = feld[nr].masse;
             gesamtlabel.Content = feld[nr].gesamtgewicht;
@@ -226,7 +229,6 @@ namespace Schraubengott
 
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
-            lbl1.Content = cmb_nr.SelectedIndex;
 
             switch (cmb_nr.SelectedIndex)
             {
@@ -338,6 +340,11 @@ namespace Schraubengott
 
 
 
+
+        }
+
+        private void text_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }
