@@ -146,7 +146,30 @@ namespace Schraubengott
                 case 4:
                     tab_5.Visibility = Visibility.Visible;
                     break;
-            }         
+            }
+
+            matlabel.Content = feld[nr].material;
+            festlabel.Content = feld[nr].festigkeit;
+            kopflabel.Content = feld[nr].typ;
+            gewindelabel.Content = feld[nr].gewinde;
+            gewtyplabel.Content = feld[nr].gewindeart;
+            laengelabel.Content = feld[nr].laenge;
+            gewlenlabel.Content = feld[nr]. gewindelaenge;
+            mengelabel.Content = feld[nr].menge;
+            sweitelabel.Content = feld[nr].schluesselbreite;
+            masselabel.Content = feld[nr].masse;
+            gesamtlabel.Content = feld[nr].gesamtgewicht;
+            steigunglabel.Content = feld[nr].gewindesteigung;
+            gewtiefelabel.Content = feld[nr].gewindetiefe;
+            rundunglabel.Content = feld[nr].gewinderundung;
+            flankenlabel.Content = feld[nr].flankendurchmesser;
+            kernlabel.Content = feld[nr].kerndurchmesser;
+            flankenwinkellabel.Content = feld[nr].flankenwinkel;
+            Re.Content = feld[nr].elastizitätsgrenze;
+            Rm.Content = feld[nr].Zugfestigkeit;
+
+
+
         }
 
         private void btndelete1_Click(object sender, RoutedEventArgs e)
