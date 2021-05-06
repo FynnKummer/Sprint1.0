@@ -106,9 +106,7 @@
     <Resource Include="vykres_-_din_931.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Symbol.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Symbol.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
