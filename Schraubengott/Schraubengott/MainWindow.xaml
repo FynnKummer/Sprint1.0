@@ -196,6 +196,11 @@
         </ComboBox>
         <Button x:Name="new_screw" Content="1.Schraube Konfigurieren" Grid.Column="1" HorizontalAlignment="Left" Margin="235.5,36,0,0" VerticalAlignment="Top" Width="76" Height="21" Click="new_screw_Click"/>
         <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="185.5,-82,0,0" VerticalAlignment="Top" Width="120" MaxDropDownHeight="100"/>
+        <Image x:Name="Logo" Grid.Column="1" HorizontalAlignment="Left" Height="80" Margin="10,10,0,0" VerticalAlignment="Top" Width="160" Source="Logo.png" Visibility="Visible">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="Logo.png"/>
+            </Image.OpacityMask>
+        </Image>
 
 
 
