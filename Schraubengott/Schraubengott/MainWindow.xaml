@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Schraubengott"
         mc:Ignorable="d"
-        Title="Schraubengott" Height="652.912" Width="1067.25" Icon="Untitled - 2.ico" ResizeMode="CanMinimize">
+        Title="Schraubengott" Height="652.912" Width="1067.25" Icon="Symbol.ico" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"/>
@@ -16,7 +16,7 @@
         <Button Content="Ich bin fertig Mama" HorizontalAlignment="Left" Height="23" Margin="765.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="616.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"  />
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="433" Margin="235.333,62,0,0" VerticalAlignment="Top" Width="761">
-            <TabItem Header="Konfigurieren">
+            <TabItem x:Name="tab_konfig" Header="Konfigurieren" Height="22" Margin="-2,-2,-2.5,0" VerticalAlignment="Top">
                 <Grid>
                     <Grid.Background>
                         <RadialGradientBrush>
@@ -51,7 +51,7 @@
                     </ComboBox>
                     <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="36,150,0,0" VerticalAlignment="Top" Height="16" Width="87" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.Column="1" Grid.ColumnSpan="2"/>
                     <ComboBox x:Name="cbgewinde" IsEditable="true"
-                                IsReadOnly="true" HorizontalAlignment="Left" Margin="36,115,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="cbgewinde_SelectionChanged">
+                                IsReadOnly="true" HorizontalAlignment="Left" Margin="36,115,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="cbgewinde_SelectionChanged" MaxDropDownHeight="60">
                         <ComboBoxItem Content="M4" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="M5" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="M6" HorizontalAlignment="Left" Width="118"/>
@@ -69,6 +69,8 @@
                         IsReadOnly="true" HorizontalAlignment="Left" Margin="36,80,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="cbkopf_SelectionChanged" >
                         <ComboBoxItem Content="Außensechskant"/>
                         <ComboBoxItem Content="Innensechskant" />
+                        <ComboBoxItem Content="Schlitz"/>
+                        <ComboBoxItem Content="Kreuzschlitz" />
 
                     </ComboBox>
 
@@ -193,7 +195,7 @@
 
         </ComboBox>
         <Button x:Name="new_screw" Content="1.Schraube Konfigurieren" Grid.Column="1" HorizontalAlignment="Left" Margin="235.5,36,0,0" VerticalAlignment="Top" Width="76" Height="21" Click="new_screw_Click"/>
-        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="185.5,-82,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="185.5,-82,0,0" VerticalAlignment="Top" Width="120" MaxDropDownHeight="100"/>
 
 
 
