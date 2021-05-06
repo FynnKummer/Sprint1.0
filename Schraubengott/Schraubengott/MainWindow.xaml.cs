@@ -24,15 +24,18 @@ namespace Schraubengott
     /// </summary>
     public partial class MainWindow : Window
     {
-        Schraube[] feld = new Schraube[5];
+        Schraube[] feld = new Schraube[5];      //Array vom Typ Schraube erstellen
         int nr = 0;                             //Variable für den Index des Feldes Schraube
-        int new_screw_int = 1;
+        int new_screw_int = 1;                  //Varibale für Neue Schraube Button und Combobox mit Schraubenauswahl
         // hier noch ne Random Nummer erzeugen lassen für ne Bestell und Kudnennummer
 
 
         public MainWindow()
         {
-            feld[0] = new Schraube();
+            for (int i = 0; i < feld.Length; i++)
+            {
+                feld[i] = new Schraube();         // Array wird mit Objekten gefüllt
+            }
 
             InitializeComponent();
 
@@ -41,7 +44,7 @@ namespace Schraubengott
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            Application.Current.Shutdown();                    //Exitbutton schließt die App
         }
 
         private void cbmat_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -229,48 +232,55 @@ namespace Schraubengott
         private void new_screw_Click(object sender, RoutedEventArgs e)
         {
             cmb_nr.Visibility = Visibility.Visible;
+            
 
 
             
             
                 new_screw.Content = (new_screw_int+1)+ ". Schraube erstellen";
-                switch (new_screw_int)
+                
+            switch (new_screw_int)
                 {
                     case 1:
                         
                         screw1.Visibility = Visibility.Visible;
+                        cmb_nr.SelectedItem = screw1;
                         new_screw_int++;
                         break;
 
                     case 2:
                         screw2.Visibility = Visibility.Visible;
+                        cmb_nr.SelectedItem = screw2;
                         new_screw_int++;
 
                         break;
 
                     case 3:
                         screw3.Visibility = Visibility.Visible;
+                        cmb_nr.SelectedItem = screw3;
                         new_screw_int++;
                         break;
 
                     case 4:
                         screw4.Visibility = Visibility.Visible;
+                        cmb_nr.SelectedItem = screw4;
                         new_screw_int++;
                         break;
 
                     case 5:
                         screw5.Visibility = Visibility.Visible;
+                        cmb_nr.SelectedItem = screw5;
                         new_screw_int++;
-                        break;
+                        new_screw.Visibility = Visibility.Collapsed;
+
+
+                    break;
+                
      
 
                 }
-            if (new_screw_int == 6)
-            {
-                new_screw.Visibility = Visibility.Collapsed;
-
-            }
             
+
 
 
 

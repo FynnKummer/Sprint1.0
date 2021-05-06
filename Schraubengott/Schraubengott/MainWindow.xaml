@@ -192,7 +192,7 @@
             <ComboBoxItem x:Name="screw5" Visibility="Collapsed" Content="Schraube 5" HorizontalAlignment="Left" Width="118"/>
 
         </ComboBox>
-        <Button x:Name="new_screw" Content="1.Schraube Konfigurieren" Grid.Column="1" HorizontalAlignment="Left" Margin="211.5,36,0,0" VerticalAlignment="Top" Width="76" Height="21" Click="new_screw_Click"/>
+        <Button x:Name="new_screw" Content="1.Schraube Konfigurieren" Grid.Column="1" HorizontalAlignment="Left" Margin="235.5,36,0,0" VerticalAlignment="Top" Width="76" Height="21" Click="new_screw_Click"/>
 
 
 
