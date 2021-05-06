@@ -86,27 +86,26 @@
                     <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="3"/>
 
                     <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="4" HorizontalAlignment="Left" Height="20" Margin="174,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
-                    <Label x:Name="lbl1" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="208,185,0,0" VerticalAlignment="Top" Width="338" Grid.ColumnSpan="2" Height="30"/>
 
-                    <Label x:Name="matlabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,10,0,0" VerticalAlignment="Top" Width="38" Height="30"/>
-                    <Label x:Name="festlabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,49,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="kopflabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,84,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="gewindelabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,119,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="gewlenlabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,220,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="laengelabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,185,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="mengelabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,255,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="gewtyplabel" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,148,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="gewtiefelabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="200,36,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="rundunglabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="200,80,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="flankenlabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="200,127,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="kernlabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="200,167,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="flankenwinkellabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="200,202,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="Re" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="200,237,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="Rm" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="200,280,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="sweitelabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="133,36,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="masselabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="133,88,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="gesamtlabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="133,144,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="steigunglabel" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="133,197,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="matlabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="43,6,0,0" VerticalAlignment="Top" Width="38" Height="30"/>
+                    <Label x:Name="festlabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="38,45,0,0" VerticalAlignment="Top" Width="43"/>
+                    <Label x:Name="kopflabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="39,80,0,0" VerticalAlignment="Top" Width="42"/>
+                    <Label x:Name="gewindelabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="44,115,0,0" VerticalAlignment="Top" Width="37"/>
+                    <Label x:Name="gewlenlabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="38,144,0,0" VerticalAlignment="Top" Width="37"/>
+                    <Label x:Name="laengelabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="38,185,0,0" VerticalAlignment="Top" Width="37"/>
+                    <Label x:Name="mengelabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="38,220,0,0" VerticalAlignment="Top" Width="37"/>
+                    <Label x:Name="gewtyplabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="38,255,0,0" VerticalAlignment="Top" Width="37"/>
+                    <Label x:Name="gewtiefelabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="174,18,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="rundunglabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="174,53,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="flankenlabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="174,88,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="kernlabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="174,123,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="flankenwinkellabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="174,159,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Re" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="174,224,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Rm" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="174,263,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="sweitelabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="174,302,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="masselabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="272,22,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="gesamtlabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="272,62,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="steigunglabel" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="272,105,0,0" VerticalAlignment="Top"/>
 
 
 
