@@ -108,6 +108,41 @@ namespace Schraubengott
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
         {
+           /* TextBox material = new TextBox()
+            {
+                Text = "Material:\nFestigkeit:\n",
+                IsReadOnly = true,
+                Background = null,
+                BorderThickness = new Thickness(0),
+
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Height = 350,
+                Width = 270,
+                Margin = new Thickness(43, 6, 0, 0),
+            };
+            if (nr == 0)
+            {
+                grid1.Children.Add(material);
+            }
+            else if (nr == 1)
+            {
+                grid2.Children.Add(material);
+            }
+            else if (nr == 2)
+            {
+                grid3.Children.Add(material);
+            }
+            else if (nr == 3)
+            {
+                grid4.Children.Add(material);
+            }
+            else if (nr == 4)
+            {
+                grid5.Children.Add(material);
+            }
+
+            */
             if (nr == 0 && tab_1.Visibility == Visibility.Visible)
             {
                 nr++;
@@ -148,6 +183,7 @@ namespace Schraubengott
                     break;
             }
 
+ 
             matlabel.Content = feld[nr].material;
             festlabel.Content = feld[nr].festigkeit;
             kopflabel.Content = feld[nr].typ;
@@ -170,8 +206,6 @@ namespace Schraubengott
             flankenwinkellabel.Content = feld[nr].flankenwinkel;
             Re.Content = feld[nr].elastizitätsgrenze;
             Rm.Content = feld[nr].Zugfestigkeit;
-
-
 
         }
 
@@ -293,7 +327,7 @@ namespace Schraubengott
                         screw1.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw1;
                         new_screw_int++;
-                    new_screw.Content = "weitere Schrabue erstelln";
+                    new_screw.Content = "weitere Schrabue erstellen";
 
                     tab_konfig.Header = "1. Konfiguration";
 
@@ -342,16 +376,12 @@ namespace Schraubengott
 
                 }
             
-
-
-
-
-
         }
 
         private void text_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
+
     }
 }

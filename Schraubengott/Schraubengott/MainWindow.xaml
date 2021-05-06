@@ -38,7 +38,7 @@
 
                     <ComboBox Name="cbmat"   IsEditable="true" SelectedValuePath="Content"
                                 IsReadOnly="true" SelectionChanged="cbmat_SelectionChanged_1" HorizontalAlignment="Left" Height="26" Margin="36,10,0,0" VerticalAlignment="Top" Width="140" Grid.Column="2" Grid.ColumnSpan="2">
-                        <ComboBoxItem Content="Verzinkter Stahl"/>
+                        <ComboBoxItem x:Name="name" Content="Verzinkter Stahl"/>
                         <ComboBoxItem Content="V2A"/>
                         <ComboBoxItem Content="V4A"/>
 
@@ -87,7 +87,7 @@
 
                     <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="4" HorizontalAlignment="Left" Height="20" Margin="174,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
 
-                    <Label x:Name="matlabel" Content="-----" Grid.Column="4" HorizontalAlignment="Left" Margin="43,6,0,0" VerticalAlignment="Top" Width="40" Height="30"/>
+                    <Label x:Name="matlabel" Content="-----" Grid.Column="4" HorizontalAlignment="Left" Margin="42.667,6,0,0" VerticalAlignment="Top" Width="269" Height="353"/>
                     <Label x:Name="festlabel" Content="-----" Grid.Column="4" HorizontalAlignment="Left" Margin="38,45,0,0" VerticalAlignment="Top" Width="40"/>
                     <Label x:Name="kopflabel" Content="-----" Grid.Column="4" HorizontalAlignment="Left" Margin="39,80,0,0" VerticalAlignment="Top" Width="40"/>
                     <Label x:Name="gewindelabel" Content="-----" Grid.Column="4" HorizontalAlignment="Left" Margin="44,115,0,0" VerticalAlignment="Top" Width="40"/>
@@ -113,7 +113,7 @@
             </TabItem>
             <TabItem x:Name="tab_1" Header="Schraube 1" Visibility="Collapsed">
                 <ScrollViewer >
-                    <Grid>
+                    <Grid x:Name="grid1">
                         <Grid.Background>
                             <RadialGradientBrush>
                                 <GradientStop Color="#FFFAFCFE"/>
@@ -163,7 +163,7 @@
             </TabItem>
             <TabItem x:Name="tab_2" Header="Schraube 2" Visibility="Collapsed">
                 <ScrollViewer >
-                    <Grid>
+                    <Grid x:Name="grid2">
                         <Grid.Background>
                             <RadialGradientBrush>
                                 <GradientStop Color="#FFFAFCFE"/>
@@ -181,7 +181,7 @@
             </TabItem>
             <TabItem x:Name="tab_3" Header="Schraube 3" Visibility="Collapsed">
                 <ScrollViewer >
-                    <Grid>
+                    <Grid x:Name="grid3">
                         <Grid.Background>
                             <RadialGradientBrush>
                                 <GradientStop Color="#FFFAFCFE"/>
@@ -199,7 +199,7 @@
             </TabItem>
             <TabItem x:Name="tab_4" Header="Schraube 4" Visibility="Collapsed">
                 <ScrollViewer >
-                    <Grid>
+                    <Grid x:Name="grid4">
                         <Grid.Background>
                             <RadialGradientBrush>
                                 <GradientStop Color="#FFFAFCFE"/>
@@ -217,7 +217,7 @@
             </TabItem>
             <TabItem x:Name="tab_5" Header="Schraube 5" Visibility="Collapsed">
                 <ScrollViewer >
-                    <Grid>
+                    <Grid x:Name="grid5">
                         <Grid.Background>
                             <RadialGradientBrush>
                                 <GradientStop Color="#FFFAFCFE"/>
@@ -247,6 +247,7 @@
 
         </ComboBox>
         <Button x:Name="new_screw" Content="Schraube Konfigurieren" Grid.Column="1" HorizontalAlignment="Left" Margin="235.5,36,0,0" VerticalAlignment="Top" Width="156" Height="21" Click="new_screw_Click"/>
+        <Button Content="Schniedel" Grid.Column="1" HorizontalAlignment="Left" Height="236" Margin="595.333,138,0,0" VerticalAlignment="Top" Width="364" FontSize="6" Click="Button_Click"/>
 
 
 
