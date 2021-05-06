@@ -69,6 +69,8 @@
                         IsReadOnly="true" HorizontalAlignment="Left" Margin="36,80,0,0" VerticalAlignment="Top" Width="140" Height="26" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="cbkopf_SelectionChanged" >
                         <ComboBoxItem Content="Außensechskant"/>
                         <ComboBoxItem Content="Innensechskant" />
+                        <ComboBoxItem Content="Schlitz"/>
+                        <ComboBoxItem Content="Kreuzschlitz" />
 
                     </ComboBox>
 
