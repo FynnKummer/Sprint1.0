@@ -94,6 +94,7 @@ namespace Schraubengott
             a_textBox.SelectionStart = a_textBox.Text.Length;
         }
 
+
         public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -197,7 +198,8 @@ namespace Schraubengott
         }
         private void btnuebernehmen_Click_1(object sender, RoutedEventArgs e)
         {
-           // feld[nr].laenge = txtlaenge.Text; // konvert to int
+            // feld[nr].laenge = txtlaenge.Text; // konvert to int
+            lbl1.Content = txt_len.Text;
 
         }
 

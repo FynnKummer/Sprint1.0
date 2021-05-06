@@ -77,13 +77,14 @@
                     <Label Content="Schraubenlänge:" HorizontalAlignment="Left" Height="30" Margin="13,185,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <Label Content="Gewindelänge:" HorizontalAlignment="Left" Height="30" Margin="13,220,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="87,185,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="2"/>
-                    <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="13,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="2"/>
+                    <TextBox x:Name="txt_len" MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="13,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="2"/>
                     <TextBox MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="13,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="2"/>
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="87,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="2"/>
                     <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="2"/>
                     <Button x:Name="btnuebernehmen" Content="Übernehmen" Grid.Column="2" HorizontalAlignment="Left" Height="20" Margin="164,375,0,0" VerticalAlignment="Top" Width="96" Foreground="Black" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnuebernehmen_Click_1"/>
                     <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="3" HorizontalAlignment="Left" Height="20" Margin="174.333,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
+                    <Label x:Name="lbl1" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,185,0,0" VerticalAlignment="Top" Width="118" Grid.ColumnSpan="2" Height="30"/>
 
 
 
@@ -185,7 +186,6 @@
         </TabControl>
 
         <Label x:Name="preislbl" Content="preislbl" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="765.333,500,0,0" VerticalAlignment="Top" Width="194"/>
-        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="411.5,-39,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox Visibility="Collapsed" Name="cmb_nr" Grid.Column="1" HorizontalAlignment="Left" Margin="52.5,62,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_nr_SelectionChanged">
             <ComboBoxItem x:Name="screw1" Visibility="Collapsed" Content="Schraube 1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="screw2" Visibility="Collapsed" Content="Schraube 2" HorizontalAlignment="Left" Width="118"/>
@@ -195,7 +195,6 @@
 
         </ComboBox>
         <Button x:Name="new_screw" Content="1.Schraube Konfigurieren" Grid.Column="1" HorizontalAlignment="Left" Margin="235.5,36,0,0" VerticalAlignment="Top" Width="76" Height="21" Click="new_screw_Click"/>
-        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="185.5,-82,0,0" VerticalAlignment="Top" Width="120" MaxDropDownHeight="100"/>
 
 
 
