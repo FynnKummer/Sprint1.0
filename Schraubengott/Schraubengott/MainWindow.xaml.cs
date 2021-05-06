@@ -163,9 +163,9 @@ namespace Schraubengott
             masselabel.Content = feld[nr].masse;
             gesamtlabel.Content = feld[nr].gesamtgewicht;
             steigunglabel.Content = feld[nr].gewindesteigung;
-            gewtiefelabel.Content = feld[nr].gewindetiefe;
-            rundunglabel.Content = feld[nr].gewinderundung;
-            flankenlabel.Content = feld[nr].flankendurchmesser;
+            gewtiefelabel1.Content = feld[nr].gewindetiefe;
+            rundunglabel1.Content = feld[nr].gewinderundung;
+            flankenlabel1.Content = feld[nr].flankendurchmesser;
             kernlabel.Content = feld[nr].kerndurchmesser;
             flankenwinkellabel.Content = feld[nr].flankenwinkel;
             Re.Content = feld[nr].elastizitätsgrenze;
