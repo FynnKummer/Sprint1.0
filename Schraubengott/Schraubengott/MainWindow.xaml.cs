@@ -256,7 +256,7 @@ namespace Schraubengott
                         cmb_nr.SelectedItem = screw1;
                         new_screw_int++;
                     //Keine Sorge, das kommt noch an die Richtige Stelle
-                    MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel", "Fehlerhafte Eingabe", MessageBoxButton.OK,MessageBoxImage.Error);
+                    MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.\nKeine Sorge, kommt noch an die richtige Stelle", "Fehlerhafte Eingabe", MessageBoxButton.OK,MessageBoxImage.Error);
                    
                         break;
 
