@@ -196,12 +196,10 @@ namespace Schraubengott
 
             
         }
-        private void btnuebernehmen_Click_1(object sender, RoutedEventArgs e)
-        {
-            // feld[nr].laenge = txtlaenge.Text; // konvert to int
-            lbl1.Content = txt_len.Text;
+        
+            //lbl1.Content = txt_len.Text;
 
-        }
+        
 
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {

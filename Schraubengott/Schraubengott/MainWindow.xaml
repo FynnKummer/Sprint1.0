@@ -82,7 +82,7 @@
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="87,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="2"/>
                     <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2"/>
                     <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="2"/>
-                    <Button x:Name="btnuebernehmen" Content="Übernehmen" Grid.Column="2" HorizontalAlignment="Left" Height="20" Margin="164,375,0,0" VerticalAlignment="Top" Width="96" Foreground="Black" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnuebernehmen_Click_1"/>
+                  
                     <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="3" HorizontalAlignment="Left" Height="20" Margin="174.333,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
                     <Label x:Name="lbl1" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="208,185,0,0" VerticalAlignment="Top" Width="118" Grid.ColumnSpan="2" Height="30"/>
 
