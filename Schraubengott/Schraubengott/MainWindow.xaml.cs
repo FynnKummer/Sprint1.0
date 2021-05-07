@@ -307,7 +307,7 @@ namespace Schraubengott
         private void new_screw_Click(object sender, RoutedEventArgs e)
         {
             cmb_nr.Visibility = Visibility.Visible;
-            new_screw.Visibility = Visibility.Collapsed;
+            
 
             //if (schraubenlenge < gewindelenge)
             //{
@@ -344,7 +344,7 @@ namespace Schraubengott
                         screw2.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw2;
                         new_screw_int++;
-                    new_screw.Content = "weitere Schrabue erstelln";
+                    new_screw.Content = "weitere Schrabue erstellen";
                     tab_konfig.Header = "2. Konfiguration";
 
                     break;
@@ -353,15 +353,16 @@ namespace Schraubengott
                         screw3.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw3;
                         new_screw_int++;
-                    new_screw.Content = "weitere Schrabue erstelln";
+                    
                     tab_konfig.Header = "3. Konfiguration";
                     break;
 
                     case 4:
                         screw4.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw4;
-                        new_screw_int++;
-                    new_screw.Content = "weitere Schrabue erstelln";
+                    new_screw.Content = "letzte Schrabue erstelln";
+                    new_screw_int++;
+                
                     tab_konfig.Header = "4. Konfiguration";
                     break;
 
@@ -369,7 +370,7 @@ namespace Schraubengott
                         screw5.Visibility = Visibility.Visible;
                         cmb_nr.SelectedItem = screw5;
                         new_screw_int++;
-                    new_screw.Content = "letzte Schrabue erstelln";
+                    
                     tab_konfig.Header = "5. Konfiguration";
                     new_screw.Visibility = Visibility.Collapsed;
 
