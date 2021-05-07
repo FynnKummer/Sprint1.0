@@ -889,7 +889,7 @@ namespace Objektorientiert
 
 
             // Listenformat einführen 
-            mySheet.Range["A1", "E29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
+            mySheet.Range["A1", "F29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
 
             // Werte der Schrauben in Tabelle eingeben 
 
@@ -928,7 +928,7 @@ namespace Objektorientiert
  
 
             // Zellenbreite an Text anpassen 
-            for (int i = 1; i < 9; i++)
+            for (int i = 1; i <arr.Length + 2; i++)
             {
                 mySheet.Columns[i].AutoFit();
             }
