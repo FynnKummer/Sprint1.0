@@ -247,7 +247,7 @@
 
         </ComboBox>
         <Button x:Name="new_screw" Content="Schraube Konfigurieren" Grid.Column="1" HorizontalAlignment="Left" Margin="235.5,36,0,0" VerticalAlignment="Top" Width="156" Height="21" Click="new_screw_Click"/>
-        <Button Content="Schniedel" Grid.Column="1" HorizontalAlignment="Left" Height="236" Margin="595.333,138,0,0" VerticalAlignment="Top" Width="364" FontSize="6" Click="Button_Click"/>
+        <Button Content="Schniedel" Grid.Column="1" HorizontalAlignment="Left" Height="236" Margin="595.333,138,0,0" VerticalAlignment="Top" Width="364" FontSize="6" />
 
 
 

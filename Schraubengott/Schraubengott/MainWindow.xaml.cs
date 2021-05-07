@@ -27,6 +27,7 @@ namespace Schraubengott
         Schraube[] feld = new Schraube[5];      //Array vom Typ Schraube erstellen
         int nr = 0;                             //Variable für den Index des Feldes Schraube
         int new_screw_int = 1;                  //Varibale für Neue Schraube Button und Combobox mit Schraubenauswahl
+        
         // hier noch ne Random Nummer erzeugen lassen für ne Bestell und Kudnennummer
 
 
@@ -108,6 +109,8 @@ namespace Schraubengott
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
         {
+           
+            
            /* TextBox material = new TextBox()
             {
                 Text = "Material:\nFestigkeit:\n",
@@ -206,7 +209,7 @@ namespace Schraubengott
             flankenwinkellabel.Content = feld[nr].flankenwinkel;
             Re.Content = feld[nr].elastizitätsgrenze;
             Rm.Content = feld[nr].Zugfestigkeit;
-
+            
         }
 
         private void btndelete1_Click(object sender, RoutedEventArgs e)
@@ -304,6 +307,7 @@ namespace Schraubengott
         private void new_screw_Click(object sender, RoutedEventArgs e)
         {
             cmb_nr.Visibility = Visibility.Visible;
+            new_screw.Visibility = Visibility.Collapsed;
 
             //if (schraubenlenge < gewindelenge)
             //{
@@ -375,7 +379,7 @@ namespace Schraubengott
      
 
                 }
-            
+         
         }
 
         private void text_TextChanged(object sender, TextChangedEventArgs e)
