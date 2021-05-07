@@ -111,7 +111,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem x:Name="tab_1" Header="Schraube 1" Visibility="Collapsed">
+            <TabItem x:Name="tab_1" Header="Anzeige" >
                 <ScrollViewer >
                     <Grid x:Name="grid1">
                         <Grid.Background>
@@ -121,7 +121,7 @@
 
                             </RadialGradientBrush>
                         </Grid.Background>
-                        <Button Content="Auswahl löschen" HorizontalAlignment="Left" Height="32" Margin="553,349,0,0" VerticalAlignment="Top" Width="156" Click="btndelete1_Click"/>
+                        
                         <Label x:Name="matlabel1" Content="-----" HorizontalAlignment="Left" Margin="78,106,0,0" VerticalAlignment="Top" Width="40"/>
                         <Label x:Name="festlabel1" Content="-----" HorizontalAlignment="Left" Margin="78,137,0,0" VerticalAlignment="Top" Width="40"/>
                         <Label x:Name="kopflabel1" Content="-----" HorizontalAlignment="Left" Margin="78,168,0,0" VerticalAlignment="Top" Width="40"/>
@@ -161,7 +161,7 @@
 
 
             </TabItem>
-            <TabItem x:Name="tab_2" Header="Schraube 2" Visibility="Collapsed">
+            <TabItem x:Name="tab_2" Header="Warenkorb" >
                 <ScrollViewer >
                     <Grid x:Name="grid2">
                         <Grid.Background>
@@ -171,68 +171,14 @@
 
                             </RadialGradientBrush>
                         </Grid.Background>
-                        <Button Content="Auswahl löschen" HorizontalAlignment="Left" Height="32" Margin="553,349,0,0" VerticalAlignment="Top" Width="156" Click="btndelete2_Click"/>
-
-
-                    </Grid>
-                </ScrollViewer>
-
-
-            </TabItem>
-            <TabItem x:Name="tab_3" Header="Schraube 3" Visibility="Collapsed">
-                <ScrollViewer >
-                    <Grid x:Name="grid3">
-                        <Grid.Background>
-                            <RadialGradientBrush>
-                                <GradientStop Color="#FFFAFCFE"/>
-                                <GradientStop Color="#FFDDE0E4" Offset="0.626"/>
-
-                            </RadialGradientBrush>
-                        </Grid.Background>
-                        <Button Content="Auswahl löschen" HorizontalAlignment="Left" Height="32" Margin="553,349,0,0" VerticalAlignment="Top" Width="156" Click="btndelete3_Click"/>
-
+                        
 
                     </Grid>
                 </ScrollViewer>
 
 
             </TabItem>
-            <TabItem x:Name="tab_4" Header="Schraube 4" Visibility="Collapsed">
-                <ScrollViewer >
-                    <Grid x:Name="grid4">
-                        <Grid.Background>
-                            <RadialGradientBrush>
-                                <GradientStop Color="#FFFAFCFE"/>
-                                <GradientStop Color="#FFDDE0E4" Offset="0.626"/>
-
-                            </RadialGradientBrush>
-                        </Grid.Background>
-                        <Button Content="Auswahl löschen" HorizontalAlignment="Left" Height="32" Margin="553,349,0,0" VerticalAlignment="Top" Width="156" Click="btndelete4_Click"/>
-
-
-                    </Grid>
-                </ScrollViewer>
-
-
-            </TabItem>
-            <TabItem x:Name="tab_5" Header="Schraube 5" Visibility="Collapsed">
-                <ScrollViewer >
-                    <Grid x:Name="grid5">
-                        <Grid.Background>
-                            <RadialGradientBrush>
-                                <GradientStop Color="#FFFAFCFE"/>
-                                <GradientStop Color="#FFDDE0E4" Offset="0.626"/>
-
-                            </RadialGradientBrush>
-                        </Grid.Background>
-                        <Button Content="Auswahl löschen" HorizontalAlignment="Left" Height="32" Margin="553,349,0,0" VerticalAlignment="Top" Width="156" Click="btndelete5_Click"/>
-
-
-                    </Grid>
-                </ScrollViewer>
-
-
-            </TabItem>
+            
 
 
         </TabControl>

@@ -154,14 +154,7 @@ namespace Schraubengott
             {
                 nr++;
             }
-            if (nr == 2 && tab_3.Visibility == Visibility.Visible)
-            {
-                nr++;
-            }
-            if (nr == 3 && tab_4.Visibility == Visibility.Visible)
-            {
-                nr++;
-            }
+            
             
             switch (nr)
             {
@@ -173,17 +166,7 @@ namespace Schraubengott
                     tab_2.Visibility = Visibility.Visible;
                     nr++;
                     break;
-                case 2:
-                    tab_3.Visibility = Visibility.Visible;
-                    nr++;
-                    break;
-                case 3:
-                    tab_4.Visibility = Visibility.Visible;
-                    nr++;
-                    break;
-                case 4:
-                    tab_5.Visibility = Visibility.Visible;
-                    break;
+             
             }
 
  
@@ -212,31 +195,7 @@ namespace Schraubengott
             
         }
 
-        private void btndelete1_Click(object sender, RoutedEventArgs e)
-        {
-            tab_1.Visibility = Visibility.Collapsed;
-            nr = 0;
-        }
-        private void btndelete2_Click(object sender, RoutedEventArgs e)
-        {
-            tab_2.Visibility = Visibility.Collapsed;
-            nr = 0;
-        }
-        private void btndelete3_Click(object sender, RoutedEventArgs e)
-        {
-            tab_3.Visibility = Visibility.Collapsed;
-            nr = 0;
-        }
-        private void btndelete4_Click(object sender, RoutedEventArgs e)
-        {
-            tab_4.Visibility = Visibility.Collapsed;
-            nr = 0;
-        }
-        private void btndelete5_Click(object sender, RoutedEventArgs e)
-        {
-            tab_5.Visibility = Visibility.Collapsed;
-            nr = 0;
-        }
+        
 
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
