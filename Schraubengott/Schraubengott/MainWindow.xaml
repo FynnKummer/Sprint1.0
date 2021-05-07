@@ -16,7 +16,7 @@
         <Button Content="Ich bin fertig Mama" HorizontalAlignment="Left" Height="23" Margin="765.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="616.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"  />
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="433" Margin="235.333,62,0,0" VerticalAlignment="Top" Width="761">
-            <TabItem x:Name="tab_konfig" Header=" 1. Schraube konfigurieren" Height="22" Margin="-2,-2,-2.5,0" VerticalAlignment="Top">
+            <TabItem x:Name="tab_konfig" Header="Konfigurator" Height="22" Margin="-2,-2,-2.5,0" VerticalAlignment="Top">
                 <Grid>
                     <Grid.Background>
                         <RadialGradientBrush>
