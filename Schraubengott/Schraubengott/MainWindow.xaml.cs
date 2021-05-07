@@ -39,8 +39,6 @@ namespace Schraubengott
             }
 
             InitializeComponent();
-
-
         }
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
@@ -76,7 +74,6 @@ namespace Schraubengott
             }
         }
 
-
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox a_textBox = (TextBox)sender;
@@ -95,12 +92,12 @@ namespace Schraubengott
             a_textBox.SelectionStart = a_textBox.Text.Length;
         }
 
-
         public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
             feld[nr].gewindeart = "Feingewinde";
         }
+
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
 
@@ -109,9 +106,8 @@ namespace Schraubengott
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
         {
-           
-            
-           /* TextBox material = new TextBox()
+/*           
+            TextBox Konfigurator = new TextBox()
             {
                 Text = "Material:\nFestigkeit:\n",
                 IsReadOnly = true,
@@ -126,26 +122,13 @@ namespace Schraubengott
             };
             if (nr == 0)
             {
-                grid1.Children.Add(material);
+                grid0.Children.Add(Konfigurator);
             }
             else if (nr == 1)
             {
-                grid2.Children.Add(material);
-            }
-            else if (nr == 2)
-            {
-                grid3.Children.Add(material);
-            }
-            else if (nr == 3)
-            {
-                grid4.Children.Add(material);
-            }
-            else if (nr == 4)
-            {
-                grid5.Children.Add(material);
+                grid1.Children.Add(Konfigurator);
             }
 
-            */
             if (nr == 0 && tab_1.Visibility == Visibility.Visible)
             {
                 nr++;
@@ -154,8 +137,7 @@ namespace Schraubengott
             {
                 nr++;
             }
-            
-            
+                        
             switch (nr)
             {
                 case 0:
@@ -183,20 +165,11 @@ namespace Schraubengott
             einzelpreis.Content = feld[nr].stückpreis;
             sweitelabel.Content = feld[nr].schluesselbreite;
             masselabel.Content = feld[nr].masse;
-            gesamtlabel.Content = feld[nr].gesamtgewicht;
-            steigunglabel.Content = feld[nr].gewindesteigung;
-            gewtiefelabel1.Content = feld[nr].gewindetiefe;
-            rundunglabel1.Content = feld[nr].gewinderundung;
-            flankenlabel1.Content = feld[nr].flankendurchmesser;
-            kernlabel.Content = feld[nr].kerndurchmesser;
-            flankenwinkellabel.Content = feld[nr].flankenwinkel;
+            gesamtlabel.Content = feld[nr].gesamtgewicht;  
             Re.Content = feld[nr].elastizitätsgrenze;
             Rm.Content = feld[nr].Zugfestigkeit;
-            
+*/
         }
-
-        
-
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -219,9 +192,12 @@ namespace Schraubengott
             
         }
 
-        //lbl1.Content = txt_len.Text;
+
+
 
         #region "hallo"
+
+
 
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
@@ -346,6 +322,22 @@ namespace Schraubengott
         {
 
         }
+
         #endregion 
+
+
+        private void schrauben_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Schraube> items = new List<Schraube>();
+            items.Add( feld[0].material );
+
+            schrauben.ItemsSource = items;
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
     }
 }

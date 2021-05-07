@@ -8,19 +8,19 @@ namespace Schraubengott
 {
     class Schraube
     {
-        public String name; // Vom Benutzer festgeleter Name für die Schraube
+        public string name; // Vom Benutzer festgeleter Name für die Schraube
         public int menge;
         public int laenge;
         public double volumen;
         public int schluesselbreite;
-        public String typ;      //Innensechskant/Ausßensechskant
-        public String festigkeit;
-        public String festaus;//Festigkeitsklasse ausgeschrieben
+        public string typ;      //Innensechskant/Ausßensechskant
+        public string festigkeit;
+        public string festaus;//Festigkeitsklasse ausgeschrieben
 
-        public String gewindeart;
+        public string gewindeart;
         public int gewindelaenge;
         public double gewindesteigung;
-        public String gewinde;
+        public string gewinde;
         public double gewindetiefe;  //  belegt 
         public double gewinderundung; //  belegt 
         public double flankendurchmesser; //  belegt 
@@ -31,8 +31,8 @@ namespace Schraubengott
         public double Zugfestigkeit; //belegt
 
 
-        public String material;
-        public String mataus;//Material ausgeschrieben
+        public string material;
+        public string mataus;//Material ausgeschrieben
         public double dichte;
         public double masse;
         public double gesamtgewicht;
@@ -41,18 +41,18 @@ namespace Schraubengott
         public double stückpreis; //
         public double nettopreis_Summe;  // belegt
         public double nettoeinzelpreis;  //belegt
-
+        
         //Auswahlen der Comboboxen den Variablen zuweisen
-        public void gewinde_festlegen(String gew)
+        public void gewinde_festlegen(string gew)
         {
             this.gewinde = gew;
         }
-        public void kopf_festlegen(String kopf)
+        public void kopf_festlegen(string kopf)
         {
             this.typ = kopf;
 
         }
-        public void festigkeit_festlegen(String fest)
+        public void festigkeit_festlegen(string fest)
         {
             this.festigkeit = fest;
         }
