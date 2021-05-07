@@ -218,10 +218,10 @@ namespace Schraubengott
 
             
         }
-        
-            //lbl1.Content = txt_len.Text;
 
-        
+        //lbl1.Content = txt_len.Text;
+
+        #region "hallo"
 
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
@@ -346,6 +346,6 @@ namespace Schraubengott
         {
 
         }
-
+        #endregion 
     }
 }
