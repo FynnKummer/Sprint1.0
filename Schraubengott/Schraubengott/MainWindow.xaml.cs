@@ -176,6 +176,8 @@ namespace Schraubengott
                 MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.","Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
+            //hier dann alle Werte in die Schraube speichern
+
         }
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
