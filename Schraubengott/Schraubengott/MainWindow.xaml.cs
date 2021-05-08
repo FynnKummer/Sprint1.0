@@ -358,27 +358,5 @@ namespace Schraubengott
 
         #endregion 
 
-
-        private void schrauben_Loaded(object sender, RoutedEventArgs e)
-        {
-                List<Schraube> items = new List<Schraube>();
-                items.Add(feld[0]);
-                items.Add(feld[1]);
-                items.Add(feld[2]);
-                items.Add(feld[3]);
-                items.Add(feld[4]);
-
-               schrauben.ItemsSource = items;
-            
-
-
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
     }
 }
