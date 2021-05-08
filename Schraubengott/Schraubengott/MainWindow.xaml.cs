@@ -106,69 +106,76 @@ namespace Schraubengott
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
         {
-/*           
-            TextBox Konfigurator = new TextBox()
-            {
-                Text = "Material:\nFestigkeit:\n",
-                IsReadOnly = true,
-                Background = null,
-                BorderThickness = new Thickness(0),
+            #region "Was ist das?"
+            /*           
+                        TextBox Konfigurator = new TextBox()
+                        {
+                            Text = "Material:\nFestigkeit:\n",
+                            IsReadOnly = true,
+                            Background = null,
+                            BorderThickness = new Thickness(0),
 
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Top,
-                Height = 350,
-                Width = 270,
-                Margin = new Thickness(43, 6, 0, 0),
-            };
-            if (nr == 0)
-            {
-                grid0.Children.Add(Konfigurator);
-            }
-            else if (nr == 1)
-            {
-                grid1.Children.Add(Konfigurator);
-            }
+                            HorizontalAlignment = HorizontalAlignment.Left,
+                            VerticalAlignment = VerticalAlignment.Top,
+                            Height = 350,
+                            Width = 270,
+                            Margin = new Thickness(43, 6, 0, 0),
+                        };
+                        if (nr == 0)
+                        {
+                            grid0.Children.Add(Konfigurator);
+                        }
+                        else if (nr == 1)
+                        {
+                            grid1.Children.Add(Konfigurator);
+                        }
 
-            if (nr == 0 && tab_1.Visibility == Visibility.Visible)
-            {
-                nr++;
-            }
-            if (nr == 1 && tab_2.Visibility == Visibility.Visible)
-            {
-                nr++;
-            }
-                        
-            switch (nr)
-            {
-                case 0:
-                    tab_1.Visibility = Visibility.Visible;
-                    nr++;
-                    break;
-                case 1:
-                    tab_2.Visibility = Visibility.Visible;
-                    nr++;
-                    break;
-             
-            }
+                        if (nr == 0 && tab_1.Visibility == Visibility.Visible)
+                        {
+                            nr++;
+                        }
+                        if (nr == 1 && tab_2.Visibility == Visibility.Visible)
+                        {
+                            nr++;
+                        }
 
- 
-            matlabel.Content = feld[nr].material;
-            festlabel.Content = feld[nr].festigkeit;
-            kopflabel.Content = feld[nr].typ;
-            gewindelabel.Content = feld[nr].gewinde;
-            gewtyplabel.Content = feld[nr].gewindeart;
-            laengelabel.Content = feld[nr].laenge;
-            gewlenlabel.Content = feld[nr]. gewindelaenge;
-            mengelabel.Content = feld[nr].menge;
-            Bemerkung.Content = text.Text;
-            preis.Content = feld[nr].preis_summe;
-            einzelpreis.Content = feld[nr].stückpreis;
-            sweitelabel.Content = feld[nr].schluesselbreite;
-            masselabel.Content = feld[nr].masse;
-            gesamtlabel.Content = feld[nr].gesamtgewicht;  
-            Re.Content = feld[nr].elastizitätsgrenze;
-            Rm.Content = feld[nr].Zugfestigkeit;
-*/
+                        switch (nr)
+                        {
+                            case 0:
+                                tab_1.Visibility = Visibility.Visible;
+                                nr++;
+                                break;
+                            case 1:
+                                tab_2.Visibility = Visibility.Visible;
+                                nr++;
+                                break;
+
+                        }
+
+
+                        matlabel.Content = feld[nr].material;
+                        festlabel.Content = feld[nr].festigkeit;
+                        kopflabel.Content = feld[nr].typ;
+                        gewindelabel.Content = feld[nr].gewinde;
+                        gewtyplabel.Content = feld[nr].gewindeart;
+                        laengelabel.Content = feld[nr].laenge;
+                        gewlenlabel.Content = feld[nr]. gewindelaenge;
+                        mengelabel.Content = feld[nr].menge;
+                        Bemerkung.Content = text.Text;
+                        preis.Content = feld[nr].preis_summe;
+                        einzelpreis.Content = feld[nr].stückpreis;
+                        sweitelabel.Content = feld[nr].schluesselbreite;
+                        masselabel.Content = feld[nr].masse;
+                        gesamtlabel.Content = feld[nr].gesamtgewicht;  
+                        Re.Content = feld[nr].elastizitätsgrenze;
+                        Rm.Content = feld[nr].Zugfestigkeit;
+            */
+            #endregion
+
+            if (Convert.ToInt32(txt_len.Text) < Convert.ToInt32(txt_gewlen.Text)){
+                MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.","Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
         }
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -271,8 +278,7 @@ namespace Schraubengott
                     tab_konfig.Header = "1. Konfiguration";
 
                     //Keine Sorge, das kommt noch an die Richtige Stelle
-                    MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.\nKeine Sorge, kommt noch an die richtige Stelle", "Fehlerhafte Eingabe", MessageBoxButton.OK,MessageBoxImage.Error);
-                   
+                    
                         break;
 
                     case 2:
@@ -331,7 +337,7 @@ namespace Schraubengott
             List<Schraube> items = new List<Schraube>();
             items.Add( feld[0] );
 
-            schrauben.ItemsSource = items;
+           // schrauben.ItemsSource = items;
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
