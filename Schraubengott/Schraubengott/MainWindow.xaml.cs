@@ -37,6 +37,7 @@ namespace Schraubengott
             {
                 feld[i] = new Schraube();         // Array wird mit Objekten gefüllt
             }
+            cmb_nr.SelectedItem = screw1;
 
             InitializeComponent();
         }
@@ -107,76 +108,99 @@ namespace Schraubengott
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
         {
             #region "Was ist das?"
-            /*           
-                        TextBox Konfigurator = new TextBox()
-                        {
-                            Text = "Material:\nFestigkeit:\n",
-                            IsReadOnly = true,
-                            Background = null,
-                            BorderThickness = new Thickness(0),
+                /*           
+                            TextBox Konfigurator = new TextBox()
+                            {
+                                Text = "Material:\nFestigkeit:\n",
+                                IsReadOnly = true,
+                                Background = null,
+                                BorderThickness = new Thickness(0),
 
-                            HorizontalAlignment = HorizontalAlignment.Left,
-                            VerticalAlignment = VerticalAlignment.Top,
-                            Height = 350,
-                            Width = 270,
-                            Margin = new Thickness(43, 6, 0, 0),
-                        };
-                        if (nr == 0)
-                        {
-                            grid0.Children.Add(Konfigurator);
-                        }
-                        else if (nr == 1)
-                        {
-                            grid1.Children.Add(Konfigurator);
-                        }
+                                HorizontalAlignment = HorizontalAlignment.Left,
+                                VerticalAlignment = VerticalAlignment.Top,
+                                Height = 350,
+                                Width = 270,
+                                Margin = new Thickness(43, 6, 0, 0),
+                            };
+                            if (nr == 0)
+                            {
+                                grid0.Children.Add(Konfigurator);
+                            }
+                            else if (nr == 1)
+                            {
+                                grid1.Children.Add(Konfigurator);
+                            }
 
-                        if (nr == 0 && tab_1.Visibility == Visibility.Visible)
-                        {
-                            nr++;
-                        }
-                        if (nr == 1 && tab_2.Visibility == Visibility.Visible)
-                        {
-                            nr++;
-                        }
-
-                        switch (nr)
-                        {
-                            case 0:
-                                tab_1.Visibility = Visibility.Visible;
+                            if (nr == 0 && tab_1.Visibility == Visibility.Visible)
+                            {
                                 nr++;
-                                break;
-                            case 1:
-                                tab_2.Visibility = Visibility.Visible;
+                            }
+                            if (nr == 1 && tab_2.Visibility == Visibility.Visible)
+                            {
                                 nr++;
-                                break;
+                            }
 
-                        }
+                            switch (nr)
+                            {
+                                case 0:
+                                    tab_1.Visibility = Visibility.Visible;
+                                    nr++;
+                                    break;
+                                case 1:
+                                    tab_2.Visibility = Visibility.Visible;
+                                    nr++;
+                                    break;
+
+                            }
 
 
-                        matlabel.Content = feld[nr].material;
-                        festlabel.Content = feld[nr].festigkeit;
-                        kopflabel.Content = feld[nr].typ;
-                        gewindelabel.Content = feld[nr].gewinde;
-                        gewtyplabel.Content = feld[nr].gewindeart;
-                        laengelabel.Content = feld[nr].laenge;
-                        gewlenlabel.Content = feld[nr]. gewindelaenge;
-                        mengelabel.Content = feld[nr].menge;
-                        Bemerkung.Content = text.Text;
-                        preis.Content = feld[nr].preis_summe;
-                        einzelpreis.Content = feld[nr].stückpreis;
-                        sweitelabel.Content = feld[nr].schluesselbreite;
-                        masselabel.Content = feld[nr].masse;
-                        gesamtlabel.Content = feld[nr].gesamtgewicht;  
-                        Re.Content = feld[nr].elastizitätsgrenze;
-                        Rm.Content = feld[nr].Zugfestigkeit;
-            */
-            #endregion
+                            matlabel.Content = feld[nr].material;
+                            festlabel.Content = feld[nr].festigkeit;
+                            kopflabel.Content = feld[nr].typ;
+                            gewindelabel.Content = feld[nr].gewinde;
+                            gewtyplabel.Content = feld[nr].gewindeart;
+                            laengelabel.Content = feld[nr].laenge;
+                            gewlenlabel.Content = feld[nr]. gewindelaenge;
+                            mengelabel.Content = feld[nr].menge;
+                            Bemerkung.Content = text.Text;
+                            preis.Content = feld[nr].preis_summe;
+                            einzelpreis.Content = feld[nr].stückpreis;
+                            sweitelabel.Content = feld[nr].schluesselbreite;
+                            masselabel.Content = feld[nr].masse;
+                            gesamtlabel.Content = feld[nr].gesamtgewicht;  
+                            Re.Content = feld[nr].elastizitätsgrenze;
+                            Rm.Content = feld[nr].Zugfestigkeit;
+                */
+                #endregion
 
-            if (Convert.ToInt32(txt_len.Text) < Convert.ToInt32(txt_gewlen.Text)){
-                MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.","Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
-
+            if (txt_len.Text == "" || txt_gewlen.Text == "")
+            {
+                MessageBox.Show("Für Gewindelänge und oder Länge liegt keine Eingabe vor.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;// wenn min eine Eingabe leer ist, wird die Methode beendet
             }
+
+            else if (Convert.ToInt32(txt_len.Text) < Convert.ToInt32(txt_gewlen.Text))
+            {
+                MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;//wenn Gewlen größer als Len wird Methode beendet
+            }
+            feld[nr].gewindelaenge = Convert.ToInt32(txt_gewlen.Text);
+            feld[nr].laenge = Convert.ToInt32(txt_len.Text);
+
             //hier dann alle Werte in die Schraube speichern
+
+            
+            feld[nr].festigkeit = cbfk.SelectedItem.ToString();
+            if(txt_menge.Text.ToString()==null)
+            {
+                MessageBox.Show("Es wurde keine Eingabe für die Menge gemacht.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            feld[nr].menge = Convert.ToInt32(txt_menge.Text.ToString());
+            feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
+            feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
+
+            lbl_test2.Content = feld[nr].gewinde;
 
         }
 
@@ -189,14 +213,14 @@ namespace Schraubengott
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //kopf
-            feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
+           // feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
         }
 
         private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //gewinde
 
-            feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
+            //feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
 
             
         }
@@ -215,33 +239,34 @@ namespace Schraubengott
             {
                 
                 case 0:
-                    //nr ist schon 0
+                    nr = 0;
                     
                     tab_konfig.Header = "1. Konfiguration"; // Hier muss noch was geändert werden, dass sich der Tabheader immer der aktuellen Schraube anpasst
-
+                    lbl_test.Content = nr;
                     break;
 
                 case 1:
                     nr = 1;
                     tab_konfig.Header = "2. Konfiguration";
-
+                    lbl_test.Content = nr;
                     break;
 
                 case 2:
                     nr = 2;
                     tab_konfig.Header = "3. Konfiguration";
-
+                    lbl_test.Content = nr;
                     break;
 
                 case 3:
                     nr = 3;
                     tab_konfig.Header = "4. Konfiguration";
-
+                    lbl_test.Content = nr;
                     break;
 
                 case 4:
                     nr = 4;
                     tab_konfig.Header = "5. Konfiguration";
+                    lbl_test.Content = nr;
                     break;
 
             }

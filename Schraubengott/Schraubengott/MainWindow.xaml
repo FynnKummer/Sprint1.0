@@ -47,7 +47,7 @@
 
                     </ComboBox>
                     <ComboBox Name="cbfk" IsEditable="true"
-                                IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="36,45,0,0" VerticalAlignment="Top" Width="140" Grid.Column="2" Grid.ColumnSpan="4" SelectionChanged="cbfk_SelectionChanged"   >
+                                IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="36,45,0,0" VerticalAlignment="Top" Width="140" Grid.Column="2" Grid.ColumnSpan="4" SelectionChanged="cbfk_SelectionChanged" MaxDropDownHeight="60"  >
 
 
 
@@ -84,9 +84,11 @@
                     <TextBox x:Name="txt_gewlen" MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="13,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="3" Grid.ColumnSpan="2"/>
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="41,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="4" Grid.ColumnSpan="2"/>
                     <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="4,255,0,0" VerticalAlignment="Top" Width="112" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="3" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txt_menge" MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="3" Grid.ColumnSpan="2"/>
 
                     <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="6" HorizontalAlignment="Left" Height="20" Margin="175,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
+                    <Label x:Name="lbl_test" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="189,108,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lbl_test2" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="204,211,0,0" VerticalAlignment="Top"/>
 
 
 
@@ -161,8 +163,8 @@
         </TabControl>
 
         <Label x:Name="preislbl" Content="preislbl" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="765.333,500,0,0" VerticalAlignment="Top" Width="194"/>
-        <ComboBox Visibility="Collapsed" Name="cmb_nr" Grid.Column="1" HorizontalAlignment="Left" Margin="52.5,62,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_nr_SelectionChanged">
-            <ComboBoxItem x:Name="screw1" Visibility="Collapsed" Content="Schraube 1" HorizontalAlignment="Left" Width="118"/>
+        <ComboBox  Name="cmb_nr" Grid.Column="1" HorizontalAlignment="Left" Margin="52.5,62,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_nr_SelectionChanged">
+            <ComboBoxItem x:Name="screw1"  Content="Schraube 1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="screw2" Visibility="Collapsed" Content="Schraube 2" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="screw3" Visibility="Collapsed" Content="Schraube 3" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="screw4" Visibility="Collapsed" Content="Schraube 4" HorizontalAlignment="Left" Width="118"/>
