@@ -93,6 +93,9 @@
             </TabItem>
             <TabItem x:Name="tab_1" Header="Anzeige" >
                 <Grid x:Name="grid1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
                     <Grid.Background>
                         <RadialGradientBrush>
                             <GradientStop Color="#FFFAFCFE"/>
@@ -100,17 +103,26 @@
 
                         </RadialGradientBrush>
                     </Grid.Background>
-                    <Label HorizontalAlignment="Left" Margin="406,88,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Schraube&#xD;&#xA;&#xD;&#xA;Schraube 1&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Schraube 2&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Schraube 3&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Schraube 4&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Schraube 5" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18"/>
-                    <Label x:Name="Matlabel" Content="Material" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18" Width="75"/>
-                    <Label x:Name="Festlabel" Content="Festigkeit&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="193,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18" Width="90"/>
-                    <Label x:Name="Kopflabel" Content="Kopf&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18" Width="47"/>
-                    <Label x:Name="Gewindelabel" Content="Gewinde&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="331,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18" Width="79"/>
-                    <Label x:Name="Typlabel" Content="Typ&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="410,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18" Width="38"/>
-                    <Label x:Name="Laengelabel" Content="Länge&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="453,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18" Width="58"/>
-                    <Label x:Name="Gewlaengelabel" Content="Gewindelänge&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="516,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18" Width="123"/>
-                    <Label x:Name="Mengelabel" HorizontalAlignment="Left" Margin="644,10,0,0" VerticalAlignment="Top" Height="383" FontSize="18"/>
-                    <Label x:Name="mengelabel" Content="Menge" HorizontalAlignment="Left" Margin="644,10,0,0" VerticalAlignment="Top" Width="100" Height="383" FontSize="18"/>
+                    <TextBox x:Name="Schraubetxt" HorizontalAlignment="Left" Height="383" Margin="0,10,0,0" TextWrapping="Wrap" Text="Schraube&#xA;&#xD;&#xA;&#xA;Schraube 1&#xA;&#xA;Schraube 2&#xA;&#xA;Schraube 3&#xA;&#xA;Schraube 4&#xA;&#xA;Schraube 5" VerticalAlignment="Top" Width="75" FontSize="16" TextChanged="TextBox_TextChanged_2" IsReadOnly="True"/>
+                    <TextBox x:Name="Materialtxt" HorizontalAlignment="Left" Height="383" Margin="75,10,0,0" TextWrapping="Wrap" Text="Material" VerticalAlignment="Top" Width="108" FontSize="16" IsReadOnly="True" TextChanged="Materialtxt_TextChanged"/>
+                    <TextBox x:Name="Festtxt" HorizontalAlignment="Left" Height="383" Margin="183,10,0,0" TextWrapping="Wrap" Text="Festigkeit" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True" TextChanged="Festtxt_TextChanged"/>
+                    <TextBox x:Name="Kopftxt" HorizontalAlignment="Left" Height="383" Margin="258,10,0,0" TextWrapping="Wrap" Text="Kopf" VerticalAlignment="Top" Width="135" FontSize="16" IsReadOnly="True" TextChanged="Kopftxt_TextChanged"/>
+                    <TextBox x:Name="Gewindetxt" HorizontalAlignment="Left" Height="383" Margin="393,10,0,0" TextWrapping="Wrap" Text="Gewinde" VerticalAlignment="Top" Width="51" FontSize="16" IsReadOnly="True" TextChanged="Gewindetxt_TextChanged"/>
+                    <TextBox x:Name="Typtxt" HorizontalAlignment="Left" Height="383" Margin="444,10,0,0" TextWrapping="Wrap" Text="Typ" VerticalAlignment="Top" Width="129" FontSize="16" IsReadOnly="True" TextChanged="Typtxt_TextChanged"/>
+                    <TextBox x:Name="Laengetxt" HorizontalAlignment="Left" Height="383" Margin="573,10,0,0" TextWrapping="Wrap" Text="Länge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" TextChanged="Laengetxt_TextChanged"/>
+                    <TextBox x:Name="gewlentxt" HorizontalAlignment="Left" Height="383" Margin="629,10,0,0" TextWrapping="Wrap" Text="Gewindelänge" VerticalAlignment="Top" Width="69" FontSize="16" TextChanged="TextBox_TextChanged_1" IsReadOnly="True"/>
+                    <TextBox x:Name="mengetxt" HorizontalAlignment="Left" Height="383" Margin="698,10,0,0" TextWrapping="Wrap" Text="Menge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" TextChanged="mengetxt_TextChanged"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,90,0,0" VerticalAlignment="Top" Width="754"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="754"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,150,0,0" VerticalAlignment="Top" Width="754"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,216,0,0" VerticalAlignment="Top" Width="754"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,280,0,0" VerticalAlignment="Top" Width="754"/>
+                    <CheckBox x:Name="check1" Content="" HorizontalAlignment="Left" Margin="26,99,0,0" VerticalAlignment="Top" Checked="check1_Checked"/>
+                    <CheckBox x:Name="check2" Content="" HorizontalAlignment="Left" Margin="26,165,0,0" VerticalAlignment="Top" Checked="check2_Checked"/>
+                    <CheckBox x:Name="check3" Content="" HorizontalAlignment="Left" Margin="26,226,0,0" VerticalAlignment="Top" Checked="check3_Checked"/>
+                    <CheckBox x:Name="check4" Content="" HorizontalAlignment="Left" Margin="26,291,0,0" VerticalAlignment="Top" Checked="check4_Checked"/>
+                    <CheckBox x:Name="check5" Content="" HorizontalAlignment="Left" Margin="26,356,0,0" VerticalAlignment="Top" Checked="check5_Checked"/>
+
 
 
 
@@ -135,6 +147,34 @@
 
                         </RadialGradientBrush>
                     </Grid.Background>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="10,64,0,0" TextWrapping="Wrap" Text="Schraube 1" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="10,118,0,0" TextWrapping="Wrap" Text="Schraube 2" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="10,172,0,0" TextWrapping="Wrap" Text="Schraube 3" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="10,226,0,0" TextWrapping="Wrap" Text="Schraube 4" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="10,280,0,0" TextWrapping="Wrap" Text="Schraube 5" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="130,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_3" Text="Menge"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="370,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Einzelpreis"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="10,334,0,0" TextWrapping="Wrap" Text="Summe" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="250,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Gewicht"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="130,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="250,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="130,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="130,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="130,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="130,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="130,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="250,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="250,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="250,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="250,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="250,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="370,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="370,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="370,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="370,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="370,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Height="54" Margin="370,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
 
                 </Grid>

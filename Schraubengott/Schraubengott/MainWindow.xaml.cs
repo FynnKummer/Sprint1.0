@@ -109,71 +109,6 @@ namespace Schraubengott
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
         {
-            #region "Was ist das?"
-                /*           
-                            TextBox Konfigurator = new TextBox()
-                            {
-                                Text = "Material:\nFestigkeit:\n",
-                                IsReadOnly = true,
-                                Background = null,
-                                BorderThickness = new Thickness(0),
-
-                                HorizontalAlignment = HorizontalAlignment.Left,
-                                VerticalAlignment = VerticalAlignment.Top,
-                                Height = 350,
-                                Width = 270,
-                                Margin = new Thickness(43, 6, 0, 0),
-                            };
-                            if (nr == 0)
-                            {
-                                grid0.Children.Add(Konfigurator);
-                            }
-                            else if (nr == 1)
-                            {
-                                grid1.Children.Add(Konfigurator);
-                            }
-
-                            if (nr == 0 && tab_1.Visibility == Visibility.Visible)
-                            {
-                                nr++;
-                            }
-                            if (nr == 1 && tab_2.Visibility == Visibility.Visible)
-                            {
-                                nr++;
-                            }
-
-                            switch (nr)
-                            {
-                                case 0:
-                                    tab_1.Visibility = Visibility.Visible;
-                                    nr++;
-                                    break;
-                                case 1:
-                                    tab_2.Visibility = Visibility.Visible;
-                                    nr++;
-                                    break;
-
-                            }
-
-
-                            matlabel.Content = feld[nr].material;
-                            festlabel.Content = feld[nr].festigkeit;
-                            kopflabel.Content = feld[nr].typ;
-                            gewindelabel.Content = feld[nr].gewinde;
-                            gewtyplabel.Content = feld[nr].gewindeart;
-                            laengelabel.Content = feld[nr].laenge;
-                            gewlenlabel.Content = feld[nr]. gewindelaenge;
-                            mengelabel.Content = feld[nr].menge;
-                            Bemerkung.Content = text.Text;
-                            preis.Content = feld[nr].preis_summe;
-                            einzelpreis.Content = feld[nr].stückpreis;
-                            sweitelabel.Content = feld[nr].schluesselbreite;
-                            masselabel.Content = feld[nr].masse;
-                            gesamtlabel.Content = feld[nr].gesamtgewicht;  
-                            Re.Content = feld[nr].elastizitätsgrenze;
-                            Rm.Content = feld[nr].Zugfestigkeit;
-                */
-                #endregion
 
             //hier noch alle Eingabeelement mit den aktuellen Werten in der Schraube festlegen. Wenn noch nicht festgelegt, dann Default
 
@@ -205,41 +140,40 @@ namespace Schraubengott
             feld[nr].gewinde_festlegen(cbgewinde.SelectedValue.ToString());
 
             lbl_test2.Content = feld[nr].gewinde;
+            
 
-            Matlabel.Content = ("Material" + Environment.NewLine + Environment.NewLine + feld[0].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].material);
-            Festlabel.Content = ("Festigkeit" + Environment.NewLine + Environment.NewLine + feld[0].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].festigkeit);
-            Kopflabel.Content = ("Kopf" + Environment.NewLine + Environment.NewLine + feld[0].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].typ);
-            Gewindelabel.Content = ("Gewinde" + Environment.NewLine + Environment.NewLine + feld[0].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewinde);
-            Typlabel.Content = ("Typ" + Environment.NewLine + Environment.NewLine + feld[0].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindeart);
-            Laengelabel.Content = ("Länge" + Environment.NewLine + Environment.NewLine + feld[0].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].laenge);
-            Gewindelabel.Content = ("Gewindelänge" + Environment.NewLine + Environment.NewLine + feld[0].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindelaenge);
-            mengelabel.Content = ("Menge" + Environment.NewLine + Environment.NewLine + feld[0].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].menge);
+
+            Materialtxt.Text = ("Material" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].material);
+            Festtxt.Text = ("Festigkeit" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].festigkeit);
+            Kopftxt.Text = ("Kopf" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].typ);
+            Gewindetxt.Text = ("Gewinde" + Environment.NewLine + Environment.NewLine + feld[0].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewinde);
+            Typtxt.Text = ("Typ" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindeart);
+            Laengetxt.Text = ("Länge" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].laenge);
+            gewlentxt.Text = ("Gewindelänge" + Environment.NewLine + Environment.NewLine + feld[0].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindelaenge);
+            mengetxt.Text = ("Menge" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].menge);
 
         }
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //festigkeitsklasse
-            //feld[nr].festigkeit_festlegen(cbfk.SelectedItem.ToString());
+            feld[nr].festigkeit_festlegen(cbfk.SelectedItem.ToString());
         }
 
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //kopf
-           //feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
+           feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
         }
 
         private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //gewinde
 
-            //feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
+            feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
 
             
         }
-
-
-
 
         #region "hallo"
 
@@ -359,5 +293,83 @@ namespace Schraubengott
 
         #endregion
 
+        #region bla
+
+        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Materialtxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Festtxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Kopftxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Gewindetxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Typtxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Laengetxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void mengetxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void check1_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void check2_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void check3_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void check4_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void check5_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        private void TextBox_TextChanged_3(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

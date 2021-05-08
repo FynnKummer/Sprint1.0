@@ -13,7 +13,7 @@ namespace Schraubengott
         public int laenge;
         public double volumen;
         public int schluesselbreite;
-        public string typ;      //Innensechskant/Ausßensechskant
+        public string typ; //Innensechskant/Ausßensechskant
         public string festigkeit;
         public string festaus;//Festigkeitsklasse ausgeschrieben
 
@@ -64,7 +64,7 @@ namespace Schraubengott
         }
         public void gewlen_festlegen(int gewlen)
         {
-
+            
         }
 
         //Berechnungen 
@@ -211,213 +211,214 @@ namespace Schraubengott
                     break;
             }
         }
-    }
-      /*  public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
-        {
-        // Variablen festlegen
-        double preis = 0;
-        double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis, massekilo;
-
-        // Aufpreise festlegen
-        const double aufpreis_Innensechskannt = 0.21;
-        const double aufpreis_Teilgewinde = 0.16;
-        const double aufpreis_Feingewinde = 0.27;
-        const double kilopreis_verzinkt = 12.12;
-        const double kilopreis_V2A = 26.78;
-        const double kilopreis_V4A = 35.56;
-        const double mws = 1.19;
-
-        //Grundpreis nach Material
-        if (this.material.Equals("1"))
-        {                                           // Verzinkte Schraube 
-            preis = kilopreis_verzinkt;
-        }
-        else if (this.material.Equals("2")) //hier fehlt die Bedingung
-        {
-            preis = kilopreis_V2A;                     // Edelstahlschraube 
-        }
-        else
-        {
-            preis = kilopreis_V4A;
-        }
-
-        // Aufpreise 
-        // Teilgewindelänge 
-        if (this.gewindelaenge != laenge)
-        {
-            preis = preis + aufpreis_Teilgewinde;
-        }
-
-        // Innensechskant
-        if (this.typ.Equals("I", StringComparison.InvariantCultureIgnoreCase))
-        {
-            preis = preis + aufpreis_Innensechskannt;
-        }
-
-        // Feingewinde 
-        if (this.gewindeart.Equals("F", StringComparison.InvariantCultureIgnoreCase))
-        {
-            preis = preis + aufpreis_Feingewinde;
-        }
-
-        // Preisvarianten berechnen            
-        massekilo = 0.001 * masse;
-
-        nettokilopreis = preis;
-        nettoeinzelpreis = nettokilopreis * massekilo;
-        netto50 = 50 * nettoeinzelpreis;
-        netto100 = 100 * nettoeinzelpreis;
-        Nettobestellpreis = menge * nettoeinzelpreis;
-
-        einzelpreis = nettoeinzelpreis * mws;
-        kilopreis = nettokilopreis * mws;
-        preis50 = netto50 * mws;
-        preis100 = netto100 * mws;
-        Bestellpreis = einzelpreis * menge;
-
-        // Objekt 
-
-        this.preis_summe = Bestellpreis;
-        this.stückpreis = einzelpreis;
-        this.nettopreis_Summe = Nettobestellpreis;
-        this.nettoeinzelpreis = nettoeinzelpreis;
-
-        // Ausgabe der Preise            
-        string summenenstring = "Summe (" + this.menge + "Stück):";
-
-        Console.WriteLine(" Preise:");
-        Console.WriteLine();
-        Console.WriteLine("  Nettopreise                                  Preise inkl. Mehrwertsteuer");
-        Console.WriteLine();
-        Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
-        Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
-        Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
-        Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
-        Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
-    }
-
 
     }
+    /*  public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
+      {
+      // Variablen festlegen
+      double preis = 0;
+      double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis, massekilo;
 
-    class ExcelControll
-    {
-        public int bestellnummer;
-        // Konstuktor 
+      // Aufpreise festlegen
+      const double aufpreis_Innensechskannt = 0.21;
+      const double aufpreis_Teilgewinde = 0.16;
+      const double aufpreis_Feingewinde = 0.27;
+      const double kilopreis_verzinkt = 12.12;
+      const double kilopreis_V2A = 26.78;
+      const double kilopreis_V4A = 35.56;
+      const double mws = 1.19;
 
-        public static void Excel_erstellen(Schraube[] arr)
-        {
-            new ExcelControll(arr);
-        }
+      //Grundpreis nach Material
+      if (this.material.Equals("1"))
+      {                                           // Verzinkte Schraube 
+          preis = kilopreis_verzinkt;
+      }
+      else if (this.material.Equals("2")) //hier fehlt die Bedingung
+      {
+          preis = kilopreis_V2A;                     // Edelstahlschraube 
+      }
+      else
+      {
+          preis = kilopreis_V4A;
+      }
 
-        ExcelControll(Schraube[] arr)
-        {
-            // Erstellen einer Neuen Exelmappe 
-            Excel.Application excelApp = new Excel.Application();
-            excelApp.Visible = true;
-            excelApp.Workbooks.Add();
+      // Aufpreise 
+      // Teilgewindelänge 
+      if (this.gewindelaenge != laenge)
+      {
+          preis = preis + aufpreis_Teilgewinde;
+      }
 
-            // Hinzufügen einer Seite? 
-            Excel._Worksheet mySheet = (Excel.Worksheet)excelApp.ActiveSheet;
+      // Innensechskant
+      if (this.typ.Equals("I", StringComparison.InvariantCultureIgnoreCase))
+      {
+          preis = preis + aufpreis_Innensechskannt;
+      }
 
+      // Feingewinde 
+      if (this.gewindeart.Equals("F", StringComparison.InvariantCultureIgnoreCase))
+      {
+          preis = preis + aufpreis_Feingewinde;
+      }
 
+      // Preisvarianten berechnen            
+      massekilo = 0.001 * masse;
 
-            // Kategorien festlegen
+      nettokilopreis = preis;
+      nettoeinzelpreis = nettokilopreis * massekilo;
+      netto50 = 50 * nettoeinzelpreis;
+      netto100 = 100 * nettoeinzelpreis;
+      Nettobestellpreis = menge * nettoeinzelpreis;
 
-            mySheet.Cells[2, 1] = "Techniche Details";
-            mySheet.Cells[3, 1] = "Schraubenlänge";
-            mySheet.Cells[4, 1] = "Gewindelänge";
-            mySheet.Cells[5, 1] = "Schlüsselweite";
-            mySheet.Cells[6, 1] = "Gewindedurchmesser";
-            mySheet.Cells[7, 1] = "Masse pro Stück";
-            mySheet.Cells[8, 1] = "Gesamtgewicht";
-            mySheet.Cells[9, 1] = "Gewindesteigung";
-            mySheet.Cells[10, 1] = "Gewindetiefe";
-            mySheet.Cells[11, 1] = "Rundung";
-            mySheet.Cells[12, 1] = "Flankendurchmesser";
-            mySheet.Cells[13, 1] = "Kerndurchmesser";
-            mySheet.Cells[14, 1] = "Flankenwinkel";
-            mySheet.Cells[15, 1] = "";
-            mySheet.Cells[16, 1] = "Elastizitätzgrenze";
-            mySheet.Cells[17, 1] = "Zugfestigkeit";
-            mySheet.Cells[18, 1] = "";
-            mySheet.Cells[19, 1] = "Preis (Netto)";
-            mySheet.Cells[20, 1] = "Summe";
-            mySheet.Cells[21, 1] = "Stückpreis";
-            mySheet.Cells[22, 1] = "";
-            mySheet.Cells[23, 1] = "Preis (Brutto)";
-            mySheet.Cells[24, 1] = "Summe";
-            mySheet.Cells[25, 1] = "Stückpreis";
-            mySheet.Cells[27, 1] = "Menge";
+      einzelpreis = nettoeinzelpreis * mws;
+      kilopreis = nettokilopreis * mws;
+      preis50 = netto50 * mws;
+      preis100 = netto100 * mws;
+      Bestellpreis = einzelpreis * menge;
 
+      // Objekt 
 
-            // Listenformat einführen 
-            mySheet.Range["A1", "E29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
+      this.preis_summe = Bestellpreis;
+      this.stückpreis = einzelpreis;
+      this.nettopreis_Summe = Nettobestellpreis;
+      this.nettoeinzelpreis = nettoeinzelpreis;
 
-            // Werte der Schrauben in Tabelle eingeben 
+      // Ausgabe der Preise            
+      string summenenstring = "Summe (" + this.menge + "Stück):";
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                mySheet.Cells[1, i + 2] = arr[i].name;
-                mySheet.Cells[3, i + 2] = arr[i].laenge + " mm";
-                mySheet.Cells[4, i + 2] = arr[i].gewindelaenge + " mm";
-                mySheet.Cells[5, i + 2] = arr[i].schluesselbreite + " mm";
-                mySheet.Cells[6, i + 2] = arr[i].gewinde;
-                mySheet.Cells[7, i + 2] = Math.Round(arr[i].masse, 2) + " g";
-                mySheet.Cells[8, i + 2] = Math.Round(arr[i].gesamtgewicht, 2) + " g";
-                mySheet.Cells[9, i + 2] = Math.Round(arr[i].gewindesteigung, 2) + " mm";
-                mySheet.Cells[10, i + 2] = Math.Round(arr[i].gewindetiefe, 2) + " mm";
-                mySheet.Cells[11, i + 2] = Math.Round(arr[i].gewinderundung, 2) + " mm";
-                mySheet.Cells[12, i + 2] = Math.Round(arr[i].flankendurchmesser, 2) + " mm";
-                mySheet.Cells[13, i + 2] = Math.Round(arr[i].kerndurchmesser, 2) + " mm";
-                mySheet.Cells[14, i + 2] = Math.Round(arr[i].flankenwinkel, 2) + "°";
-
-                mySheet.Cells[16, i + 2] = Math.Round(arr[i].elastizitätsgrenze, 2) + " N/mm²";
-                mySheet.Cells[17, i + 2] = Math.Round(arr[i].Zugfestigkeit, 2) + " N/mm²";
-
-
-                mySheet.Cells[20, i + 2] = Math.Round(arr[i].nettopreis_Summe, 2) + "€";
-                mySheet.Cells[21, i + 2] = Math.Round(arr[i].nettoeinzelpreis, 2) + "€";
-
-
-                mySheet.Cells[24, i + 2] = Math.Round(arr[i].preis_summe, 2) + "€";
-                mySheet.Cells[25, i + 2] = Math.Round(arr[i].stückpreis, 2) + "€";
-
-                mySheet.Cells[27, i + 2] = arr[i].menge;
-
-                mySheet.Cells[28, i + 2].AddComment("Anmerkung S " + i);
-
-            }
+      Console.WriteLine(" Preise:");
+      Console.WriteLine();
+      Console.WriteLine("  Nettopreise                                  Preise inkl. Mehrwertsteuer");
+      Console.WriteLine();
+      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
+      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
+      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
+      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
+      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
+  }
 
 
-            // Zellenbreite an Text anpassen 
-            for (int i = 1; i < 9; i++)
-            {
-                mySheet.Columns[i].AutoFit();
-            }
+  }
+
+  class ExcelControll
+  {
+      public int bestellnummer;
+      // Konstuktor 
+
+      public static void Excel_erstellen(Schraube[] arr)
+      {
+          new ExcelControll(arr);
+      }
+
+      ExcelControll(Schraube[] arr)
+      {
+          // Erstellen einer Neuen Exelmappe 
+          Excel.Application excelApp = new Excel.Application();
+          excelApp.Visible = true;
+          excelApp.Workbooks.Add();
+
+          // Hinzufügen einer Seite? 
+          Excel._Worksheet mySheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
 
-            // Excel abspeichern für Email  
 
-            // Bestellnummer 
+          // Kategorien festlegen
 
-            Random nummer = new Random();
-            bestellnummer = nummer.Next(10000000, 99999999);
+          mySheet.Cells[2, 1] = "Techniche Details";
+          mySheet.Cells[3, 1] = "Schraubenlänge";
+          mySheet.Cells[4, 1] = "Gewindelänge";
+          mySheet.Cells[5, 1] = "Schlüsselweite";
+          mySheet.Cells[6, 1] = "Gewindedurchmesser";
+          mySheet.Cells[7, 1] = "Masse pro Stück";
+          mySheet.Cells[8, 1] = "Gesamtgewicht";
+          mySheet.Cells[9, 1] = "Gewindesteigung";
+          mySheet.Cells[10, 1] = "Gewindetiefe";
+          mySheet.Cells[11, 1] = "Rundung";
+          mySheet.Cells[12, 1] = "Flankendurchmesser";
+          mySheet.Cells[13, 1] = "Kerndurchmesser";
+          mySheet.Cells[14, 1] = "Flankenwinkel";
+          mySheet.Cells[15, 1] = "";
+          mySheet.Cells[16, 1] = "Elastizitätzgrenze";
+          mySheet.Cells[17, 1] = "Zugfestigkeit";
+          mySheet.Cells[18, 1] = "";
+          mySheet.Cells[19, 1] = "Preis (Netto)";
+          mySheet.Cells[20, 1] = "Summe";
+          mySheet.Cells[21, 1] = "Stückpreis";
+          mySheet.Cells[22, 1] = "";
+          mySheet.Cells[23, 1] = "Preis (Brutto)";
+          mySheet.Cells[24, 1] = "Summe";
+          mySheet.Cells[25, 1] = "Stückpreis";
+          mySheet.Cells[27, 1] = "Menge";
+
+
+          // Listenformat einführen 
+          mySheet.Range["A1", "E29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
+
+          // Werte der Schrauben in Tabelle eingeben 
+
+          for (int i = 0; i < arr.Length; i++)
+          {
+              mySheet.Cells[1, i + 2] = arr[i].name;
+              mySheet.Cells[3, i + 2] = arr[i].laenge + " mm";
+              mySheet.Cells[4, i + 2] = arr[i].gewindelaenge + " mm";
+              mySheet.Cells[5, i + 2] = arr[i].schluesselbreite + " mm";
+              mySheet.Cells[6, i + 2] = arr[i].gewinde;
+              mySheet.Cells[7, i + 2] = Math.Round(arr[i].masse, 2) + " g";
+              mySheet.Cells[8, i + 2] = Math.Round(arr[i].gesamtgewicht, 2) + " g";
+              mySheet.Cells[9, i + 2] = Math.Round(arr[i].gewindesteigung, 2) + " mm";
+              mySheet.Cells[10, i + 2] = Math.Round(arr[i].gewindetiefe, 2) + " mm";
+              mySheet.Cells[11, i + 2] = Math.Round(arr[i].gewinderundung, 2) + " mm";
+              mySheet.Cells[12, i + 2] = Math.Round(arr[i].flankendurchmesser, 2) + " mm";
+              mySheet.Cells[13, i + 2] = Math.Round(arr[i].kerndurchmesser, 2) + " mm";
+              mySheet.Cells[14, i + 2] = Math.Round(arr[i].flankenwinkel, 2) + "°";
+
+              mySheet.Cells[16, i + 2] = Math.Round(arr[i].elastizitätsgrenze, 2) + " N/mm²";
+              mySheet.Cells[17, i + 2] = Math.Round(arr[i].Zugfestigkeit, 2) + " N/mm²";
+
+
+              mySheet.Cells[20, i + 2] = Math.Round(arr[i].nettopreis_Summe, 2) + "€";
+              mySheet.Cells[21, i + 2] = Math.Round(arr[i].nettoeinzelpreis, 2) + "€";
+
+
+              mySheet.Cells[24, i + 2] = Math.Round(arr[i].preis_summe, 2) + "€";
+              mySheet.Cells[25, i + 2] = Math.Round(arr[i].stückpreis, 2) + "€";
+
+              mySheet.Cells[27, i + 2] = arr[i].menge;
+
+              mySheet.Cells[28, i + 2].AddComment("Anmerkung S " + i);
+
+          }
+
+
+          // Zellenbreite an Text anpassen 
+          for (int i = 1; i < 9; i++)
+          {
+              mySheet.Columns[i].AutoFit();
+          }
+
+
+          // Excel abspeichern für Email  
+
+          // Bestellnummer 
+
+          Random nummer = new Random();
+          bestellnummer = nummer.Next(10000000, 99999999);
 
 
 
-            mySheet.SaveAs(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
+          mySheet.SaveAs(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
 
 
-            excelApp.Workbooks.Close();
+          excelApp.Workbooks.Close();
 
-            //Exel Speichern für Kunden 
+          //Exel Speichern für Kunden 
 
-            /* string Pfad = @"C:\Desktop\";
+          /* string Pfad = @"C:\Desktop\";
 
-             mySheet.SaveAs(Pfad+@"\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
-            */
-
-            // Excel muss noch geschlossen werden 
+           mySheet.SaveAs(Pfad+@"\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
+          */
+     
+    // Excel muss noch geschlossen werden 
 
     /*
 
