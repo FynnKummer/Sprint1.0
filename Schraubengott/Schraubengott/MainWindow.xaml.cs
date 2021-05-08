@@ -201,28 +201,32 @@ namespace Schraubengott
                 return;
             }
             feld[nr].menge = Convert.ToInt32(txt_menge.Text.ToString());
-            feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
-            feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
+            feld[nr].kopf_festlegen(cbkopf.SelectedValue.ToString());
+            feld[nr].gewinde_festlegen(cbgewinde.SelectedValue.ToString());
 
             lbl_test2.Content = feld[nr].gewinde;
 
-            Schraube1konfig.Content = (feld[0].festigkeit + "" + feld[0].typ + "" + feld[0].gewinde + "" + feld[0].gewindeart + "" + feld[0].laenge + "" + feld[0].gewindelaenge + "" + feld[0].menge);
-            Schraube2konfig.Content = (feld[1].festigkeit + "" + feld[1].typ + "" + feld[1].gewinde + "" + feld[1].gewindeart + "" + feld[1].laenge + "" + feld[1].gewindelaenge + "" + feld[1].menge);
-            Schraube3konfig.Content = (feld[2].festigkeit + "" + feld[2].typ + "" + feld[2].gewinde + "" + feld[2].gewindeart + "" + feld[2].laenge + "" + feld[2].gewindelaenge + "" + feld[2].menge);
-            Schraube4konfig.Content = (feld[3].festigkeit + "" + feld[3].typ + "" + feld[3].gewinde + "" + feld[3].gewindeart + "" + feld[3].laenge + "" + feld[3].gewindelaenge + "" + feld[3].menge);
-            Schraube5konfig.Content = (feld[4].typ + "" + feld[4].gewinde );
+            Matlabel.Content = ("Material" + Environment.NewLine + Environment.NewLine + feld[0].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].material);
+            Festlabel.Content = ("Festigkeit" + Environment.NewLine + Environment.NewLine + feld[0].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].festigkeit);
+            Kopflabel.Content = ("Kopf" + Environment.NewLine + Environment.NewLine + feld[0].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].typ);
+            Gewindelabel.Content = ("Gewinde" + Environment.NewLine + Environment.NewLine + feld[0].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewinde);
+            Typlabel.Content = ("Typ" + Environment.NewLine + Environment.NewLine + feld[0].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindeart);
+            Laengelabel.Content = ("Länge" + Environment.NewLine + Environment.NewLine + feld[0].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].laenge);
+            Gewindelabel.Content = ("Gewindelänge" + Environment.NewLine + Environment.NewLine + feld[0].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindelaenge);
+            mengelabel.Content = ("Menge" + Environment.NewLine + Environment.NewLine + feld[0].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].menge);
+
         }
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //festigkeitsklasse
-            feld[nr].festigkeit_festlegen(cbfk.SelectedItem.ToString());
+            //feld[nr].festigkeit_festlegen(cbfk.SelectedItem.ToString());
         }
 
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //kopf
-           // feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
+           //feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
         }
 
         private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -355,14 +359,5 @@ namespace Schraubengott
 
         #endregion
 
-        private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void text_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
