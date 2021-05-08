@@ -47,9 +47,7 @@
 
                     </ComboBox>
                     <ComboBox Name="cbfk" IsEditable="true"
-                                IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="36,45,0,0" VerticalAlignment="Top" Width="140" Grid.Column="2" Grid.ColumnSpan="4" SelectionChanged="cbfk_SelectionChanged" MaxDropDownHeight="60"  >
-
-
+                         IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="36,45,0,0" VerticalAlignment="Top" Width="140" Grid.Column="2" Grid.ColumnSpan="4" SelectionChanged="cbfk_SelectionChanged" MaxDropDownHeight="60"  >      
 
                     </ComboBox>
                     <CheckBox Content="Feingewinde" HorizontalAlignment="Left" Margin="36,150,0,0" VerticalAlignment="Top" Height="16" Width="87" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.Column="2" Grid.ColumnSpan="3"/>
@@ -85,7 +83,6 @@
                     <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="41,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="4" Grid.ColumnSpan="2"/>
                     <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="4,255,0,0" VerticalAlignment="Top" Width="112" Grid.ColumnSpan="2" Grid.Column="1"/>
                     <TextBox x:Name="txt_menge" MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="3" Grid.ColumnSpan="2"/>
-
                     <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="6" HorizontalAlignment="Left" Height="20" Margin="175,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
                     <Label x:Name="lbl_test" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="189,108,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lbl_test2" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="204,211,0,0" VerticalAlignment="Top"/>
