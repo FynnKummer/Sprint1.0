@@ -37,10 +37,9 @@ namespace Schraubengott
             {
                 feld[i] = new Schraube();         // Array wird mit Objekten gefüllt
             }
-<<<<<<< HEAD
+
             //cmb_nr.SelectedItem = screw1;
-=======
->>>>>>> parent of 41512f3 (.)
+
 
             InitializeComponent();
 
@@ -183,7 +182,7 @@ namespace Schraubengott
             }
             //hier dann alle Werte in die Schraube speichern
 
-<<<<<<< HEAD
+
             
             feld[nr].festigkeit = cbfk.SelectedItem.ToString();
             if(txt_menge.Text.ToString()==null)
@@ -196,8 +195,7 @@ namespace Schraubengott
             feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
 
             lbl_test2.Content = feld[nr].gewinde;
-=======
->>>>>>> parent of 41512f3 (.)
+
         }
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
