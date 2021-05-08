@@ -37,9 +37,10 @@ namespace Schraubengott
             {
                 feld[i] = new Schraube();         // Array wird mit Objekten gefüllt
             }
-            
 
+            
             InitializeComponent();
+            cmb_nr.SelectedIndex = 0;           //Combobox hat von Anfang an die erste Schraube ausgewählt
 
         }
 
