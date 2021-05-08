@@ -37,7 +37,7 @@ namespace Schraubengott
             {
                 feld[i] = new Schraube();         // Array wird mit Objekten gefüllt
             }
-            //cmb_nr.SelectedItem = screw1;
+            
 
             InitializeComponent();
 
@@ -192,7 +192,7 @@ namespace Schraubengott
 
             
             feld[nr].festigkeit = cbfk.SelectedItem.ToString();
-            if(txt_menge.Text.ToString()==null)
+            if(txt_menge.Text.ToString()=="")
             {
                 MessageBox.Show("Es wurde keine Eingabe für die Menge gemacht.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -275,8 +275,9 @@ namespace Schraubengott
 
         private void new_screw_Click(object sender, RoutedEventArgs e)
         {
-            cmb_nr.Visibility = Visibility.Visible;
             
+            
+
 
             //if (schraubenlenge < gewindelenge)
             //{
@@ -287,7 +288,7 @@ namespace Schraubengott
             //
             //}
 
-           
+
 
 
 
