@@ -87,12 +87,12 @@
                     <TextBox MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="13,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged" Grid.Column="3" Grid.ColumnSpan="2"/>
 
                     <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="6" HorizontalAlignment="Left" Height="20" Margin="175,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
-
-
+<<<<<<< HEAD
                     <Label x:Name="lbl_test" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="189,108,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lbl_test2" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="204,211,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lbl1" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="78,177,0,0" VerticalAlignment="Top"/>
-
+=======
+>>>>>>> parent of 41512f3 (.)
 
 
 
