@@ -329,7 +329,7 @@ namespace Schraubengott
         private void schrauben_Loaded(object sender, RoutedEventArgs e)
         {
             List<Schraube> items = new List<Schraube>();
-            items.Add( feld[0].material );
+            items.Add( feld[0] );
 
             schrauben.ItemsSource = items;
         }
