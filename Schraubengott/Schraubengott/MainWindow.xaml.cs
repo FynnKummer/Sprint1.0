@@ -103,7 +103,7 @@ namespace Schraubengott
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
 
-            feld[nr].gewindeart = "Standartgewinde";
+            feld[nr].gewindeart = "Standardgewinde";
         }
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
@@ -202,6 +202,12 @@ namespace Schraubengott
             feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
 
             lbl_test2.Content = feld[nr].gewinde;
+
+            Schraube1konfig.Content = (feld[0].festigkeit + "" + feld[0].typ + "" + feld[0].gewinde + "" + feld[0].gewindeart + "" + feld[0].laenge + "" + feld[0].gewindelaenge + "" + feld[0].menge);
+            Schraube2konfig.Content = (feld[1].festigkeit + "" + feld[1].typ + "" + feld[1].gewinde + "" + feld[1].gewindeart + "" + feld[1].laenge + "" + feld[1].gewindelaenge + "" + feld[1].menge);
+            Schraube3konfig.Content = (feld[2].festigkeit + "" + feld[2].typ + "" + feld[2].gewinde + "" + feld[2].gewindeart + "" + feld[2].laenge + "" + feld[2].gewindelaenge + "" + feld[2].menge);
+            Schraube4konfig.Content = (feld[3].festigkeit + "" + feld[3].typ + "" + feld[3].gewinde + "" + feld[3].gewindeart + "" + feld[3].laenge + "" + feld[3].gewindelaenge + "" + feld[3].menge);
+            Schraube5konfig.Content = (feld[4].typ + "" + feld[4].gewinde );
         }
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -352,12 +358,17 @@ namespace Schraubengott
          
         }
 
-        private void text_TextChanged(object sender, TextChangedEventArgs e)
+
+        #endregion
+
+        private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        #endregion 
+        private void text_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }
