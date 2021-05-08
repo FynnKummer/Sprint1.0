@@ -121,7 +121,14 @@
                         <Label x:Name="einzelpreis1" Content="-----" HorizontalAlignment="Left" Margin="268,91,0,0" VerticalAlignment="Top" Width="40"/>
                         <Label x:Name="Summelabel1" Content="-----" HorizontalAlignment="Left" Margin="268,130,0,0" VerticalAlignment="Top" Width="40"/>
                         <Label x:Name="Stückpreislabel1" Content="-----" HorizontalAlignment="Left" Margin="268,161,0,0" VerticalAlignment="Top" Width="40"/>
-                        <DataGrid x:Name="schrauben" HorizontalAlignment="Left" Height="310" Margin="123,56,0,0" VerticalAlignment="Top" Width="503" SelectionChanged="DataGrid_SelectionChanged" Loaded="schrauben_Loaded"/>
+                        <DataGrid  x:Name="schrauben" HorizontalAlignment="Left" Height="310" Margin="123,56,0,0" VerticalAlignment="Top" Width="503" SelectionChanged="DataGrid_SelectionChanged" Loaded="schrauben_Loaded">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header=" material"/>
+                                <DataGridTextColumn Header=" festigkeit"/>
+                                <DataGridTextColumn Header=" gewicht"/>
+                                <DataGridTextColumn Header=" dicke"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
 
 
 
