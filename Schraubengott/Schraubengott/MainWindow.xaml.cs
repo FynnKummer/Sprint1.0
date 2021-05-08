@@ -37,9 +37,10 @@ namespace Schraubengott
             {
                 feld[i] = new Schraube();         // Array wird mit Objekten gefüllt
             }
-            cmb_nr.SelectedItem = screw1;
+            //cmb_nr.SelectedItem = screw1;
 
             InitializeComponent();
+
         }
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
@@ -201,7 +202,6 @@ namespace Schraubengott
             feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
 
             lbl_test2.Content = feld[nr].gewinde;
-
         }
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -362,15 +362,16 @@ namespace Schraubengott
         private void schrauben_Loaded(object sender, RoutedEventArgs e)
         {
             List<Schraube> items = new List<Schraube>();
-            items.Add( feld[0] );
+            items.Add( feld[0].material, feld[0].festigkeit);
 
-           // schrauben.ItemsSource = items;
+           schrauben.ItemsSource = items;
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+
 
     }
 }

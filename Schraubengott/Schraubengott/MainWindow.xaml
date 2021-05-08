@@ -17,7 +17,7 @@
         <Button Content="Button" HorizontalAlignment="Left" Height="23" Margin="616.5,578,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"  />
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="433" Margin="235.333,62,0,0" VerticalAlignment="Top" Width="761">
             <TabItem x:Name="tab_konfig" Header="Konfigurator" Height="22" Margin="-2,-2,-2.5,0" VerticalAlignment="Top">
-                <Grid x:Name="grid0">
+                <Grid x:Name="grid0" RenderTransformOrigin="0.426,0.462">
                     <Grid.Background>
                         <RadialGradientBrush>
                             <GradientStop Color="#FFFAFCFE"/>
@@ -89,6 +89,7 @@
                     <Button x:Name="btnauswahl" Content="Auswahl speichern" Grid.Column="6" HorizontalAlignment="Left" Height="20" Margin="175,375,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
                     <Label x:Name="lbl_test" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="189,108,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lbl_test2" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="204,211,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lbl1" Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="78,177,0,0" VerticalAlignment="Top"/>
 
 
 
