@@ -163,7 +163,7 @@ namespace Schraubengott
             
 
 
-            Materialtxt.Text = ("Material" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].material);
+            Materialtxt.Text = ("Material\n\n\n"  + feld[0].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].material);
             Festtxt.Text = ("Festigkeit" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].festigkeit);
             Kopftxt.Text = ("Kopf" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].typ);
             Gewindetxt.Text = ("Gewinde" + Environment.NewLine + Environment.NewLine + feld[0].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewinde);
@@ -451,15 +451,15 @@ namespace Schraubengott
         {
             if (check1.IsChecked == true)
             {
-                // menge1txt.Text = feld[1].menge;
-                //gew1txt.Text = feld[1].masse;
-                //preis1txt.Text = feld[1].preis_summe;
+                menge1txt.Text = feld[1].menge.ToString();
+                gew1txt.Text = feld[1].masse.ToString();
+                preis1txt.Text = feld[1].preis_summe.ToString();
 
                 TextBox txt = new TextBox();
-                txt.Name = "txtt";
                 txt.TextWrapping = TextWrapping.Wrap;
                 txt.Text = "fdsafdsa";
                 txt.Margin = new Thickness(10, 64, 0, 0);
+                grid2.Children.Add(txt);
 
             }
             else
