@@ -56,13 +56,13 @@ namespace Schraubengott
                 cbfk.Items.Clear();
                 cbfk.Items.Add("V2A 50");
                 cbfk.Items.Add("V2A 70");
-                feld[nr].material = "V2A";
+               // feld[nr].material = "V2A";
             }
             else if (cbmat.SelectedValue.ToString() == "V4A")
             {
                 cbfk.Items.Clear();
                 cbfk.Items.Add("V4A 70");
-                feld[nr].material = "V4A";
+              //  feld[nr].material = "V4A";
             }
             else if (cbmat.SelectedValue.ToString() == "Verzinkter Stahl")
             {
@@ -73,7 +73,8 @@ namespace Schraubengott
                 cbfk.Items.Add("9.8");
                 cbfk.Items.Add("10.9");
                 cbfk.Items.Add("12.9");
-                feld[nr].material = "Verzinkter Stahl";
+              //  feld[nr].material = "Verzinkter Stahl";
+
             }
         }
 
@@ -123,23 +124,31 @@ namespace Schraubengott
                 MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;//wenn Gewlen größer als Len wird Methode beendet
             }
-            feld[nr].gewindelaenge = Convert.ToInt32(txt_gewlen.Text);
-            feld[nr].laenge = Convert.ToInt32(txt_len.Text);
 
-            //hier dann alle Werte in die Schraube speichern
+            if (cbfk.SelectedItem == null)
+            {
+                MessageBox.Show("Für die Festigkeitsklasse liegt keine Auswahl vor.", "Fehldend Auswahl", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+           
 
             
-            feld[nr].festigkeit = cbfk.SelectedItem.ToString();
+            
             if(txt_menge.Text.ToString()=="")
             {
                 MessageBox.Show("Es wurde keine Eingabe für die Menge gemacht.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             feld[nr].menge = Convert.ToInt32(txt_menge.Text.ToString());
-            feld[nr].kopf_festlegen(cbkopf.SelectedValue.ToString());
-            feld[nr].gewinde_festlegen(cbgewinde.SelectedValue.ToString());
+            feld[nr].typ = cbkopf.SelectedValue.ToString();
+            feld[nr].gewinde = cbgewinde.SelectedValue.ToString();
+            feld[nr].festigkeit = cbfk.SelectedItem.ToString();
+            feld[nr].material = cbmat.SelectedValue.ToString();
+            feld[nr].gewindelaenge = Convert.ToInt32(txt_gewlen.Text);
+            feld[nr].laenge = Convert.ToInt32(txt_len.Text);
 
-            lbl_test2.Content = feld[nr].gewinde;
+
+            lbl_test2.Content = feld[nr].material;// nur zum Test, muss später weg
             
 
 
@@ -152,25 +161,26 @@ namespace Schraubengott
             gewlentxt.Text = ("Gewindelänge" + Environment.NewLine + Environment.NewLine + feld[0].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindelaenge);
             mengetxt.Text = ("Menge" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].menge);
 
+            MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //festigkeitsklasse
-            feld[nr].festigkeit_festlegen(cbfk.SelectedItem.ToString());
+            //feld[nr].festigkeit_festlegen(cbfk.SelectedItem.ToString());
         }
 
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //kopf
-           feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
+           //feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
         }
 
         private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //gewinde
 
-            feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
+            //feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
 
             
         }
