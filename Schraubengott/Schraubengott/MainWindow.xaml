@@ -110,19 +110,19 @@
                         </RadialGradientBrush>
                     </Grid.Background>
                     <TextBox x:Name="Schraubetxt"  HorizontalAlignment="Left" Height="383" Margin="0,10,0,0" TextWrapping="Wrap" Text="Schraube&#xA;&#xD;&#xA;&#xA;Schraube 1&#xA;&#xA;Schraube 2&#xA;&#xA;Schraube 3&#xA;&#xA;Schraube 4&#xA;&#xA;Schraube 5" VerticalAlignment="Top" Width="75" FontSize="16" TextChanged="TextBox_TextChanged_2" IsReadOnly="True"/>
-                    <TextBox x:Name="Materialtxt" HorizontalAlignment="Left" Height="383" Margin="75,10,0,0" TextWrapping="Wrap" Text="Material" VerticalAlignment="Top" Width="108" FontSize="16" IsReadOnly="True" TextChanged="Materialtxt_TextChanged"/>
-                    <TextBox x:Name="Festtxt" HorizontalAlignment="Left" Height="383" Margin="183,10,0,0" TextWrapping="Wrap" Text="Festigkeit" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True" TextChanged="Festtxt_TextChanged"/>
-                    <TextBox x:Name="Kopftxt" HorizontalAlignment="Left" Height="383" Margin="258,10,0,0" TextWrapping="Wrap" Text="Kopf" VerticalAlignment="Top" Width="135" FontSize="16" IsReadOnly="True" TextChanged="Kopftxt_TextChanged"/>
-                    <TextBox x:Name="Gewindetxt" HorizontalAlignment="Left" Height="383" Margin="393,10,0,0" TextWrapping="Wrap" Text="Gewinde" VerticalAlignment="Top" Width="51" FontSize="16" IsReadOnly="True" TextChanged="Gewindetxt_TextChanged"/>
-                    <TextBox x:Name="Typtxt" HorizontalAlignment="Left" Height="383" Margin="444,10,0,0" TextWrapping="Wrap" Text="Typ" VerticalAlignment="Top" Width="129" FontSize="16" IsReadOnly="True" TextChanged="Typtxt_TextChanged"/>
-                    <TextBox x:Name="Laengetxt" HorizontalAlignment="Left" Height="383" Margin="573,10,0,0" TextWrapping="Wrap" Text="Länge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" TextChanged="Laengetxt_TextChanged"/>
-                    <TextBox x:Name="gewlentxt" HorizontalAlignment="Left" Height="383" Margin="629,10,0,0" TextWrapping="Wrap" Text="Gewindelänge" VerticalAlignment="Top" Width="69" FontSize="16" TextChanged="TextBox_TextChanged_1" IsReadOnly="True"/>
-                    <TextBox x:Name="mengetxt" HorizontalAlignment="Left" Height="383" Margin="698,10,0,0" TextWrapping="Wrap" Text="Menge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" TextChanged="mengetxt_TextChanged"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,90,0,0" VerticalAlignment="Top" Width="754"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="754"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,153,0,0" VerticalAlignment="Top" Width="754"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,216,0,0" VerticalAlignment="Top" Width="754"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,280,0,0" VerticalAlignment="Top" Width="754"/>
+                    <TextBox x:Name="Materialtxt" HorizontalAlignment="Left" Height="383" Margin="75,10,0,0" TextWrapping="Wrap" Text="Material" VerticalAlignment="Top" Width="127" FontSize="16" IsReadOnly="True" TextChanged="Materialtxt_TextChanged"/>
+                    <TextBox x:Name="Festtxt" HorizontalAlignment="Left" Height="383" Margin="202,10,0,0" TextWrapping="Wrap" Text="Festigkeit" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True" TextChanged="Festtxt_TextChanged"/>
+                    <TextBox x:Name="Kopftxt" HorizontalAlignment="Left" Height="383" Margin="277,10,0,0" TextWrapping="Wrap" Text="Kopf" VerticalAlignment="Top" Width="147" FontSize="16" IsReadOnly="True" TextChanged="Kopftxt_TextChanged"/>
+                    <TextBox x:Name="Gewindetxt" HorizontalAlignment="Left" Height="383" Margin="424,10,0,0" TextWrapping="Wrap" Text="Gewinde" VerticalAlignment="Top" Width="51" FontSize="16" IsReadOnly="True" TextChanged="Gewindetxt_TextChanged"/>
+                    <TextBox x:Name="Typtxt" HorizontalAlignment="Left" Height="383" Margin="475,10,0,0" TextWrapping="Wrap" Text="Typ" VerticalAlignment="Top" Width="142" FontSize="16" IsReadOnly="True" TextChanged="Typtxt_TextChanged"/>
+                    <TextBox x:Name="Laengetxt" HorizontalAlignment="Left" Height="383" Margin="617,10,0,0" TextWrapping="Wrap" Text="Länge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" TextChanged="Laengetxt_TextChanged"/>
+                    <TextBox x:Name="gewlentxt" HorizontalAlignment="Left" Height="383" Margin="673,10,0,0" TextWrapping="Wrap" Text="Gewindelänge" VerticalAlignment="Top" Width="69" FontSize="16" TextChanged="TextBox_TextChanged_1" IsReadOnly="True"/>
+                    <TextBox x:Name="mengetxt" HorizontalAlignment="Left" Height="383" Margin="742,10,0,0" TextWrapping="Wrap" Text="Menge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" TextChanged="mengetxt_TextChanged"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,90,0,0" VerticalAlignment="Top" Width="798"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="798"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,153,0,0" VerticalAlignment="Top" Width="798"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,216,0,0" VerticalAlignment="Top" Width="798"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="0,280,0,0" VerticalAlignment="Top" Width="798"/>
                     <CheckBox x:Name="check1" Content="" HorizontalAlignment="Left" Margin="26,99,0,0" VerticalAlignment="Top" Checked="check1_Checked"/>
                     <CheckBox x:Name="check2" Content="" HorizontalAlignment="Left" Margin="26,165,0,0" VerticalAlignment="Top" Checked="check2_Checked"/>
                     <CheckBox x:Name="check3" Content="" HorizontalAlignment="Left" Margin="26,226,0,0" VerticalAlignment="Top" Checked="check3_Checked"/>

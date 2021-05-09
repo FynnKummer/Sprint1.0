@@ -164,14 +164,14 @@ public partial class MainWindow : Window
             
 
 
-            Materialtxt.Text = ("Material\n\n\n"  + feld[0].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].material + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].material);
-            Festtxt.Text = ("Festigkeit" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].festigkeit + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].festigkeit);
-            Kopftxt.Text = ("Kopf" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].typ + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].typ);
-            Gewindetxt.Text = ("Gewinde" + Environment.NewLine + Environment.NewLine + feld[0].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewinde + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewinde);
-            Typtxt.Text = ("Typ" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindeart + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindeart);
-            Laengetxt.Text = ("Länge" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].laenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].laenge);
-            gewlentxt.Text = ("Gewindelänge" + Environment.NewLine + Environment.NewLine + feld[0].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].gewindelaenge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].gewindelaenge);
-            mengetxt.Text = ("Menge" + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[0].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[1].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[2].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[3].menge + Environment.NewLine + Environment.NewLine + Environment.NewLine + feld[4].menge);
+            Materialtxt.Text = ("Material" + "\n\n\n"  + feld[0].material + "\n\n\n" + feld[1].material + "\n\n\n" + feld[2].material + "\n\n\n" + feld[3].material + "\n\n\n" + feld[4].material);
+            Festtxt.Text = ("Festigkeit" + "\n\n\n" + feld[0].festigkeit + "\n\n\n" + feld[1].festigkeit + "\n\n\n" + feld[2].festigkeit + "\n\n\n" + feld[3].festigkeit + "\n\n\n" + feld[4].festigkeit);
+            Kopftxt.Text = ("Kopf" + "\n\n\n" + feld[0].typ + "\n\n\n" + feld[1].typ + "\n\n\n" + feld[2].typ + "\n\n\n" + feld[3].typ + "\n\n\n" + feld[4].typ);
+            Gewindetxt.Text = ("Gewinde" + "\n\n" + feld[0].gewinde + "\n\n\n" + feld[1].gewinde + "\n\n\n" + feld[2].gewinde + "\n\n\n" + feld[3].gewinde + "\n\n\n" + feld[4].gewinde);
+            Typtxt.Text = ("Typ" + "\n\n\n" + feld[0].gewindeart + "\n\n\n" + feld[1].gewindeart + "\n\n\n" + feld[2].gewindeart + "\n\n\n" + feld[3].gewindeart + "\n\n\n" + feld[4].gewindeart);
+            Laengetxt.Text = ("Länge" + "\n\n\n" + feld[0].laenge + "\n\n\n" + feld[1].laenge + "\n\n\n" + feld[2].laenge + "\n\n\n" + feld[3].laenge + "\n\n\n" + feld[4].laenge);
+            gewlentxt.Text = ("Gewindelänge" + "\n\n" + feld[0].gewindelaenge + "\n\n\n" + feld[1].gewindelaenge + "\n\n\n" + feld[2].gewindelaenge + "\n\n\n" + feld[3].gewindelaenge + "\n\n\n" + feld[4].gewindelaenge);
+            mengetxt.Text = ("Menge" + "\n\n\n" + feld[0].menge + "\n\n\n" + feld[1].menge + "\n\n\n" + feld[2].menge + "\n\n\n" + feld[3].menge + "\n\n\n" + feld[4].menge);
 
             MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
         }
@@ -464,18 +464,18 @@ public partial class MainWindow : Window
         {
             if (check1.IsChecked == true)
             {
-                menge1txt.Text = feld[1].menge.ToString();
-                gew1txt.Text = feld[1].masse.ToString();
-                preis1txt.Text = feld[1].preis_summe.ToString();
+                menge1txt.Text = feld[0].menge.ToString();
+                gew1txt.Text = feld[0].masse.ToString();
+                preis1txt.Text = feld[0].preis_summe.ToString();
 
-                TextBox txt = new TextBox();
+               /* TextBox txt = new TextBox();
                 txt.TextWrapping = TextWrapping.Wrap;
                 txt.Text = "fdsafdsa";
                 txt.Margin = new Thickness(10, 64, 0, 0);
                 grid2.Children.Add(txt);
-
+               */
             }
-            else
+            else if(check1.IsChecked == false)
             {
                 menge1txt.Text = "--";
                 gew1txt.Text = "--";
@@ -484,11 +484,11 @@ public partial class MainWindow : Window
 
             if (check2.IsChecked == true)
             {
-                //  menge2txt.Text = feld[2].menge;
-                // gew2txt.Text = feld[2].masse;
-                // preis2txt.Text = feld[2].preis_summe;
+                 menge2txt.Text = feld[1].menge.ToString();
+                 gew2txt.Text = feld[1].masse.ToString();
+                 preis2txt.Text = feld[1].preis_summe.ToString();
             }
-            else
+            else if (check2.IsChecked == false)
             {
                 menge2txt.Text = "--";
                 gew2txt.Text = "--";
@@ -497,29 +497,70 @@ public partial class MainWindow : Window
 
             if (check3.IsChecked == true)
             {
-                //  menge3txt.Text = feld[3].menge;
-                //  gew3txt.Text = feld[3].masse;
-                //  preis3txt.Text = feld[3].preis_summe;
+                menge3txt.Text = feld[2].menge.ToString();
+                gew3txt.Text = feld[2].masse.ToString();
+                preis3txt.Text = feld[2].preis_summe.ToString();
             }
-            else
+            else if (check3.IsChecked == false)
             {
-                //  menge3txt.Text = "--";
-                // gew3txt.Text = "--";
-                //  preis3txt.Text = "--";
+                 menge3txt.Text = "--";
+                 gew3txt.Text = "--";
+                 preis3txt.Text = "--";
             }
-             
+
+            if (check4.IsChecked == true)
+            {
+                menge4txt.Text = feld[3].menge.ToString();
+                gew4txt.Text = feld[3].masse.ToString();
+                preis4txt.Text = feld[3].preis_summe.ToString();
+            }
+            else if (check4.IsChecked == false)
+            {
+                menge4txt.Text = "--";
+                gew4txt.Text = "--";
+                preis4txt.Text = "--";
+            }
+
             if (check5.IsChecked == true)
             {
-                // menge5txt.Text = feld[5].menge;
-                // gew5txt.Text = feld[5].masse;
-                // preis5txt.Text = feld[5].preis_summe;
+                menge5txt.Text = feld[4].menge.ToString();
+                gew5txt.Text = feld[4].masse.ToString();
+                preis5txt.Text = feld[4].preis_summe.ToString();
             }
-            else
+            else if (check5.IsChecked == false)
             {
                 menge5txt.Text = "--";
                 gew5txt.Text = "--";
                 preis5txt.Text = "--";
             }
+
+      /*      int x1 = int.TryParse(menge1txt.Text);
+            int x2 = int.TryParse(menge2txt.Text);
+            int x3 = int.TryParse(menge3txt.Text);
+            int x4 = int.TryParse(menge4txt.Text);
+            int x5 = int.TryParse(menge5txt.Text);
+
+            if (Int32.TryParse(menge1txt.Text, out x1) && Int32.TryParse(menge2txt.Text, out x2) && Int32.TryParse(menge3txt.Text, out x3) && Int32.TryParse(menge4txt.Text, out x4) && Int32.TryParse(menge5txt.Text, out x5))
+                summemengetxt.Text = (x1 + x2 + x3 + x4 + x5).ToString();
+
+            int y1 = int.TryParse(gew1txt.Text);
+            int y2 = int.TryParse(gew2txt.Text);
+            int y3 = int.TryParse(gew3txt.Text);
+            int y4 = int.TryParse(gew4txt.Text);
+            int y5 = int.TryParse(gew5txt.Text);
+
+            if (Int32.TryParse(gew1txt.Text, out y1) && Int32.TryParse(gew2txt.Text, out y2) && Int32.TryParse(gew3txt.Text, out y3) && Int32.TryParse(gew4txt.Text, out y4) && Int32.TryParse(gew5txt.Text, out y5))
+                summegewtxt.Text = (y1 + y2 + y3 + y4 + y5).ToString();
+
+            int z1 = int.TryParse(preis1txt.Text);
+            int z2 = int.TryParse(preis2txt.Text);
+            int z3 = int.TryParse(preis3txt.Text);
+            int z4 = int.TryParse(preis4txt.Text);
+            int z5 = int.TryParse(preis5txt.Text);
+
+            if (Int32.TryParse(preis1txt.Text, out z1) && Int32.TryParse(preis2txt.Text, out z2) && Int32.TryParse(preis3txt.Text, out z3) && Int32.TryParse(preis4txt.Text, out z4) && Int32.TryParse(preis5txt.Text, out z5))
+                summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();
+      */
         }
     }
     }
