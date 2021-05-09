@@ -110,6 +110,7 @@ namespace Schraubengott
 
         private void btnauswahl_Click(object sender, RoutedEventArgs e)
         {
+            #region "Wenn was nicht passt Fehlermeldungen"
 
             //hier noch alle Eingabeelement mit den aktuellen Werten in der Schraube festlegen. Wenn noch nicht festgelegt, dann Default
 
@@ -130,10 +131,10 @@ namespace Schraubengott
                 MessageBox.Show("Für die Festigkeitsklasse liegt keine Auswahl vor.", "Fehldend Auswahl", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-           
 
-            
-            
+            #endregion
+
+
             if(txt_menge.Text.ToString()=="")
             {
                 MessageBox.Show("Es wurde keine Eingabe für die Menge gemacht.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -166,21 +167,17 @@ namespace Schraubengott
 
         private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //festigkeitsklasse
-            //feld[nr].festigkeit_festlegen(cbfk.SelectedItem.ToString());
+            
         }
 
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //kopf
-           //feld[nr].kopf_festlegen(cbkopf.SelectedItem.ToString());
+            
         }
 
         private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //gewinde
-
-            //feld[nr].gewinde_festlegen(cbgewinde.SelectedItem.ToString());
+           
 
             
         }
