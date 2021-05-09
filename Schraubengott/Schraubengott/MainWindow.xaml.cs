@@ -19,10 +19,11 @@ using System.Windows.Shapes;
 
 namespace Schraubengott
 {
-    /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+   /// <summary>
+
+/// Interaktionslogik für MainWindow.xaml
+ /// </summary>
+public partial class MainWindow : Window
     {
         Schraube[] feld = new Schraube[5];      //Array vom Typ Schraube erstellen
         int nr = 0;                             //Variable für den Index des Feldes Schraube
@@ -159,7 +160,7 @@ namespace Schraubengott
             feld[nr].laenge = Convert.ToInt32(txt_len.Text);
 
 
-            lbl_test2.Content = feld[nr].material;// nur zum Test, muss später weg
+            //lbl_test2.Content = feld[nr].material;// nur zum Test, muss später weg
             
 
 
@@ -182,7 +183,19 @@ namespace Schraubengott
 
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            if (cbkopf.SelectedValue.ToString() == "Außensechskant")
+            {
+                Image1.Visibility = Visibility.Visible;
+                Image2.Visibility = Visibility.Hidden;
+
+            }
+            else
+            {
+                Image1.Visibility = Visibility.Hidden;
+                Image2.Visibility = Visibility.Visible;
+            }
+
+
         }
 
         private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -206,31 +219,31 @@ namespace Schraubengott
                     nr = 0;
                     
                     tab_konfig.Header = "1. Konfiguration"; // Hier muss noch was geändert werden, dass sich der Tabheader immer der aktuellen Schraube anpasst
-                    lbl_test.Content = nr;
+                    //lbl_test.Content = nr;
                     break;
 
                 case 1:
                     nr = 1;
                     tab_konfig.Header = "2. Konfiguration";
-                    lbl_test.Content = nr;
+                    //lbl_test.Content = nr;
                     break;
 
                 case 2:
                     nr = 2;
                     tab_konfig.Header = "3. Konfiguration";
-                    lbl_test.Content = nr;
+                    //lbl_test.Content = nr;
                     break;
 
                 case 3:
                     nr = 3;
                     tab_konfig.Header = "4. Konfiguration";
-                    lbl_test.Content = nr;
+                   // lbl_test.Content = nr;
                     break;
 
                 case 4:
                     nr = 4;
                     tab_konfig.Header = "5. Konfiguration";
-                    lbl_test.Content = nr;
+                    //lbl_test.Content = nr;
                     break;
 
             }
