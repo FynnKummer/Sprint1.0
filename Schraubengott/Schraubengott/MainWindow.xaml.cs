@@ -481,6 +481,7 @@ public partial class MainWindow : Window
                 gew1txt.Text = "--";
                 preis1txt.Text = "--";
             }
+
             if (check2.IsChecked == true)
             {
                 //  menge2txt.Text = feld[2].menge;
@@ -493,6 +494,7 @@ public partial class MainWindow : Window
                 gew2txt.Text = "--";
                 preis2txt.Text = "--";
             }
+
             if (check3.IsChecked == true)
             {
                 //  menge3txt.Text = feld[3].menge;
@@ -505,6 +507,7 @@ public partial class MainWindow : Window
                 // gew3txt.Text = "--";
                 //  preis3txt.Text = "--";
             }
+             
             if (check5.IsChecked == true)
             {
                 // menge5txt.Text = feld[5].menge;
