@@ -19,10 +19,9 @@ using System.Windows.Shapes;
 
 namespace Schraubengott
 {
-   /// <summary>
-
-/// Interaktionslogik für MainWindow.xaml
- /// </summary>
+    /// <summary>
+    /// Interaktionslogik für MainWindow.xaml
+    /// </summary>
 public partial class MainWindow : Window
     {
         Schraube[] feld = new Schraube[5];      //Array vom Typ Schraube erstellen
@@ -42,7 +41,6 @@ public partial class MainWindow : Window
             
             InitializeComponent();
             cmb_nr.SelectedIndex = 0;           //Combobox hat von Anfang an die erste Schraube ausgewählt
-
         }
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
@@ -52,6 +50,7 @@ public partial class MainWindow : Window
 
         private void cbmat_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+            //Combobox für Festigkeitsklasse wir abhängig von dem Material befüllt
             if (cbmat.SelectedValue.ToString() == "V2A")
             {
                 cbfk.Items.Clear();
@@ -75,7 +74,6 @@ public partial class MainWindow : Window
                 cbfk.Items.Add("10.9");
                 cbfk.Items.Add("12.9");
               //  feld[nr].material = "Verzinkter Stahl";
-
             }
         }
 
@@ -84,13 +82,13 @@ public partial class MainWindow : Window
             TextBox a_textBox = (TextBox)sender;
             string a_newText = string.Empty;
 
+            //In den Textboxen für Menge, Schrauben- und Gewindelänge können nur Zahlen eingegeben werden
             for (int i = 0; i < a_textBox.Text.Length; i++)
             {
                 if (Regex.IsMatch(a_textBox.Text[i].ToString(), "^[0-9]+$"))
                 {
                     a_newText += a_textBox.Text[i];
                 }
-
             }
 
             a_textBox.Text = a_newText;
@@ -99,13 +97,11 @@ public partial class MainWindow : Window
 
         public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-
             feld[nr].gewindeart = "Feingewinde";
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-
             feld[nr].gewindeart = "Standardgewinde";
         }
 
@@ -136,7 +132,6 @@ public partial class MainWindow : Window
 
             #endregion
 
-
             if (gewartcheck.IsChecked== true)
             {
                 feld[nr].gewindeart = "Feingewinde";
@@ -159,11 +154,6 @@ public partial class MainWindow : Window
             feld[nr].gewindelaenge = Convert.ToInt32(txt_gewlen.Text);
             feld[nr].laenge = Convert.ToInt32(txt_len.Text);
 
-
-            //lbl_test2.Content = feld[nr].material;// nur zum Test, muss später weg
-            
-
-
             Materialtxt.Text = ("Material" + "\n\n\n"  + feld[0].material + "\n\n\n" + feld[1].material + "\n\n\n" + feld[2].material + "\n\n\n" + feld[3].material + "\n\n\n" + feld[4].material);
             Festtxt.Text = ("Festigkeit" + "\n\n\n" + feld[0].festigkeit + "\n\n\n" + feld[1].festigkeit + "\n\n\n" + feld[2].festigkeit + "\n\n\n" + feld[3].festigkeit + "\n\n\n" + feld[4].festigkeit);
             Kopftxt.Text = ("Kopf" + "\n\n\n" + feld[0].typ + "\n\n\n" + feld[1].typ + "\n\n\n" + feld[2].typ + "\n\n\n" + feld[3].typ + "\n\n\n" + feld[4].typ);
@@ -173,236 +163,27 @@ public partial class MainWindow : Window
             gewlentxt.Text = ("Gewindelänge" + "\n\n" + feld[0].gewindelaenge + "\n\n\n" + feld[1].gewindelaenge + "\n\n\n" + feld[2].gewindelaenge + "\n\n\n" + feld[3].gewindelaenge + "\n\n\n" + feld[4].gewindelaenge);
             mengetxt.Text = ("Menge" + "\n\n\n" + feld[0].menge + "\n\n\n" + feld[1].menge + "\n\n\n" + feld[2].menge + "\n\n\n" + feld[3].menge + "\n\n\n" + feld[4].menge);
 
-
             //Berechnungen für die ausgewählte Schraube
             feld[nr].dichte_festlegen();
             feld[nr].vol_berechnen();
 
-
             MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        private void cbfk_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
         }
 
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //Grafik der Schraube ändern, abhängig von dem Schraubenkopf
             if (cbkopf.SelectedValue.ToString() == "Außensechskant")
             {
                 Image1.Visibility = Visibility.Visible;
                 Image2.Visibility = Visibility.Hidden;
-
             }
             else
             {
                 Image1.Visibility = Visibility.Hidden;
                 Image2.Visibility = Visibility.Visible;
             }
-
-
         }
-
-        private void cbgewinde_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           
-
-            
-        }
-
-        #region "hallo"
-
-
-
-        private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
-        {
-
-            switch (cmb_nr.SelectedIndex)
-            {
-                
-                case 0:
-                    nr = 0;
-                    
-                    tab_konfig.Header = "1. Konfiguration"; // Hier muss noch was geändert werden, dass sich der Tabheader immer der aktuellen Schraube anpasst
-                    //lbl_test.Content = nr;
-                    break;
-
-                case 1:
-                    nr = 1;
-                    tab_konfig.Header = "2. Konfiguration";
-                    //lbl_test.Content = nr;
-                    break;
-
-                case 2:
-                    nr = 2;
-                    tab_konfig.Header = "3. Konfiguration";
-                    //lbl_test.Content = nr;
-                    break;
-
-                case 3:
-                    nr = 3;
-                    tab_konfig.Header = "4. Konfiguration";
-                   // lbl_test.Content = nr;
-                    break;
-
-                case 4:
-                    nr = 4;
-                    tab_konfig.Header = "5. Konfiguration";
-                    //lbl_test.Content = nr;
-                    break;
-
-            }
-                
-        }
-
-        private void new_screw_Click(object sender, RoutedEventArgs e)
-        {
-            
-            
-
-
-            //if (schraubenlenge < gewindelenge)
-            //{
-            //    gewindelengetextbox.Background = Brushes.Red;           wenn die Gewindelänge nicht zur Schraubenlänge passt, wird die Gewindelängetextbox rot
-            //                                     Orangered geht auch
-            //
-            //
-            //
-            //}
-
-
-
-
-
-            //new_screw.Content = (new_screw_int+1)+ ". Schraube erstellen";
-
-            switch (new_screw_int)
-                {
-                    case 1:
-                        
-                        screw2.Visibility = Visibility.Visible;
-                        cmb_nr.SelectedItem = screw2;
-                        new_screw_int++;
-                    tab_konfig.Header = "2. Konfiguration";
-
-
-
-                    break;
-
-                    case 2:
-                        screw3.Visibility = Visibility.Visible;
-                        cmb_nr.SelectedItem = screw3;
-                        new_screw_int++;
-                    
-                    tab_konfig.Header = "3. Konfiguration";
-
-                    break;
-
-                    case 3:
-                        screw4.Visibility = Visibility.Visible;
-                        cmb_nr.SelectedItem = screw4;
-                        new_screw_int++;
-                    
-                    tab_konfig.Header = "4. Konfiguration";
-                    new_screw.Content = "letzte Schraube erstellen";
-                    break;
-
-                    case 4:
-                        screw5.Visibility = Visibility.Visible;
-                        cmb_nr.SelectedItem = screw5;
-                    
-                    new_screw_int++;
-                
-                    tab_konfig.Header = "5. Konfiguration";
-                    new_screw.Visibility = Visibility.Collapsed;
-                    break;
-
-                    
-                
-     
-
-                }
-         
-        }
-
-
-        #endregion
-
-        #region bla
-
-        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Materialtxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Festtxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Kopftxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Gewindetxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Typtxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Laengetxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void mengetxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void check1_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void check2_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void check3_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void check4_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void check5_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        #endregion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -411,13 +192,6 @@ public partial class MainWindow : Window
                 menge1txt.Text = feld[0].menge.ToString();
                 gew1txt.Text = feld[0].masse.ToString();
                 preis1txt.Text = feld[0].preis_summe.ToString();
-
-               /* TextBox txt = new TextBox();
-                txt.TextWrapping = TextWrapping.Wrap;
-                txt.Text = "fdsafdsa";
-                txt.Margin = new Thickness(10, 64, 0, 0);
-                grid2.Children.Add(txt);
-               */
             }
             else if(check1.IsChecked == false)
             {
@@ -503,8 +277,7 @@ public partial class MainWindow : Window
             double z5 = Convert.ToDouble(preis5txt.Text);
 
             if (double.TryParse(preis1txt.Text, out z1) && double.TryParse(preis2txt.Text, out z2) && double.TryParse(preis3txt.Text, out z3) && double.TryParse(preis4txt.Text, out z4) && double.TryParse(preis5txt.Text, out z5))
-                summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();
-      
+                summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();     
         }
 
         private void btnexcel_Click(object sender, RoutedEventArgs e)
@@ -515,5 +288,5 @@ public partial class MainWindow : Window
             }
         }
     }
-    }
+}
 
