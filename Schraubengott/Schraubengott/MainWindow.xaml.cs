@@ -261,6 +261,8 @@ public partial class MainWindow : Window
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            tab_2.Visibility = Visibility.Visible;
+
             if (check1.IsChecked == true)
             {
                 menge1txt.Text = feld[0].menge.ToString();
