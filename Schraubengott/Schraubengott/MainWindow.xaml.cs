@@ -175,8 +175,8 @@ public partial class MainWindow : Window
 
 
             //Berechnungen für die ausgewählte Schraube
-            feld[nr].dichte_festlegen();
-            feld[nr].vol_berechnen();
+            
+            feld[nr].berechnen();
 
 
             MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
