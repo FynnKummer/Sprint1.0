@@ -189,14 +189,6 @@ public partial class MainWindow : Window
                 cbmat.SelectedItem = feld[nr].material;
             }
 
-
-
-
-
-
-
-
-
         }
 
         private void new_screw_Click(object sender, RoutedEventArgs e)
