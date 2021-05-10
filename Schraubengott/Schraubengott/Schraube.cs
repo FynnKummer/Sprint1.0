@@ -190,8 +190,7 @@ namespace Schraubengott
             }
         }
 
-    }
-      public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
+        public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
       {
       // Variablen festlegen
       double preis = 0;
@@ -273,8 +272,9 @@ namespace Schraubengott
       //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
       //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
       //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
-  }
-
+        }
+    }
+      
 
   }
 
@@ -451,9 +451,9 @@ namespace Schraubengott
 
             Console.WriteLine("Fertig");
             Console.ReadKey();
-
-        }
 */
+        }
+
     }
 
 
