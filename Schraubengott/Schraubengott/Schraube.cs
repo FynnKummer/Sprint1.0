@@ -271,18 +271,7 @@ namespace Schraubengott
       this.nettopreis_Summe = Nettobestellpreis;
       this.nettoeinzelpreis = nettoeinzelpreis;
 
-      // Ausgabe der Preise            
-      //string summenenstring = "Summe (" + this.menge + "Stück):";
-
-      //Console.WriteLine(" Preise:");
-      //Console.WriteLine();
-      //Console.WriteLine("  Nettopreise                                  Preise inkl. Mehrwertsteuer");
-      //Console.WriteLine();
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
+      
         }
 
 
