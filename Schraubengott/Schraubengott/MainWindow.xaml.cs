@@ -164,8 +164,8 @@ public partial class MainWindow : Window
             mengetxt.Text = ("Menge" + "\n\n\n" + feld[0].menge + "\n\n\n" + feld[1].menge + "\n\n\n" + feld[2].menge + "\n\n\n" + feld[3].menge + "\n\n\n" + feld[4].menge);
 
             //Berechnungen für die ausgewählte Schraube
-            feld[nr].dichte_festlegen();
-            feld[nr].vol_berechnen();
+            
+            feld[nr].berechnen();
 
             MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
         }
