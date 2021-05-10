@@ -117,7 +117,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="tab_2" Header="Warenkorb" Visibility="Visible">
+            <TabItem x:Name="tab_2" Header="Warenkorb" Visibility="Collapsed">
                 <Grid x:Name="grid2">
                     <Grid.Background>
                         <RadialGradientBrush>
