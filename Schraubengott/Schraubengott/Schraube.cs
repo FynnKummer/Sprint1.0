@@ -23,6 +23,7 @@ namespace Schraubengott
         public string gewinde;
         public double gewindetiefe;  //  belegt 
         public double gewinderundung; //  belegt 
+        
         public double flankendurchmesser; //  belegt 
         public double kerndurchmesser; //  belegt 
         public double flankenwinkel;  //belegt
@@ -32,7 +33,6 @@ namespace Schraubengott
 
 
         public string material;
-        public string mataus;//Material ausgeschrieben
         public double dichte;
         public double masse;
         public double gesamtgewicht;
@@ -41,11 +41,26 @@ namespace Schraubengott
         public double stückpreis; //
         public double nettopreis_Summe;  // belegt
         public double nettoeinzelpreis;  //belegt
-        
-      
-       
+
+
+
+
+
+        #region "Methoden für Berechnungen""
 
         //Berechnungen 
+        public void berechnen()
+        {
+            dichte_festlegen();
+            vol_berechnen();
+            preis_berechnen();
+            gewsteigung_schlbreite_festlegen();
+            geometrie();
+            gewicht_berechnen();
+            festigkeit_berechnen();
+
+
+        }
         public void dichte_festlegen()
         {
             if (this.material.Equals("Verzinkter Stahl"))
@@ -260,22 +275,184 @@ namespace Schraubengott
       this.nettopreis_Summe = Nettobestellpreis;
       this.nettoeinzelpreis = nettoeinzelpreis;
 
-      // Ausgabe der Preise            
-      //string summenenstring = "Summe (" + this.menge + "Stück):";
-
-      //Console.WriteLine(" Preise:");
-      //Console.WriteLine();
-      //Console.WriteLine("  Nettopreise                                  Preise inkl. Mehrwertsteuer");
-      //Console.WriteLine();
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
-      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
-        }
-    }
       
-  }
+        }
+
+
+        public void gewsteigung_schlbreite_festlegen()
+        {
+            String[] feld = this.gewinde.Split('M');
+            int d = Int32.Parse(feld[1]);
+
+            //Gewindesteigung + Schlüsselbreite
+            if (gewindeart.Equals("Standartgewinde"))
+            {
+                switch (this.gewinde)
+                {
+                    case "M4":
+                        this.gewindesteigung = 0.7;
+                        this.schluesselbreite = 7;
+                        break;
+
+                    case "M5":
+                        this.gewindesteigung = 0.8;
+                        this.schluesselbreite = 8;
+                        break;
+
+                    case "M6":
+                        this.gewindesteigung = 1;
+                        this.schluesselbreite = 10;
+                        break;
+
+                    case "M8":
+                        this.gewindesteigung = 1.25;
+                        this.schluesselbreite = 13;
+                        break;
+
+                    case "M10":
+                        this.gewindesteigung = 1.5;
+                        this.schluesselbreite = 17;
+                        break;
+
+                    case "M12":
+                        this.gewindesteigung = 1.75;
+                        this.schluesselbreite = 19;
+                        break;
+
+                    case "M16":
+                        this.gewindesteigung = 2;
+                        this.schluesselbreite = 24;
+                        break;
+
+                    case "M20":
+                        this.gewindesteigung = 2.5;
+                        this.schluesselbreite = 30;
+                        break;
+                }
+            }
+            if (this.gewindeart.Equals("Fenigewinde"))//Die if Schleife wird zu spät beendet
+            {
+                switch (this.gewinde)
+                {
+                    case "M4":
+                        this.gewindesteigung = 0.5;
+                        break;
+
+                    case "M5":
+                        this.gewindesteigung = 0.5;
+                        break;
+
+                    case "M6":
+                        this.gewindesteigung = 0.75;
+                        break;
+
+                    case "M8":
+                        this.gewindesteigung = 0.75;
+
+                        break;
+
+                    case "M10":
+                        this.gewindesteigung = 1;
+                        break;
+
+                    case "M12":
+                        this.gewindesteigung = 1.25;
+                        break;
+
+                    case "M16":
+                        this.gewindesteigung = 1.5;
+                        break;
+
+                    case "M20":
+                        this.gewindesteigung = 1.5;
+                        break;
+                }
+            }
+        }
+
+        public void geometrie()
+        {
+            double h3, r, d2, d3, flankenwikel;
+            String[] feld = this.gewinde.Split('M');
+            int d = Int32.Parse(feld[1]);
+            // Rechnungen   
+            h3 = 0.6134 * this.gewindesteigung;    // Gewindetiefe 
+            r = 0.1443 * this.gewindesteigung; // Rundung
+            d2 = d - 0.64595 * this.gewindesteigung;   //Flankendurchmesser 
+            d3 = d - 1.2269;    //Kerndurchmesser 
+            flankenwikel = 60;  //Flankenwinkel 
+
+            // Speichern in Schraube 
+
+            this.gewindetiefe = h3;
+            this.gewinderundung = r;
+            this.flankendurchmesser = d2;
+            this.kerndurchmesser = d3;
+            this.flankenwinkel = flankenwikel;
+        }
+
+        public void gewicht_berechnen()
+        {
+            
+            this.masse = this.volumen * this.dichte;
+            this.gesamtgewicht = this.masse * this.menge;
+        }
+
+        public void festigkeit_berechnen()
+        {
+            double Rm = 0;
+            double Re = 0;
+
+            switch (this.festigkeit)
+            {
+                case "5.8":
+                    Rm = 500;
+                    Re = 400;
+                    break;
+                case "6.8":
+                    Rm = 600;
+                    Re = 480;
+                    break;
+                case "8.8":
+                    Rm = 800;
+                    Re = 640;
+                    break;
+                case "9.8":
+                    Rm = 900;
+                    Re = 720;
+                    break;
+                case "10.9":
+                    Rm = 1000;
+                    Re = 900;
+                    break;
+                case "12.9":
+                    Rm = 1200;
+                    Re = 1080;
+                    break;
+                case "1":     //v4a 50er Festigkeitsklasse
+                    Rm = 500;
+                    Re = 210;
+                    break;
+                case "2":    //v2a 70er Festigkeitsklasse
+                    Rm = 700;
+                    Re = 450;
+                    break;
+                case "3":     //v4a 50er Festigkeitsklasse
+                    Rm = 500;
+                    Re = 210;
+                    break;
+            }
+            this.elastizitätsgrenze = Re;
+            this.Zugfestigkeit = Rm;
+        }
+
+
+        #endregion
+
+
+    }
+
+}
 
 
 
