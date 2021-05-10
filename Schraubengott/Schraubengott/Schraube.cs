@@ -15,7 +15,7 @@ namespace Schraubengott
         public int schluesselbreite;
         public string typ; //Innensechskant/Ausßensechskant
         public string festigkeit;
-        public string festaus;//Festigkeitsklasse ausgeschrieben
+        
 
         public string gewindeart;
         public int gewindelaenge;
