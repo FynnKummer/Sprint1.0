@@ -23,7 +23,7 @@ namespace Schraubengott
         public string gewinde;
         public double gewindetiefe;  //  belegt 
         public double gewinderundung; //  belegt 
-        
+
         public double flankendurchmesser; //  belegt 
         public double kerndurchmesser; //  belegt 
         public double flankenwinkel;  //belegt
@@ -42,7 +42,7 @@ namespace Schraubengott
         public double nettopreis_Summe;  // belegt
         public double nettoeinzelpreis;  //belegt
 
-        public string bemerkung; 
+        public string bemerkung;
 
 
 
@@ -208,77 +208,77 @@ namespace Schraubengott
         }
 
         public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
-      {
-      // Variablen festlegen
-      double preis = 0;
-      double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis, massekilo;
+        {
+            // Variablen festlegen
+            double preis = 0;
+            double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis, massekilo;
 
-      // Aufpreise festlegen
-      const double aufpreis_Innensechskannt = 0.21;
-      const double aufpreis_Teilgewinde = 0.16;
-      const double aufpreis_Feingewinde = 0.27;
-      const double kilopreis_verzinkt = 12.12;
-      const double kilopreis_V2A = 26.78;
-      const double kilopreis_V4A = 35.56;
-      const double mws = 1.19;
+            // Aufpreise festlegen
+            const double aufpreis_Innensechskannt = 0.21;
+            const double aufpreis_Teilgewinde = 0.16;
+            const double aufpreis_Feingewinde = 0.27;
+            const double kilopreis_verzinkt = 12.12;
+            const double kilopreis_V2A = 26.78;
+            const double kilopreis_V4A = 35.56;
+            const double mws = 1.19;
 
-      //Grundpreis nach Material
-      if (this.material.Equals("1"))
-      {                                           // Verzinkte Schraube 
-          preis = kilopreis_verzinkt;
-      }
-      else if (this.material.Equals("2")) //hier fehlt die Bedingung
-      {
-          preis = kilopreis_V2A;                     // Edelstahlschraube 
-      }
-      else
-      {
-          preis = kilopreis_V4A;
-      }
+            //Grundpreis nach Material
+            if (this.material.Equals("1"))
+            {                                           // Verzinkte Schraube 
+                preis = kilopreis_verzinkt;
+            }
+            else if (this.material.Equals("V2A")) //hier fehlt die Bedingung
+            {
+                preis = kilopreis_V2A;                     // Edelstahlschraube 
+            }
+            else
+            {
+                preis = kilopreis_V4A;
+            }
 
-      // Aufpreise 
-      // Teilgewindelänge 
-      if (this.gewindelaenge != this.laenge)
-      {
-          preis = preis + aufpreis_Teilgewinde;
-      }
+            // Aufpreise 
+            // Teilgewindelänge 
+            if (this.gewindelaenge != this.laenge)
+            {
+                preis = preis + aufpreis_Teilgewinde;
+            }
 
-      // Innensechskant
-      if (this.typ.Equals("I", StringComparison.InvariantCultureIgnoreCase))
-      {
-          preis = preis + aufpreis_Innensechskannt;
-      }
+            // Innensechskant
+            if (this.typ.Equals("I", StringComparison.InvariantCultureIgnoreCase))
+            {
+                preis = preis + aufpreis_Innensechskannt;
+            }
 
-      // Feingewinde 
-      if (this.gewindeart.Equals("F", StringComparison.InvariantCultureIgnoreCase))
-      {
-          preis = preis + aufpreis_Feingewinde;
-      }
+            // Feingewinde 
+            if (this.gewindeart.Equals("F", StringComparison.InvariantCultureIgnoreCase))
+            {
+                preis = preis + aufpreis_Feingewinde;
+            }
 
-      // Preisvarianten berechnen            
-      massekilo = 0.001 * masse;
+            // Preisvarianten berechnen            
+            massekilo = 0.001 * masse;
 
-      nettokilopreis = preis;
-      nettoeinzelpreis = nettokilopreis * massekilo;
-      netto50 = 50 * nettoeinzelpreis;
-      netto100 = 100 * nettoeinzelpreis;
-      Nettobestellpreis = menge * nettoeinzelpreis;
+            nettokilopreis = preis;
+            nettoeinzelpreis = nettokilopreis * massekilo;
+            netto50 = 50 * nettoeinzelpreis;
+            netto100 = 100 * nettoeinzelpreis;
+            Nettobestellpreis = menge * nettoeinzelpreis;
 
-      einzelpreis = nettoeinzelpreis * mws;
-      kilopreis = nettokilopreis * mws;
-      preis50 = netto50 * mws;
-      preis100 = netto100 * mws;
-      Bestellpreis = einzelpreis * menge;
+            einzelpreis = nettoeinzelpreis * mws;
+            kilopreis = nettokilopreis * mws;
+            preis50 = netto50 * mws;
+            preis100 = netto100 * mws;
+            Bestellpreis = einzelpreis * menge;
 
-      // Objekt 
+            // Objekt 
 
-      this.preis_summe = Bestellpreis;
-      this.stückpreis = einzelpreis;
-      this.nettopreis_Summe = Nettobestellpreis;
-      this.nettoeinzelpreis = nettoeinzelpreis;
-
-      
+            this.preis_summe = Bestellpreis;
+            this.stückpreis = einzelpreis;
+            this.nettopreis_Summe = Nettobestellpreis;
+            this.nettoeinzelpreis = nettoeinzelpreis;
         }
+
+
 
 
         public void gewsteigung_schlbreite_festlegen()
@@ -371,7 +371,6 @@ namespace Schraubengott
                 }
             }
         }
-
         public void geometrie()
         {
             double h3, r, d2, d3, flankenwikel;
@@ -395,7 +394,7 @@ namespace Schraubengott
 
         public void gewicht_berechnen()
         {
-            
+
             this.masse = this.volumen * this.dichte;
             this.gesamtgewicht = this.masse * this.menge;
         }
@@ -451,10 +450,12 @@ namespace Schraubengott
 
         #endregion
 
-
     }
-
 }
+ 
+
+
+
 
 
 
