@@ -462,7 +462,7 @@ public partial class MainWindow : Window
 
                 summe = summe + arr[i].nettopreis_Summe;
 
-                mySheet.Cells[1, i + 2] = "Schraube" + i
+                mySheet.Cells[1, i + 2] = "Schraube" + i;
                 mySheet.Cells[1, i + 2] = arr[i].name;
                 mySheet.Cells[2, i + 2] = arr[i].menge;
                 mySheet.Cells[4, i + 2] = arr[i].laenge + " mm";
