@@ -155,6 +155,7 @@ public partial class MainWindow : Window
                 MessageBox.Show("Es wurde keine Eingabe für die Menge gemacht.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
             feld[nr].menge = Convert.ToInt32(txt_menge.Text.ToString());
             feld[nr].typ = cbkopf.SelectedValue.ToString();
             feld[nr].gewinde = cbgewinde.SelectedValue.ToString();
