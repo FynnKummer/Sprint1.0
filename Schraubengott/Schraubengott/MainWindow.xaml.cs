@@ -378,89 +378,27 @@ public partial class MainWindow : Window
 
         private void check1_Checked(object sender, RoutedEventArgs e)
         {
-            if (check1.IsChecked == true )
-            {
-               // menge1txt.Text = feld[1].menge;
-                //gew1txt.Text = feld[1].masse;
-                //preis1txt.Text = feld[1].preis_summe;
 
-                TextBox txt = new TextBox();
-                txt.Name = "txtt";
-                txt.TextWrapping = TextWrapping.Wrap;
-                txt.Text = "fdsafdsa";
-                txt.Margin = new Thickness(10, 64, 0, 0);
-
-            }
-            else
-            {
-                menge1txt.Text = "--";
-                gew1txt.Text = "--";
-                preis1txt.Text = "--";
-            }
         }
 
         private void check2_Checked(object sender, RoutedEventArgs e)
         {
-            if (check2.IsChecked == true)
-            {
-              //  menge2txt.Text = feld[2].menge;
-               // gew2txt.Text = feld[2].masse;
-               // preis2txt.Text = feld[2].preis_summe;
-            }
-            else
-            {
-                menge2txt.Text = "--";
-                gew2txt.Text = "--";
-                preis2txt.Text = "--";
-            }
+
         }
 
         private void check3_Checked(object sender, RoutedEventArgs e)
         {
-            if (check3.IsChecked == true)
-            {
-              //  menge3txt.Text = feld[3].menge;
-              //  gew3txt.Text = feld[3].masse;
-              //  preis3txt.Text = feld[3].preis_summe;
-            }
-            else
-            {
-              //  menge3txt.Text = "--";
-               // gew3txt.Text = "--";
-              //  preis3txt.Text = "--";
-            }
+
         }
 
         private void check4_Checked(object sender, RoutedEventArgs e)
         {
-            if (check4.IsChecked == true)
-            {
-             //   menge4txt.Text = feld[4].menge;
-              //  gew4txt.Text = feld[4].masse;
-              //  preis4txt.Text = feld[4].preis_summe;
-            }
-            else
-            {
-                menge4txt.Text = "--";
-                gew4txt.Text = "--";
-                preis4txt.Text = "--";
-            }
+
         }
 
         private void check5_Checked(object sender, RoutedEventArgs e)
         {
-            if (check5.IsChecked == true)
-            {
-               // menge5txt.Text = feld[5].menge;
-               // gew5txt.Text = feld[5].masse;
-               // preis5txt.Text = feld[5].preis_summe;
-            }
-            else
-            {
-                menge5txt.Text = "--";
-                gew5txt.Text = "--";
-                preis5txt.Text = "--";
-            }
+
         }
 
 
@@ -567,6 +505,14 @@ public partial class MainWindow : Window
             if (Int32.TryParse(preis1txt.Text, out z1) && Int32.TryParse(preis2txt.Text, out z2) && Int32.TryParse(preis3txt.Text, out z3) && Int32.TryParse(preis4txt.Text, out z4) && Int32.TryParse(preis5txt.Text, out z5))
                 summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();
       */
+        }
+
+        private void btnexcel_Click(object sender, RoutedEventArgs e)
+        {
+            ExcelControll. Excel_erstellen(Schraube[] arr)
+            {
+                new ExcelControll(arr);
+            }
         }
     }
     }
