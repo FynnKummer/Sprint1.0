@@ -179,6 +179,117 @@ public partial class MainWindow : Window
             MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
+        {
+
+            switch (cmb_nr.SelectedIndex)
+            {
+
+                case 0:
+                    nr = 0;
+
+                    tab_konfig.Header = "1. Konfiguration"; // Hier muss noch was geändert werden, dass sich der Tabheader immer der aktuellen Schraube anpasst
+                    //lbl_test.Content = nr;
+                    break;
+
+                case 1:
+                    nr = 1;
+                    tab_konfig.Header = "2. Konfiguration";
+                    //lbl_test.Content = nr;
+                    break;
+
+                case 2:
+                    nr = 2;
+                    tab_konfig.Header = "3. Konfiguration";
+                    //lbl_test.Content = nr;
+                    break;
+
+                case 3:
+                    nr = 3;
+                    tab_konfig.Header = "4. Konfiguration";
+                    // lbl_test.Content = nr;
+                    break;
+
+                case 4:
+                    nr = 4;
+                    tab_konfig.Header = "5. Konfiguration";
+                    //lbl_test.Content = nr;
+                    break;
+
+            }
+
+        }
+
+        private void new_screw_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+
+            //if (schraubenlenge < gewindelenge)
+            //{
+            //    gewindelengetextbox.Background = Brushes.Red;           wenn die Gewindelänge nicht zur Schraubenlänge passt, wird die Gewindelängetextbox rot
+            //                                     Orangered geht auch
+            //
+            //
+            //
+            //}
+
+
+
+
+
+            //new_screw.Content = (new_screw_int+1)+ ". Schraube erstellen";
+
+            switch (new_screw_int)
+            {
+                case 1:
+
+                    screw2.Visibility = Visibility.Visible;
+                    cmb_nr.SelectedItem = screw2;
+                    new_screw_int++;
+                    tab_konfig.Header = "2. Konfiguration";
+
+
+
+                    break;
+
+                case 2:
+                    screw3.Visibility = Visibility.Visible;
+                    cmb_nr.SelectedItem = screw3;
+                    new_screw_int++;
+
+                    tab_konfig.Header = "3. Konfiguration";
+
+                    break;
+
+                case 3:
+                    screw4.Visibility = Visibility.Visible;
+                    cmb_nr.SelectedItem = screw4;
+                    new_screw_int++;
+
+                    tab_konfig.Header = "4. Konfiguration";
+                    new_screw.Content = "letzte Schraube erstellen";
+                    break;
+
+                case 4:
+                    screw5.Visibility = Visibility.Visible;
+                    cmb_nr.SelectedItem = screw5;
+
+                    new_screw_int++;
+
+                    tab_konfig.Header = "5. Konfiguration";
+                    new_screw.Visibility = Visibility.Collapsed;
+                    break;
+
+
+
+
+
+            }
+
+        }
+
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Grafik der Schraube ändern, abhängig von dem Schraubenkopf

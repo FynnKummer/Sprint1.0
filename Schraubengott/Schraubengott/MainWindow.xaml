@@ -53,10 +53,10 @@
 
                             </ComboBox>
                             <ComboBox Name="cbfk" IsEditable="true" SelectedValuePath="Content"
-                         IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="135,85,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="cbfk_SelectionChanged" MaxDropDownHeight="60"  />
+                         IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="135,85,0,0" VerticalAlignment="Top" Width="140" MaxDropDownHeight="60"  />
                             <CheckBox x:Name="gewartcheck" Content="Feingewinde" HorizontalAlignment="Left" Margin="188,226,0,0" VerticalAlignment="Top" Height="16" Width="87" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
                             <ComboBox x:Name="cbgewinde" IsEditable="true" SelectedValuePath="Content"
-                                IsReadOnly="true" HorizontalAlignment="Left" Margin="135,185,0,0" VerticalAlignment="Top" Width="140" Height="26" SelectionChanged="cbgewinde_SelectionChanged" MaxDropDownHeight="60">
+                                IsReadOnly="true" HorizontalAlignment="Left" Margin="135,185,0,0" VerticalAlignment="Top" Width="140" Height="26" MaxDropDownHeight="60">
                                 <ComboBoxItem Content="M4" HorizontalAlignment="Left" Width="118"/>
                                 <ComboBoxItem Content="M5" HorizontalAlignment="Left" Width="118"/>
                                 <ComboBoxItem Content="M6" HorizontalAlignment="Left" Width="118"/>
@@ -109,26 +109,26 @@
 
                         </RadialGradientBrush>
                     </Grid.Background>
-                    <TextBox x:Name="Schraubetxt"  HorizontalAlignment="Left" Height="383" Margin="0,10,0,0" TextWrapping="Wrap" Text="Schraube&#xA;&#xD;&#xA;&#xA;Schraube 1&#xA;&#xA;Schraube 2&#xA;&#xA;Schraube 3&#xA;&#xA;Schraube 4&#xA;&#xA;Schraube 5" VerticalAlignment="Top" Width="75" FontSize="16" TextChanged="TextBox_TextChanged_2" IsReadOnly="True"/>
-                    <TextBox x:Name="Materialtxt" HorizontalAlignment="Left" Height="383" Margin="75,10,0,0" TextWrapping="Wrap" Text="Material" VerticalAlignment="Top" Width="127" FontSize="16" IsReadOnly="True" TextChanged="Materialtxt_TextChanged"/>
-                    <TextBox x:Name="Festtxt" HorizontalAlignment="Left" Height="383" Margin="202,10,0,0" TextWrapping="Wrap" Text="Festigkeit" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True" TextChanged="Festtxt_TextChanged"/>
-                    <TextBox x:Name="Kopftxt" HorizontalAlignment="Left" Height="383" Margin="277,10,0,0" TextWrapping="Wrap" Text="Kopf" VerticalAlignment="Top" Width="147" FontSize="16" IsReadOnly="True" TextChanged="Kopftxt_TextChanged"/>
-                    <TextBox x:Name="Gewindetxt" HorizontalAlignment="Left" Height="383" Margin="424,10,0,0" TextWrapping="Wrap" Text="Gewinde" VerticalAlignment="Top" Width="51" FontSize="16" IsReadOnly="True" TextChanged="Gewindetxt_TextChanged"/>
-                    <TextBox x:Name="Typtxt" HorizontalAlignment="Left" Height="383" Margin="475,10,0,0" TextWrapping="Wrap" Text="Typ" VerticalAlignment="Top" Width="142" FontSize="16" IsReadOnly="True" TextChanged="Typtxt_TextChanged"/>
-                    <TextBox x:Name="Laengetxt" HorizontalAlignment="Left" Height="383" Margin="617,10,0,0" TextWrapping="Wrap" Text="Länge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" TextChanged="Laengetxt_TextChanged"/>
-                    <TextBox x:Name="gewlentxt" HorizontalAlignment="Left" Height="383" Margin="673,10,0,0" TextWrapping="Wrap" Text="Gewindelänge" VerticalAlignment="Top" Width="69" FontSize="16" TextChanged="TextBox_TextChanged_1" IsReadOnly="True"/>
-                    <TextBox x:Name="mengetxt" HorizontalAlignment="Left" Height="383" Margin="742,10,0,0" TextWrapping="Wrap" Text="Menge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" TextChanged="mengetxt_TextChanged"/>
+                    <TextBox x:Name="Schraubetxt"  HorizontalAlignment="Left" Height="383" Margin="0,10,0,0" TextWrapping="Wrap" Text="Schraube&#xA;&#xD;&#xA;&#xA;Schraube 1&#xA;&#xA;Schraube 2&#xA;&#xA;Schraube 3&#xA;&#xA;Schraube 4&#xA;&#xA;Schraube 5" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True"/>
+                    <TextBox x:Name="Materialtxt" HorizontalAlignment="Left" Height="383" Margin="75,10,0,0" TextWrapping="Wrap" Text="Material" VerticalAlignment="Top" Width="127" FontSize="16" IsReadOnly="True" />
+                    <TextBox x:Name="Festtxt" HorizontalAlignment="Left" Height="383" Margin="202,10,0,0" TextWrapping="Wrap" Text="Festigkeit" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True" />
+                    <TextBox x:Name="Kopftxt" HorizontalAlignment="Left" Height="383" Margin="277,10,0,0" TextWrapping="Wrap" Text="Kopf" VerticalAlignment="Top" Width="147" FontSize="16" IsReadOnly="True" />
+                    <TextBox x:Name="Gewindetxt" HorizontalAlignment="Left" Height="383" Margin="424,10,0,0" TextWrapping="Wrap" Text="Gewinde" VerticalAlignment="Top" Width="51" FontSize="16" IsReadOnly="True" />
+                    <TextBox x:Name="Typtxt" HorizontalAlignment="Left" Height="383" Margin="475,10,0,0" TextWrapping="Wrap" Text="Typ" VerticalAlignment="Top" Width="142" FontSize="16" IsReadOnly="True" />
+                    <TextBox x:Name="Laengetxt" HorizontalAlignment="Left" Height="383" Margin="617,10,0,0" TextWrapping="Wrap" Text="Länge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" />
+                    <TextBox x:Name="gewlentxt" HorizontalAlignment="Left" Height="383" Margin="673,10,0,0" TextWrapping="Wrap" Text="Gewindelänge" VerticalAlignment="Top" Width="69" FontSize="16"  IsReadOnly="True"/>
+                    <TextBox x:Name="mengetxt" HorizontalAlignment="Left" Height="383" Margin="742,10,0,0" TextWrapping="Wrap" Text="Menge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" />
                     <Separator HorizontalAlignment="Left" Height="100" Margin="0,90,0,0" VerticalAlignment="Top" Width="798"/>
                     <Separator HorizontalAlignment="Left" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="798"/>
                     <Separator HorizontalAlignment="Left" Height="100" Margin="0,153,0,0" VerticalAlignment="Top" Width="798"/>
                     <Separator HorizontalAlignment="Left" Height="100" Margin="0,216,0,0" VerticalAlignment="Top" Width="798"/>
                     <Separator HorizontalAlignment="Left" Height="100" Margin="0,280,0,0" VerticalAlignment="Top" Width="798"/>
-                    <CheckBox x:Name="check1" Content="" HorizontalAlignment="Left" Margin="26,99,0,0" VerticalAlignment="Top" Checked="check1_Checked"/>
-                    <CheckBox x:Name="check2" Content="" HorizontalAlignment="Left" Margin="26,165,0,0" VerticalAlignment="Top" Checked="check2_Checked"/>
-                    <CheckBox x:Name="check3" Content="" HorizontalAlignment="Left" Margin="26,226,0,0" VerticalAlignment="Top" Checked="check3_Checked"/>
-                    <CheckBox x:Name="check4" Content="" HorizontalAlignment="Left" Margin="26,291,0,0" VerticalAlignment="Top" Checked="check4_Checked"/>
-                    <CheckBox x:Name="check5" Content="" HorizontalAlignment="Left" Margin="26,356,0,0" VerticalAlignment="Top" Checked="check5_Checked"/>
-                    <Button Content="zum Warenkorb" HorizontalAlignment="Left" Height="23" Margin="817,357,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click"  />
+                    <CheckBox x:Name="check1" Content="" HorizontalAlignment="Left" Margin="26,99,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="check2" Content="" HorizontalAlignment="Left" Margin="26,165,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="check3" Content="" HorizontalAlignment="Left" Margin="26,226,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="check4" Content="" HorizontalAlignment="Left" Margin="26,291,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="check5" Content="" HorizontalAlignment="Left" Margin="26,356,0,0" VerticalAlignment="Top"/>
+                    <Button Content="zum Warenkorb" HorizontalAlignment="Left" Height="23" Margin="817,357,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click"/>
 
 
 
