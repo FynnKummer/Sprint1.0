@@ -137,8 +137,6 @@ public partial class MainWindow : Window
                 MessageBox.Show("Für die Festigkeitsklasse liegt keine Auswahl vor.", "Fehldend Auswahl", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
-
             #endregion
 
             if (gewartcheck.IsChecked== true)
@@ -174,8 +172,7 @@ public partial class MainWindow : Window
             gewlentxt.Text = ("Gewindelänge" + "\n\n" + feld[0].gewindelaenge + "\n\n\n" + feld[1].gewindelaenge + "\n\n\n" + feld[2].gewindelaenge + "\n\n\n" + feld[3].gewindelaenge + "\n\n\n" + feld[4].gewindelaenge);
             mengetxt.Text = ("Menge" + "\n\n\n" + feld[0].menge + "\n\n\n" + feld[1].menge + "\n\n\n" + feld[2].menge + "\n\n\n" + feld[3].menge + "\n\n\n" + feld[4].menge);
 
-            //Berechnungen für die ausgewählte Schraube
-            
+            //Berechnungen für die ausgewählte Schraube           
             feld[nr].berechnen();
 
             MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -183,12 +180,10 @@ public partial class MainWindow : Window
 
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
-
             switch (cmb_nr.SelectedIndex)
             {
                 case 0:
-                    nr = 0;
-                   
+                    nr = 0;                  
                     break;
                
                 case 1:
@@ -207,9 +202,6 @@ public partial class MainWindow : Window
                     nr = 4;
                     break;
             }
-
-
-
             //if (feld[nr].material != "")
             //{
             //    //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
@@ -225,32 +217,26 @@ public partial class MainWindow : Window
                 case 1:
                     screw2.Visibility = Visibility.Visible;
                     cmb_nr.SelectedItem = screw2;
-                    new_screw_int++;
-                    
+                    new_screw_int++;                  
                     break;
 
                 case 2:
                     screw3.Visibility = Visibility.Visible;
                     cmb_nr.SelectedItem = screw3;
-                    new_screw_int++;
-                   
+                    new_screw_int++;                  
                     break;
 
                 case 3:
                     screw4.Visibility = Visibility.Visible;
                     cmb_nr.SelectedItem = screw4;
-                    new_screw_int++;
-
-                    
+                    new_screw_int++;                  
                     new_screw.Content = "letzte Schraube erstellen";
                     break;
 
                 case 4:
                     screw5.Visibility = Visibility.Visible;
                     cmb_nr.SelectedItem = screw5;
-
                     new_screw_int++;
-
                     tab_konfig.Header = "5. Konfiguration";
                     new_screw.Visibility = Visibility.Collapsed;
                     break;
@@ -274,7 +260,12 @@ public partial class MainWindow : Window
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (check1.IsChecked == true || check2.IsChecked == true || check3.IsChecked == true || check4.IsChecked == true || check5.IsChecked == true)
+            if (check1.IsChecked == true && feld[0].material == null || check2.IsChecked == true && feld[1].material == null || check3.IsChecked == true && feld[2].material == null || check4.IsChecked == true && feld[3].material == null || check5.IsChecked == true && feld[4].material == null)
+            {
+                MessageBox.Show("Die Auswahl ist leer.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;//wenn die ausgewählte schraube leer ist, wird die Methode beendet
+            }          
+            else if (check1.IsChecked == true || check2.IsChecked == true || check3.IsChecked == true || check4.IsChecked == true || check5.IsChecked == true)
             {
                MessageBox.Show("Auswahl wurde dem Warenkorb hinzugefügt.","", MessageBoxButton.OK, MessageBoxImage.Information);
                tab_2.Visibility = Visibility.Visible;
@@ -405,8 +396,20 @@ public partial class MainWindow : Window
 
         private void btnangebot_Click(object sender, RoutedEventArgs e)
         {
+            if (txtkunde.Text == "")
+            {
+                MessageBox.Show("Es wurde keine Kundennummer eingetragen", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; //Methode beenden, wenn keine Kundennummer eingetragen wird
+            }
+            else if (txtkunde.Text.Length != 10)
+            {
+                MessageBox.Show("Die Kundennummer muss aus 10 Zahlen bestehen.", "Falsche Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; //Methode beenden, wenn eine Kundennummer mit weniger als 10 Zeichen eigegeben wird
+            }
+            
             bool senden = true;
             ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer);
+            MessageBox.Show("Angebot wurde erfolgreich abgesendet!", "Bestellt", MessageBoxButton.OK);
         }
 
     }
@@ -465,8 +468,7 @@ public partial class MainWindow : Window
             mySheet.Cells[23, 1] = "";
             mySheet.Cells[24, 1] = "Preis (Brutto)";
             mySheet.Cells[25, 1] = "Summe";
-            mySheet.Cells[26, 1] = "Stückpreis";
-            
+            mySheet.Cells[26, 1] = "Stückpreis";          
             mySheet.Cells[28, 1] = "Bestellsumme"; 
 
             // Listenformat einführen 
@@ -503,9 +505,7 @@ public partial class MainWindow : Window
                 
                 mySheet.Cells[28, i + 2] = Math.Round(summe,2)+"€";
 
-                mySheet.Cells[29, i + 2].AddComment("Test");
-
-                
+                mySheet.Cells[29, i + 2].AddComment("Test");               
             }
 
             // Zellenbreite an Text anpassen 
