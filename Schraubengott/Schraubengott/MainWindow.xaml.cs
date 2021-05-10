@@ -184,11 +184,37 @@ public partial class MainWindow : Window
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
 
-            if (feld[nr].material != "")
+            switch (cmb_nr.SelectedIndex)
             {
-                //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
-                cbmat.SelectedItem = feld[nr].material;
+                case 0:
+                    nr = 0;
+                    test.Content = nr;
+                    break;
+               
+                case 1:
+                    nr = 1;
+                    break;
+                
+                case 2:
+                    nr = 2;
+                    break;
+                
+                case 3:
+                    nr = 3;
+                    break;
+                
+                case 4:
+                    nr = 4;
+                    break;
             }
+
+
+
+            //if (feld[nr].material != "")
+            //{
+            //    //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
+            //    cbmat.SelectedItem = feld[nr].material;
+            //}
 
         }
 
@@ -200,14 +226,14 @@ public partial class MainWindow : Window
                     screw2.Visibility = Visibility.Visible;
                     cmb_nr.SelectedItem = screw2;
                     new_screw_int++;
-                    tab_konfig.Header = "2. Konfiguration";
+                    
                     break;
 
                 case 2:
                     screw3.Visibility = Visibility.Visible;
                     cmb_nr.SelectedItem = screw3;
                     new_screw_int++;
-                    tab_konfig.Header = "3. Konfiguration";
+                   
                     break;
 
                 case 3:
@@ -215,7 +241,7 @@ public partial class MainWindow : Window
                     cmb_nr.SelectedItem = screw4;
                     new_screw_int++;
 
-                    tab_konfig.Header = "4. Konfiguration";
+                    
                     new_screw.Content = "letzte Schraube erstellen";
                     break;
 
