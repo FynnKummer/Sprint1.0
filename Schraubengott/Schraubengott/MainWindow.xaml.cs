@@ -209,9 +209,9 @@ public partial class MainWindow : Window
                 preis1txt.Text = "0";
             }
 
+                 menge2txt.Text = feld[1].menge.ToString();
             if (check2.IsChecked == true)
             {
-                 menge2txt.Text = feld[1].menge.ToString();
                  gew2txt.Text = feld[1].masse.ToString();
                  preis2txt.Text = feld[1].preis_summe.ToString();
             }
