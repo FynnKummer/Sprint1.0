@@ -187,7 +187,7 @@ public partial class MainWindow : Window
             {
                 case 0:
                     nr = 0;
-                    test.Content = nr;
+                   
                     break;
                
                 case 1:
@@ -209,11 +209,11 @@ public partial class MainWindow : Window
 
 
 
-            //if (feld[nr].material != "")
-            //{
-            //    //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
-            //    cbmat.SelectedItem = feld[nr].material;
-            //}
+            if (feld[nr].material != "")
+            {
+                //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
+                cbmat.SelectedValue = feld[nr].material;
+            }
 
         }
 
