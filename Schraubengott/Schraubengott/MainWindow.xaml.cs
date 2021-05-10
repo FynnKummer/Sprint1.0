@@ -305,7 +305,7 @@ public partial class MainWindow : Window
                         new_screw_int++;
                     
                     tab_konfig.Header = "4. Konfiguration";
-                    new_screw.Content = "letzte Schrabue erstelln";
+                    new_screw.Content = "letzte Schraube erstellen";
                     break;
 
                     case 4:
@@ -540,7 +540,7 @@ public partial class MainWindow : Window
                 preis5txt.Text = "--";
             }
 
-      /*      int x1 = int.TryParse(menge1txt.Text);
+      /*    int x1 = int.TryParse(menge1txt.Text);
             int x2 = int.TryParse(menge2txt.Text);
             int x3 = int.TryParse(menge3txt.Text);
             int x4 = int.TryParse(menge4txt.Text);
