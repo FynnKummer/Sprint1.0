@@ -17,8 +17,6 @@ using System.Windows.Shapes;
 using System.Net.Mail;
 using Excel = Microsoft.Office.Interop.Excel;
 
-
-
 namespace Schraubengott
 {
     /// <summary>
@@ -29,8 +27,6 @@ public partial class MainWindow : Window
         Schraube[] feld = new Schraube[5];      //Array vom Typ Schraube erstellen
         int nr = 0;                             //Variable für den Index des Feldes Schraube
         int new_screw_int = 1;                  //Varibale für Neue Schraube Button und Combobox mit Schraubenauswahl
-
-        // hier noch ne Random Nummer erzeugen lassen für ne Bestell und Kudnennummer
 
         Random nummer = new Random();
         int bestellnummer;
@@ -46,10 +42,8 @@ public partial class MainWindow : Window
             InitializeComponent();
             cmb_nr.SelectedIndex = 0;           //Combobox hat von Anfang an die erste Schraube ausgewählt
 
-
             // Bestellnummer 
             bestellnummer = nummer.Next(10000000, 99999999);
-
         }
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
@@ -181,86 +175,51 @@ public partial class MainWindow : Window
 
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
-
             switch (cmb_nr.SelectedIndex)
             {
-
                 case 0:
                     nr = 0;
-
                     tab_konfig.Header = "1. Konfiguration"; // Hier muss noch was geändert werden, dass sich der Tabheader immer der aktuellen Schraube anpasst
-                    //lbl_test.Content = nr;
                     break;
 
                 case 1:
                     nr = 1;
                     tab_konfig.Header = "2. Konfiguration";
-                    //lbl_test.Content = nr;
                     break;
 
                 case 2:
                     nr = 2;
                     tab_konfig.Header = "3. Konfiguration";
-                    //lbl_test.Content = nr;
                     break;
 
                 case 3:
                     nr = 3;
                     tab_konfig.Header = "4. Konfiguration";
-                    // lbl_test.Content = nr;
                     break;
 
                 case 4:
                     nr = 4;
                     tab_konfig.Header = "5. Konfiguration";
-                    //lbl_test.Content = nr;
                     break;
-
             }
-
         }
 
         private void new_screw_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-
-            //if (schraubenlenge < gewindelenge)
-            //{
-            //    gewindelengetextbox.Background = Brushes.Red;           wenn die Gewindelänge nicht zur Schraubenlänge passt, wird die Gewindelängetextbox rot
-            //                                     Orangered geht auch
-            //
-            //
-            //
-            //}
-
-
-
-
-
-            //new_screw.Content = (new_screw_int+1)+ ". Schraube erstellen";
-
             switch (new_screw_int)
             {
                 case 1:
-
                     screw2.Visibility = Visibility.Visible;
                     cmb_nr.SelectedItem = screw2;
                     new_screw_int++;
                     tab_konfig.Header = "2. Konfiguration";
-
-
-
                     break;
 
                 case 2:
                     screw3.Visibility = Visibility.Visible;
                     cmb_nr.SelectedItem = screw3;
                     new_screw_int++;
-
                     tab_konfig.Header = "3. Konfiguration";
-
                     break;
 
                 case 3:
@@ -281,13 +240,7 @@ public partial class MainWindow : Window
                     tab_konfig.Header = "5. Konfiguration";
                     new_screw.Visibility = Visibility.Collapsed;
                     break;
-
-
-
-
-
             }
-
         }
 
         private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -415,8 +368,6 @@ public partial class MainWindow : Window
 
     class ExcelControll
     {
-        
-
         public static void ExelContoll_aufrufen(Schraube[] arr, bool senden, int bestellnummer)
         {
             Excel_erstellen(arr, senden, bestellnummer);
@@ -436,8 +387,7 @@ public partial class MainWindow : Window
             }
            else
             {
-                excelApp.Visible = true;
-                
+                excelApp.Visible = true;               
             }
 
             excelApp.Workbooks.Add();
@@ -445,10 +395,7 @@ public partial class MainWindow : Window
             // Hinzufügen einer Seite? 
             Excel._Worksheet mySheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
-
-
             // Kategorien festlegen
-
             mySheet.Cells[2, 1] = "Techniche Details";
             mySheet.Cells[3, 1] = "Schraubenlänge";
             mySheet.Cells[4, 1] = "Gewindelänge";
@@ -475,12 +422,10 @@ public partial class MainWindow : Window
             mySheet.Cells[25, 1] = "Stückpreis";
             mySheet.Cells[27, 1] = "Menge";
 
-
             // Listenformat einführen 
             mySheet.Range["A1", "E29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
 
             // Werte der Schrauben in Tabelle eingeben 
-
             for (int i = 0; i < arr.Length; i++)
             {
                 mySheet.Cells[1, i + 2] = arr[i].name;
@@ -496,24 +441,15 @@ public partial class MainWindow : Window
                 mySheet.Cells[12, i + 2] = Math.Round(arr[i].flankendurchmesser, 2) + " mm";
                 mySheet.Cells[13, i + 2] = Math.Round(arr[i].kerndurchmesser, 2) + " mm";
                 mySheet.Cells[14, i + 2] = Math.Round(arr[i].flankenwinkel, 2) + "°";
-
                 mySheet.Cells[16, i + 2] = Math.Round(arr[i].elastizitätsgrenze, 2) + " N/mm²";
                 mySheet.Cells[17, i + 2] = Math.Round(arr[i].Zugfestigkeit, 2) + " N/mm²";
-
-
                 mySheet.Cells[20, i + 2] = Math.Round(arr[i].nettopreis_Summe, 2) + "€";
                 mySheet.Cells[21, i + 2] = Math.Round(arr[i].nettoeinzelpreis, 2) + "€";
-
-
                 mySheet.Cells[24, i + 2] = Math.Round(arr[i].preis_summe, 2) + "€";
                 mySheet.Cells[25, i + 2] = Math.Round(arr[i].stückpreis, 2) + "€";
-
                 mySheet.Cells[27, i + 2] = arr[i].menge;
-
                 mySheet.Cells[28, i + 2].AddComment("Anmerkung S " + i);
-
             }
-
 
             // Zellenbreite an Text anpassen 
             for (int i = 1; i < 9; i++)
@@ -521,34 +457,17 @@ public partial class MainWindow : Window
                 mySheet.Columns[i].AutoFit();
             }
 
-
             if (senden == true)
             {
                 mySheet.SaveAs(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
 
-
                 excelApp.Workbooks.Close();
 
                 Emailsenden(bestellnummer);
-            }
-
-        
-
-            //Exel Speichern für Kunden 
-
-            /* string Pfad = @"C:\Desktop\";
-
-             mySheet.SaveAs(Pfad+@"\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
-            */
-
-            // Excel muss noch geschlossen werden 
-
-          
-
-        }
+            }       
+       }
 
         public static void Emailsenden(int bestellnummer)
-
         {
             string text = "Anfrage";
             string betreff = "Anfrage";
@@ -566,7 +485,6 @@ public partial class MainWindow : Window
             Mail.To.Add("hsp.anfragen@gmx.net");
 
             // Betreff
-
             Mail.Subject = betreff;
 
             Mail.Body = text;
@@ -574,7 +492,6 @@ public partial class MainWindow : Window
             Attachment Tabelle = new Attachment(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
 
             Mail.Attachments.Add(Tabelle);
-
 
             // Abseneserver 
             SmtpClient mailClient = new SmtpClient(server);
@@ -585,10 +502,7 @@ public partial class MainWindow : Window
             mailClient.Credentials = new System.Net.NetworkCredential(user, passwort);
 
             mailClient.Send(Mail);
-
-
         }
-
     }
 }
 
