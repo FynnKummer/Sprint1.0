@@ -42,6 +42,8 @@ namespace Schraubengott
         public double nettopreis_Summe;  // belegt
         public double nettoeinzelpreis;  //belegt
 
+        public string bemerkung; 
+
 
 
 
