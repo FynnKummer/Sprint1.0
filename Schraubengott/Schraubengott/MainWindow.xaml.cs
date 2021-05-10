@@ -274,8 +274,17 @@ public partial class MainWindow : Window
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            tab_2.Visibility = Visibility.Visible;
-
+            if (check1.IsChecked == true || check2.IsChecked == true || check3.IsChecked == true || check4.IsChecked == true || check5.IsChecked == true)
+            {
+               MessageBox.Show("Auswahl wurde dem Warenkorb hinzugefügt.","", MessageBoxButton.OK, MessageBoxImage.Information);
+               tab_2.Visibility = Visibility.Visible;
+            }
+            else 
+            {
+                MessageBox.Show("Es ist nichts ausgewählt.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;//wenn keine Checkbox ausgewählt, wird die Methode beendet
+            }
+            
             if (check1.IsChecked == true)
             {
                 menge1txt.Text = feld[0].menge.ToString();

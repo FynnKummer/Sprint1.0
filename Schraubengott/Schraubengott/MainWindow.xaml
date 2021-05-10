@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Schraubengott"
         mc:Ignorable="d"
-        Title="Schraubengott" Height="610.245" Width="1072.583" Icon="Symbol.ico" ResizeMode="CanMinimize">
+        Title="Schraubengott" Height="638.245" Width="1072.583" Icon="Symbol.ico" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"/>
             <ColumnDefinition Width="782*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="btnexit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="904.333,546,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="btnexit_Click" />
+        <Button Name="btnexit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="904.333,555,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="btnexit_Click" />
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="447" Margin="42.333,44,0,0" VerticalAlignment="Top" Width="954">
             <TabItem x:Name="tab_konfig" Header="Konfigurator" Height="22" Margin="-2,-2,-2.5,0" VerticalAlignment="Top">
                 <Grid x:Name="grid0" RenderTransformOrigin="0.426,0.462">
@@ -166,7 +166,8 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Gryffindor IT-Solutions - Fynn Kummer | Jonathan Rietig | Lars Bohling | Malte Klarmann" HorizontalAlignment="Left" Height="29" Margin="0,550,0,0" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
-        
+        <Label Content="Gryffindor IT-Solutions - Fynn Kummer | Jonathan Rietig | Lars Bohling | Malte Klarmann" HorizontalAlignment="Left" Height="29" Margin="10,571,0,0" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="84" Margin="481.333,516,0,0" VerticalAlignment="Top" Width="78" Source="Symbol.ico" RenderTransformOrigin="-0.274,0.063"/>
+
     </Grid>
 </Window>
