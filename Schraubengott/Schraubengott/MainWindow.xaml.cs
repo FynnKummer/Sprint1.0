@@ -421,9 +421,9 @@ public partial class MainWindow : Window
             }
             else if(check1.IsChecked == false)
             {
-                menge1txt.Text = "--";
-                gew1txt.Text = "--";
-                preis1txt.Text = "--";
+                menge1txt.Text = "0";
+                gew1txt.Text = "0";
+                preis1txt.Text = "0";
             }
 
             if (check2.IsChecked == true)
@@ -434,9 +434,9 @@ public partial class MainWindow : Window
             }
             else if (check2.IsChecked == false)
             {
-                menge2txt.Text = "--";
-                gew2txt.Text = "--";
-                preis2txt.Text = "--";
+                menge2txt.Text = "0";
+                gew2txt.Text = "0";
+                preis2txt.Text = "0";
             }
 
             if (check3.IsChecked == true)
@@ -447,9 +447,9 @@ public partial class MainWindow : Window
             }
             else if (check3.IsChecked == false)
             {
-                 menge3txt.Text = "--";
-                 gew3txt.Text = "--";
-                 preis3txt.Text = "--";
+                 menge3txt.Text = "0";
+                 gew3txt.Text = "0";
+                 preis3txt.Text = "0";
             }
 
             if (check4.IsChecked == true)
@@ -460,9 +460,9 @@ public partial class MainWindow : Window
             }
             else if (check4.IsChecked == false)
             {
-                menge4txt.Text = "--";
-                gew4txt.Text = "--";
-                preis4txt.Text = "--";
+                menge4txt.Text = "0";
+                gew4txt.Text = "0";
+                preis4txt.Text = "0";
             }
 
             if (check5.IsChecked == true)
@@ -473,38 +473,38 @@ public partial class MainWindow : Window
             }
             else if (check5.IsChecked == false)
             {
-                menge5txt.Text = "--";
-                gew5txt.Text = "--";
-                preis5txt.Text = "--";
+                menge5txt.Text = "0";
+                gew5txt.Text = "0";
+                preis5txt.Text = "0";
             }
 
-      /*    int x1 = int.TryParse(menge1txt.Text);
-            int x2 = int.TryParse(menge2txt.Text);
-            int x3 = int.TryParse(menge3txt.Text);
-            int x4 = int.TryParse(menge4txt.Text);
-            int x5 = int.TryParse(menge5txt.Text);
+            double x1 = Convert.ToDouble(menge1txt.Text);
+            double x2 = Convert.ToDouble(menge2txt.Text);
+            double x3 = Convert.ToDouble(menge3txt.Text);
+            double x4 = Convert.ToDouble(menge4txt.Text);
+            double x5 = Convert.ToDouble(menge5txt.Text);
 
-            if (Int32.TryParse(menge1txt.Text, out x1) && Int32.TryParse(menge2txt.Text, out x2) && Int32.TryParse(menge3txt.Text, out x3) && Int32.TryParse(menge4txt.Text, out x4) && Int32.TryParse(menge5txt.Text, out x5))
+            if (double.TryParse(menge1txt.Text, out x1) && double.TryParse(menge2txt.Text, out x2) && double.TryParse(menge3txt.Text, out x3) && double.TryParse(menge4txt.Text, out x4) && double.TryParse(menge5txt.Text, out x5))
                 summemengetxt.Text = (x1 + x2 + x3 + x4 + x5).ToString();
 
-            int y1 = int.TryParse(gew1txt.Text);
-            int y2 = int.TryParse(gew2txt.Text);
-            int y3 = int.TryParse(gew3txt.Text);
-            int y4 = int.TryParse(gew4txt.Text);
-            int y5 = int.TryParse(gew5txt.Text);
+            double y1 = Convert.ToDouble(gew1txt.Text);
+            double y2 = Convert.ToDouble(gew2txt.Text);
+            double y3 = Convert.ToDouble(gew3txt.Text);
+            double y4 = Convert.ToDouble(gew4txt.Text);
+            double y5 = Convert.ToDouble(gew5txt.Text);
 
-            if (Int32.TryParse(gew1txt.Text, out y1) && Int32.TryParse(gew2txt.Text, out y2) && Int32.TryParse(gew3txt.Text, out y3) && Int32.TryParse(gew4txt.Text, out y4) && Int32.TryParse(gew5txt.Text, out y5))
+            if (double.TryParse(gew1txt.Text, out y1) && double.TryParse(gew2txt.Text, out y2) && double.TryParse(gew3txt.Text, out y3) && double.TryParse(gew4txt.Text, out y4) && double.TryParse(gew5txt.Text, out y5))
                 summegewtxt.Text = (y1 + y2 + y3 + y4 + y5).ToString();
 
-            int z1 = int.TryParse(preis1txt.Text);
-            int z2 = int.TryParse(preis2txt.Text);
-            int z3 = int.TryParse(preis3txt.Text);
-            int z4 = int.TryParse(preis4txt.Text);
-            int z5 = int.TryParse(preis5txt.Text);
+            double z1 = Convert.ToDouble(preis1txt.Text);
+            double z2 = Convert.ToDouble(preis2txt.Text);
+            double z3 = Convert.ToDouble(preis3txt.Text);
+            double z4 = Convert.ToDouble(preis4txt.Text);
+            double z5 = Convert.ToDouble(preis5txt.Text);
 
-            if (Int32.TryParse(preis1txt.Text, out z1) && Int32.TryParse(preis2txt.Text, out z2) && Int32.TryParse(preis3txt.Text, out z3) && Int32.TryParse(preis4txt.Text, out z4) && Int32.TryParse(preis5txt.Text, out z5))
+            if (double.TryParse(preis1txt.Text, out z1) && double.TryParse(preis2txt.Text, out z2) && double.TryParse(preis3txt.Text, out z3) && double.TryParse(preis4txt.Text, out z4) && double.TryParse(preis5txt.Text, out z5))
                 summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();
-      */
+      
         }
 
         private void btnexcel_Click(object sender, RoutedEventArgs e)
