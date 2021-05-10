@@ -175,7 +175,7 @@ public partial class MainWindow : Window
 
 
             //Berechnungen für die ausgewählte Schraube
-            feld[nr].masse_berechnen();
+            feld[nr].dichte_festlegen();
             feld[nr].vol_berechnen();
 
 

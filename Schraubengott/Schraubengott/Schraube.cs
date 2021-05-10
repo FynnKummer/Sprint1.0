@@ -46,7 +46,7 @@ namespace Schraubengott
        
 
         //Berechnungen 
-        public void masse_berechnen()
+        public void dichte_festlegen()
         {
             if (this.material.Equals("Verzinkter Stahl"))
             {
