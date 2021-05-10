@@ -207,11 +207,11 @@ namespace Schraubengott
         public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
         {
             // Variablen festlegen
-            double preis = 0;
+            double preis;
             double kilopreis, nettoeinzelpreis, nettokilopreis, netto50, netto100, Nettobestellpreis, einzelpreis, preis50, preis100, Bestellpreis, massekilo;
 
             // Aufpreise festlegen
-            const double aufpreis_Innensechskannt = 0.21;
+            const double aufpreis_Innensechskant = 0.21;
             const double aufpreis_Teilgewinde = 0.16;
             const double aufpreis_Feingewinde = 0.27;
             const double kilopreis_verzinkt = 12.12;
@@ -243,7 +243,7 @@ namespace Schraubengott
             // Innensechskant
             if (this.typ.Equals("I", StringComparison.InvariantCultureIgnoreCase))
             {
-                preis = preis + aufpreis_Innensechskannt;
+                preis = preis + aufpreis_Innensechskant;
             }
 
             // Feingewinde 
@@ -274,9 +274,6 @@ namespace Schraubengott
             this.nettopreis_Summe = Nettobestellpreis;
             this.nettoeinzelpreis = nettoeinzelpreis;
         }
-
-
-
 
         public void gewsteigung_schlbreite_festlegen()
         {
@@ -368,6 +365,7 @@ namespace Schraubengott
                 }
             }
         }
+
         public void geometrie()
         {
             double h3, r, d2, d3, flankenwikel;
@@ -443,7 +441,6 @@ namespace Schraubengott
             this.elastizitätsgrenze = Re;
             this.Zugfestigkeit = Rm;
         }
-
 
         #endregion
 
