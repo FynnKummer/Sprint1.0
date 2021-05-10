@@ -156,6 +156,7 @@ public partial class MainWindow : Window
             feld[nr].material = cbmat.SelectedValue.ToString();
             feld[nr].gewindelaenge = Convert.ToInt32(txt_gewlen.Text);
             feld[nr].laenge = Convert.ToInt32(txt_len.Text);
+            feld[nr].bemerkung = text.Text;
 
             Materialtxt.Text = ("Material" + "\n\n\n"  + feld[0].material + "\n\n\n" + feld[1].material + "\n\n\n" + feld[2].material + "\n\n\n" + feld[3].material + "\n\n\n" + feld[4].material);
             Festtxt.Text = ("Festigkeit" + "\n\n\n" + feld[0].festigkeit + "\n\n\n" + feld[1].festigkeit + "\n\n\n" + feld[2].festigkeit + "\n\n\n" + feld[3].festigkeit + "\n\n\n" + feld[4].festigkeit);
