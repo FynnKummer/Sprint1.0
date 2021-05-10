@@ -182,33 +182,21 @@ public partial class MainWindow : Window
 
         private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
-            switch (cmb_nr.SelectedIndex)
+
+            if (feld[nr].material != "")
             {
-                case 0:
-                    nr = 0;
-                    tab_konfig.Header = "1. Konfiguration"; // Hier muss noch was geändert werden, dass sich der Tabheader immer der aktuellen Schraube anpasst
-                    break;
-
-                case 1:
-                    nr = 1;
-                    tab_konfig.Header = "2. Konfiguration";
-                    break;
-
-                case 2:
-                    nr = 2;
-                    tab_konfig.Header = "3. Konfiguration";
-                    break;
-
-                case 3:
-                    nr = 3;
-                    tab_konfig.Header = "4. Konfiguration";
-                    break;
-
-                case 4:
-                    nr = 4;
-                    tab_konfig.Header = "5. Konfiguration";
-                    break;
+                //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
+                cbmat.SelectedItem = feld[nr].material;
             }
+
+
+
+
+
+
+
+
+
         }
 
         private void new_screw_Click(object sender, RoutedEventArgs e)
@@ -443,7 +431,7 @@ public partial class MainWindow : Window
 
                 summe = summe + arr[i].nettopreis_Summe;
 
-                mySheet.Cells[1, i + 2] = "Schraube" + i
+                mySheet.Cells[1, i + 2] = "Schraube" + i;
                 mySheet.Cells[1, i + 2] = arr[i].name;
                 mySheet.Cells[2, i + 2] = arr[i].menge;
                 mySheet.Cells[4, i + 2] = arr[i].laenge + " mm";

@@ -15,6 +15,10 @@
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="447" Margin="42.333,44,0,0" VerticalAlignment="Top" Width="954">
             <TabItem x:Name="tab_konfig" Header="Konfigurator" Height="22" Margin="-2,-2,-2.5,0" VerticalAlignment="Top">
                 <Grid x:Name="grid0" RenderTransformOrigin="0.426,0.462">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="47*"/>
+                        <ColumnDefinition Width="901*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.Background>
                         <RadialGradientBrush>
                             <GradientStop Color="#FFFAFCFE"/>
@@ -23,9 +27,9 @@
                         </RadialGradientBrush>
                     </Grid.Background>
 
-                    <Image x:Name="Image1" HorizontalAlignment="Left" Margin="754,0,0,23" Width="140"  Height="368" VerticalAlignment="Bottom" Source="vykres_-_din_931.jpg" Visibility="Visible"/>
-                    <Image x:Name="Image2" HorizontalAlignment="Left" Margin="754,0,0,23" Width="140"  Height="368" VerticalAlignment="Bottom" Source="3929_1.jpg" Visibility="Hidden"/>
-                    <ComboBox  x:Name="cmb_nr" HorizontalAlignment="Left" Margin="237,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_nr_SelectionChanged" Height="30">
+                    <Image x:Name="Image1" HorizontalAlignment="Left" Margin="707.25,0,0,23" Width="140"  Height="368" VerticalAlignment="Bottom" Source="vykres_-_din_931.jpg" Visibility="Visible" Grid.Column="1"/>
+                    <Image x:Name="Image2" HorizontalAlignment="Left" Margin="707.25,0,0,23" Width="140"  Height="368" VerticalAlignment="Bottom" Source="3929_1.jpg" Visibility="Hidden" Grid.Column="1"/>
+                    <ComboBox  x:Name="cmb_nr" HorizontalAlignment="Left" Margin="190.25,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_nr_SelectionChanged" Height="30" Grid.Column="1">
                         <ComboBoxItem x:Name="screw1"  Content="Schraube 1" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="screw2" Visibility="Collapsed" Content="Schraube 2" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="screw3" Visibility="Collapsed" Content="Schraube 3" HorizontalAlignment="Left" Width="118"/>
@@ -33,9 +37,9 @@
                         <ComboBoxItem x:Name="screw5" Visibility="Collapsed" Content="Schraube 5" HorizontalAlignment="Left" Width="118"/>
 
                     </ComboBox>
-                    <Button x:Name="new_screw" Content="weitere Konfigurieren" HorizontalAlignment="Left" Margin="445,25,0,0" VerticalAlignment="Top" Width="156" Height="30" Click="new_screw_Click"/>
-                    <Label Content="EA" HorizontalAlignment="Left" Height="30" Margin="634,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219"/>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="308" Margin="25,85,0,0" VerticalAlignment="Top" Width="662">
+                    <Button x:Name="new_screw" Content="weitere Konfigurieren" HorizontalAlignment="Left" Margin="398.25,25,0,0" VerticalAlignment="Top" Width="156" Height="30" Click="new_screw_Click" Grid.Column="1"/>
+                    <Label Content="EA" HorizontalAlignment="Left" Height="30" Margin="587.25,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="308" Margin="25,85,0,0" VerticalAlignment="Top" Width="662" Grid.ColumnSpan="2">
                         <Grid>
                             <Label Content="Material:" Height="30" Margin="15,35,0,0" VerticalAlignment="Top" Width="58" HorizontalAlignment="Left"/>
                             <Label Content="Festigkeitsklasse:" HorizontalAlignment="Left" Height="30" Margin="15,85,0,0" VerticalAlignment="Top" Width="112"/>
@@ -76,7 +80,7 @@
                             <Button x:Name="btnauswahl" Content="Auswahl speichern" HorizontalAlignment="Left" Height="20" Margin="534,275,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
                         </Grid>
                     </Border>
-                    <Label Content="Zu konfigurierende Schraube:" HorizontalAlignment="Left" Height="30" Margin="46,25,0,0" VerticalAlignment="Top" Width="171"/>
+                    <Label Content="Zu konfigurierende Schraube:" HorizontalAlignment="Left" Height="30" Margin="46,25,0,0" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tab_1" Header="Übersicht" >
@@ -155,6 +159,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Griffindor IT-Solutions - Fynn Kummer | Jonathan Rietig | Lars Bohling | Malte Klarmann" HorizontalAlignment="Left" Height="29" Margin="0,550,0,0" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
+        <Label Content="Gryffindor IT-Solutions - Fynn Kummer | Jonathan Rietig | Lars Bohling | Malte Klarmann" HorizontalAlignment="Left" Height="29" Margin="0,550,0,0" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
