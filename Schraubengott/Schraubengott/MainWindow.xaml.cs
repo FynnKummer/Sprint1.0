@@ -271,7 +271,7 @@ public partial class MainWindow : Window
 
             if (check1.IsChecked == true)
             {
-                menge1txt.Text = Math.Round(feld[0].menge,2).ToString();
+                menge1txt.Text = feld[0].menge.ToString();
                 gew1txt.Text = feld[0].masse.ToString();
                 preis1txt.Text = feld[0].stückpreis.ToString();
                 gpreis1txt.Text = feld[0].preis_summe.ToString();
