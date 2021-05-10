@@ -23,6 +23,7 @@ namespace Schraubengott
         public string gewinde;
         public double gewindetiefe;  //  belegt 
         public double gewinderundung; //  belegt 
+        
         public double flankendurchmesser; //  belegt 
         public double kerndurchmesser; //  belegt 
         public double flankenwinkel;  //belegt
@@ -32,7 +33,6 @@ namespace Schraubengott
 
 
         public string material;
-       // public string mataus;//Material ausgeschrieben
         public double dichte;
         public double masse;
         public double gesamtgewicht;
@@ -41,19 +41,23 @@ namespace Schraubengott
         public double stückpreis; //
         public double nettopreis_Summe;  // belegt
         public double nettoeinzelpreis;  //belegt
-        
-      
-       
+
+
+
+
+
+        #region "Methoden für Berechnungen""
 
         //Berechnungen 
         public void berechnen()
         {
             dichte_festlegen();
             vol_berechnen();
-            //preis 
+            preis_berechnen();
             gewsteigung_schlbreite_festlegen();
             geometrie();
             gewicht_berechnen();
+            festigkeit_berechnen();
 
 
         }
@@ -394,13 +398,61 @@ namespace Schraubengott
             this.gesamtgewicht = this.masse * this.menge;
         }
 
+        public void festigkeit_berechnen()
+        {
+            double Rm = 0;
+            double Re = 0;
+
+            switch (this.festigkeit)
+            {
+                case "5.8":
+                    Rm = 500;
+                    Re = 400;
+                    break;
+                case "6.8":
+                    Rm = 600;
+                    Re = 480;
+                    break;
+                case "8.8":
+                    Rm = 800;
+                    Re = 640;
+                    break;
+                case "9.8":
+                    Rm = 900;
+                    Re = 720;
+                    break;
+                case "10.9":
+                    Rm = 1000;
+                    Re = 900;
+                    break;
+                case "12.9":
+                    Rm = 1200;
+                    Re = 1080;
+                    break;
+                case "1":     //v4a 50er Festigkeitsklasse
+                    Rm = 500;
+                    Re = 210;
+                    break;
+                case "2":    //v2a 70er Festigkeitsklasse
+                    Rm = 700;
+                    Re = 450;
+                    break;
+                case "3":     //v4a 50er Festigkeitsklasse
+                    Rm = 500;
+                    Re = 210;
+                    break;
+            }
+            this.elastizitätsgrenze = Re;
+            this.Zugfestigkeit = Rm;
+        }
 
 
+        #endregion
 
 
     }
-      
-  }
+
+}
 
 
 
