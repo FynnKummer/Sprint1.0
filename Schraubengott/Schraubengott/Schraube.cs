@@ -45,9 +45,6 @@ namespace Schraubengott
         public string bemerkung;
 
 
-
-
-
         #region "Methoden für Berechnungen""
 
         //Berechnungen 
@@ -287,7 +284,7 @@ namespace Schraubengott
             int d = Int32.Parse(feld[1]);
 
             //Gewindesteigung + Schlüsselbreite
-            if (gewindeart.Equals("Standartgewinde"))
+            if (gewindeart.Equals("Standardgewinde"))
             {
                 switch (this.gewinde)
                 {
@@ -452,10 +449,3 @@ namespace Schraubengott
 
     }
 }
- 
-
-
-
-
-
-
