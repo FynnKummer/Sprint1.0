@@ -568,6 +568,14 @@ public partial class MainWindow : Window
                 summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();
       */
         }
+
+        private void btnexcel_Click(object sender, RoutedEventArgs e)
+        {
+            ExcelControll. Excel_erstellen(Schraube[] arr)
+            {
+                new ExcelControll(arr);
+            }
+        }
     }
     }
 

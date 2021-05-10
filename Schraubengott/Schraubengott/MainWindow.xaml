@@ -183,7 +183,7 @@
                     <TextBox x:Name="preis5txt" HorizontalAlignment="Left" Height="54" Margin="370,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
                     <TextBox x:Name="summepreistxt" HorizontalAlignment="Left" Height="54" Margin="370,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
                     <Button x:Name="btnangebot" Content="Angebot absenden" HorizontalAlignment="Left" Height="42" Margin="772,334,0,0" VerticalAlignment="Top" Width="130"/>
-                    <Button x:Name="btnexcel" Content="Excel herunterladen" HorizontalAlignment="Left" Height="42" Margin="772,268,0,0" VerticalAlignment="Top" Width="130"/>
+                    <Button x:Name="btnexcel" Content="Excel herunterladen" HorizontalAlignment="Left" Height="42" Margin="772,268,0,0" VerticalAlignment="Top" Width="130" Click="btnexcel_Click"/>
 
 
                 </Grid>
