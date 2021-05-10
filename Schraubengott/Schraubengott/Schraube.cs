@@ -227,7 +227,7 @@ namespace Schraubengott
             {                                           // Verzinkte Schraube 
                 preis = kilopreis_verzinkt;
             }
-            else if (this.material.Equals("V2A")) //hier fehlt die Bedingung
+            else if (this.material.Equals("2")) //hier fehlt die Bedingung
             {
                 preis = kilopreis_V2A;                     // Edelstahlschraube 
             }
