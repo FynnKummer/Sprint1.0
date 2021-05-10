@@ -42,30 +42,8 @@ namespace Schraubengott
         public double nettopreis_Summe;  // belegt
         public double nettoeinzelpreis;  //belegt
         
-        //Auswahlen der Comboboxen den Variablen zuweisen
-        public void gewinde_festlegen(string gew)
-        {
-            this.gewinde = gew;
-        }
-        public void kopf_festlegen(string kopf)
-        {
-            this.typ = kopf;
-
-        }
-        public void festigkeit_festlegen(string fest)
-        {
-            this.festigkeit = fest;
-        }
-
-        //Eingaben der Textboxen den Variablen zuweisen
-        public void laenge_festlegen(int laenge)
-        {
-
-        }
-        public void gewlen_festlegen(int gewlen)
-        {
-            
-        }
+      
+       
 
         //Berechnungen 
         public void masse_berechnen()
@@ -213,7 +191,7 @@ namespace Schraubengott
         }
 
     }
-    /*  public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
+      public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
       {
       // Variablen festlegen
       double preis = 0;
@@ -244,7 +222,7 @@ namespace Schraubengott
 
       // Aufpreise 
       // Teilgewindelänge 
-      if (this.gewindelaenge != laenge)
+      if (this.gewindelaenge != this.laenge)
       {
           preis = preis + aufpreis_Teilgewinde;
       }
@@ -284,17 +262,17 @@ namespace Schraubengott
       this.nettoeinzelpreis = nettoeinzelpreis;
 
       // Ausgabe der Preise            
-      string summenenstring = "Summe (" + this.menge + "Stück):";
+      //string summenenstring = "Summe (" + this.menge + "Stück):";
 
-      Console.WriteLine(" Preise:");
-      Console.WriteLine();
-      Console.WriteLine("  Nettopreise                                  Preise inkl. Mehrwertsteuer");
-      Console.WriteLine();
-      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
-      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
-      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
-      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
-      Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
+      //Console.WriteLine(" Preise:");
+      //Console.WriteLine();
+      //Console.WriteLine("  Nettopreise                                  Preise inkl. Mehrwertsteuer");
+      //Console.WriteLine();
+      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", summenenstring, Math.Round(Nettobestellpreis, 2), "            ", Math.Round(Bestellpreis));
+      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Stückpreis:", Math.Round(nettoeinzelpreis, 2), "            ", Math.Round(einzelpreis, 2));
+      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Kilopreis:", Math.Round(nettokilopreis, 2), "            ", Math.Round(kilopreis, 2));
+      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR", "Preis 50 Stück:", Math.Round(netto50, 2), "            ", Math.Round(preis50, 2));
+      //Console.WriteLine("  {0,-18} {1,8:f} EUR {2} {0,-18} {3,8:f} EUR ", "Preis 100 Stück:", Math.Round(netto100, 2), "            ", Math.Round(preis100, 2));
   }
 
 

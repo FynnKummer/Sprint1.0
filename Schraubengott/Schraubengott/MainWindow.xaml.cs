@@ -38,7 +38,7 @@ public partial class MainWindow : Window
             {
                 feld[i] = new Schraube();         // Array wird mit Objekten gefüllt
             }
-
+            Schraube a = new Schraube();
             
             InitializeComponent();
             cmb_nr.SelectedIndex = 0;           //Combobox hat von Anfang an die erste Schraube ausgewählt
@@ -172,6 +172,12 @@ public partial class MainWindow : Window
             Laengetxt.Text = ("Länge" + "\n\n\n" + feld[0].laenge + "\n\n\n" + feld[1].laenge + "\n\n\n" + feld[2].laenge + "\n\n\n" + feld[3].laenge + "\n\n\n" + feld[4].laenge);
             gewlentxt.Text = ("Gewindelänge" + "\n\n" + feld[0].gewindelaenge + "\n\n\n" + feld[1].gewindelaenge + "\n\n\n" + feld[2].gewindelaenge + "\n\n\n" + feld[3].gewindelaenge + "\n\n\n" + feld[4].gewindelaenge);
             mengetxt.Text = ("Menge" + "\n\n\n" + feld[0].menge + "\n\n\n" + feld[1].menge + "\n\n\n" + feld[2].menge + "\n\n\n" + feld[3].menge + "\n\n\n" + feld[4].menge);
+
+
+            //Berechnungen für die ausgewählte Schraube
+            feld[nr].masse_berechnen();
+            feld[nr].vol_berechnen();
+
 
             MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
         }
