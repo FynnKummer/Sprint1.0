@@ -424,7 +424,7 @@ public partial class MainWindow : Window
             mySheet.Cells[27, 1] = "Menge";
 
             // Listenformat einführen 
-            mySheet.Range["A1", "E29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
+            mySheet.Range["A1", "F29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
 
             // Werte der Schrauben in Tabelle eingeben 
             for (int i = 0; i < arr.Length; i++)
