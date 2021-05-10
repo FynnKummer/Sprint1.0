@@ -59,13 +59,11 @@ public partial class MainWindow : Window
                 cbfk.Items.Clear();
                 cbfk.Items.Add("V2A 50");
                 cbfk.Items.Add("V2A 70");
-               // feld[nr].material = "V2A";
             }
             else if (cbmat.SelectedValue.ToString() == "V4A")
             {
                 cbfk.Items.Clear();
                 cbfk.Items.Add("V4A 70");
-              //  feld[nr].material = "V4A";
             }
             else if (cbmat.SelectedValue.ToString() == "Verzinkter Stahl")
             {
@@ -76,7 +74,6 @@ public partial class MainWindow : Window
                 cbfk.Items.Add("9.8");
                 cbfk.Items.Add("10.9");
                 cbfk.Items.Add("12.9");
-              //  feld[nr].material = "Verzinkter Stahl";
             }
         }
 
@@ -119,7 +116,16 @@ public partial class MainWindow : Window
                 MessageBox.Show("Für Gewindelänge und oder Länge liegt keine Eingabe vor.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;// wenn min eine Eingabe leer ist, wird die Methode beendet
             }
-
+            else if (Convert.ToInt32(txt_len.Text) <= 5)
+            {
+                MessageBox.Show("Eingaben für Länge zu klein.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;//wenn len kleiner als 6 wird Methode beendet
+            }
+            else if (Convert.ToInt32(txt_gewlen.Text) <= 5)
+            {
+                MessageBox.Show("Eingaben für Gewindelänge zu klein.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;//wenn Gewlen kleiner als 6 wird Methode beendet
+            }
             else if (Convert.ToInt32(txt_len.Text) < Convert.ToInt32(txt_gewlen.Text))
             {
                 MessageBox.Show("Eingaben für Länge und Gewindelänge sind nicht kompatibel.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
