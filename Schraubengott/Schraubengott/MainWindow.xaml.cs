@@ -449,7 +449,7 @@ public partial class MainWindow : Window
                 mySheet.Cells[24, i + 2] = Math.Round(arr[i].preis_summe, 2) + "€";
                 mySheet.Cells[25, i + 2] = Math.Round(arr[i].stückpreis, 2) + "€";
                 mySheet.Cells[27, i + 2] = arr[i].menge;
-                mySheet.Cells[28, i + 2].AddComment("Anmerkung S " + i);
+                mySheet.Cells[28, i + 2].AddComment(arr[i].bemerkung);
             }
 
             // Zellenbreite an Text anpassen 
