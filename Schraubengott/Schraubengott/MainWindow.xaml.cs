@@ -271,61 +271,70 @@ public partial class MainWindow : Window
 
             if (check1.IsChecked == true)
             {
-                menge1txt.Text = feld[0].menge.ToString();
+                menge1txt.Text = Math.Round(feld[0].menge,2).ToString();
                 gew1txt.Text = feld[0].masse.ToString();
-                preis1txt.Text = feld[0].preis_summe.ToString();
+                preis1txt.Text = feld[0].stückpreis.ToString();
+                gpreis1txt.Text = feld[0].preis_summe.ToString();
             }
             else if(check1.IsChecked == false)
             {
                 menge1txt.Text = "0";
                 gew1txt.Text = "0";
                 preis1txt.Text = "0";
+                gpreis1txt.Text = "0";
             }
 
             if (check2.IsChecked == true)
             {
                  menge2txt.Text = feld[1].menge.ToString();
                  gew2txt.Text = feld[1].masse.ToString();
-                 preis2txt.Text = feld[1].preis_summe.ToString();
+                 preis2txt.Text = feld[1].stückpreis.ToString();
+                 gpreis2txt.Text = feld[1].preis_summe.ToString();
             }
             else if (check2.IsChecked == false)
             {
                 menge2txt.Text = "0";
                 gew2txt.Text = "0";
                 preis2txt.Text = "0";
+                gpreis2txt.Text = "0";
             }
 
             if (check3.IsChecked == true)
             {
                 menge3txt.Text = feld[2].menge.ToString();
                 gew3txt.Text = feld[2].masse.ToString();
-                preis3txt.Text = feld[2].preis_summe.ToString();
+                preis3txt.Text = feld[2].stückpreis.ToString();
+                gpreis3txt.Text = feld[2].preis_summe.ToString();
             }
             else if (check3.IsChecked == false)
             {
                  menge3txt.Text = "0";
                  gew3txt.Text = "0";
                  preis3txt.Text = "0";
+                 gpreis3txt.Text = "0";
             }
 
             if (check4.IsChecked == true)
             {
                 menge4txt.Text = feld[3].menge.ToString();
                 gew4txt.Text = feld[3].masse.ToString();
-                preis4txt.Text = feld[3].preis_summe.ToString();
+                preis4txt.Text = feld[3].stückpreis.ToString();
+                gpreis4txt.Text = feld[3].preis_summe.ToString();
             }
             else if (check4.IsChecked == false)
             {
                 menge4txt.Text = "0";
                 gew4txt.Text = "0";
                 preis4txt.Text = "0";
+                gpreis4txt.Text = "0";
             }
 
             if (check5.IsChecked == true)
             {
                 menge5txt.Text = feld[4].menge.ToString();
                 gew5txt.Text = feld[4].masse.ToString();
-                preis5txt.Text = feld[4].preis_summe.ToString();
+                preis5txt.Text = feld[4].stückpreis.ToString();
+                gpreis5txt.Text = feld[4].preis_summe.ToString();
             }
             else if (check5.IsChecked == false)
             {
@@ -333,6 +342,15 @@ public partial class MainWindow : Window
                 gew5txt.Text = "0";
                 preis5txt.Text = "0";
             }
+
+            double w1 = Convert.ToDouble(gpreis1txt.Text);
+            double w2 = Convert.ToDouble(gpreis2txt.Text);
+            double w3 = Convert.ToDouble(gpreis3txt.Text);
+            double w4 = Convert.ToDouble(gpreis4txt.Text);
+            double w5 = Convert.ToDouble(gpreis5txt.Text);
+
+            if (double.TryParse(gpreis1txt.Text, out w1) && double.TryParse(gpreis2txt.Text, out w2) && double.TryParse(gpreis3txt.Text, out w3) && double.TryParse(gpreis4txt.Text, out w4) && double.TryParse(gpreis5txt.Text, out w5))
+                gesamtpreistxt.Text = (w1 + w2 + w3 + w4 + w5).ToString();
 
             double x1 = Convert.ToDouble(menge1txt.Text);
             double x2 = Convert.ToDouble(menge2txt.Text);
@@ -373,6 +391,7 @@ public partial class MainWindow : Window
             bool senden = true;
             ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer);
         }
+
     }
 
     class ExcelControll
