@@ -210,11 +210,11 @@ public partial class MainWindow : Window
 
 
 
-            if (feld[nr].material != "")
-            {
-                //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
-                cbmat.SelectedValue = feld[nr].material;
-            }
+            //if (feld[nr].material != "")
+            //{
+            //    //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
+            //    cbmat.SelectedValue = feld[nr].material;
+            //}
 
         }
 
