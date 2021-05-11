@@ -57,17 +57,22 @@ public partial class MainWindow : Window
             if (cbmat.SelectedValue.ToString() == "V2A")
             {
                 cbfk.Items.Clear();
+                cbfk.Items.Add("--Bitte auswählen--");
+                
+                
                 cbfk.Items.Add("V2A 50");
                 cbfk.Items.Add("V2A 70");
             }
             else if (cbmat.SelectedValue.ToString() == "V4A")
             {
                 cbfk.Items.Clear();
+                cbfk.Items.Add("--Bitte auswählen--");
                 cbfk.Items.Add("V4A 70");
             }
             else if (cbmat.SelectedValue.ToString() == "Verzinkter Stahl")
             {
                 cbfk.Items.Clear();
+                cbfk.Items.Add("--Bitte auswählen--");
                 cbfk.Items.Add("5.8");
                 cbfk.Items.Add("6.8");
                 cbfk.Items.Add("8.8");
@@ -212,6 +217,18 @@ public partial class MainWindow : Window
 
         private void new_screw_Click(object sender, RoutedEventArgs e)
         {
+
+
+            //neue Schraube wird erstellt und alle Auswhalen werden aus Default zurückgesetzt
+            cbfk.SelectedIndex = 0;
+            cbgewinde.SelectedIndex = 0;
+            cbkopf.SelectedIndex = 0;
+            cbmat.SelectedIndex = 0;
+            txt_gewlen.Text = "";
+            txt_len.Text = "";
+            txt_menge.Text = "";
+            gewartcheck.IsChecked = false;
+            
             switch (new_screw_int)
             {
                 case 1:
