@@ -245,40 +245,54 @@ public partial class MainWindow : Window
             switch (feld[nr].gewinde)
             {
                 case "M4":
-                    cbgewinde.SelectedValue = 1;
+                    cbgewinde.SelectedIndex = 1;
                     break;
 
                 case "M5":
-                    cbgewinde.SelectedValue =2;
+                    cbgewinde.SelectedIndex =2;
                     break;
 
                 case "M6":
-                    cbgewinde.SelectedValue =3;
+                    cbgewinde.SelectedIndex =3;
                     break;
 
                 case "M8":
-                    cbgewinde.SelectedValue = 4;
+                    cbgewinde.SelectedIndex = 4;
                     break;
 
                 case "M10":
-                    cbgewinde.SelectedValue = 5;
+                    cbgewinde.SelectedIndex = 5;
                     break;
                     
                 case "M12":
-                    cbgewinde.SelectedValue = 6;
+                    cbgewinde.SelectedIndex = 6;
                     
                     break;
                     
                 case "M16":
-                    cbgewinde.SelectedValue = 7;
+                    cbgewinde.SelectedIndex = 7;
                   
                     break;
                 
                 case "M20":
-                    cbgewinde.SelectedValue = 8;
+                    cbgewinde.SelectedIndex = 8;
                     
                     break;
             }
+
+
+            if (feld[nr].gewindeart=="Feingewinde")
+            {
+                gewartcheck.IsChecked = true;
+            }
+
+            txt_gewlen.Text = feld[nr].gewindelaenge.ToString();
+            txt_len.Text = feld[nr].laenge.ToString();
+            txt_menge.Text = feld[nr].menge.ToString();
+           
+
+
+
 
         }
 
