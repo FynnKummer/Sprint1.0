@@ -48,19 +48,19 @@ namespace Schraubengott
         #region "Methoden für Berechnungen""
 
         //Berechnungen 
-        public void berechnen()
+        public void Berechnen()
         {
-            dichte_festlegen();
-            vol_berechnen();
-            gewsteigung_schlbreite_festlegen();
-            geometrie();
-            gewicht_berechnen();
-            festigkeit_berechnen();
-            preis_berechnen();
+            Dichte_festlegen();
+            Vol_berechnen();
+            Gewsteigung_schlbreite_festlegen();
+            Geometrie();
+            Gewicht_berechnen();
+            Festigkeit_berechnen();
+            Preis_berechnen();
 
 
         }
-        public void dichte_festlegen()
+        public void Dichte_festlegen()
         {
             if (this.material.Equals("Verzinkter Stahl"))
             {
@@ -75,7 +75,7 @@ namespace Schraubengott
                 this.dichte = 0.008; //V4A
             }
         }
-        public void vol_berechnen()
+        public void Vol_berechnen()
         {
             double volumen_schraubenkopf;
             double volumen_schaft;
@@ -204,7 +204,7 @@ namespace Schraubengott
             }
         }
 
-        public void preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
+        public void Preis_berechnen()//eventuell für jede Preisvariable eine eigene Methode
         {
             // Variablen festlegen
             double preis;
@@ -275,7 +275,7 @@ namespace Schraubengott
             this.nettoeinzelpreis = nettoeinzelpreis;
         }
 
-        public void gewsteigung_schlbreite_festlegen()
+        public void Gewsteigung_schlbreite_festlegen()
         {
             String[] feld = this.gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
@@ -366,7 +366,7 @@ namespace Schraubengott
             }
         }
 
-        public void geometrie()
+        public void Geometrie()
         {
             double h3, r, d2, d3, flankenwikel;
             String[] feld = this.gewinde.Split('M');
@@ -387,14 +387,14 @@ namespace Schraubengott
             this.flankenwinkel = flankenwikel;
         }
 
-        public void gewicht_berechnen()
+        public void Gewicht_berechnen()
         {
 
             this.masse = this.volumen * this.dichte;
             this.gesamtgewicht = this.masse * this.menge;
         }
 
-        public void festigkeit_berechnen()
+        public void Festigkeit_berechnen()
         {
             double Rm = 0;
             double Re = 0;
