@@ -169,7 +169,7 @@ public partial class MainWindow : Window
                 feld[nr].gewindeart = "Standardgewinde";
             }
 
-            if(txt_menge.Text.ToString()=="")
+            if(txt_menge.Text.ToString()==""||txt_menge.Text.ToString()=="0")
             {
                 MessageBox.Show("Es wurde keine Eingabe für die Menge gemacht.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -358,15 +358,21 @@ public partial class MainWindow : Window
         private void Cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Grafik der Schraube ändern, abhängig von dem Schraubenkopf
-            if (cbkopf.SelectedValue.ToString() == "Außensechskant")
+            if (cbkopf.SelectedIndex == 1)
             {
                 Image1.Visibility = Visibility.Visible;
-                Image2.Visibility = Visibility.Hidden;
+                Image2.Visibility = Visibility.Collapsed;
+            }
+            else if(cbkopf.SelectedIndex==2)
+            {
+                Image1.Visibility = Visibility.Collapsed;
+                Image2.Visibility = Visibility.Visible;
             }
             else
             {
-                Image1.Visibility = Visibility.Hidden;
-                Image2.Visibility = Visibility.Visible;
+                Image1.Visibility = Visibility.Visible;
+                Image2.Visibility = Visibility.Collapsed;
+
             }
         }
 
