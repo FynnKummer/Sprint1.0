@@ -28,13 +28,15 @@ public partial class MainWindow : Window
         int nr = 0;                             //Variable für den Index des Feldes Schraube
         int new_screw_int = 1;                  //Varibale für Neue Schraube Button und Combobox mit Schraubenauswahl
 
-        Random nummer = new Random();
+        //Zufällige Bestellnummer erstellen
+        Random nummer = new Random();           
         int bestellnummer;
+
         string kundennummer;
 
         public MainWindow()
         {
-            for (int i = 0; i < feld.Length; i++)
+            for (int i = 0; i < feld.Length; i++) 
             {
                 feld[i] = new Schraube();         // Array wird mit Objekten gefüllt
             }
@@ -65,18 +67,15 @@ public partial class MainWindow : Window
             {
                 return;  
             }
-
         }
 
         private void Cbmat_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            //Combobox für Festigkeitsklasse wir abhängig von dem Material befüllt
+            //ComboBoxItems für Festigkeitsklasse werden abhängig von dem Material erstellt
             if (cbmat.SelectedValue.ToString() == "V2A")
             {
                 cbfk.Items.Clear();
-                cbfk.Items.Add("--Bitte auswählen--");
-                
-                
+                cbfk.Items.Add("--Bitte auswählen--");             
                 cbfk.Items.Add("V2A 50");
                 cbfk.Items.Add("V2A 70");
             }
@@ -120,24 +119,22 @@ public partial class MainWindow : Window
 
         public void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            feld[nr].gewindeart = "Feingewinde";
+            feld[nr].gewindeart = "Feingewinde";    //Gewindeartauswahl der Checkbox wird em Objekt hinzugefügt
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            feld[nr].gewindeart = "Standardgewinde";
+            feld[nr].gewindeart = "Standardgewinde";    //Gewindeartauswahl der Checkbox wird em Objekt hinzugefügt
         }
 
         private void Btnauswahl_Click(object sender, RoutedEventArgs e)
         {
-            #region "Wenn was nicht passt Fehlermeldungen"
-
-            //hier noch alle Eingabeelement mit den aktuellen Werten in der Schraube festlegen. Wenn noch nicht festgelegt, dann Default
+            #region Fehlermeldung bei Falscheingaben"
 
             if (feld[nr].gewinde == "")
             {
                 MessageBox.Show("Es fehlt eine Gewindeeingabe.\rBitte eine Auswahl treffen", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+                return;// wenn keine Gewindeeingabe, wird die Methode beendet
             }
 
             if (txt_len.Text == "" || txt_gewlen.Text == "")
@@ -164,10 +161,17 @@ public partial class MainWindow : Window
             if (cbfk.SelectedItem == null)
             {
                 MessageBox.Show("Für die Festigkeitsklasse liegt keine Auswahl vor.", "Fehldend Auswahl", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;// wenn keine Festigkeitsklasse ausgewählt ist, wird die Methode beendet
+            }
+
+            if (txt_menge.Text.ToString() == "" || txt_menge.Text.ToString() == "0")
+            {
+                MessageBox.Show("Es wurde keine Eingabe für die Menge gemacht.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             #endregion
 
+            #region "Ausgewählten Werte werden dem Objekt zugewiesen"
             if (gewartcheck.IsChecked== true)
             {
                 feld[nr].gewindeart = "Feingewinde";
@@ -175,12 +179,6 @@ public partial class MainWindow : Window
             else if (gewartcheck.IsChecked == false)
             {
                 feld[nr].gewindeart = "Standardgewinde";
-            }
-
-            if(txt_menge.Text.ToString()==""||txt_menge.Text.ToString()=="0")
-            {
-                MessageBox.Show("Es wurde keine Eingabe für die Menge gemacht.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
             }
 
             feld[nr].menge = Convert.ToInt32(txt_menge.Text.ToString());
@@ -191,10 +189,9 @@ public partial class MainWindow : Window
             feld[nr].gewindelaenge = Convert.ToInt32(txt_gewlen.Text);
             feld[nr].laenge = Convert.ToInt32(txt_len.Text);
             feld[nr].bemerkung = text.Text.ToString();
+            #endregion
 
-      
-
-
+            //Die Werte den Objekts Schraube werden in der Übersichtstabelle übernommen
             Materialtxt.Text = ("Material" + "\n\n\n"  + feld[0].material + "\n\n\n" + feld[1].material + "\n\n\n" + feld[2].material + "\n\n\n" + feld[3].material + "\n\n\n" + feld[4].material);
             Festtxt.Text = ("Festigkeit" + "\n\n\n" + feld[0].festigkeit + "\n\n\n" + feld[1].festigkeit + "\n\n\n" + feld[2].festigkeit + "\n\n\n" + feld[3].festigkeit + "\n\n\n" + feld[4].festigkeit);
             Kopftxt.Text = ("Kopf" + "\n\n\n" + feld[0].typ + "\n\n\n" + feld[1].typ + "\n\n\n" + feld[2].typ + "\n\n\n" + feld[3].typ + "\n\n\n" + feld[4].typ);
@@ -212,7 +209,7 @@ public partial class MainWindow : Window
 
         private void Cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
-            switch (cmb_nr.SelectedIndex)
+            switch (cmb_nr.SelectedIndex)//Auswahl der Schraube
             {
                 case 0:
                     nr = 0;     
@@ -233,9 +230,10 @@ public partial class MainWindow : Window
                 case 4:
                     nr = 4;
                     break;
-            }           
-            
-            if(feld[nr].material=="Verzinkter Stahl")
+            }
+
+            #region "Die gespeicherten Werte des Objekts werden in den Comboboxen angezeigt"
+            if (feld[nr].material=="Verzinkter Stahl")
             {
                 cbmat.SelectedIndex = 1;
 
@@ -360,11 +358,12 @@ public partial class MainWindow : Window
             txt_gewlen.Text = feld[nr].gewindelaenge.ToString();
             txt_len.Text = feld[nr].laenge.ToString();
             txt_menge.Text = feld[nr].menge.ToString();
+            #endregion
         }
 
         private void New_screw_Click(object sender, RoutedEventArgs e)
         {
-            //neue Schraube wird erstellt und alle Auswhalen werden aus Default zurückgesetzt
+            //neue Schraube wird erstellt und alle Auswahlen werden aus Default zurückgesetzt
             cbfk.SelectedIndex = 0;
             cbgewinde.SelectedIndex = 0;
             cbkopf.SelectedIndex = 0;
@@ -422,12 +421,12 @@ public partial class MainWindow : Window
             {
                 Image1.Visibility = Visibility.Visible;
                 Image2.Visibility = Visibility.Collapsed;
-
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            #region "Fehlermeldung bei Falscheingabe"
             if (check1.IsChecked == true && feld[0].material == null || check2.IsChecked == true && feld[1].material == null || check3.IsChecked == true && feld[2].material == null || check4.IsChecked == true && feld[3].material == null || check5.IsChecked == true && feld[4].material == null)
             {
                 MessageBox.Show("Die Auswahl ist leer.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -443,7 +442,9 @@ public partial class MainWindow : Window
                 MessageBox.Show("Es ist nichts ausgewählt.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;//wenn keine Checkbox ausgewählt, wird die Methode beendet
             }
-            
+            #endregion
+
+            #region "Die Werte des ausgewälten Objekts werden im Warenkorb gespeichert"
             if (check1.IsChecked == true)
             {
                 menge1txt.Text = feld[0].menge.ToString();
@@ -553,7 +554,8 @@ public partial class MainWindow : Window
             double z5 = Convert.ToDouble(preis5txt.Text);
 
             
-                summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();     
+                summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();
+            #endregion
         }
 
         private void Btnexcel_Click(object sender, RoutedEventArgs e)
@@ -564,7 +566,7 @@ public partial class MainWindow : Window
 
         public void Btnangebot_Click(object sender, RoutedEventArgs e)
         {
-            kundennummer = txtkunde.Text;
+            kundennummer = txtkunde.Text; //Eingegebene Kundennr. wird in der Variablen gespeichert
 
             if (txtkunde.Text == "")
             {
@@ -580,8 +582,6 @@ public partial class MainWindow : Window
             bool senden = true;
             ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer,kundennummer);
             MessageBox.Show("Angebot wurde erfolgreich abgesendet!", "Bestellt", MessageBoxButton.OK);
-
-            
         }
 
     }
