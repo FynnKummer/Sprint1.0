@@ -581,7 +581,6 @@ public partial class MainWindow : Window
             
             bool senden = true;
 
-
             ExcelControll.ExelContoll_aufrufen(Feld_anpassen(feld), senden, bestellnummer,kundennummer);
             MessageBox.Show("Angebot wurde erfolgreich abgesendet!", "Bestellt", MessageBoxButton.OK);
         }
@@ -592,33 +591,31 @@ public partial class MainWindow : Window
             for(int s=0; s < newfeld.Length; s++)
             {
                 newfeld[s] = new Schraube();
-            }
-           
+            }        
 
             if (check1.IsChecked == true)
             {
-                newfeld[0] = feld[0];
-               
+                newfeld[0] = feld[0];              
             }
+
             if (check2.IsChecked == true)
             {
-                newfeld[1] = feld[1];
-               
+                newfeld[1] = feld[1];              
             }
+
             if (check3.IsChecked == true)
             {
-                newfeld[2] = feld[2];
-               
+                newfeld[2] = feld[2];              
             }
+
             if (check4.IsChecked == true)
             {
-                newfeld[3] = feld[3];
-                
+                newfeld[3] = feld[3];               
             }
+
             if (check5.IsChecked == true)
             {
-                newfeld[4] = feld[4];
-                
+                newfeld[4] = feld[4];             
             }
 
             return newfeld;
