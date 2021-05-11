@@ -528,6 +528,7 @@ public partial class MainWindow : Window
             Excel._Worksheet mySheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
             // Kategorien festlegen
+
             mySheet.Cells[2, 1] = "Menge";
             mySheet.Cells[3, 1] = "Techniche Details";
             mySheet.Cells[4, 1] = "Schraubenlänge";
@@ -554,6 +555,39 @@ public partial class MainWindow : Window
             mySheet.Cells[25, 1] = "Summe";
             mySheet.Cells[26, 1] = "Stückpreis";          
             mySheet.Cells[28, 1] = "Bestellsumme"; 
+
+
+
+
+/*
+            mySheet.Cells[2, 1] = "Menge";
+            mySheet.Cells[3, 1] = "Techniche Details";
+            mySheet.Cells[4, 1] = "Schraubenlänge";
+            mySheet.Cells[5, 1] = "Gewindelänge";
+            mySheet.Cells[6, 1] = "Schlüsselweite";
+            mySheet.Cells[7, 1] = "Gewindedurchmesser";
+            mySheet.Cells[8, 1] = "Masse pro Stück";
+            mySheet.Cells[9, 1] = "Gesamtgewicht";
+            mySheet.Cells[10, 1] = "Gewindesteigung";
+            mySheet.Cells[11, 1] = "Gewindetiefe";
+            mySheet.Cells[12, 1] = "Rundung";
+            mySheet.Cells[13, 1] = "Flankendurchmesser";
+            mySheet.Cells[14, 1] = "Kerndurchmesser";
+            mySheet.Cells[15, 1] = "Flankenwinkel";
+            mySheet.Cells[16, 1] = "";
+            mySheet.Cells[17, 1] = "Elastizitätzgrenze";
+            mySheet.Cells[18, 1] = "Zugfestigkeit";
+            mySheet.Cells[19, 1] = "";
+            mySheet.Cells[20, 1] = "Preis (Netto)";
+            mySheet.Cells[21, 1] = "Summe";
+            mySheet.Cells[22, 1] = "Stückpreis";
+            mySheet.Cells[23, 1] = "";
+            mySheet.Cells[24, 1] = "Preis (Brutto)";
+            mySheet.Cells[25, 1] = "Summe";
+            mySheet.Cells[26, 1] = "Stückpreis";          
+            mySheet.Cells[28, 1] = "Bestellsumme"; 
+
+*/
 
             // Listenformat einführen 
             mySheet.Range["A1", "F29"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
