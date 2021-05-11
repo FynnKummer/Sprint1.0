@@ -285,6 +285,20 @@ public partial class MainWindow : Window
             {
                 gewartcheck.IsChecked = true;
             }
+            if (feld[nr].typ == "Außensechskant")
+            {
+                cbkopf.SelectedIndex = 0;
+                Image1.Visibility = Visibility.Visible;
+                Image2.Visibility = Visibility.Collapsed;
+
+            }
+            else
+            {
+                cbkopf.SelectedIndex = 1;
+                Image1.Visibility = Visibility.Collapsed;
+                Image2.Visibility = Visibility.Visible;
+
+            }
 
             txt_gewlen.Text = feld[nr].gewindelaenge.ToString();
             txt_len.Text = feld[nr].laenge.ToString();
