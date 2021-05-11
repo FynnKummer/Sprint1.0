@@ -668,7 +668,7 @@ public partial class MainWindow : Window
                 mySheet.Cells[1, i + 2] = "Schraube " + (i+1);
                 mySheet.Cells[2, i + 2] =  arr[i].material;
                 mySheet.Cells[3, i + 2] =  arr[i].festigkeit;
-                mySheet.Cells[4, i + 2] =  ""; //!!! Schraubenkopf
+                mySheet.Cells[4, i + 2] =  arr[i].typ;
                 mySheet.Cells[5, i + 2] =  arr[i].gewinde;
                 mySheet.Cells[6, i + 2] =  arr[i].gewindeart;
                 mySheet.Cells[7, i + 2] =  arr[i].laenge;
