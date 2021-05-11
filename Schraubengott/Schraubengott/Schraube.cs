@@ -425,15 +425,15 @@ namespace Schraubengott
                     Rm = 1200;
                     Re = 1080;
                     break;
-                case "1":     //v4a 50er Festigkeitsklasse
+                case "V2A 50":     //v4a 50er Festigkeitsklasse
                     Rm = 500;
                     Re = 210;
                     break;
-                case "2":    //v2a 70er Festigkeitsklasse
+                case "V2A 70":    //v2a 70er Festigkeitsklasse
                     Rm = 700;
                     Re = 450;
                     break;
-                case "3":     //v4a 50er Festigkeitsklasse
+                case "V4A 70":     //v4a 50er Festigkeitsklasse
                     Rm = 500;
                     Re = 210;
                     break;
