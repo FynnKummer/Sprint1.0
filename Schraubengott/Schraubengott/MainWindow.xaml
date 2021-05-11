@@ -120,7 +120,7 @@
                     <CheckBox x:Name="check3" Content="" HorizontalAlignment="Left" Margin="50,228,0,0" VerticalAlignment="Top"/>
                     <CheckBox x:Name="check4" Content="" HorizontalAlignment="Left" Margin="50,292,0,0" VerticalAlignment="Top"/>
                     <CheckBox x:Name="check5" Content="" HorizontalAlignment="Left" Margin="50,357,0,0" VerticalAlignment="Top"/>
-                    <Button Content="zum Warenkorb" HorizontalAlignment="Left" Height="23" Margin="817,357,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click"/>
+                    <Button Content="zum Warenkorb" HorizontalAlignment="Left" Height="23" Margin="817,357,0,0" VerticalAlignment="Top" Width="92" Click="btnwarenkorb_Click"/>
                 </Grid>
 
             </TabItem>

@@ -127,6 +127,26 @@ public partial class MainWindow : Window
             feld[nr].gewindeart = "Standardgewinde";    //Gewindeartauswahl der Checkbox wird em Objekt hinzugefügt
         }
 
+        private void Cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Grafik der Schraube ändern, abhängig von dem Schraubenkopf
+            if (cbkopf.SelectedIndex == 1)
+            {
+                Image1.Visibility = Visibility.Visible;
+                Image2.Visibility = Visibility.Collapsed;
+            }
+            else if (cbkopf.SelectedIndex == 2)
+            {
+                Image1.Visibility = Visibility.Collapsed;
+                Image2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Image1.Visibility = Visibility.Visible;
+                Image2.Visibility = Visibility.Collapsed;
+            }
+        }
+
         private void Btnauswahl_Click(object sender, RoutedEventArgs e)
         {
             #region Fehlermeldung bei Falscheingaben"
@@ -404,27 +424,7 @@ public partial class MainWindow : Window
             }
         }
 
-        private void Cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //Grafik der Schraube ändern, abhängig von dem Schraubenkopf
-            if (cbkopf.SelectedIndex == 1)
-            {
-                Image1.Visibility = Visibility.Visible;
-                Image2.Visibility = Visibility.Collapsed;
-            }
-            else if(cbkopf.SelectedIndex==2)
-            {
-                Image1.Visibility = Visibility.Collapsed;
-                Image2.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Image1.Visibility = Visibility.Visible;
-                Image2.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnwarenkorb_Click(object sender, RoutedEventArgs e)
         {
             #region "Fehlermeldung bei Falscheingabe"
             if (check1.IsChecked == true && feld[0].material == null || check2.IsChecked == true && feld[1].material == null || check3.IsChecked == true && feld[2].material == null || check4.IsChecked == true && feld[3].material == null || check5.IsChecked == true && feld[4].material == null)
