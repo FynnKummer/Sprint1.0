@@ -625,6 +625,7 @@ public partial class MainWindow : Window
             mySheet.Cells[2, 1] =  "Material";
             mySheet.Cells[3, 1] =  "Festigkeitsklasse";
             mySheet.Cells[4, 1] =  "Schraubenkopf";
+          #region ...
             mySheet.Cells[5, 1] =  "Gewinde";
             mySheet.Cells[6, 1] =  "Gewindetyp";
             mySheet.Cells[7, 1] =  "Schraubenlänge (mm)";
@@ -655,39 +656,7 @@ public partial class MainWindow : Window
             mySheet.Cells[32, 1] ="Elastizitätsgrenze (N/mm²)";
             mySheet.Cells[33, 1] ="Zugfestigkeit (N/mm²)";
             
- 
-
-
-
-/*
-            mySheet.Cells[2, 1] = "Menge";
-            mySheet.Cells[3, 1] = "Techniche Details";
-            mySheet.Cells[4, 1] = "Schraubenlänge";
-            mySheet.Cells[5, 1] = "Gewindelänge";
-            mySheet.Cells[6, 1] = "Schlüsselweite";
-            mySheet.Cells[7, 1] = "Gewindedurchmesser";
-            mySheet.Cells[8, 1] = "Masse pro Stück";
-            mySheet.Cells[9, 1] = "Gesamtgewicht";
-            mySheet.Cells[10, 1] = "Gewindesteigung";
-            mySheet.Cells[11, 1] = "Gewindetiefe";
-            mySheet.Cells[12, 1] = "Rundung";
-            mySheet.Cells[13, 1] = "Flankendurchmesser";
-            mySheet.Cells[14, 1] = "Kerndurchmesser";
-            mySheet.Cells[15, 1] = "Flankenwinkel";
-            mySheet.Cells[16, 1] = "";
-            mySheet.Cells[17, 1] = "Elastizitätzgrenze";
-            mySheet.Cells[18, 1] = "Zugfestigkeit";
-            mySheet.Cells[19, 1] = "";
-            mySheet.Cells[20, 1] = "Preis (Netto)";
-            mySheet.Cells[21, 1] = "Summe";
-            mySheet.Cells[22, 1] = "Stückpreis";
-            mySheet.Cells[23, 1] = "";
-            mySheet.Cells[24, 1] = "Preis (Brutto)";
-            mySheet.Cells[25, 1] = "Summe";
-            mySheet.Cells[26, 1] = "Stückpreis";          
-            mySheet.Cells[28, 1] = "Bestellsumme"; 
-
-*/
+ #endregion  
 
             // Listenformat einführen 
             mySheet.Range["A1", "F19"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatList2);
@@ -700,7 +669,7 @@ public partial class MainWindow : Window
             {
                 
                 summe = summe + arr[i].nettopreis_Summe;
-
+                #region ...
                 mySheet.Cells[1, i + 2] = "Schraube " + (i+1);
                 mySheet.Cells[2, i + 2] =  arr[i].material;
                 mySheet.Cells[3, i + 2] =  arr[i].festigkeit;
@@ -714,12 +683,14 @@ public partial class MainWindow : Window
                 mySheet.Cells[11, i + 2] = "";
                 mySheet.Cells[12, i + 2] = Math.Round(arr[i].nettopreis_Summe,2);
                 mySheet.Cells[13, i + 2] = Math.Round(arr[i].nettoeinzelpreis,2);
+ #endregion              
                 mySheet.Cells[14, i + 2] = "";
                 mySheet.Cells[15, i + 2] = Math.Round(arr[i].preis_summe,2);
                 mySheet.Cells[16, i + 2] = Math.Round(arr[i].stückpreis,2);
                 mySheet.Cells[17, i + 2] = "";
                 // Summe 
                 mySheet.Cells[19, i + 2]. AddComment("Test");
+               #region ...
                 mySheet.Cells[20, i + 2] = "";
                 mySheet.Cells[21, i + 2] = "";
                 mySheet.Cells[22, i + 2] = "";
@@ -734,42 +705,12 @@ public partial class MainWindow : Window
                 mySheet.Cells[31, i + 2] = "";
                 mySheet.Cells[32, i + 2] = Math.Round(arr[i].elastizitätsgrenze,2);
                 mySheet.Cells[33, i + 2] = Math.Round(arr[i].Zugfestigkeit,2);
-
-
-                
-
-
-/*
-                mySheet.Cells[1, i + 2] = "Schraube" + i;
-                mySheet.Cells[2, i + 2] = arr[i].menge;
-                mySheet.Cells[4, i + 2] = arr[i].laenge + " mm";
-                mySheet.Cells[5, i + 2] = arr[i].gewindelaenge + " mm";
-                mySheet.Cells[6, i + 2] = arr[i].schluesselbreite + " mm";
-                mySheet.Cells[7, i + 2] = arr[i].gewinde;
-                mySheet.Cells[8, i + 2] = Math.Round(arr[i].masse, 2) + " g";
-                mySheet.Cells[9, i + 2] = Math.Round(arr[i].gesamtgewicht, 2) + " g";
-                mySheet.Cells[10, i + 2] = Math.Round(arr[i].gewindesteigung, 2) + " mm";
-                mySheet.Cells[11, i + 2] = Math.Round(arr[i].gewindetiefe, 2) + " mm";
-                mySheet.Cells[12, i + 2] = Math.Round(arr[i].gewinderundung, 2) + " mm";
-                mySheet.Cells[13, i + 2] = Math.Round(arr[i].flankendurchmesser, 2) + " mm";
-                mySheet.Cells[14, i + 2] = Math.Round(arr[i].kerndurchmesser, 2) + " mm";
-                mySheet.Cells[15, i + 2] = Math.Round(arr[i].flankenwinkel, 2) + "°";
-                mySheet.Cells[17, i + 2] = Math.Round(arr[i].elastizitätsgrenze, 2) + " N/mm²";
-                mySheet.Cells[18, i + 2] = Math.Round(arr[i].Zugfestigkeit, 2) + " N/mm²";
-                mySheet.Cells[21, i + 2] = Math.Round(arr[i].nettopreis_Summe, 2) + "€";
-                mySheet.Cells[22, i + 2] = Math.Round(arr[i].nettoeinzelpreis, 2) + "€";
-                mySheet.Cells[25, i + 2] = Math.Round(arr[i].preis_summe, 2) + "€";
-                mySheet.Cells[26, i + 2] = Math.Round(arr[i].stückpreis, 2) + "€";
-                
-                mySheet.Cells[28, i + 2] = Math.Round(summe,2)+"€";
-
-                mySheet.Cells[29, i + 2].AddComment("Test");  
-*/
-
+#endregion
             }
 
-            mySheet.Cells[18, 6] = summe;
+            mySheet.Cells[18, 6] = Math.Round(summe,2);
 
+            #region ...
             // Zellenbreite an Text anpassen 
             for (int i = 1; i < 9; i++)
             {
@@ -783,7 +724,8 @@ public partial class MainWindow : Window
                 excelApp.Workbooks.Close();
 
                 Emailsenden(bestellnummer);
-            }       
+            }  
+            #endregion
        }
 
         public static void Emailsenden(int bestellnummer)
