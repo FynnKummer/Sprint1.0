@@ -50,7 +50,7 @@
                                 <ComboBoxItem Content="V4A"/>
                             </ComboBox>
                             <ComboBox Name="cbfk" IsEditable="true" SelectedValuePath="Content" IsReadOnly="true"   HorizontalAlignment="Left" Height="26" Margin="135,85,0,0" VerticalAlignment="Top" Width="140" MaxDropDownHeight="60">
-                             
+
                                 <ComboBoxItem Content="--Bitte auswählen--" IsEnabled="False"/>
 
                             </ComboBox>
@@ -73,7 +73,7 @@
                             <ComboBox x:Name="cbkopf" IsEditable="true" SelectedValuePath="Content" IsReadOnly="true" HorizontalAlignment="Left" Margin="135,135,0,0" VerticalAlignment="Top" Width="140" Height="26" SelectionChanged="Cbkopf_SelectionChanged" >
                                 <ComboBoxItem Content="--Bitte auswählen--" IsEnabled="False"/>
                                 <ComboBoxItem Content="Außensechskant"/>
-                                <ComboBoxItem Content="Innensechskant" />
+                                <ComboBoxItem Content="Innensechskant"/>
                             </ComboBox>
 
                             <Label Content="Schraubenlänge:" HorizontalAlignment="Left" Height="30" Margin="350,35,0,0" VerticalAlignment="Top" Width="112"/>
@@ -83,7 +83,7 @@
                             <TextBox x:Name="txt_gewlen" MaxLength="3" HorizontalAlignment="Left" Height="26" Margin="535,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
                             <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="610,85,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219"/>
                             <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="350,135,0,0" VerticalAlignment="Top" Width="112"/>
-                            <TextBox x:Name="txt_menge" MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="535,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
+                            <TextBox x:Name="txt_menge" MaxLength="5" HorizontalAlignment="Left" Height="26" Margin="535,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
                             <Button x:Name="Btnauswahl" Content="Auswahl speichern" HorizontalAlignment="Left" Height="20" Margin="534,275,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="Btnauswahl_Click"/>
                         </Grid>
                     </Border>
@@ -179,8 +179,8 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Gryffindor IT-Solutions - Fynn Kummer | Jonathan Rietig | Lars Bohling | Malte Klarmann" HorizontalAlignment="Left" Height="29" Margin="10,571,0,0" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="84" Margin="481.333,516,0,0" VerticalAlignment="Top" Width="78" Source="Symbol.ico" RenderTransformOrigin="-0.274,0.063"/>
+        <Label Content="Fynn Kummer | Jonathan Rietig | Lars Bohling | Malte Klarmann" HorizontalAlignment="Left" Height="29" Margin="10,571,0,0" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="135" Margin="429.333,496,0,-21" VerticalAlignment="Top" Width="184" Source="Logo.png" RenderTransformOrigin="-0.274,0.063"/>
 
     </Grid>
 </Window>

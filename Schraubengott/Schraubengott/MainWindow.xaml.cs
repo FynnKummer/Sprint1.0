@@ -137,15 +137,15 @@ public partial class MainWindow : Window
                 MessageBox.Show("Für Gewindelänge und oder Länge liegt keine Eingabe vor.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;// wenn min eine Eingabe leer ist, wird die Methode beendet
             }
-            else if (Convert.ToInt32(txt_len.Text) <= 5)
+            else if (Convert.ToInt32(txt_len.Text) < 5 || Convert.ToInt32(txt_len.Text) > 150)
             {
-                MessageBox.Show("Eingaben für Länge zu klein.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;//wenn len kleiner als 6 wird Methode beendet
+                MessageBox.Show("Eingaben für Länge außerhalb des möglichen Wertebereichs.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;//wenn len kleiner als 5 wird Methode beendet
             }
-            else if (Convert.ToInt32(txt_gewlen.Text) <= 5)
+            else if (Convert.ToInt32(txt_gewlen.Text) < 5 || Convert.ToInt32(txt_gewlen.Text) > 150)
             {
-                MessageBox.Show("Eingaben für Gewindelänge zu klein.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;//wenn Gewlen kleiner als 6 wird Methode beendet
+                MessageBox.Show("Eingaben für Gewindelänge außerhalb des möglichen Wertebereichs.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;//wenn Gewlen kleiner als 5 wird Methode beendet
             }
             else if (Convert.ToInt32(txt_len.Text) < Convert.ToInt32(txt_gewlen.Text))
             {
