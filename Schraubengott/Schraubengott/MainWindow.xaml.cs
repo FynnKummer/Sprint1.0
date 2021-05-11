@@ -84,6 +84,7 @@ public partial class MainWindow : Window
                 cbfk.Items.Clear();
                 cbfk.Items.Add("--Bitte auswählen--");
                 cbfk.Items.Add("V4A 70");
+                cbfk.SelectedIndex = 1;
             }
             else if (cbmat.SelectedValue.ToString() == "Verzinkter Stahl")
             {
@@ -232,16 +233,71 @@ public partial class MainWindow : Window
             if(feld[nr].material=="Verzinkter Stahl")
             {
                 cbmat.SelectedIndex = 1;
+
+                switch (feld[nr].festigkeit)
+                {
+                    case "5.8":
+                        cbfk.SelectedIndex =1 ;
+
+                        break;
+                    
+                    case "6.8":
+
+                        cbfk.SelectedIndex = 2;
+                        break;
+
+                    case "8.8":
+                        cbfk.SelectedIndex = 3;
+                        break;
+
+                    case "9.8":
+                        cbfk.SelectedIndex = 4;
+                        break;
+
+                    case "10.8":
+                        cbfk.SelectedIndex = 5;
+                        break;
+
+                    case "12.8":
+                        cbfk.SelectedIndex = 6;
+                        break;
+                }
             }
             else if (feld[nr].material == "V2A")
             {
                 cbmat.SelectedIndex = 2;
+
+                switch (feld[nr].festigkeit)
+                {
+                    case "V2A 50":
+                        cbfk.SelectedIndex = 1;
+
+                        break;
+
+                    case "V2A 70":
+                        cbfk.SelectedIndex = 2;
+
+                        break;
+
+            }
+
             }
             else if (feld[nr].material == "V4A")
             {
                 cbmat.SelectedIndex = 3;
+
+                cbfk.SelectedIndex = 1;
             }
             
+            
+
+
+
+
+
+
+
+
             switch (feld[nr].gewinde)
             {
                 case "M4":
@@ -303,6 +359,9 @@ public partial class MainWindow : Window
             txt_gewlen.Text = feld[nr].gewindelaenge.ToString();
             txt_len.Text = feld[nr].laenge.ToString();
             txt_menge.Text = feld[nr].menge.ToString();
+
+
+            
            
 
 
@@ -317,7 +376,7 @@ public partial class MainWindow : Window
             //neue Schraube wird erstellt und alle Auswhalen werden aus Default zurückgesetzt
             cbfk.SelectedIndex = 0;
             cbgewinde.SelectedIndex = 0;
-            cbkopf.SelectedIndex = 0;
+            cbkopf.SelectedIndex = -1;
             cbmat.SelectedIndex = 0;
             txt_gewlen.Text = "";
             txt_len.Text = "";
