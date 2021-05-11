@@ -30,6 +30,7 @@ public partial class MainWindow : Window
 
         Random nummer = new Random();
         int bestellnummer;
+        string kundennummer;
 
         public MainWindow()
         {
@@ -50,6 +51,7 @@ public partial class MainWindow : Window
             
             // Bestellnummer 
             bestellnummer = nummer.Next(10000000, 99999999);
+            
         }
 
         private void Btnexit_Click(object sender, RoutedEventArgs e)
@@ -552,10 +554,10 @@ public partial class MainWindow : Window
         private void Btnexcel_Click(object sender, RoutedEventArgs e)
         {
             bool senden = false; 
-            ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer);
+            ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer,kundennummer);
         }
 
-        private void Btnangebot_Click(object sender, RoutedEventArgs e)
+        public void Btnangebot_Click(object sender, RoutedEventArgs e)
         {
             if (txtkunde.Text == "")
             {
@@ -569,25 +571,28 @@ public partial class MainWindow : Window
             }
             
             bool senden = true;
-            ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer);
+            ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer,kundennummer);
             MessageBox.Show("Angebot wurde erfolgreich abgesendet!", "Bestellt", MessageBoxButton.OK);
+
+            kundennummer = txtkunde.Text;
         }
 
     }
 
     class ExcelControll
     {
-        public static void ExelContoll_aufrufen(Schraube[] arr, bool senden, int bestellnummer)
+        public static void ExelContoll_aufrufen(Schraube[] arr, bool senden, int bestellnummer, string kundennummer)
         {
-            Excel_erstellen(arr, senden, bestellnummer);
+            Excel_erstellen(arr, senden, bestellnummer, kundennummer);
         }
-        public static void Excel_erstellen(Schraube[] arr, bool senden, int bestellnummer)
+        public static void Excel_erstellen(Schraube[] arr, bool senden, int bestellnummer, string Kundennummer)
         {
-            new ExcelControll(arr, senden, bestellnummer);
+            new ExcelControll(arr, senden, bestellnummer, Kundennummer);
         }
 
-        ExcelControll(Schraube[] arr, bool senden, int bestellnummer)
+        ExcelControll(Schraube[] arr, bool senden, int bestellnummer, string kundennummer)
         {
+
             // Erstellen einer Neuen Exelmappe 
             Excel.Application excelApp = new Excel.Application();
            if (senden == true)
@@ -690,7 +695,7 @@ public partial class MainWindow : Window
 
             mySheet.Cells[18, 6] = Math.Round(summe,2);
 
-            #region ...
+          
             // Zellenbreite an Text anpassen 
             for (int i = 1; i < 9; i++)
             {
@@ -699,19 +704,19 @@ public partial class MainWindow : Window
 
             if (senden == true)
             {
-                mySheet.SaveAs(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
+                mySheet.SaveAs(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) +"(" + kundennummer + ").xlsx");
 
                 excelApp.Workbooks.Close();
 
-                Emailsenden(bestellnummer);
+                Emailsenden(bestellnummer, kundennummer);
             }  
-            #endregion
+            
        }
 
-        public static void Emailsenden(int bestellnummer)
+        public static void Emailsenden(int bestellnummer, string Kundennummer)
         {
             string text = "Anfrage";
-            string betreff = "Anfrage";
+            string betreff = "Anfrage ("+Kundennummer+")";
             string server = "mail.gmx.net";
             int port = 587;
             string user = "456263856";
@@ -730,7 +735,7 @@ public partial class MainWindow : Window
 
             Mail.Body = text;
 
-            Attachment Tabelle = new Attachment(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) + ".xlsx");
+            Attachment Tabelle = new Attachment(@"C:\Windows\Temp\Bestellung " + Convert.ToString(bestellnummer) + "(" + Kundennummer + ").xlsx");
 
             Mail.Attachments.Add(Tabelle);
 
