@@ -564,6 +564,7 @@ public partial class MainWindow : Window
 
         public void Btnangebot_Click(object sender, RoutedEventArgs e)
         {
+
             if (txtkunde.Text == "")
             {
                 MessageBox.Show("Es wurde keine Kundennummer eingetragen", "", MessageBoxButton.OK, MessageBoxImage.Error);
