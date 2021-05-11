@@ -653,7 +653,6 @@ public partial class MainWindow : Window
             {
                 
                 summe = summe + arr[i].nettopreis_Summe;
-                #region ...
                 mySheet.Cells[1, i + 2] = "Schraube " + (i+1);
                 mySheet.Cells[2, i + 2] =  arr[i].material;
                 mySheet.Cells[3, i + 2] =  arr[i].festigkeit;
@@ -667,14 +666,12 @@ public partial class MainWindow : Window
                 mySheet.Cells[11, i + 2] = "";
                 mySheet.Cells[12, i + 2] = Math.Round(arr[i].nettopreis_Summe,2);
                 mySheet.Cells[13, i + 2] = Math.Round(arr[i].nettoeinzelpreis,2);
- #endregion              
                 mySheet.Cells[14, i + 2] = "";
                 mySheet.Cells[15, i + 2] = Math.Round(arr[i].preis_summe,2);
                 mySheet.Cells[16, i + 2] = Math.Round(arr[i].stückpreis,2);
                 mySheet.Cells[17, i + 2] = "";
                 // Summe 
                 mySheet.Cells[19, i + 2]. AddComment("Test");
-               #region ...
                 mySheet.Cells[20, i + 2] = "";
                 mySheet.Cells[21, i + 2] = "";
                 mySheet.Cells[22, i + 2] = "";
@@ -683,13 +680,12 @@ public partial class MainWindow : Window
                 mySheet.Cells[25, i + 2] = Math.Round(arr[i].gesamtgewicht,2);          
                 mySheet.Cells[26, i + 2] = Math.Round(arr[i].gewindesteigung,2); 
                 mySheet.Cells[27, i + 2] = Math.Round(arr[i].gewindetiefe,2);
-                mySheet.Cells[28, i + 2] = arr[i].gewinderundung;
+                mySheet.Cells[28, i + 2] = Math.Round(arr[i].gewinderundung,2);
                 mySheet.Cells[29, i + 2] = Math.Round(arr[i].flankendurchmesser,2);
                 mySheet.Cells[30, i + 2] = Math.Round(arr[i]. flankenwinkel,2);
                 mySheet.Cells[31, i + 2] = "";
                 mySheet.Cells[32, i + 2] = Math.Round(arr[i].elastizitätsgrenze,2);
                 mySheet.Cells[33, i + 2] = Math.Round(arr[i].Zugfestigkeit,2);
-#endregion
             }
 
             mySheet.Cells[18, 6] = Math.Round(summe,2);
