@@ -134,7 +134,7 @@ public partial class MainWindow : Window
 
             //hier noch alle Eingabeelement mit den aktuellen Werten in der Schraube festlegen. Wenn noch nicht festgelegt, dann Default
 
-            if (feld[nr].gewinde == null)
+            if (feld[nr].gewinde == "")
             {
                 MessageBox.Show("Es fehlt eine Gewindeeingabe.\rBitte eine Auswahl treffen", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -348,8 +348,7 @@ public partial class MainWindow : Window
             }
             else if (feld[nr].typ == "Innensechskant")
             {
-
-
+                cbkopf.SelectedIndex = 2;
                 Image1.Visibility = Visibility.Collapsed;
                 Image2.Visibility = Visibility.Visible;
             }
