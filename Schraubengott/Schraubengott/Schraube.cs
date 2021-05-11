@@ -52,11 +52,11 @@ namespace Schraubengott
         {
             dichte_festlegen();
             vol_berechnen();
-            preis_berechnen();
             gewsteigung_schlbreite_festlegen();
             geometrie();
             gewicht_berechnen();
             festigkeit_berechnen();
+            preis_berechnen();
 
 
         }
@@ -269,8 +269,8 @@ namespace Schraubengott
 
             // Objekt 
 
-            this.preis_summe = Bestellpreis;
-            this.stückpreis = einzelpreis;
+            preis_summe = Bestellpreis;
+            stückpreis = einzelpreis;
             this.nettopreis_Summe = Nettobestellpreis;
             this.nettoeinzelpreis = nettoeinzelpreis;
         }
