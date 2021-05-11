@@ -42,6 +42,7 @@ public partial class MainWindow : Window
             InitializeComponent();
             cmb_nr.SelectedIndex = 0;           //Combobox hat von Anfang an die erste Schraube ausgewählt
 
+            //Comboboxen werden von Anfange an auf Default gesetzt
             cbfk.SelectedIndex = 0;
             cbgewinde.SelectedIndex = 0;
             cbkopf.SelectedIndex = 0;
