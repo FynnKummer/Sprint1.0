@@ -559,7 +559,7 @@ public partial class MainWindow : Window
         private void Btnexcel_Click(object sender, RoutedEventArgs e)
         {
             bool senden = false; 
-            ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer,kundennummer);
+            ExcelControll.ExelContoll_aufrufen(Feld_anpassen(feld), senden, bestellnummer,kundennummer);
         }
 
         public void Btnangebot_Click(object sender, RoutedEventArgs e)
@@ -578,12 +578,51 @@ public partial class MainWindow : Window
             }
             
             bool senden = true;
-            ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer,kundennummer);
+
+
+            ExcelControll.ExelContoll_aufrufen(Feld_anpassen(feld), senden, bestellnummer,kundennummer);
             MessageBox.Show("Angebot wurde erfolgreich abgesendet!", "Bestellt", MessageBoxButton.OK);
 
             
         }
 
+        private  Schraube[] Feld_anpassen(Schraube[] feld)
+        {
+            Schraube[] newfeld = new Schraube[5];
+            for(int s=0; s < newfeld.Length; s++)
+            {
+                newfeld[s] = new Schraube();
+            }
+           
+
+            if (check1.IsChecked == true)
+            {
+                newfeld[0] = feld[0];
+               
+            }
+            if (check2.IsChecked == true)
+            {
+                newfeld[1] = feld[1];
+               
+            }
+            if (check3.IsChecked == true)
+            {
+                newfeld[2] = feld[2];
+               
+            }
+            if (check4.IsChecked == true)
+            {
+                newfeld[3] = feld[3];
+                
+            }
+            if (check5.IsChecked == true)
+            {
+                newfeld[4] = feld[4];
+                
+            }
+
+            return newfeld;
+        }
     }
 
     class ExcelControll
