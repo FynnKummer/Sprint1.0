@@ -357,8 +357,6 @@ public partial class MainWindow : Window
 
         private void New_screw_Click(object sender, RoutedEventArgs e)
         {
-
-
             //neue Schraube wird erstellt und alle Auswhalen werden aus Default zurückgesetzt
             cbfk.SelectedIndex = 0;
             cbgewinde.SelectedIndex = 0;
