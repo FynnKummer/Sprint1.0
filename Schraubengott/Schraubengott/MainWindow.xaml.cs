@@ -47,6 +47,7 @@ public partial class MainWindow : Window
             cbgewinde.SelectedIndex = 0;
             cbkopf.SelectedIndex = 0;
             cbmat.SelectedIndex = 0;
+            cbkopf.SelectedIndex = 0;
             
             // Bestellnummer 
             bestellnummer = nummer.Next(10000000, 99999999);
@@ -54,7 +55,7 @@ public partial class MainWindow : Window
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
         {
-
+            //Wenn Exit-Button geklickt wird, wird gefragt, ob das Fenster geschlossen werden soll. Mit klick auf ja wird die App beendet
             if (MessageBox.Show("Das Fenster wirklich schließen?\nAlle Konfigurationene werden gelöscht!","Warnung", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 Application.Current.Shutdown();  
@@ -227,6 +228,8 @@ public partial class MainWindow : Window
                     nr = 4;
                     break;
             }
+            
+            
             if(feld[nr].material=="Verzinkter Stahl")
             {
                 cbmat.SelectedIndex = 1;
@@ -278,8 +281,7 @@ public partial class MainWindow : Window
                     break;
             }
 
-           //
-            //if( ma)
+           
 
 
 
