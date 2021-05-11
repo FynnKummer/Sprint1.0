@@ -42,6 +42,11 @@ public partial class MainWindow : Window
             InitializeComponent();
             cmb_nr.SelectedIndex = 0;           //Combobox hat von Anfang an die erste Schraube ausgewählt
 
+            cbfk.SelectedIndex = 0;
+            cbgewinde.SelectedIndex = 0;
+            cbkopf.SelectedIndex = 0;
+            cbmat.SelectedIndex = 0;
+            
             // Bestellnummer 
             bestellnummer = nummer.Next(10000000, 99999999);
         }
