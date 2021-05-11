@@ -525,7 +525,7 @@ public partial class MainWindow : Window
             double w4 = Convert.ToDouble(gpreis4txt.Text);
             double w5 = Convert.ToDouble(gpreis5txt.Text);
 
-            if (double.TryParse(gpreis1txt.Text, out w1) && double.TryParse(gpreis2txt.Text, out w2) && double.TryParse(gpreis3txt.Text, out w3) && double.TryParse(gpreis4txt.Text, out w4) && double.TryParse(gpreis5txt.Text, out w5))
+            
                 gesamtpreistxt.Text = (w1 + w2 + w3 + w4 + w5).ToString();
 
             double x1 = Convert.ToDouble(menge1txt.Text);
@@ -534,7 +534,7 @@ public partial class MainWindow : Window
             double x4 = Convert.ToDouble(menge4txt.Text);
             double x5 = Convert.ToDouble(menge5txt.Text);
 
-            if (double.TryParse(menge1txt.Text, out x1) && double.TryParse(menge2txt.Text, out x2) && double.TryParse(menge3txt.Text, out x3) && double.TryParse(menge4txt.Text, out x4) && double.TryParse(menge5txt.Text, out x5))
+            
                 summemengetxt.Text = (x1 + x2 + x3 + x4 + x5).ToString();
 
             double y1 = Convert.ToDouble(gew1txt.Text);
@@ -543,7 +543,7 @@ public partial class MainWindow : Window
             double y4 = Convert.ToDouble(gew4txt.Text);
             double y5 = Convert.ToDouble(gew5txt.Text);
 
-            if (double.TryParse(gew1txt.Text, out y1) && double.TryParse(gew2txt.Text, out y2) && double.TryParse(gew3txt.Text, out y3) && double.TryParse(gew4txt.Text, out y4) && double.TryParse(gew5txt.Text, out y5))
+            
                 summegewtxt.Text = (y1 + y2 + y3 + y4 + y5).ToString();
 
             double z1 = Convert.ToDouble(preis1txt.Text);
@@ -552,7 +552,7 @@ public partial class MainWindow : Window
             double z4 = Convert.ToDouble(preis4txt.Text);
             double z5 = Convert.ToDouble(preis5txt.Text);
 
-            if (double.TryParse(preis1txt.Text, out z1) && double.TryParse(preis2txt.Text, out z2) && double.TryParse(preis3txt.Text, out z3) && double.TryParse(preis4txt.Text, out z4) && double.TryParse(preis5txt.Text, out z5))
+            
                 summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();     
         }
 
