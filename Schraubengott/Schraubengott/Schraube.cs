@@ -220,11 +220,11 @@ namespace Schraubengott
             const double mws = 1.19;
 
             //Grundpreis nach Material
-            if (this.material.Equals("1"))
+            if (this.material.Equals("Verzinkter Stahl"))
             {                                           // Verzinkte Schraube 
                 preis = kilopreis_verzinkt;
             }
-            else if (this.material.Equals("2")) //hier fehlt die Bedingung
+            else if (this.material.Equals("V2A")) 
             {
                 preis = kilopreis_V2A;                     // Edelstahlschraube 
             }
@@ -241,13 +241,13 @@ namespace Schraubengott
             }
 
             // Innensechskant
-            if (this.typ.Equals("I", StringComparison.InvariantCultureIgnoreCase))
+            if (this.typ.Equals("Innensechskant", StringComparison.InvariantCultureIgnoreCase))
             {
                 preis = preis + aufpreis_Innensechskant;
             }
 
             // Feingewinde 
-            if (this.gewindeart.Equals("F", StringComparison.InvariantCultureIgnoreCase))
+            if (this.gewindeart.Equals("Außensechskant", StringComparison.InvariantCultureIgnoreCase))
             {
                 preis = preis + aufpreis_Feingewinde;
             }
