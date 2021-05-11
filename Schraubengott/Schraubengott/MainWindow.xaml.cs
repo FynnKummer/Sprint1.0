@@ -47,6 +47,7 @@ public partial class MainWindow : Window
             cbgewinde.SelectedIndex = 0;
             cbkopf.SelectedIndex = 0;
             cbmat.SelectedIndex = 0;
+            cbkopf.SelectedIndex = 0;
             
             // Bestellnummer 
             bestellnummer = nummer.Next(10000000, 99999999);
@@ -54,7 +55,16 @@ public partial class MainWindow : Window
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();                    //Exitbutton schließt die App
+            //Wenn Exit-Button geklickt wird, wird gefragt, ob das Fenster geschlossen werden soll. Mit klick auf ja wird die App beendet
+            if (MessageBox.Show("Das Fenster wirklich schließen?\nAlle Konfigurationene werden gelöscht!","Warnung", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();  
+            }
+            else
+            {
+                return;  
+            }
+
         }
 
         private void cbmat_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -197,7 +207,8 @@ public partial class MainWindow : Window
             switch (cmb_nr.SelectedIndex)
             {
                 case 0:
-                    nr = 0;                  
+                    nr = 0;
+                    
                     break;
                
                 case 1:
@@ -216,11 +227,58 @@ public partial class MainWindow : Window
                     nr = 4;
                     break;
             }
-            //if (feld[nr].material != "")
-            //{
-            //    //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
-            //    cbmat.SelectedValue = feld[nr].material;
-            //}
+            
+            
+            if(feld[nr].material=="Verzinkter Stahl")
+            {
+                cbmat.SelectedIndex = 1;
+            }
+            else if (feld[nr].material == "V2A")
+            {
+                cbmat.SelectedIndex = 2;
+            }
+            else if (feld[nr].material == "V4A")
+            {
+                cbmat.SelectedIndex = 3;
+            }
+            
+            switch (feld[nr].gewinde)
+            {
+                case "M4":
+                    cbgewinde.SelectedValue = 1;
+                    break;
+
+                case "M5":
+                    cbgewinde.SelectedValue =2;
+                    break;
+
+                case "M6":
+                    cbgewinde.SelectedValue =3;
+                    break;
+
+                case "M8":
+                    cbgewinde.SelectedValue = 4;
+                    break;
+
+                case "M10":
+                    cbgewinde.SelectedValue = 5;
+                    break;
+                    
+                case "M12":
+                    cbgewinde.SelectedValue = 6;
+                    
+                    break;
+                    
+                case "M16":
+                    cbgewinde.SelectedValue = 7;
+                  
+                    break;
+                
+                case "M20":
+                    cbgewinde.SelectedValue = 8;
+                    
+                    break;
+            }
 
         }
 
@@ -305,7 +363,7 @@ public partial class MainWindow : Window
             if (check1.IsChecked == true)
             {
                 menge1txt.Text = feld[0].menge.ToString();
-                gew1txt.Text = Math.Round(feld[0].masse,2).ToString();
+                gew1txt.Text = Math.Round(feld[0].gesamtgewicht, 2).ToString();
                 preis1txt.Text = Math.Round(feld[0].stückpreis,2).ToString();
                 gpreis1txt.Text = Math.Round(feld[0].preis_summe,2).ToString();
             }
@@ -320,7 +378,7 @@ public partial class MainWindow : Window
             if (check2.IsChecked == true)
             {
                  menge2txt.Text = feld[1].menge.ToString();
-                 gew2txt.Text = Math.Round(feld[1].masse,2).ToString();
+                 gew2txt.Text = Math.Round(feld[1].gesamtgewicht, 2).ToString();
                  preis2txt.Text = Math.Round(feld[1].stückpreis,2).ToString();
                  gpreis2txt.Text = Math.Round(feld[1].preis_summe,2).ToString();
             }
@@ -335,7 +393,7 @@ public partial class MainWindow : Window
             if (check3.IsChecked == true)
             {
                 menge3txt.Text = feld[2].menge.ToString();
-                gew3txt.Text = Math.Round(feld[2].masse,2).ToString();
+                gew3txt.Text = Math.Round(feld[2].gesamtgewicht, 2).ToString();
                 preis3txt.Text = Math.Round(feld[2].stückpreis,2).ToString();
                 gpreis3txt.Text = Math.Round(feld[2].preis_summe,2).ToString();
             }
@@ -350,7 +408,7 @@ public partial class MainWindow : Window
             if (check4.IsChecked == true)
             {
                 menge4txt.Text = feld[3].menge.ToString();
-                gew4txt.Text = Math.Round(feld[3].masse,2).ToString();
+                gew4txt.Text = Math.Round(feld[3].gesamtgewicht, 2).ToString();
                 preis4txt.Text = Math.Round(feld[3].stückpreis,2).ToString();
                 gpreis4txt.Text = Math.Round(feld[3].preis_summe,2).ToString();
             }
@@ -365,7 +423,7 @@ public partial class MainWindow : Window
             if (check5.IsChecked == true)
             {
                 menge5txt.Text = feld[4].menge.ToString();
-                gew5txt.Text = Math.Round(feld[4].masse,2).ToString();
+                gew5txt.Text = Math.Round(feld[4].gesamtgewicht, 2).ToString();
                 preis5txt.Text = Math.Round(feld[4].stückpreis,2).ToString();
                 gpreis5txt.Text = Math.Round(feld[4].preis_summe,2).ToString();
             }
