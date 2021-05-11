@@ -53,7 +53,7 @@ public partial class MainWindow : Window
             bestellnummer = nummer.Next(10000000, 99999999);
         }
 
-        private void btnexit_Click(object sender, RoutedEventArgs e)
+        private void Btnexit_Click(object sender, RoutedEventArgs e)
         {
             //Wenn Exit-Button geklickt wird, wird gefragt, ob das Fenster geschlossen werden soll. Mit klick auf ja wird die App beendet
             if (MessageBox.Show("Das Fenster wirklich schließen?\nAlle Konfigurationene werden gelöscht!","Warnung", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
@@ -67,7 +67,7 @@ public partial class MainWindow : Window
 
         }
 
-        private void cbmat_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        private void Cbmat_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             //Combobox für Festigkeitsklasse wir abhängig von dem Material befüllt
             if (cbmat.SelectedValue.ToString() == "V2A")
@@ -126,7 +126,7 @@ public partial class MainWindow : Window
             feld[nr].gewindeart = "Standardgewinde";
         }
 
-        private void btnauswahl_Click(object sender, RoutedEventArgs e)
+        private void Btnauswahl_Click(object sender, RoutedEventArgs e)
         {
             #region "Wenn was nicht passt Fehlermeldungen"
 
@@ -197,12 +197,12 @@ public partial class MainWindow : Window
             mengetxt.Text = ("Menge" + "\n\n\n" + feld[0].menge + "\n\n\n" + feld[1].menge + "\n\n\n" + feld[2].menge + "\n\n\n" + feld[3].menge + "\n\n\n" + feld[4].menge);
 
             //Berechnungen für die ausgewählte Schraube           
-            feld[nr].berechnen();
+            feld[nr].Berechnen();
 
             MessageBox.Show("Die aktuelle Konfiguration wurde in die Übersicht hinzugefügt.", "Konfiguration gespeichert", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        private void cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
+        private void Cmb_nr_SelectionChanged(object sender, SelectionChangedEventArgs e)//auswahl der Schraubennummer (Index vom Feld)
         {
             switch (cmb_nr.SelectedIndex)
             {
@@ -296,7 +296,7 @@ public partial class MainWindow : Window
 
         }
 
-        private void new_screw_Click(object sender, RoutedEventArgs e)
+        private void New_screw_Click(object sender, RoutedEventArgs e)
         {
 
 
@@ -341,7 +341,7 @@ public partial class MainWindow : Window
             }
         }
 
-        private void cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Cbkopf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Grafik der Schraube ändern, abhängig von dem Schraubenkopf
             if (cbkopf.SelectedValue.ToString() == "Außensechskant")
@@ -486,13 +486,13 @@ public partial class MainWindow : Window
                 summepreistxt.Text = (z1 + z2 + z3 + z4 + z5).ToString();     
         }
 
-        private void btnexcel_Click(object sender, RoutedEventArgs e)
+        private void Btnexcel_Click(object sender, RoutedEventArgs e)
         {
             bool senden = false; 
             ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer);
         }
 
-        private void btnangebot_Click(object sender, RoutedEventArgs e)
+        private void Btnangebot_Click(object sender, RoutedEventArgs e)
         {
             if (txtkunde.Text == "")
             {

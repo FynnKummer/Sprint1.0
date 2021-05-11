@@ -11,7 +11,7 @@
             <ColumnDefinition Width="11*"/>
             <ColumnDefinition Width="782*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="btnexit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="904.333,555,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="btnexit_Click" />
+        <Button Name="Btnexit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="904.333,555,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="Btnexit_Click" />
         <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="447" Margin="42.333,44,0,0" VerticalAlignment="Top" Width="954">
             <TabItem x:Name="tab_konfig" Header="Konfigurator" Height="22" Margin="-2,-2,-2.5,0" VerticalAlignment="Top">
                 <Grid x:Name="grid0" RenderTransformOrigin="0.426,0.462">
@@ -29,7 +29,7 @@
 
                     <Image x:Name="Image1" HorizontalAlignment="Left" Margin="707.25,0,0,23" Width="140"  Height="368" VerticalAlignment="Bottom" Source="vykres_-_din_931.jpg" Visibility="Visible" Grid.Column="1"/>
                     <Image x:Name="Image2" HorizontalAlignment="Left" Margin="707.25,0,0,23" Width="140"  Height="368" VerticalAlignment="Bottom" Source="3929_1.jpg" Visibility="Hidden" Grid.Column="1"/>
-                    <ComboBox  x:Name="cmb_nr" HorizontalAlignment="Left" Margin="190.25,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_nr_SelectionChanged" Height="30" Grid.Column="1">
+                    <ComboBox  x:Name="cmb_nr" HorizontalAlignment="Left" Margin="190.25,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cmb_nr_SelectionChanged" Height="30" Grid.Column="1">
                         <ComboBoxItem x:Name="screw1"  Content="Schraube 1" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="screw2" Visibility="Collapsed" Content="Schraube 2" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="screw3" Visibility="Collapsed" Content="Schraube 3" HorizontalAlignment="Left" Width="118"/>
@@ -37,13 +37,13 @@
                         <ComboBoxItem x:Name="screw5" Visibility="Collapsed" Content="Schraube 5" HorizontalAlignment="Left" Width="118"/>
 
                     </ComboBox>
-                    <Button x:Name="new_screw" Content="weitere Konfigurieren" HorizontalAlignment="Left" Margin="398.25,25,0,0" VerticalAlignment="Top" Width="156" Height="30" Click="new_screw_Click" Grid.Column="1"/>
+                    <Button x:Name="new_screw" Content="weitere Konfigurieren" HorizontalAlignment="Left" Margin="398.25,25,0,0" VerticalAlignment="Top" Width="156" Height="30" Click="New_screw_Click" Grid.Column="1"/>
                     <Label Content="EA" HorizontalAlignment="Left" Height="30" Margin="587.25,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="308" Margin="25,85,0,0" VerticalAlignment="Top" Width="662" Grid.ColumnSpan="2">
                         <Grid>
                             <Label Content="Material:" Height="30" Margin="15,35,0,0" VerticalAlignment="Top" Width="58" HorizontalAlignment="Left"/>
                             <Label Content="Festigkeitsklasse:" HorizontalAlignment="Left" Height="30" Margin="15,85,0,0" VerticalAlignment="Top" Width="112"/>
-                            <ComboBox Name="cbmat"   IsEditable="true" SelectedValuePath="Content" IsReadOnly="true" SelectionChanged="cbmat_SelectionChanged_1" HorizontalAlignment="Left" Height="26" Margin="135,35,0,0" VerticalAlignment="Top" Width="140">
+                            <ComboBox Name="cbmat"   IsEditable="true" SelectedValuePath="Content" IsReadOnly="true" SelectionChanged="Cbmat_SelectionChanged_1" HorizontalAlignment="Left" Height="26" Margin="135,35,0,0" VerticalAlignment="Top" Width="140">
                                 <ComboBoxItem Content="--Bitte auswählen--" IsEnabled="False"/>
                                 <ComboBoxItem x:Name="name" Content="Verzinkter Stahl"/>
                                 <ComboBoxItem Content="V2A"/>
@@ -70,7 +70,7 @@
                             <Label Content="Bemerkungen:" HorizontalAlignment="Left" Margin="350,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.971,4.298" Height="26" Width="86"/>
                             <TextBox x:Name="text" HorizontalAlignment="Left" Height="53" Margin="441,185,0,0" TextWrapping="Wrap" Text="z.B Bitte in 50er Paketen versenden" VerticalAlignment="Top" Width="207" IsReadOnly="False" />
                             <Label Content="Kopf:" HorizontalAlignment="Left" Height="30" Margin="15,135,0,0" VerticalAlignment="Top" Width="112"/>
-                            <ComboBox x:Name="cbkopf" IsEditable="true" SelectedValuePath="Content" IsReadOnly="true" HorizontalAlignment="Left" Margin="135,135,0,0" VerticalAlignment="Top" Width="140" Height="26" SelectionChanged="cbkopf_SelectionChanged" >
+                            <ComboBox x:Name="cbkopf" IsEditable="true" SelectedValuePath="Content" IsReadOnly="true" HorizontalAlignment="Left" Margin="135,135,0,0" VerticalAlignment="Top" Width="140" Height="26" SelectionChanged="Cbkopf_SelectionChanged" >
                                 <ComboBoxItem Content="--Bitte auswählen--" IsEnabled="False"/>
                                 <ComboBoxItem Content="Außensechskant"/>
                                 <ComboBoxItem Content="Innensechskant" />
@@ -84,7 +84,7 @@
                             <Label Content="mm" HorizontalAlignment="Left" Height="30" Margin="610,85,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219"/>
                             <Label Content="Menge" HorizontalAlignment="Left" Height="26" Margin="350,135,0,0" VerticalAlignment="Top" Width="112"/>
                             <TextBox x:Name="txt_menge" MaxLength="9" HorizontalAlignment="Left" Height="26" Margin="535,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" UndoLimit="99" TextChanged="TextBox_TextChanged"/>
-                            <Button x:Name="btnauswahl" Content="Auswahl speichern" HorizontalAlignment="Left" Height="20" Margin="534,275,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="btnauswahl_Click"/>
+                            <Button x:Name="Btnauswahl" Content="Auswahl speichern" HorizontalAlignment="Left" Height="20" Margin="534,275,0,0" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Click="Btnauswahl_Click"/>
                         </Grid>
                     </Border>
                     <Label Content="Zu konfigurierende Schraube:" HorizontalAlignment="Left" Height="30" Margin="46,25,0,0" VerticalAlignment="Top" Width="171" Grid.ColumnSpan="2"/>
@@ -165,8 +165,8 @@
                     <TextBox TextAlignment="Center" x:Name="preis4txt" HorizontalAlignment="Left" Height="54" Margin="340.167,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="1"/>
                     <TextBox TextAlignment="Center" x:Name="preis5txt" HorizontalAlignment="Left" Height="54" Margin="340.167,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="1"/>
                     <TextBox TextAlignment="Center" x:Name="summepreistxt" HorizontalAlignment="Left" Height="54" Margin="340.167,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="1"/>
-                    <Button x:Name="btnangebot" Content="Angebot absenden" HorizontalAlignment="Left" Height="42" Margin="742.167,280,0,0" VerticalAlignment="Top" Width="130" Click="btnangebot_Click" Grid.Column="1"/>
-                    <Button x:Name="btnexcel" Content="Excel herunterladen" HorizontalAlignment="Left" Height="42" Margin="742.167,346,0,0" VerticalAlignment="Top" Width="130" Click="btnexcel_Click" Grid.Column="1"/>
+                    <Button x:Name="btnangebot" Content="Angebot absenden" HorizontalAlignment="Left" Height="42" Margin="742.167,280,0,0" VerticalAlignment="Top" Width="130" Click="Btnangebot_Click" Grid.Column="1"/>
+                    <Button x:Name="btnexcel" Content="Excel herunterladen" HorizontalAlignment="Left" Height="42" Margin="742.167,346,0,0" VerticalAlignment="Top" Width="130" Click="Btnexcel_Click" Grid.Column="1"/>
                     <TextBox TextAlignment="Center" HorizontalAlignment="Left" Height="54" Margin="460.167,10,0,0" TextWrapping="Wrap" Text="Preis in Euro" VerticalAlignment="Top" Width="130" IsReadOnly="True" Grid.Column="1"/>
                     <TextBox TextAlignment="Center" x:Name="gpreis1txt" HorizontalAlignment="Left" Height="54" Margin="460.167,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" IsReadOnly="True" Grid.Column="1"/>
                     <TextBox TextAlignment="Center" x:Name="gpreis2txt" HorizontalAlignment="Left" Height="54" Margin="460.167,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" IsReadOnly="True" Grid.Column="1"/>
