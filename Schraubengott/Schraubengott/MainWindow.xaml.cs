@@ -564,6 +564,7 @@ public partial class MainWindow : Window
 
         public void Btnangebot_Click(object sender, RoutedEventArgs e)
         {
+            kundennummer = txtkunde.Text;
 
             if (txtkunde.Text == "")
             {
@@ -580,7 +581,7 @@ public partial class MainWindow : Window
             ExcelControll.ExelContoll_aufrufen(feld, senden, bestellnummer,kundennummer);
             MessageBox.Show("Angebot wurde erfolgreich abgesendet!", "Bestellt", MessageBoxButton.OK);
 
-            kundennummer = txtkunde.Text;
+            
         }
 
     }
