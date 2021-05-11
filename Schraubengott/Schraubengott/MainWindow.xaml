@@ -12,7 +12,7 @@
             <ColumnDefinition Width="782*"/>
         </Grid.ColumnDefinitions>
         <Button Name="Btnexit" Content="Exit" HorizontalAlignment="Left" Height="22" Margin="904.333,555,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="Btnexit_Click" />
-        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="447" Margin="42.333,44,0,0" VerticalAlignment="Top" Width="954">
+        <TabControl Grid.Column="1" HorizontalAlignment="Left" Height="447" Margin="27.333,26,0,0" VerticalAlignment="Top" Width="954">
             <TabItem x:Name="tab_konfig" Header="Konfigurator" Height="22" Margin="-2,-2,-2.5,0" VerticalAlignment="Top">
                 <Grid x:Name="grid0" RenderTransformOrigin="0.426,0.462">
                     <Grid.ColumnDefinitions>
@@ -180,7 +180,7 @@
             </TabItem>
         </TabControl>
         <Label Content="Fynn Kummer | Jonathan Rietig | Lars Bohling | Malte Klarmann" HorizontalAlignment="Left" Height="29" Margin="10,571,0,0" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="135" Margin="429.333,496,0,-21" VerticalAlignment="Top" Width="184" Source="Logo.png" RenderTransformOrigin="-0.274,0.063"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="153" Margin="410.333,478,0,-21" VerticalAlignment="Top" Width="214" Source="Logo.png" RenderTransformOrigin="-0.274,0.063"/>
 
     </Grid>
 </Window>

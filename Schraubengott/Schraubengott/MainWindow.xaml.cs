@@ -45,7 +45,6 @@ public partial class MainWindow : Window
             //Comboboxen werden von Anfange an auf Default gesetzt
             cbfk.SelectedIndex = 0;
             cbgewinde.SelectedIndex = 0;
-            cbkopf.SelectedIndex = 0;
             cbmat.SelectedIndex = 0;
             cbkopf.SelectedIndex = 0;
             
@@ -208,10 +207,9 @@ public partial class MainWindow : Window
             switch (cmb_nr.SelectedIndex)
             {
                 case 0:
-                    nr = 0;
-                    
+                    nr = 0;     
                     break;
-               
+            
                 case 1:
                     nr = 1;
                     break;
@@ -227,8 +225,7 @@ public partial class MainWindow : Window
                 case 4:
                     nr = 4;
                     break;
-            }
-            
+            }           
             
             if(feld[nr].material=="Verzinkter Stahl")
             {
@@ -238,11 +235,9 @@ public partial class MainWindow : Window
                 {
                     case "5.8":
                         cbfk.SelectedIndex =1 ;
-
                         break;
                     
                     case "6.8":
-
                         cbfk.SelectedIndex = 2;
                         break;
 
@@ -271,35 +266,30 @@ public partial class MainWindow : Window
                 {
                     case "V2A 50":
                         cbfk.SelectedIndex = 1;
-
                         break;
 
                     case "V2A 70":
                         cbfk.SelectedIndex = 2;
-
                         break;
-
-            }
-
+                }
             }
             else if (feld[nr].material == "V4A")
             {
                 cbmat.SelectedIndex = 3;
-
                 cbfk.SelectedIndex = 1;
             }
-            
-            
-
-
-
-
-
-
-
+            else
+            {
+                cbmat.SelectedIndex = 0;
+                cbfk.SelectedIndex = 0;
+            }
 
             switch (feld[nr].gewinde)
             {
+                case null:
+                    cbgewinde.SelectedIndex = 0;
+                    break;
+
                 case "M4":
                     cbgewinde.SelectedIndex = 1;
                     break;
@@ -321,13 +311,11 @@ public partial class MainWindow : Window
                     break;
                     
                 case "M12":
-                    cbgewinde.SelectedIndex = 6;
-                    
+                    cbgewinde.SelectedIndex = 6;                   
                     break;
                     
                 case "M16":
-                    cbgewinde.SelectedIndex = 7;
-                  
+                    cbgewinde.SelectedIndex = 7;                 
                     break;
                 
                 case "M20":
@@ -336,47 +324,43 @@ public partial class MainWindow : Window
                     break;
             }
 
-
             if (feld[nr].gewindeart=="Feingewinde")
             {
                 gewartcheck.IsChecked = true;
             }
+            else
+            {
+                gewartcheck.IsChecked = false;
+            }
             if (feld[nr].typ == "Außensechskant")
             {
-                cbkopf.SelectedIndex = 0;
+                cbkopf.SelectedIndex = 1;
                 Image1.Visibility = Visibility.Visible;
                 Image2.Visibility = Visibility.Collapsed;
+            }
+            else if (feld[nr].typ == "Innensechskant")
+            {
 
+
+                Image1.Visibility = Visibility.Collapsed;
+                Image2.Visibility = Visibility.Visible;
             }
             else
             {
-                cbkopf.SelectedIndex = 1;
-                Image1.Visibility = Visibility.Collapsed;
-                Image2.Visibility = Visibility.Visible;
-
+                cbkopf.SelectedIndex = 0;
             }
 
             txt_gewlen.Text = feld[nr].gewindelaenge.ToString();
             txt_len.Text = feld[nr].laenge.ToString();
             txt_menge.Text = feld[nr].menge.ToString();
-
-
-            
-           
-
-
-
-
         }
 
         private void New_screw_Click(object sender, RoutedEventArgs e)
         {
-
-
             //neue Schraube wird erstellt und alle Auswhalen werden aus Default zurückgesetzt
             cbfk.SelectedIndex = 0;
             cbgewinde.SelectedIndex = 0;
-            cbkopf.SelectedIndex = -1;
+            cbkopf.SelectedIndex = 0;
             cbmat.SelectedIndex = 0;
             txt_gewlen.Text = "";
             txt_len.Text = "";
