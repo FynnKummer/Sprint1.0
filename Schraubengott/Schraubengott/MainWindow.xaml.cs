@@ -54,7 +54,20 @@ public partial class MainWindow : Window
 
         private void btnexit_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();                    //Exitbutton schließt die App
+
+            if (MessageBox.Show("Das Fenster wirklich schließen?\nAlle Konfigurationene werden gelöscht!","Warnung", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();  
+            }
+            else
+            {
+                return;  
+            }
+
+
+
+
+
         }
 
         private void cbmat_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -194,7 +207,8 @@ public partial class MainWindow : Window
             switch (cmb_nr.SelectedIndex)
             {
                 case 0:
-                    nr = 0;                  
+                    nr = 0;
+                    
                     break;
                
                 case 1:
@@ -213,11 +227,62 @@ public partial class MainWindow : Window
                     nr = 4;
                     break;
             }
-            //if (feld[nr].material != "")
-            //{
-            //    //hier noch einfügen, dass bei Auswahlwechsel die Auswahl wieder die richtige ist
-            //    cbmat.SelectedValue = feld[nr].material;
-            //}
+            if(feld[nr].material=="Verzinkter Stahl")
+            {
+                cbmat.SelectedIndex = 1;
+            }
+            else if (feld[nr].material == "V2A")
+            {
+                cbmat.SelectedIndex = 2;
+            }
+            else if (feld[nr].material == "V4A")
+            {
+                cbmat.SelectedIndex = 3;
+            }
+            
+            switch (feld[nr].gewinde)
+            {
+                case "M4":
+                    cbgewinde.SelectedValue = 1;
+                    break;
+
+                case "M5":
+                    cbgewinde.SelectedValue =2;
+                    break;
+
+                case "M6":
+                    cbgewinde.SelectedValue =3;
+                    break;
+
+                case "M8":
+                    cbgewinde.SelectedValue = 4;
+                    break;
+
+                case "M10":
+                    cbgewinde.SelectedValue = 5;
+                    break;
+                    
+                case "M12":
+                    cbgewinde.SelectedValue = 6;
+                    
+                    break;
+                    
+                case "M16":
+                    cbgewinde.SelectedValue = 7;
+                  
+                    break;
+                
+                case "M20":
+                    cbgewinde.SelectedValue = 8;
+                    
+                    break;
+            }
+
+           //
+            //if( ma)
+
+
+
 
         }
 
