@@ -45,7 +45,6 @@ public partial class MainWindow : Window
             //Comboboxen werden von Anfange an auf Default gesetzt
             cbfk.SelectedIndex = 0;
             cbgewinde.SelectedIndex = 0;
-            cbkopf.SelectedIndex = 0;
             cbmat.SelectedIndex = 0;
             cbkopf.SelectedIndex = 0;
             
@@ -343,14 +342,14 @@ public partial class MainWindow : Window
             }
             if (feld[nr].typ == "Außensechskant")
             {
-                cbkopf.SelectedIndex = 0;
+                cbkopf.SelectedIndex = 1;
                 Image1.Visibility = Visibility.Visible;
                 Image2.Visibility = Visibility.Collapsed;
 
             }
             else
             {
-                cbkopf.SelectedIndex = 1;
+
                 Image1.Visibility = Visibility.Collapsed;
                 Image2.Visibility = Visibility.Visible;
 
@@ -376,7 +375,7 @@ public partial class MainWindow : Window
             //neue Schraube wird erstellt und alle Auswhalen werden aus Default zurückgesetzt
             cbfk.SelectedIndex = 0;
             cbgewinde.SelectedIndex = 0;
-            cbkopf.SelectedIndex = -1;
+            cbkopf.SelectedIndex = 0;
             cbmat.SelectedIndex = 0;
             txt_gewlen.Text = "";
             txt_len.Text = "";
