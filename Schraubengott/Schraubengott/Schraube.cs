@@ -277,8 +277,8 @@ namespace Schraubengott
 
         public void Gewsteigung_schlbreite_festlegen()
         {
-            String[] feld = this.gewinde.Split('M');
-            int d = Int32.Parse(feld[1]);
+            //String[] feld = this.gewinde.Split('M');
+            //int d = Int32.Parse(feld[1]);
 
             //Gewindesteigung + Schlüsselbreite
             if (gewindeart.Equals("Standardgewinde"))
@@ -369,6 +369,7 @@ namespace Schraubengott
         public void Geometrie()
         {
             double h3, r, d2, d3, flankenwikel;
+            
             String[] feld = this.gewinde.Split('M');
             int d = Int32.Parse(feld[1]);
             // Rechnungen   

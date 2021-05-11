@@ -134,6 +134,12 @@ public partial class MainWindow : Window
 
             //hier noch alle Eingabeelement mit den aktuellen Werten in der Schraube festlegen. Wenn noch nicht festgelegt, dann Default
 
+            if (feld[nr].gewinde == null)
+            {
+                MessageBox.Show("Es fehlt eine Gewindeeingabe.\rBitte eine Auswahl treffen", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (txt_len.Text == "" || txt_gewlen.Text == "")
             {
                 MessageBox.Show("Für Gewindelänge und oder Länge liegt keine Eingabe vor.", "Fehlerhafte Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
