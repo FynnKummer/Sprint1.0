@@ -8,6 +8,7 @@ namespace Schraubengott
 {
     class Schraube
     {
+        public string name; // Vom Benutzer festgeleter Name für die Schraube
         public int menge;
         public int laenge;
         public double volumen;
