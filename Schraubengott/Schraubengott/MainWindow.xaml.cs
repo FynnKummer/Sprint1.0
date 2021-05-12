@@ -450,7 +450,7 @@ public partial class MainWindow : Window
                 menge1txt.Text = feld[0].menge.ToString();
                 gew1txt.Text = Math.Round(feld[0].gesamtgewicht, 2).ToString();
                 preis1txt.Text = Math.Round(feld[0].stückpreis,2).ToString();
-                gpreis1txt.Text = Math.Round(feld[0].preis_summe,2).ToString();
+                gpreis1txt.Text = Math.Round(feld[0].nettopreis_Summe,2).ToString();
             }
             else if(check1.IsChecked == false)
             {
@@ -465,7 +465,7 @@ public partial class MainWindow : Window
                  menge2txt.Text = feld[1].menge.ToString();
                  gew2txt.Text = Math.Round(feld[1].gesamtgewicht, 2).ToString();
                  preis2txt.Text = Math.Round(feld[1].stückpreis,2).ToString();
-                 gpreis2txt.Text = Math.Round(feld[1].preis_summe,2).ToString();
+                 gpreis2txt.Text = Math.Round(feld[1].nettopreis_Summe, 2).ToString();
             }
             else if (check2.IsChecked == false)
             {
@@ -480,7 +480,7 @@ public partial class MainWindow : Window
                 menge3txt.Text = feld[2].menge.ToString();
                 gew3txt.Text = Math.Round(feld[2].gesamtgewicht, 2).ToString();
                 preis3txt.Text = Math.Round(feld[2].stückpreis,2).ToString();
-                gpreis3txt.Text = Math.Round(feld[2].preis_summe,2).ToString();
+                gpreis3txt.Text = Math.Round(feld[2].nettopreis_Summe, 2).ToString();
             }
             else if (check3.IsChecked == false)
             {
@@ -495,7 +495,7 @@ public partial class MainWindow : Window
                 menge4txt.Text = feld[3].menge.ToString();
                 gew4txt.Text = Math.Round(feld[3].gesamtgewicht, 2).ToString();
                 preis4txt.Text = Math.Round(feld[3].stückpreis,2).ToString();
-                gpreis4txt.Text = Math.Round(feld[3].preis_summe,2).ToString();
+                gpreis4txt.Text = Math.Round(feld[3].nettopreis_Summe, 2).ToString();
             }
             else if (check4.IsChecked == false)
             {
@@ -510,7 +510,7 @@ public partial class MainWindow : Window
                 menge5txt.Text = feld[4].menge.ToString();
                 gew5txt.Text = Math.Round(feld[4].gesamtgewicht, 2).ToString();
                 preis5txt.Text = Math.Round(feld[4].stückpreis,2).ToString();
-                gpreis5txt.Text = Math.Round(feld[4].preis_summe,2).ToString();
+                gpreis5txt.Text = Math.Round(feld[4].nettopreis_Summe, 2).ToString();
             }
             else if (check5.IsChecked == false)
             {
