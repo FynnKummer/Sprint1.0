@@ -92,6 +92,10 @@
             </TabItem>
             <TabItem x:Name="tab_1" Header="Übersicht" >
                 <Grid x:Name="grid1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="101*"/>
+                        <RowDefinition Height="107*"/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -101,26 +105,26 @@
                             <GradientStop Color="#FFDDE0E4" Offset="0.626"/>
                         </RadialGradientBrush>
                     </Grid.Background>
-                    <TextBox x:Name="Schraubetxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="5,10,0,0" TextWrapping="Wrap" Text="Schraube&#xA;&#xD;&#xA;&#xA;Schraube 1&#xA;&#xA;Schraube 2&#xA;&#xA;Schraube 3&#xA;&#xA;Schraube 4&#xA;&#xA;Schraube 5" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True"/>
-                    <TextBox x:Name="Materialtxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="80,10,0,0" TextWrapping="Wrap" Text="Material" VerticalAlignment="Top" Width="127" FontSize="16" IsReadOnly="True"/>
-                    <TextBox x:Name="Festtxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="207,10,0,0" TextWrapping="Wrap" Text="Festigkeit" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True" />
-                    <TextBox x:Name="Kopftxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="282,10,0,0" TextWrapping="Wrap" Text="Kopf" VerticalAlignment="Top" Width="147" FontSize="16" IsReadOnly="True" />
-                    <TextBox x:Name="Gewindetxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="429,10,0,0" TextWrapping="Wrap" Text="Gewinde" VerticalAlignment="Top" Width="51" FontSize="16" IsReadOnly="True" />
-                    <TextBox x:Name="Typtxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="480,10,0,0" TextWrapping="Wrap" Text="Typ" VerticalAlignment="Top" Width="142" FontSize="16" IsReadOnly="True" />
-                    <TextBox x:Name="Laengetxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="622,10,0,0" TextWrapping="Wrap" Text="Länge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" />
-                    <TextBox x:Name="gewlentxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="678,10,0,0" TextWrapping="Wrap" Text="Gewindelänge" VerticalAlignment="Top" Width="69" FontSize="16"  IsReadOnly="True"/>
-                    <TextBox x:Name="mengetxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="747,10,0,0" TextWrapping="Wrap" Text="Menge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" />
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="5,81,0,0" VerticalAlignment="Top" Width="798"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="5,16,0,0" VerticalAlignment="Top" Width="798"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="5,144,0,0" VerticalAlignment="Top" Width="798"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="5,208,0,0" VerticalAlignment="Top" Width="798"/>
-                    <Separator HorizontalAlignment="Left" Height="100" Margin="5,280,0,0" VerticalAlignment="Top" Width="798"/>
-                    <CheckBox x:Name="check1" Content="" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="check2" Content="" HorizontalAlignment="Left" Margin="50,165,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="check3" Content="" HorizontalAlignment="Left" Margin="50,228,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="check4" Content="" HorizontalAlignment="Left" Margin="50,292,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="check5" Content="" HorizontalAlignment="Left" Margin="50,357,0,0" VerticalAlignment="Top"/>
-                    <Button Content="zum Warenkorb" HorizontalAlignment="Left" Height="23" Margin="826,357,0,0" VerticalAlignment="Top" Width="92" Click="btnwarenkorb_Click"/>
+                    <TextBox x:Name="Schraubetxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="10,16,0,0" TextWrapping="Wrap" Text="Schraube&#xA;&#xD;&#xA;&#xA;Schraube 1&#xA;&#xA;Schraube 2&#xA;&#xA;Schraube 3&#xA;&#xA;Schraube 4&#xA;&#xA;Schraube 5" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True" Grid.RowSpan="2"/>
+                    <TextBox x:Name="Materialtxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="85,16,0,0" TextWrapping="Wrap" Text="Material" VerticalAlignment="Top" Width="127" FontSize="16" IsReadOnly="True" Grid.RowSpan="2"/>
+                    <TextBox x:Name="Festtxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="212,16,0,0" TextWrapping="Wrap" Text="Festigkeit" VerticalAlignment="Top" Width="75" FontSize="16" IsReadOnly="True" Grid.RowSpan="2" />
+                    <TextBox x:Name="Kopftxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="287,16,0,0" TextWrapping="Wrap" Text="Kopf" VerticalAlignment="Top" Width="147" FontSize="16" IsReadOnly="True" Grid.RowSpan="2" />
+                    <TextBox x:Name="Gewindetxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="434,16,0,0" TextWrapping="Wrap" Text="Gewinde" VerticalAlignment="Top" Width="51" FontSize="16" IsReadOnly="True" Grid.RowSpan="2" />
+                    <TextBox x:Name="Typtxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="485,16,0,0" TextWrapping="Wrap" Text="Typ" VerticalAlignment="Top" Width="142" FontSize="16" IsReadOnly="True" Grid.RowSpan="2" />
+                    <TextBox x:Name="Laengetxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="627,16,0,0" TextWrapping="Wrap" Text="Länge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" Grid.RowSpan="2" />
+                    <TextBox x:Name="gewlentxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="683,16,0,0" TextWrapping="Wrap" Text="Gewindelänge" VerticalAlignment="Top" Width="69" FontSize="16"  IsReadOnly="True" Grid.RowSpan="2"/>
+                    <TextBox x:Name="mengetxt" TextAlignment="Center" HorizontalAlignment="Left" Height="383" Margin="752,16,0,0" TextWrapping="Wrap" Text="Menge" VerticalAlignment="Top" Width="56" FontSize="16" IsReadOnly="True" Grid.RowSpan="2" />
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="10,81,0,0" VerticalAlignment="Top" Width="798"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="10,16,0,0" VerticalAlignment="Top" Width="798"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="10,144,0,0" VerticalAlignment="Top" Width="798" Grid.RowSpan="2"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="10,6.167,0,0" VerticalAlignment="Top" Width="798" Grid.Row="1"/>
+                    <Separator HorizontalAlignment="Left" Height="100" Margin="10,78.167,0,0" VerticalAlignment="Top" Width="798" Grid.Row="1"/>
+                    <CheckBox x:Name="check1" Content="" HorizontalAlignment="Left" Margin="59,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.403,0.865"/>
+                    <CheckBox x:Name="check2" Content="" HorizontalAlignment="Left" Margin="59,169,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="check3" Content="" HorizontalAlignment="Left" Margin="59,31,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <CheckBox x:Name="check4" Content="" HorizontalAlignment="Left" Margin="59,95,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <CheckBox x:Name="check5" Content="" HorizontalAlignment="Left" Margin="59,159,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <Button Content="zum Warenkorb" HorizontalAlignment="Left" Height="23" Margin="832,155,0,0" VerticalAlignment="Top" Width="92" Click="btnwarenkorb_Click" Grid.Row="1"/>
                 </Grid>
 
             </TabItem>
