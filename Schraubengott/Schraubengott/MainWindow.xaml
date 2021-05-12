@@ -29,7 +29,7 @@
 
                     <Image x:Name="Image1" HorizontalAlignment="Left" Margin="707.25,0,0,23" Width="140"  Height="368" VerticalAlignment="Bottom" Source="vykres_-_din_931.jpg" Visibility="Visible" Grid.Column="1"/>
                     <Image x:Name="Image2" HorizontalAlignment="Left" Margin="707.25,0,0,23" Width="140"  Height="368" VerticalAlignment="Bottom" Source="3929_1.jpg" Visibility="Hidden" Grid.Column="1"/>
-                    <ComboBox  x:Name="cmb_nr" HorizontalAlignment="Left" Margin="190.25,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cmb_nr_SelectionChanged" Height="30" Grid.Column="1">
+                    <ComboBox  x:Name="cmb_nr" HorizontalAlignment="Left" Margin="190.25,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cmb_nr_SelectionChanged" Height="26" Grid.Column="1">
                         <ComboBoxItem x:Name="screw1"  Content="Schraube 1" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="screw2" Visibility="Collapsed" Content="Schraube 2" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem x:Name="screw3" Visibility="Collapsed" Content="Schraube 3" HorizontalAlignment="Left" Width="118"/>
@@ -37,7 +37,7 @@
                         <ComboBoxItem x:Name="screw5" Visibility="Collapsed" Content="Schraube 5" HorizontalAlignment="Left" Width="118"/>
 
                     </ComboBox>
-                    <Button x:Name="new_screw" Content="weitere Konfigurieren" HorizontalAlignment="Left" Margin="398.25,25,0,0" VerticalAlignment="Top" Width="156" Height="30" Click="New_screw_Click" Grid.Column="1"/>
+                    <Button x:Name="new_screw" Content="weitere Konfigurieren" HorizontalAlignment="Left" Margin="398.25,25,0,0" VerticalAlignment="Top" Width="156" Height="26" Click="New_screw_Click" Grid.Column="1"/>
                     <Label Content="EA" HorizontalAlignment="Left" Height="30" Margin="587.25,220,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.504,1.219" Grid.Column="1"/>
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="308" Margin="25,85,0,0" VerticalAlignment="Top" Width="662" Grid.ColumnSpan="2">
                         <Grid>
